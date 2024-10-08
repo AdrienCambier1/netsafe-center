@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Button3({ link, onClick, value }) {
+export default function HeaderButton({ link, onClick, value }) {
   return (
     <a
       href={link}
