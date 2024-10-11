@@ -3,7 +3,7 @@ import { faComment } from "@fortawesome/free-solid-svg-icons";
 import GrayButton from "../Components/GrayButton";
 import HeaderButton from "../Components/HeaderButton";
 import MainTitle from "../Components/MainTitle";
-import NavHamburgerMenu from "../Components/NavHamburgerMenu";
+import MenuModal from "../Modals/MenuModal";
 import { useEffect, useState } from "react";
 
 export default function Header() {
@@ -20,15 +20,9 @@ export default function Header() {
       }
     };
 
-    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
+    handleResize();
 
-    // Check the initial window size in case it's already larger than 1024px
-    if (window.innerWidth > 1024) {
-      setOpenMenu(false);
-    }
-
-    // Cleanup event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -54,10 +48,7 @@ export default function Header() {
           <GrayButton onClick={toggleOpenMenu} className="none" icon={faBars} />
         </div>
       </div>
-      <NavHamburgerMenu
-        isOpen={OpenMenu}
-        onClick={toggleOpenMenu}
-      ></NavHamburgerMenu>
+      <MenuModal isOpen={OpenMenu} onClick={toggleOpenMenu}></MenuModal>
     </header>
   );
 }

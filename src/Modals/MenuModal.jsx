@@ -1,11 +1,9 @@
 import { faClose, faUser } from "@fortawesome/free-solid-svg-icons";
-import HeavyPurpleButton from "./HeavyPurpleButton";
-import TitleMenu from "./TitleMenu";
-import HeaderButton from "./HeaderButton";
-import { useEffect } from "react";
-import { useState } from "react";
+import HeavyPurpleButton from "../Components/HeavyPurpleButton";
+import TitleMenu from "../Components/TitleMenu";
+import HeaderButton from "../Components/HeaderButton";
 
-export default function NavHamburgerMenu({ isOpen, onClick }) {
+export default function MenuModal({ isOpen, onClick }) {
   if (isOpen) {
     document.body.style.overflowY = "hidden";
   } else {
