@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.button3::after {
+.header-button::after {
   content: "";
   background-color: #a855f7;
   bottom: 0;
@@ -10,15 +10,22 @@
   height: 2px;
   border-radius: 10px;
   position: absolute;
-  opacity: 0;
-  transition: all 150ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease-in-out;
 }
 
-.button3:hover::after {
-  opacity: 1;
+.header-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 @font-face {
   font-family: "Raleway";
   src: url("./font/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
+.open {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
 }

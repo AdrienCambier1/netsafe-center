@@ -5,12 +5,19 @@ export default function RoundedGrayButton({ link, onClick, icon, value }) {
     <a
       href={link}
       onClick={onClick}
-      className="bg-zinc-100 py-2 px-4 flex gap-2 items-center text-zinc-300 hover:text-zinc-600 rounded-full transition-all ease-in-out w-fit"
+      className={`${
+        value ? "px-4" : null
+      } bg-zinc-100  flex gap-2 items-center text-zinc-300 hover:text-zinc-600 rounded-full cursor-pointer transition-all ease-in-out`}
     >
-      <FontAwesomeIcon className="h-4 w-4" icon={icon}></FontAwesomeIcon>
-      <p className="font-['Raleway'] font-medium text-sm text-zinc-600">
-        {value}
-      </p>
+      <FontAwesomeIcon
+        className={`${value ? null : "p-2.5"} h-4 w-4`}
+        icon={icon}
+      ></FontAwesomeIcon>
+      {value ? (
+        <p className="font-['Raleway'] font-medium text-sm text-zinc-600">
+          {value}
+        </p>
+      ) : null}
     </a>
   );
 }
