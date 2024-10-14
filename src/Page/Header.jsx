@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="z-50 fixed bg-white shadow-md shadow-purple-200/50 h-16 w-full flex items-center justify-between px-8">
+    <header className="z-10 fixed bg-white shadow-md shadow-purple-200/50 h-16 w-full flex items-center justify-between px-8">
       <div className="flex gap-4 h-full items-center relative">
         <a href="/">
           <MainTitle value="Netsafe Center"></MainTitle>
@@ -43,7 +43,7 @@ export default function Header() {
       </div>
       <div className="flex gap-4 h-full items-center">
         <GrayButton icon={faComment} background={true} />
-        <GrayButton icon={faUser} background={true} />
+        <GrayButton icon={faUser} background={true} link="login" />
         <div className="block lg:hidden">
           <GrayButton onClick={toggleOpenMenu} className="none" icon={faBars} />
         </div>

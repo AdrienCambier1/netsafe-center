@@ -65,9 +65,12 @@ export default function Home() {
           title="Poste 1"
           content="Bonjour, j'aime les enfants"
         ></NewsCard>
+        <NewsCard
+          title="Poste 1"
+          content="Bonjour, j'aime les enfants"
+        ></NewsCard>
       </div>
       <div className="col-span-1 relative flex flex-col gap-4 p-8 lg:border-l border-gray-300/50">
-        <TitleSection value="Compte"></TitleSection>
         <ConnectedState value={true}></ConnectedState>
       </div>
     </div>
