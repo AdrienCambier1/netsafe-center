@@ -1,8 +1,8 @@
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
-import GrayButton from "../Components/GrayButton";
-import HeaderButton from "../Components/HeaderButton";
-import MainTitle from "../Components/MainTitle";
+import GrayButton from "../Components/Buttons/GrayButton";
+import HeaderButton from "../Components/Buttons/HeaderButton";
+import MainTitle from "../Components/Titles/MainTitle";
 import MenuModal from "../Modals/MenuModal";
 import { useEffect, useState } from "react";
 

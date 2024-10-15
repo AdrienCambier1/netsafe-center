@@ -1,14 +1,15 @@
 import WhiteCard from "./WhiteCard";
-import MainTitle from "./MainTitle";
-import RoundedGrayButton from "./RoundedGrayButton";
+import MainTitle from "../Titles/MainTitle";
+import TitleSection from "../Titles/TitleSection";
+import RoundedGrayButton from "../Buttons/RoundedGrayButton";
 import { faBookmark, faComment } from "@fortawesome/free-solid-svg-icons";
-import GuessAccountImage from "./GuessAccountImage";
+import GuessAccountImage from "../GuessAccountImage";
 
 export default function ({ title, image, content }) {
   return (
     <WhiteCard>
       <div className="flex flex-col p-2 gap-4">
-        <MainTitle value={title}></MainTitle>
+        <MainTitle value={title} />
         <div className="flex items-center">
           {image ? (
             <img className="h-4 w-4 rounded-xl object-cover" />

@@ -1,4 +1,4 @@
-import GrayButton from "./GrayButton";
+import GrayButton from "./Buttons/GrayButton";
 
 export default function InputAuthentication({ value, type, icon }) {
   return (

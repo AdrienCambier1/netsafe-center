@@ -1,5 +1,5 @@
-import GuessAccountImage from "./GuessAccountImage";
-import HeavyPurpleButton from "./HeavyPurpleButton";
+import GuessAccountImage from "../GuessAccountImage";
+import HeavyPurpleButton from "../Buttons/HeavyPurpleButton";
 import WhiteCard from "./WhiteCard";
 
 export default function ConnectedState({ value, name }) {

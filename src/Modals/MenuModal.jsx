@@ -1,7 +1,7 @@
 import { faClose, faUser } from "@fortawesome/free-solid-svg-icons";
-import HeavyPurpleButton from "../Components/HeavyPurpleButton";
-import TitleMenu from "../Components/TitleMenu";
-import HeaderButton from "../Components/HeaderButton";
+import HeavyPurpleButton from "../Components/Buttons/HeavyPurpleButton";
+import TitleMenu from "../Components/Titles/TitleMenu";
+import HeaderButton from "../Components/Buttons/HeaderButton";
 
 export default function MenuModal({ isOpen, onClick }) {
   if (isOpen) {

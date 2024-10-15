@@ -1,45 +1,40 @@
 import { faHome, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
-import GoogleAuthentication from "../../Components/GoogleAuthentication";
-import HeavyPurpleButton from "../../Components/HeavyPurpleButton";
+import GoogleAuthentication from "../../Components/Buttons/GoogleAuthentication";
+import HeavyPurpleButton from "../../Components/Buttons/HeavyPurpleButton";
 import InputAuthentication from "../../Components/InputAuthentication";
-import MainTitle from "../../Components/MainTitle";
+import MainTitle from "../../Components/Titles/MainTitle";
 import LoginBackground from "../../Images/background_login.png";
 import OrSplitter from "../../Components/OrSplitter";
-import GrayButton from "../../Components/GrayButton";
+import GrayButton from "../../Components/Buttons/GrayButton";
+import PurpleGradientBackground from "../../Components/PurpleGradientBackground";
+import HalfWhiteCard from "../../Components/Cards/HalfWhiteCard";
 
 export default function Login() {
   return (
-    <div className="flex items-center justify-center bg-gradient-to-r from-purple-50 to-purple-100 absolute h-screen w-screen z-40 top-0 left-0 p-8">
-      <div className="bg-white rounded-xl shadow-md shadow-purple-200/50 flex overflow-hidden h-fit max-h-full max-w-full">
-        <img
-          className="hidden md:block w-96 object-cover"
-          src={LoginBackground}
-        ></img>
-
-        <div className="flex flex-col items-center gap-8 p-16 overflow-y-auto relative">
-          <div className="absolute top-2 right-2">
-            <GrayButton link="/" icon={faHome}></GrayButton>
-          </div>
-          <MainTitle value="Connectez-vous"></MainTitle>
-          <form className="flex flex-col gap-4 items-center w-full">
-            <GoogleAuthentication></GoogleAuthentication>
-            <OrSplitter value="ou" />
-            <InputAuthentication value="Adresse e-mail" icon={faUser} />
-            <InputAuthentication
-              value="Mot de passe"
-              type="password"
-              icon={faLock}
-            />
-            <HeavyPurpleButton value="Se connecter"></HeavyPurpleButton>
-            <p className="text-sm font-['Raleway'] text-zinc-600">
-              Pas de compte ?{" "}
-              <a href="sign-up" className="text-purple-500 font-bold underline">
-                S'inscrire
-              </a>
-            </p>
-          </form>
+    <PurpleGradientBackground>
+      <HalfWhiteCard image={LoginBackground}>
+        <div className="absolute top-2 right-2">
+          <GrayButton link="/" icon={faHome}></GrayButton>
         </div>
-      </div>
-    </div>
+        <MainTitle value="Connectez-vous"></MainTitle>
+        <form className="flex flex-col gap-4 items-center w-full">
+          <GoogleAuthentication></GoogleAuthentication>
+          <OrSplitter value="ou" />
+          <InputAuthentication value="Adresse e-mail" icon={faUser} />
+          <InputAuthentication
+            value="Mot de passe"
+            type="password"
+            icon={faLock}
+          />
+          <HeavyPurpleButton value="Se connecter"></HeavyPurpleButton>
+          <p className="text-sm font-['Raleway'] text-zinc-600">
+            Pas de compte ?{" "}
+            <a href="sign-up" className="text-purple-500 font-bold underline">
+              S'inscrire
+            </a>
+          </p>
+        </form>
+      </HalfWhiteCard>
+    </PurpleGradientBackground>
   );
 }

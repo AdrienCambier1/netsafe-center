@@ -1,4 +1,4 @@
-import TitleMenu from "./TitleMenu";
+import TitleMenu from "./Titles/TitleMenu";
 
 export default function OrSplitter({ value }) {
   return (

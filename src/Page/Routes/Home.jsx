@@ -1,20 +1,16 @@
-import LightPurpleButton from "../../Components/LightPurpleButton";
-import HeavyPurpleButton from "../../Components/HeavyPurpleButton";
+import LightPurpleButton from "../../Components/Buttons/LightPurpleButton";
+import HeavyPurpleButton from "../../Components/Buttons/HeavyPurpleButton";
 import {
   faHouse,
   faPlus,
   faCaretLeft,
   faBook,
   faPenNib,
-  faComment,
 } from "@fortawesome/free-solid-svg-icons";
-import WhiteCard from "../../Components/WhiteCard";
-import MainTitle from "../../Components/MainTitle";
-import TitleMenu from "../../Components/TitleMenu";
-import TitleSection from "../../Components/TitleSection";
-import RoundedGrayButton from "../../Components/RoundedGrayButton";
-import ConnectedState from "../../Components/ConnectedState";
-import NewsCard from "../../Components/NewsCard";
+import WhiteCard from "../../Components/Cards/WhiteCard";
+import TitleMenu from "../../Components/Titles/TitleMenu";
+import ConnectedState from "../../Components/Cards/ConnectedState";
+import NewsCard from "../../Components/Cards/NewsCard";
 
 export default function Home() {
   return (

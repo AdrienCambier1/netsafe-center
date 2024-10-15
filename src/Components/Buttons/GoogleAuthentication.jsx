@@ -1,4 +1,4 @@
-import GoogleLogo from "../Images/google_logo.svg";
+import GoogleLogo from "../../Images/google_logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function GoogleAuthentication() {
