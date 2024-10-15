@@ -11,7 +11,7 @@ export default function LightPurpleButton({ link, onClick, icon, value }) {
         className="h-4 w-4 p-2.5 bg-purple-100 rounded-xl text-purple-300 group-hover:text-purple-500 flex items-center hover:text-zinc-600 transition-all ease-in-out"
         icon={icon}
       ></FontAwesomeIcon>
-      <p className="text-zinc-600 font-medium font-['Raleway'] text-sm ml-2">
+      <p className="text-zinc-600 font-medium font-['Raleway'] text-sm ml-2 overflow-hidden text-ellipsis">
         {value}
       </p>
     </a>

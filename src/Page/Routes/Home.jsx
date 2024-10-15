@@ -8,7 +8,7 @@ import {
   faPenNib,
 } from "@fortawesome/free-solid-svg-icons";
 import WhiteCard from "../../Components/Cards/WhiteCard";
-import TitleMenu from "../../Components/Titles/TitleMenu";
+import FourthTitle from "../../Components/Titles/FourthTitle";
 import ConnectedState from "../../Components/Cards/ConnectedState";
 import NewsCard from "../../Components/Cards/NewsCard";
 
@@ -28,7 +28,7 @@ export default function Home() {
           ></LightPurpleButton>
         </div>
         <div className="flex flex-col gap-2">
-          <TitleMenu value="Cours actuels"></TitleMenu>
+          <FourthTitle value="Cours actuels" />
           <LightPurpleButton
             icon={faCaretLeft}
             value="Accueil"
@@ -67,7 +67,7 @@ export default function Home() {
         ></NewsCard>
       </div>
       <div className="col-span-1 relative flex flex-col gap-4 p-8 lg:border-l border-gray-300/50">
-        <ConnectedState value={true}></ConnectedState>
+        <ConnectedState value={true} link="account-center"></ConnectedState>
       </div>
     </div>
   );

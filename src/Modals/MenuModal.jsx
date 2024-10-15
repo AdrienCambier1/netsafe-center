@@ -1,23 +1,13 @@
 import { faClose, faUser } from "@fortawesome/free-solid-svg-icons";
 import HeavyPurpleButton from "../Components/Buttons/HeavyPurpleButton";
-import TitleMenu from "../Components/Titles/TitleMenu";
+import TitleMenu from "../Components/Titles/FourthTitle";
 import HeaderButton from "../Components/Buttons/HeaderButton";
+import Modalbackground from "../Components/Backgrounds/Modalbackground";
 
 export default function MenuModal({ isOpen, onClick }) {
-  if (isOpen) {
-    document.body.style.overflowY = "hidden";
-  } else {
-    document.body.style.overflowY = "auto";
-  }
-
   return (
     <>
-      <div
-        onClick={onClick}
-        className={`${
-          isOpen ? "block lg:hidden" : "hidden"
-        } w-full h-full fixed top-0 right-0 bg-black/50 transition-all ease-in-out`}
-      ></div>
+      <Modalbackground isOpen={isOpen} onClick={onClick} />
 
       <div
         className={`${

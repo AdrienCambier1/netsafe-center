@@ -1,18 +1,21 @@
 import WhiteCard from "./WhiteCard";
-import MainTitle from "../Titles/MainTitle";
-import TitleSection from "../Titles/TitleSection";
+import SecondTitle from "../Titles/SecondTitle";
 import RoundedGrayButton from "../Buttons/RoundedGrayButton";
 import { faBookmark, faComment } from "@fortawesome/free-solid-svg-icons";
 import GuessAccountImage from "../GuessAccountImage";
 
-export default function ({ title, image, content }) {
+export default function NewsCard({ title, image, content }) {
   return (
     <WhiteCard>
       <div className="flex flex-col p-2 gap-4">
-        <MainTitle value={title} />
+        <SecondTitle value={title} />
         <div className="flex items-center">
           {image ? (
-            <img className="h-4 w-4 rounded-xl object-cover" />
+            <img
+              alt={image}
+              src={image}
+              className="h-4 w-4 rounded-xl object-cover"
+            />
           ) : (
             <GuessAccountImage></GuessAccountImage>
           )}

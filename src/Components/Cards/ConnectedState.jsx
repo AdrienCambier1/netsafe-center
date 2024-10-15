@@ -2,7 +2,7 @@ import GuessAccountImage from "../GuessAccountImage";
 import HeavyPurpleButton from "../Buttons/HeavyPurpleButton";
 import WhiteCard from "./WhiteCard";
 
-export default function ConnectedState({ value, name }) {
+export default function ConnectedState({ value, name, link }) {
   return (
     <WhiteCard>
       <div className="flex flex-col gap-4 p-2">
@@ -30,6 +30,7 @@ export default function ConnectedState({ value, name }) {
         </div>
         <HeavyPurpleButton
           value={value ? "Mon profil" : "Se connecter"}
+          link={link}
         ></HeavyPurpleButton>
       </div>
     </WhiteCard>

@@ -1,9 +1,9 @@
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import HeavyPurpleButton from "../../Components/Buttons/HeavyPurpleButton";
-import MainTitle from "../../Components/Titles/MainTitle";
+import SecondTitle from "../../Components/Titles/SecondTitle";
 import Error404 from "../../Images/404.png";
 import GrayButton from "../../Components/Buttons/GrayButton";
-import PurpleGradientBackground from "../../Components/PurpleGradientBackground";
+import PurpleGradientBackground from "../../Components/Backgrounds/PurpleGradientBackground";
 import HalfWhiteCard from "../../Components/Cards/HalfWhiteCard";
 
 export default function NotFound() {
@@ -13,7 +13,7 @@ export default function NotFound() {
         <div className="absolute top-2 right-2">
           <GrayButton link="/" icon={faHome}></GrayButton>
         </div>
-        <MainTitle value="Page introuvable"></MainTitle>
+        <SecondTitle value="Page introuvable" />
 
         <p className="text-center text-sm font-['Raleway'] text-zinc-600">
           La page que vous recherchez n'éxiste pas
