@@ -22,11 +22,12 @@ export default function MenuModal({ isOpen, onClick }) {
           <HeaderButton value="Espace de connaissance"></HeaderButton>
           <HeaderButton value="Outils pratiques"></HeaderButton>
           <HeaderButton value="Quizz d'apprentissage"></HeaderButton>
-          <HeaderButton value="Cours"></HeaderButton>
+          <HeaderButton value="Cours" link="classes-list"></HeaderButton>
         </div>
         <HeavyPurpleButton
           icon={faUser}
           value="Se connecter"
+          link="login"
         ></HeavyPurpleButton>
       </div>
     </>

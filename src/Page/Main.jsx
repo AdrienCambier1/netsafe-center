@@ -4,6 +4,7 @@ import NotFound from "./Routes/NotFound";
 import Login from "./Routes/Login";
 import SignUp from "./Routes/SignUp";
 import AccountCenter from "./Routes/AccountCenter";
+import ClassesList from "./Routes/ClassesList";
 
 export default function Main() {
   return (
@@ -15,6 +16,7 @@ export default function Main() {
           <Route path="sign-up" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
           <Route path="account-center" element={<AccountCenter />} />
+          <Route path="classes-list" element={<ClassesList />} />
         </Routes>
       </Router>
     </main>

@@ -1,4 +1,4 @@
-import GuessAccountImage from "../GuessAccountImage";
+import AccountImage from "../AccountImage";
 import HeavyPurpleButton from "../Buttons/HeavyPurpleButton";
 import WhiteCard from "./WhiteCard";
 
@@ -7,7 +7,7 @@ export default function ConnectedState({ value, name, link }) {
     <WhiteCard>
       <div className="flex flex-col gap-4 p-2">
         <div className="flex items-center border-b border-gray-300/50 pb-2">
-          <GuessAccountImage></GuessAccountImage>
+          <AccountImage></AccountImage>
           <p className="text-zinc-600 font-medium font-['Raleway'] text-sm ml-2">
             Guess
           </p>

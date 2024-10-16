@@ -1,18 +1,14 @@
 import FirstTitle from "../../Components/Titles/FirstTitle";
-import WhiteCard from "../../Components/Cards/WhiteCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import LightPurpleButton from "../../Components/Buttons/LightPurpleButton";
 import {
   faLock,
-  faPencil,
   faAddressCard,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import AccountOverview from "./AccountCenterContent/AccountOverview";
 import PersonalData from "./AccountCenterContent/PersonalData";
 import PasswordAndSecurity from "./AccountCenterContent/PasswordAndSecurity";
-import UserPosts from "./AccountCenterContent/UserPosts";
 import { useState } from "react";
 import WhiteButton from "../../Components/Buttons/WhiteButton";
 
@@ -27,8 +23,6 @@ export default function AccountCenter() {
         return <PersonalData />;
       case "password_and_security":
         return <PasswordAndSecurity />;
-      case "user_posts":
-        return <UserPosts />;
       default:
         return <AccountOverview />;
     }
@@ -40,30 +34,25 @@ export default function AccountCenter() {
         <FirstTitle value="Gestion du compte" />
         <WhiteButton value="ID : 704838134" icon={faCopy} />
       </div>
-      <div className="flex flex-col md:grid grid-cols-3 gap-4 h-10 pt-4">
+      <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div className="flex flex-col gap-2">
           <LightPurpleButton
             icon={faUser}
             value="Aperçu du compte"
             onClick={() => setActiveSection("account_overview")}
-          ></LightPurpleButton>
+          />
           <LightPurpleButton
             icon={faAddressCard}
             value="Informations personnelles"
             onClick={() => setActiveSection("personal_data")}
-          ></LightPurpleButton>
+          />
           <LightPurpleButton
             icon={faLock}
             value="Mot de passe et sécurité"
             onClick={() => setActiveSection("password_and_security")}
-          ></LightPurpleButton>
-          <LightPurpleButton
-            icon={faPencil}
-            value="Vos posts"
-            onClick={() => setActiveSection("user_posts")}
-          ></LightPurpleButton>
+          />
         </div>
-        <div className="account-data flex flex-col col-span-2 gap-4 pb-4">
+        <div className="account-data flex flex-col col-span-2 gap-4">
           {renderActiveSection()}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import LightPurpleButton from "../../Components/Buttons/LightPurpleButton";
 import HeavyPurpleButton from "../../Components/Buttons/HeavyPurpleButton";
 import {
-  faHouse,
+  faBookmark,
   faPlus,
   faCaretLeft,
   faBook,
@@ -18,9 +18,8 @@ export default function Home() {
       <div className="col-span-1 relative top-0 flex flex-col gap-8 p-8 lg:border-r border-gray-300/50">
         <div className="flex flex-col gap-2">
           <LightPurpleButton
-            icon={faHouse}
-            value="Accueil"
-            link="/"
+            icon={faBookmark}
+            value="Posts enregistrés"
           ></LightPurpleButton>
           <LightPurpleButton
             icon={faBook}
