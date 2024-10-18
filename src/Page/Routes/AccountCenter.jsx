@@ -1,10 +1,13 @@
 import FirstTitle from "../../Components/Titles/FirstTitle";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import LightPurpleButton from "../../Components/Buttons/LightPurpleButton";
+import LightRedButton from "../../Components/Buttons/LightRedButton";
 import {
   faLock,
   faAddressCard,
   faUser,
+  faDoorClosed,
+  faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import AccountOverview from "./AccountCenterContent/AccountOverview";
 import PersonalData from "./AccountCenterContent/PersonalData";
@@ -51,6 +54,7 @@ export default function AccountCenter() {
             value="Mot de passe et sécurité"
             onClick={() => setActiveSection("password_and_security")}
           />
+          <LightRedButton icon={faRightToBracket} value="Se déconnecter" />
         </div>
         <div className="account-data flex flex-col col-span-2 gap-4">
           {renderActiveSection()}

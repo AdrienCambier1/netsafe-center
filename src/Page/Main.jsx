@@ -5,6 +5,7 @@ import Login from "./Routes/Login";
 import SignUp from "./Routes/SignUp";
 import AccountCenter from "./Routes/AccountCenter";
 import ClassesList from "./Routes/ClassesList";
+import QuizzList from "./Routes/QuizzList";
 
 export default function Main() {
   return (
@@ -17,6 +18,7 @@ export default function Main() {
           <Route path="*" element={<NotFound />} />
           <Route path="account-center" element={<AccountCenter />} />
           <Route path="classes-list" element={<ClassesList />} />
+          <Route path="quizz-list" element={<QuizzList />} />
         </Routes>
       </Router>
     </main>
