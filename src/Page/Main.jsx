@@ -6,6 +6,8 @@ import SignUp from "./Routes/SignUp";
 import AccountCenter from "./Routes/AccountCenter";
 import ClassesList from "./Routes/ClassesList";
 import QuizzList from "./Routes/QuizzList";
+import UsefulTools from "./Routes/UsefulTools";
+import KnowledgeArea from "./Routes/KnowledgeArea";
 
 export default function Main() {
   return (
@@ -19,6 +21,8 @@ export default function Main() {
           <Route path="account-center" element={<AccountCenter />} />
           <Route path="classes-list" element={<ClassesList />} />
           <Route path="quizz-list" element={<QuizzList />} />
+          <Route path="useful-tools" element={<UsefulTools />} />
+          <Route path="knowledge-area" element={<KnowledgeArea />} />
         </Routes>
       </Router>
     </main>

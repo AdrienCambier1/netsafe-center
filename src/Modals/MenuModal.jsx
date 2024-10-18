@@ -19,8 +19,14 @@ export default function MenuModal({ isOpen, onClick }) {
           <TitleMenu value="Bonjour toi"> </TitleMenu>
         </div>
         <div className="my-8 py-4 border-t border-gray-300/50 flex flex-col gap-2">
-          <HeaderButton value="Espace de connaissance"></HeaderButton>
-          <HeaderButton value="Outils pratiques"></HeaderButton>
+          <HeaderButton
+            value="Espace de connaissance"
+            link="knowledge-area"
+          ></HeaderButton>
+          <HeaderButton
+            value="Outils pratiques"
+            link="useful-tools"
+          ></HeaderButton>
           <HeaderButton
             value="Quizz d'apprentissage"
             link="quizz-list"

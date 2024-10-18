@@ -1,11 +1,24 @@
 import WhiteCard from "./WhiteCard";
-import ThirdTitle from "../Titles/ThirdTitle";
-import FourthTitle from "../Titles/FourthTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
 import HeavyPurpleButton from "../Buttons/HeavyPurpleButton";
+import { useEffect, useState } from "react";
 
 export default function ClassCard({ title }) {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <WhiteCard>
       <div className="flex justify-between md:flex-col items-center gap-4 p-2">
@@ -26,7 +39,11 @@ export default function ClassCard({ title }) {
           </div>
         </div>
         <div className="md:w-full">
-          <HeavyPurpleButton icon={faArrowLeft} value="Commencer" />
+          {isSmallScreen ? (
+            <HeavyPurpleButton icon={faArrowLeft} />
+          ) : (
+            <HeavyPurpleButton icon={faArrowLeft} value="Commencer" />
+          )}
         </div>
       </div>
     </WhiteCard>
