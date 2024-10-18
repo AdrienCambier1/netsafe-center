@@ -1,6 +1,5 @@
-import FirstTitle from "../../Components/Titles/FirstTitle";
-import FourthTitle from "../../Components/Titles/FourthTitle";
-import KnowledgeCard from "../../Components/Cards/KnowledgeCard";
+import { FirstTitle, FourthTitle } from "../../Components/Titles";
+import { KnowledgeCard } from "../../Components/Cards";
 
 export default function KnowledgeArea() {
   return (

@@ -1,6 +1,5 @@
-import FirstTitle from "../../Components/Titles/FirstTitle";
-import QuizzCard from "../../Components/Cards/QuizzCard";
-import FourthTitle from "../../Components/Titles/FourthTitle";
+import { FirstTitle, FourthTitle } from "../../Components/Titles";
+import { QuizzCard } from "../../Components/Cards";
 
 export default function QuizzList() {
   return (

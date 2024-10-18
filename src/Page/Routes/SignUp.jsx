@@ -1,13 +1,15 @@
 import { faHome, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
-import GoogleAuthentication from "../../Components/Buttons/GoogleAuthentication";
-import HeavyPurpleButton from "../../Components/Buttons/HeavyPurpleButton";
-import InputAuthentication from "../../Components/InputAuthentication";
-import SecondTitle from "../../Components/Titles/SecondTitle";
-import LoginBackground from "../../Images/background_login.png";
+import {
+  GoogleAuthentication,
+  HeavyPurpleButton,
+  GrayButton,
+} from "../../Components/Buttons";
+import { AuthenticationInput } from "../../Components/Inputs";
+import { SecondTitle } from "../../Components/Titles";
+import { HalfWhiteCard } from "../../Components/Cards";
 import OrSplitter from "../../Components/OrSplitter";
-import GrayButton from "../../Components/Buttons/GrayButton";
-import PurpleGradientBackground from "../../Components/Backgrounds/PurpleGradientBackground";
-import HalfWhiteCard from "../../Components/Cards/HalfWhiteCard";
+import { PurpleGradientBackground } from "../../Components/Backgrounds";
+import LoginBackground from "../../Images/background_login.png";
 
 export default function SignUp() {
   return (
@@ -20,8 +22,8 @@ export default function SignUp() {
         <form className="flex flex-col gap-4 items-center w-full">
           <GoogleAuthentication></GoogleAuthentication>
           <OrSplitter value="ou" />
-          <InputAuthentication value="Adresse e-mail" icon={faUser} />
-          <InputAuthentication
+          <AuthenticationInput value="Adresse e-mail" icon={faUser} />
+          <AuthenticationInput
             value="Mot de passe"
             type="password"
             icon={faLock}

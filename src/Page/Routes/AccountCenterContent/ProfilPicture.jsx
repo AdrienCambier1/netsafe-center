@@ -1,4 +1,4 @@
-import WhiteCard from "../../../Components/Cards/WhiteCard";
+import { WhiteCard } from "../../../Components/Cards";
 import AccountImage from "../../../Components/AccountImage";
 
 export default function ProfilPicture() {

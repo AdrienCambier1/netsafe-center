@@ -1,6 +1,5 @@
-import FirstTitle from "../../Components/Titles/FirstTitle";
-import FourthTitle from "../../Components/Titles/FourthTitle";
-import ToolsCard from "../../Components/Cards/ToolsCard";
+import { FirstTitle, FourthTitle } from "../../Components/Titles";
+import { ToolsCard } from "../../Components/Cards";
 
 export default function UsefulTools() {
   return (

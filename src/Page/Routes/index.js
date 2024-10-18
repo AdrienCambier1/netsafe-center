@@ -1,0 +1,10 @@
+export { default as AccountCenter } from "./AccountCenter";
+export { default as ClassesList } from "./ClassesList";
+export { default as Forum } from "./Forum";
+export { default as Home } from "./Home";
+export { default as KnowledgeArea } from "./KnowledgeArea";
+export { default as Login } from "./Login";
+export { default as NotFound } from "./NotFound";
+export { default as QuizzList } from "./QuizzList";
+export { default as SignUp } from "./SignUp";
+export { default as UsefulTools } from "./UsefulTools";

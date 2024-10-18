@@ -1,16 +1,16 @@
-import LightPurpleButton from "../../Components/Buttons/LightPurpleButton";
-import HeavyPurpleButton from "../../Components/Buttons/HeavyPurpleButton";
 import {
   faBookmark,
-  faPlus,
   faCaretLeft,
   faBook,
   faPenNib,
 } from "@fortawesome/free-solid-svg-icons";
-import WhiteCard from "../../Components/Cards/WhiteCard";
-import FourthTitle from "../../Components/Titles/FourthTitle";
-import ConnectedState from "../../Components/Cards/ConnectedState";
-import NewsCard from "../../Components/Cards/NewsCard";
+import {
+  ConnectedState,
+  NewsCard,
+  PostHeaderCard,
+} from "../../Components/Cards";
+import { FourthTitle } from "../../Components/Titles";
+import { LightPurpleButton, HeavyPurpleButton } from "../../Components/Buttons";
 
 export default function Home() {
   return (
@@ -20,6 +20,7 @@ export default function Home() {
           <LightPurpleButton
             icon={faBookmark}
             value="Posts enregistrés"
+            link="/forum/saved_posts"
           ></LightPurpleButton>
           <LightPurpleButton
             icon={faBook}
@@ -44,14 +45,7 @@ export default function Home() {
       </div>
 
       <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l lg:border-none border-gray-300/50 row-span-1 sm:row-span-2 lg:row-span-1">
-        <WhiteCard>
-          <div className="flex items-center justify-between">
-            <p className="text-zinc-400 font-['Raleway'] font-medium text-sm">
-              Ajouter un poste
-            </p>
-            <HeavyPurpleButton icon={faPlus}></HeavyPurpleButton>
-          </div>
-        </WhiteCard>
+        <PostHeaderCard title="Posts récents" description="Ajoutez un post" />
         <NewsCard
           title="Poste 1"
           content="Bonjour, j'aime les enfants"
@@ -66,7 +60,7 @@ export default function Home() {
         ></NewsCard>
       </div>
       <div className="col-span-1 relative flex flex-col gap-4 p-8 lg:border-l border-gray-300/50">
-        <ConnectedState value={true} link="account-center"></ConnectedState>
+        <ConnectedState value={true} link="/account-center"></ConnectedState>
       </div>
     </div>
   );

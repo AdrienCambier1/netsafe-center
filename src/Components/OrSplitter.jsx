@@ -1,4 +1,4 @@
-import FourthTitle from "./Titles/FourthTitle";
+import { FourthTitle } from "./Titles";
 
 export default function OrSplitter({ value }) {
   return (

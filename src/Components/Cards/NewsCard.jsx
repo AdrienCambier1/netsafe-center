@@ -1,6 +1,6 @@
-import WhiteCard from "./WhiteCard";
-import SecondTitle from "../Titles/SecondTitle";
-import RoundedGrayButton from "../Buttons/RoundedGrayButton";
+import { WhiteCard } from "../Cards";
+import { SecondTitle } from "../Titles";
+import { RoundedGrayButton } from "../Buttons";
 import { faBookmark, faComment } from "@fortawesome/free-solid-svg-icons";
 import AccountImage from "../AccountImage";
 
@@ -20,7 +20,7 @@ export default function NewsCard({ title, image, content }) {
         </div>
         <div className="flex gap-2">
           <RoundedGrayButton icon={faBookmark} />
-          <RoundedGrayButton icon={faComment} value="Commenter" />
+          <RoundedGrayButton icon={faComment} value="Répondre" />
         </div>
       </div>
     </WhiteCard>

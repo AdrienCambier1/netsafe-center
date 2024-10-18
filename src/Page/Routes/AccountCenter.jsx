@@ -1,22 +1,38 @@
-import FirstTitle from "../../Components/Titles/FirstTitle";
+import { useParams } from "react-router-dom";
+import { FirstTitle } from "../../Components/Titles";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
-import LightPurpleButton from "../../Components/Buttons/LightPurpleButton";
-import LightRedButton from "../../Components/Buttons/LightRedButton";
+import {
+  LightPurpleButton,
+  LightRedButton,
+  WhiteButton,
+} from "../../Components/Buttons";
 import {
   faLock,
   faAddressCard,
   faUser,
-  faDoorClosed,
   faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import AccountOverview from "./AccountCenterContent/AccountOverview";
-import PersonalData from "./AccountCenterContent/PersonalData";
-import PasswordAndSecurity from "./AccountCenterContent/PasswordAndSecurity";
-import { useState } from "react";
-import WhiteButton from "../../Components/Buttons/WhiteButton";
+import {
+  AccountOverview,
+  PersonalData,
+  PasswordAndSecurity,
+} from "./AccountCenterContent";
+import { useState, useEffect } from "react";
 
 export default function AccountCenter() {
-  const [activeSection, setActiveSection] = useState("overview");
+  const { section } = useParams();
+
+  const [activeSection, setActiveSection] = useState("account_overview");
+
+  useEffect(() => {
+    if (
+      section === "account_overview" ||
+      section === "personal_data" ||
+      section === "password_and_security"
+    ) {
+      setActiveSection(section);
+    }
+  }, [section]);
 
   function renderActiveSection() {
     switch (activeSection) {
@@ -42,17 +58,17 @@ export default function AccountCenter() {
           <LightPurpleButton
             icon={faUser}
             value="Aperçu du compte"
-            onClick={() => setActiveSection("account_overview")}
+            link="/account-center/account_overview"
           />
           <LightPurpleButton
             icon={faAddressCard}
             value="Informations personnelles"
-            onClick={() => setActiveSection("personal_data")}
+            link="/account-center/personal_data"
           />
           <LightPurpleButton
             icon={faLock}
             value="Mot de passe et sécurité"
-            onClick={() => setActiveSection("password_and_security")}
+            link="/account-center/password_and_security"
           />
           <LightRedButton icon={faRightToBracket} value="Se déconnecter" />
         </div>

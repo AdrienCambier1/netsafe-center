@@ -1,10 +1,9 @@
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import HeavyPurpleButton from "../../Components/Buttons/HeavyPurpleButton";
-import SecondTitle from "../../Components/Titles/SecondTitle";
+import { HeavyPurpleButton, GrayButton } from "../../Components/Buttons";
+import { SecondTitle } from "../../Components/Titles";
+import { HalfWhiteCard } from "../../Components/Cards";
+import { PurpleGradientBackground } from "../../Components/Backgrounds";
 import Error404 from "../../Images/404.png";
-import GrayButton from "../../Components/Buttons/GrayButton";
-import PurpleGradientBackground from "../../Components/Backgrounds/PurpleGradientBackground";
-import HalfWhiteCard from "../../Components/Cards/HalfWhiteCard";
 
 export default function NotFound() {
   return (

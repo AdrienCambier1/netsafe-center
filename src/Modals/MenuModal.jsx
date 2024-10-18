@@ -1,13 +1,12 @@
 import { faClose, faUser } from "@fortawesome/free-solid-svg-icons";
-import HeavyPurpleButton from "../Components/Buttons/HeavyPurpleButton";
-import TitleMenu from "../Components/Titles/FourthTitle";
-import HeaderButton from "../Components/Buttons/HeaderButton";
-import Modalbackground from "../Components/Backgrounds/Modalbackground";
+import { HeavyPurpleButton, HeaderButton } from "../Components/Buttons";
+import { FourthTitle } from "../Components/Titles";
+import { ModalBackground } from "../Components/Backgrounds";
 
 export default function MenuModal({ isOpen, onClick }) {
   return (
     <>
-      <Modalbackground isOpen={isOpen} onClick={onClick} />
+      <ModalBackground isOpen={isOpen} onClick={onClick} />
 
       <div
         className={`${
@@ -16,7 +15,7 @@ export default function MenuModal({ isOpen, onClick }) {
       >
         <div className=" flex justify-between items-center">
           <HeavyPurpleButton icon={faClose} onClick={onClick} />
-          <TitleMenu value="Bonjour toi"> </TitleMenu>
+          <FourthTitle value="Bonjour toi" />
         </div>
         <div className="my-8 py-4 border-t border-gray-300/50 flex flex-col gap-2">
           <HeaderButton

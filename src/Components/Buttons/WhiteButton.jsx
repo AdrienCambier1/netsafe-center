@@ -1,4 +1,4 @@
-import WhiteCard from "../Cards/WhiteCard";
+import { WhiteCard } from "../Cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function WhiteButton({ value, icon, onClick }) {

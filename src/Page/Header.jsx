@@ -1,9 +1,8 @@
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
-import GrayButton from "../Components/Buttons/GrayButton";
-import HeaderButton from "../Components/Buttons/HeaderButton";
 import MenuModal from "../Modals/MenuModal";
 import { useEffect, useState } from "react";
+import { GrayButton, HeaderButton } from "../Components/Buttons";
 
 export default function Header() {
   const [OpenMenu, setOpenMenu] = useState(false);
@@ -40,23 +39,14 @@ export default function Header() {
         </a>
       </div>
       <div className="hidden lg:flex gap-4 h-full items-center relative">
-        <HeaderButton
-          value="Espace de connaissance"
-          link="knowledge-area"
-        ></HeaderButton>
-        <HeaderButton
-          value="Outils pratiques"
-          link="useful-tools"
-        ></HeaderButton>
-        <HeaderButton
-          value="Quizz d'apprentissage"
-          link="quizz-list"
-        ></HeaderButton>
-        <HeaderButton value="Cours" link="classes-list"></HeaderButton>
+        <HeaderButton value="Espace de connaissance" link="/knowledge-area" />
+        <HeaderButton value="Outils pratiques" link="/useful-tools" />
+        <HeaderButton value="Quizz d'apprentissage" link="/quizz-list" />
+        <HeaderButton value="Cours" link="/classes-list" />
       </div>
       <div className="flex gap-2 lg:gap-4 h-full items-center">
-        <GrayButton icon={faComment} background={true} />
-        <GrayButton icon={faUser} background={true} link="login" />
+        <GrayButton icon={faComment} background={true} link="/forum" />
+        <GrayButton icon={faUser} background={true} link="/login" />
         <div className="block lg:hidden">
           <GrayButton onClick={toggleOpenMenu} className="none" icon={faBars} />
         </div>

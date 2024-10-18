@@ -1,13 +1,21 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./Routes/Home";
-import NotFound from "./Routes/NotFound";
-import Login from "./Routes/Login";
-import SignUp from "./Routes/SignUp";
-import AccountCenter from "./Routes/AccountCenter";
-import ClassesList from "./Routes/ClassesList";
-import QuizzList from "./Routes/QuizzList";
-import UsefulTools from "./Routes/UsefulTools";
-import KnowledgeArea from "./Routes/KnowledgeArea";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import {
+  Home,
+  NotFound,
+  Login,
+  SignUp,
+  AccountCenter,
+  ClassesList,
+  QuizzList,
+  UsefulTools,
+  KnowledgeArea,
+  Forum,
+} from "./Routes";
 
 export default function Main() {
   return (
@@ -18,11 +26,17 @@ export default function Main() {
           <Route path="login" element={<Login />} />
           <Route path="sign-up" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="account-center" element={<AccountCenter />} />
+          <Route
+            path="account-center"
+            element={<Navigate to="account-overview" />}
+          />
+          <Route path="account-center/:section" element={<AccountCenter />} />
           <Route path="classes-list" element={<ClassesList />} />
           <Route path="quizz-list" element={<QuizzList />} />
           <Route path="useful-tools" element={<UsefulTools />} />
           <Route path="knowledge-area" element={<KnowledgeArea />} />
+          <Route path="forum" element={<Navigate to="recent_posts" />} />
+          <Route path="forum/:section" element={<Forum />} />
         </Routes>
       </Router>
     </main>

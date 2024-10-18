@@ -1,7 +1,7 @@
-import WhiteCard from "./WhiteCard";
+import { WhiteCard } from "../Cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faLightbulb } from "@fortawesome/free-solid-svg-icons";
-import HeavyPurpleButton from "../Buttons/HeavyPurpleButton";
+import { HeavyPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
 
 export default function QuizzCard({ title }) {

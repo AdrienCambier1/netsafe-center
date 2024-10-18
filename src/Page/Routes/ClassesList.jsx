@@ -1,6 +1,5 @@
-import FirstTitle from "../../Components/Titles/FirstTitle";
-import ClassCard from "../../Components/Cards/ClassCard";
-import FourthTitle from "../../Components/Titles/FourthTitle";
+import { FirstTitle, FourthTitle } from "../../Components/Titles";
+import { ClassCard } from "../../Components/Cards";
 
 export default function ClassesList() {
   return (

@@ -1,6 +1,6 @@
 import AccountImage from "../AccountImage";
-import HeavyPurpleButton from "../Buttons/HeavyPurpleButton";
-import WhiteCard from "./WhiteCard";
+import { HeavyPurpleButton } from "../Buttons";
+import { WhiteCard } from "../Cards";
 
 export default function ConnectedState({ value, name, link }) {
   return (

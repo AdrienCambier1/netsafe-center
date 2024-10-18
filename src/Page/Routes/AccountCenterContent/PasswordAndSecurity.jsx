@@ -1,5 +1,5 @@
-import WhiteCard from "../../../Components/Cards/WhiteCard";
-import ThirdTitle from "../../../Components/Titles/ThirdTitle";
+import { WhiteCard } from "../../../Components/Cards";
+import { ThirdTitle } from "../../../Components/Titles";
 import WhiteCardContent from "../../../Components/WhiteCardContent";
 
 export default function PasswordAndSecurity() {
