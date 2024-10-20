@@ -21,27 +21,15 @@ export default function Home() {
             icon={faBookmark}
             value="Posts enregistrés"
             link="/forum/saved_posts"
-          ></LightPurpleButton>
-          <LightPurpleButton
-            icon={faBook}
-            value="Vos cours"
-          ></LightPurpleButton>
+          />
+          <LightPurpleButton icon={faBook} value="Vos cours" />
         </div>
         <div className="flex flex-col gap-2">
           <FourthTitle value="Cours actuels" />
-          <LightPurpleButton
-            icon={faCaretLeft}
-            value="Accueil"
-          ></LightPurpleButton>
-          <LightPurpleButton
-            icon={faCaretLeft}
-            value="Vos cours"
-          ></LightPurpleButton>
+          <LightPurpleButton icon={faCaretLeft} value="Accueil" />
+          <LightPurpleButton icon={faCaretLeft} value="Vos cours" />
         </div>
-        <HeavyPurpleButton
-          icon={faPenNib}
-          value="Testez vos connaissances"
-        ></HeavyPurpleButton>
+        <HeavyPurpleButton icon={faPenNib} value="Testez vos connaissances" />
       </div>
 
       <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l lg:border-none border-gray-300/50 row-span-1 sm:row-span-2 lg:row-span-1">
@@ -49,18 +37,21 @@ export default function Home() {
         <NewsCard
           title="Poste 1"
           content="Bonjour, j'aime les enfants"
-        ></NewsCard>
+          like="10"
+        />
         <NewsCard
           title="Poste 1"
           content="Bonjour, j'aime les enfants"
-        ></NewsCard>
+          like="10"
+        />
         <NewsCard
           title="Poste 1"
           content="Bonjour, j'aime les enfants"
-        ></NewsCard>
+          like="10"
+        />
       </div>
       <div className="col-span-1 relative flex flex-col gap-4 p-8 lg:border-l border-gray-300/50">
-        <ConnectedState value={true} link="/account-center"></ConnectedState>
+        <ConnectedState value={true} link="/account-center" />
       </div>
     </div>
   );

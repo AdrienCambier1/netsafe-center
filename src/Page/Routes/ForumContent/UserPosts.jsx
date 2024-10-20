@@ -1,9 +1,9 @@
 import { PostHeaderCard, NewsCard } from "../../../Components/Cards";
 
-export default function SavedPosts() {
+export default function UserPosts() {
   return (
     <>
-      <PostHeaderCard title="Posts enregistrés" description="Ajoutez un post" />
+      <PostHeaderCard title="Vos posts" description="Ajoutez un post" />
       <NewsCard value="test" title="test" like="10" />
       <NewsCard value="test" title="test" like="10" />
       <NewsCard value="test" title="test" like="10" />

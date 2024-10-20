@@ -5,8 +5,14 @@ import {
   faBookmark,
   faClock,
   faThumbsUp,
+  faFileAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { RecentPosts, MostLikedPosts, SavedPosts } from "./ForumContent";
+import {
+  RecentPosts,
+  MostLikedPosts,
+  SavedPosts,
+  UserPosts,
+} from "./ForumContent";
 import { useState, useEffect } from "react";
 
 export default function Forum() {
@@ -18,7 +24,8 @@ export default function Forum() {
     if (
       section === "saved_posts" ||
       section === "most_liked_posts" ||
-      section === "recent_posts"
+      section === "recent_posts" ||
+      section === "user_posts"
     ) {
       setActiveSection(section);
     }
@@ -32,6 +39,8 @@ export default function Forum() {
         return <MostLikedPosts />;
       case "saved_posts":
         return <SavedPosts />;
+      case "user_posts":
+        return <UserPosts />;
       default:
         return <RecentPosts />;
     }
@@ -58,6 +67,11 @@ export default function Forum() {
             value="Posts enregistrés"
             icon={faBookmark}
             link="/forum/saved_posts"
+          />
+          <LightPurpleButton
+            value="Vos posts"
+            icon={faFileAlt}
+            link="/forum/user_posts"
           />
         </div>
         <div className="account-data flex flex-col col-span-2 gap-4">

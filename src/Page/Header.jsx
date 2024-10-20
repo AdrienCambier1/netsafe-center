@@ -51,7 +51,7 @@ export default function Header() {
           <GrayButton onClick={toggleOpenMenu} className="none" icon={faBars} />
         </div>
       </div>
-      <MenuModal isOpen={OpenMenu} onClick={toggleOpenMenu}></MenuModal>
+      <MenuModal isOpen={OpenMenu} onClick={toggleOpenMenu} />
     </header>
   );
 }

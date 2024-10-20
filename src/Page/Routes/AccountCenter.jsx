@@ -34,6 +34,12 @@ export default function AccountCenter() {
     }
   }, [section]);
 
+  const [OpenDialog, setOpenDialog] = useState(false);
+
+  const toggleOpenDialog = () => {
+    setOpenDialog(!OpenDialog);
+  };
+
   function renderActiveSection() {
     switch (activeSection) {
       case "account_overview":
@@ -70,7 +76,11 @@ export default function AccountCenter() {
             value="Mot de passe et sécurité"
             link="/account-center/password_and_security"
           />
-          <LightRedButton icon={faRightToBracket} value="Se déconnecter" />
+          <LightRedButton
+            icon={faRightToBracket}
+            value="Se déconnecter"
+            onClick={toggleOpenDialog}
+          />
         </div>
         <div className="account-data flex flex-col col-span-2 gap-4">
           {renderActiveSection()}
