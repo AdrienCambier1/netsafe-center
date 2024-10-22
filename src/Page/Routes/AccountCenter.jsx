@@ -18,6 +18,7 @@ import {
   PasswordAndSecurity,
 } from "./AccountCenterContent";
 import { useState, useEffect } from "react";
+import DialogModal from "../../Modals/DialogModal";
 
 export default function AccountCenter() {
   const { section } = useParams();
@@ -86,6 +87,12 @@ export default function AccountCenter() {
           {renderActiveSection()}
         </div>
       </div>
+      <DialogModal
+        isOpen={OpenDialog}
+        onClose={() => setOpenDialog(false)}
+        title="Déconnexion"
+        description="Etes-vous sûr de vouloir vous déconnecter ?"
+      />
     </div>
   );
 }
