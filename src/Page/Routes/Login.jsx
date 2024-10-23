@@ -4,7 +4,7 @@ import {
   HeavyPurpleButton,
   GrayButton,
 } from "../../Components/Buttons";
-import { AuthenticationInput } from "../../Components/Inputs";
+import { TextInput } from "../../Components/Inputs";
 import { SecondTitle } from "../../Components/Titles";
 import { HalfWhiteCard } from "../../Components/Cards";
 import { PurpleGradientBackground } from "../../Components/Backgrounds";
@@ -22,12 +22,8 @@ export default function Login() {
         <form className="flex flex-col gap-4 items-center w-full">
           <GoogleAuthentication></GoogleAuthentication>
           <OrSplitter value="ou" />
-          <AuthenticationInput value="Adresse e-mail" icon={faUser} />
-          <AuthenticationInput
-            value="Mot de passe"
-            type="password"
-            icon={faLock}
-          />
+          <TextInput value="Adresse e-mail" icon={faUser} />
+          <TextInput value="Mot de passe" type="password" icon={faLock} />
           <HeavyPurpleButton value="Se connecter"></HeavyPurpleButton>
           <p className="text-sm font-['Raleway'] text-zinc-600">
             Pas de compte ?{" "}

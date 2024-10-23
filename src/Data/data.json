@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "title": "New Pokemon Discovery!",
+    "content": "Scientists have discovered a new species of Pokémon in the Kanto region.",
+    "like": 120,
+    "date": "10/11/2024",
+    "comments": [
+      {
+        "user": "Alice",
+        "comment": "That's amazing! Can't wait to see it!",
+        "date": "10/11/2024",
+        "like": 5
+      },
+      {
+        "user": "Bob",
+        "comment": "I hope they release more info soon!",
+        "date": "10/12/2024",
+        "like": 3
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Top 10 Battle Strategies",
+    "content": "These battle strategies have been proven to help trainers win more battles.",
+    "like": 95,
+    "date": "10/13/2024",
+    "comments": [
+      {
+        "user": "Charlie",
+        "comment": "Thanks for the tips!",
+        "date": "10/13/2024",
+        "like": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Rare Pokémon Found in Unova",
+    "content": "A trainer recently found an incredibly rare Pokémon while exploring Unova.",
+    "like": 200,
+    "date": "10/14/2024",
+    "comments": [
+      {
+        "user": "Diana",
+        "comment": "Where exactly did you find it?",
+        "date": "10/14/2024",
+        "like": 7
+      },
+      {
+        "user": "Ethan",
+        "comment": "I want to go there now!",
+        "date": "10/15/2024",
+        "like": 4
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Tips for Breeding Pokémon",
+    "content": "Learn how to breed your Pokémon effectively and get the best stats.",
+    "like": 75,
+    "date": "10/16/2024",
+    "comments": [
+      {
+        "user": "Fiona",
+        "comment": "Very useful information, thanks!",
+        "date": "10/16/2024",
+        "like": 6
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Legendary Pokémon Spotted!",
+    "content": "Rumors are circulating that a legendary Pokémon has been spotted near Mount Silver.",
+    "like": 310,
+    "date": "10/17/2024",
+    "comments": [
+      {
+        "user": "George",
+        "comment": "I heard that too! Where should I look?",
+        "date": "10/17/2024",
+        "like": 9
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Pokémon Go: Tips for Beginners",
+    "content": "If you're just starting out with Pokémon Go, here are some tips to get you started.",
+    "like": 60,
+    "date": "10/18/2024",
+    "comments": []
+  },
+  {
+    "id": 7,
+    "title": "Shiny Pokémon Hunting Guide",
+    "content": "Learn the best methods for finding shiny Pokémon in the wild.",
+    "like": 150,
+    "date": "10/19/2024",
+    "comments": [
+      {
+        "user": "Hannah",
+        "comment": "Can't wait to try this!",
+        "date": "10/19/2024",
+        "like": 8
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Eevee Evolutions: Which is Best?",
+    "content": "A detailed comparison of all the Eevee evolutions to help you choose the best one.",
+    "like": 230,
+    "date": "10/20/2024",
+    "comments": [
+      {
+        "user": "Isaac",
+        "comment": "I love Vaporeon!",
+        "date": "10/20/2024",
+        "like": 10
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Pokémon Card Collecting Tips",
+    "content": "How to start a successful Pokémon card collection and find rare cards.",
+    "like": 80,
+    "date": "10/21/2024",
+    "comments": []
+  },
+  {
+    "id": 10,
+    "title": "The Future of Pokémon Games",
+    "content": "What can we expect from the next generation of Pokémon games?",
+    "like": 180,
+    "date": "10/22/2024",
+    "comments": [
+      {
+        "user": "Jack",
+        "comment": "Excited to see what's next!",
+        "date": "10/20/2024",
+        "like": 12
+      }
+    ]
+  }
+]

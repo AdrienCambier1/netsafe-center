@@ -89,7 +89,7 @@ export default function AccountCenter() {
       </div>
       <DialogModal
         isOpen={OpenDialog}
-        onClose={() => setOpenDialog(false)}
+        onClose={toggleOpenDialog}
         title="Déconnexion"
         description="Etes-vous sûr de vouloir vous déconnecter ?"
       />

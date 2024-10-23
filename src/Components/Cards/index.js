@@ -7,3 +7,4 @@ export { default as PostHeaderCard } from "./PostHeaderCard";
 export { default as QuizzCard } from "./QuizzCard";
 export { default as ToolsCard } from "./ToolsCard";
 export { default as WhiteCard } from "./WhiteCard";
+export { default as UserComment } from "./UserComment";
