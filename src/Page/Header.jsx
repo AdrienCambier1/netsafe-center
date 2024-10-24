@@ -39,13 +39,17 @@ export default function Header() {
         </a>
       </div>
       <div className="hidden lg:flex gap-4 h-full items-center relative">
-        <HeaderButton value="Espace de connaissance" link="/knowledge-area" />
-        <HeaderButton value="Outils pratiques" link="/useful-tools" />
-        <HeaderButton value="Quizz d'apprentissage" link="/quizz-list" />
-        <HeaderButton value="Cours" link="/classes-list" />
+        <HeaderButton value="Espace de connaissance" link="/knowledge_area" />
+        <HeaderButton value="Outils pratiques" link="/useful_tools" />
+        <HeaderButton value="Quizz d'apprentissage" link="/quizz_list" />
+        <HeaderButton value="Cours" link="/classes_list" />
       </div>
       <div className="flex gap-2 lg:gap-4 h-full items-center">
-        <GrayButton icon={faComment} background={true} link="/forum" />
+        <GrayButton
+          icon={faComment}
+          background={true}
+          link="/forum/recent_posts"
+        />
         <GrayButton icon={faUser} background={true} link="/login" />
         <div className="block lg:hidden">
           <GrayButton onClick={toggleOpenMenu} className="none" icon={faBars} />

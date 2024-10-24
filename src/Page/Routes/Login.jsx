@@ -27,7 +27,7 @@ export default function Login() {
           <HeavyPurpleButton value="Se connecter"></HeavyPurpleButton>
           <p className="text-sm font-['Raleway'] text-zinc-600">
             Pas de compte ?{" "}
-            <a href="sign-up" className="text-purple-500 font-bold underline">
+            <a href="register" className="text-purple-500 font-bold underline">
               S'inscrire
             </a>
           </p>

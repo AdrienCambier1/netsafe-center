@@ -20,17 +20,17 @@ export default function MenuModal({ isOpen, onClick }) {
         <div className="my-8 py-4 border-t border-gray-300/50 flex flex-col gap-2">
           <HeaderButton
             value="Espace de connaissance"
-            link="knowledge-area"
+            link="knowledge_area"
           ></HeaderButton>
           <HeaderButton
             value="Outils pratiques"
-            link="useful-tools"
+            link="useful_tools"
           ></HeaderButton>
           <HeaderButton
             value="Quizz d'apprentissage"
-            link="quizz-list"
+            link="quizz_list"
           ></HeaderButton>
-          <HeaderButton value="Cours" link="classes-list"></HeaderButton>
+          <HeaderButton value="Cours" link="classes_list"></HeaderButton>
         </div>
         <HeavyPurpleButton
           icon={faUser}

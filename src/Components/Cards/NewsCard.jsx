@@ -39,7 +39,7 @@ export default function NewsCard({
         <div className="font-medium font-['Raleway'] text-sm text-zinc-600">
           {content}
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="flex gap-2">
             <RoundedGrayButton icon={faBookmark} />
             <RoundedGrayButton
@@ -48,7 +48,7 @@ export default function NewsCard({
               onClick={openComment}
             />
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center justify-end w-full">
             <GrayButton icon={faHeart} />
             <p className="text-zinc-600 font-['Raleway'] text-sm">{like}</p>
           </div>

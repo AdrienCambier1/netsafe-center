@@ -3,6 +3,7 @@ import {
   faCaretLeft,
   faBook,
   faPenNib,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   ConnectedState,
@@ -14,6 +15,7 @@ import { LightPurpleButton, HeavyPurpleButton } from "../../Components/Buttons";
 import CreatePostModal from "../../Modals/CreatePostModal";
 import { useState } from "react";
 import Data from "../../Data/data.json";
+import { faTiktok, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   const [isCreatePostModalOpen, setIsCreatePostModalOpen] = useState(false);
@@ -31,9 +33,27 @@ export default function Home() {
     }));
   };
 
+  const asideElement = () => {
+    return (
+      <>
+        <ConnectedState value={true} link="/account_center/account_overview" />
+        <div className="flex flex-col gap-2">
+          <FourthTitle value="Nos réseaux" />
+          <LightPurpleButton icon={faTiktok} value="Tiktok" />
+          <LightPurpleButton icon={faYoutube} value="Youtube" />
+        </div>
+        <HeavyPurpleButton
+          icon={faArrowLeft}
+          value="Voir plus de posts"
+          link="/forum/recent_posts"
+        />
+      </>
+    );
+  };
+
   return (
     <div className="min-h-screen w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative">
-      <div className="col-span-1 relative top-0 flex flex-col gap-8 p-8 lg:border-r border-gray-300/50">
+      <div className="col-span-1 relative top-0 flex flex-col gap-8 p-8">
         <div className="flex flex-col gap-2">
           <LightPurpleButton
             icon={faBookmark}
@@ -48,31 +68,36 @@ export default function Home() {
           <LightPurpleButton icon={faCaretLeft} value="Vos cours" />
         </div>
         <HeavyPurpleButton icon={faPenNib} value="Testez vos connaissances" />
+        <div className="lg:hidden flex flex-col gap-8">
+          <div className="border-t gray-300/50" />
+          {asideElement()}
+        </div>
       </div>
 
-      <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l lg:border-none border-gray-300/50">
+      <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l border-t border-gray-300/50">
         <PostHeaderCard
-          title="Posts récents"
           description="Ajoutez un post"
           onClick={toggleCreatePostModal}
         />
-        {Data.sort((a, b) => b.date - a.date).map((post) => (
-          <NewsCard
-            key={post.id}
-            title={post.title}
-            image={post.image}
-            content={post.content}
-            user={post.user}
-            date={post.date}
-            like={post.like}
-            isCommentOpen={OpenComments[post.id]}
-            openComment={() => toggleOpenComments(post.id)}
-            comments={post.comments}
-          />
-        ))}
+        {Data.sort((a, b) => b.date - a.date)
+          .slice(0, 4)
+          .map((post) => (
+            <NewsCard
+              key={post.id}
+              title={post.title}
+              image={post.image}
+              content={post.content}
+              user={post.user}
+              date={post.date}
+              like={post.like}
+              isCommentOpen={OpenComments[post.id]}
+              openComment={() => toggleOpenComments(post.id)}
+              comments={post.comments}
+            />
+          ))}
       </div>
-      <div className="hidden lg:flex col-span-1 relative flex-col gap-4 p-8 lg:border-l border-gray-300/50">
-        <ConnectedState value={true} link="/account-center" />
+      <div className="hidden lg:flex col-span-1 relative flex-col gap-4 p-8 lg:border-l border-t sm:border-t-0 border-gray-300/50">
+        {asideElement()}
       </div>
       <CreatePostModal
         isOpen={isCreatePostModalOpen}

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { FirstTitle } from "../../Components/Titles";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -12,47 +12,15 @@ import {
   faUser,
   faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  AccountOverview,
-  PersonalData,
-  PasswordAndSecurity,
-} from "./AccountCenterContent";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import DialogModal from "../../Modals/DialogModal";
 
 export default function AccountCenter() {
-  const { section } = useParams();
-
-  const [activeSection, setActiveSection] = useState("account_overview");
-
-  useEffect(() => {
-    if (
-      section === "account_overview" ||
-      section === "personal_data" ||
-      section === "password_and_security"
-    ) {
-      setActiveSection(section);
-    }
-  }, [section]);
-
   const [OpenDialog, setOpenDialog] = useState(false);
 
   const toggleOpenDialog = () => {
     setOpenDialog(!OpenDialog);
   };
-
-  function renderActiveSection() {
-    switch (activeSection) {
-      case "account_overview":
-        return <AccountOverview />;
-      case "personal_data":
-        return <PersonalData />;
-      case "password_and_security":
-        return <PasswordAndSecurity />;
-      default:
-        return <AccountOverview />;
-    }
-  }
 
   return (
     <div className="relative p-8 max-w-[70rem] left-1/2 -translate-x-1/2">
@@ -65,17 +33,17 @@ export default function AccountCenter() {
           <LightPurpleButton
             icon={faUser}
             value="Aperçu du compte"
-            link="/account-center/account_overview"
+            link="/account_center/account_overview"
           />
           <LightPurpleButton
             icon={faAddressCard}
             value="Informations personnelles"
-            link="/account-center/personal_data"
+            link="/account_center/personal_data"
           />
           <LightPurpleButton
             icon={faLock}
             value="Mot de passe et sécurité"
-            link="/account-center/password_and_security"
+            link="/account_center/password_and_security"
           />
           <LightRedButton
             icon={faRightToBracket}
@@ -84,7 +52,7 @@ export default function AccountCenter() {
           />
         </div>
         <div className="account-data flex flex-col col-span-2 gap-4">
-          {renderActiveSection()}
+          <Outlet />
         </div>
       </div>
       <DialogModal

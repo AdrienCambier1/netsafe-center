@@ -7,10 +7,12 @@ import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
 export default function PostHeaderCard({ title, description, onClick }) {
   return (
     <WhiteCard>
-      <div className="p-2 flex flex-col gap-4">
-        <div className="py-2 border-b border-gray-300/50">
-          <ThirdTitle value={title} />
-        </div>
+      <div className={`${title && "p-2"} flex flex-col gap-4`}>
+        {title && (
+          <div className="py-2 border-b border-gray-300/50">
+            <ThirdTitle value={title} />
+          </div>
+        )}
         <div className="flex gap-4 justify-between items-center">
           {description ? (
             <p className="text-zinc-400 font-['Raleway'] text-sm">
