@@ -1,0 +1,195 @@
+{
+  "quizzes": [
+    {
+      "id": 1,
+      "name": "Sécurité de base en ligne",
+      "difficulty": "Facile",
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "question": "Quelle est la meilleure façon de créer un mot de passe sécurisé ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Utiliser le nom de votre animal et l'année de sa naissance",
+            "Utiliser un mélange de lettres, de chiffres et de caractères spéciaux",
+            "Utiliser le même mot de passe pour tous vos comptes",
+            "N'utiliser que des lettres minuscules"
+          ],
+          "correct_answers": [
+            "Utiliser un mélange de lettres, de chiffres et de caractères spéciaux"
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Que devez-vous faire si vous recevez un e-mail d'un expéditeur inconnu avec une pièce jointe suspecte ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Ouvrir la pièce jointe pour voir ce qu'elle contient",
+            "Marquer l'e-mail comme spam et le supprimer",
+            "Transférer l'e-mail à vos amis",
+            "Répondre à l'expéditeur pour demander plus d'informations"
+          ],
+          "correct_answers": ["Marquer l'e-mail comme spam et le supprimer"]
+        },
+        {
+          "id": 3,
+          "question": "Lequel des éléments suivants est considéré comme une information personnelle identifiable (PII) ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Votre nom complet et votre adresse",
+            "Le nom de votre film préféré",
+            "Votre titre de poste",
+            "Le jouet préféré de votre animal"
+          ],
+          "correct_answers": ["Votre nom complet et votre adresse"]
+        },
+        {
+          "id": 4,
+          "question": "Classez les étapes suivantes dans l'ordre correct pour vous connecter en toute sécurité à un réseau Wi-Fi public.",
+          "type": "order",
+          "answers": [
+            "Activer le VPN",
+            "Éviter d'accéder à des sites sensibles",
+            "Se connecter au réseau",
+            "Vérifier que le réseau est légitime"
+          ],
+          "correct_order": [
+            "Vérifier que le réseau est légitime",
+            "Se connecter au réseau",
+            "Activer le VPN",
+            "Éviter d'accéder à des sites sensibles"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Protection avancée contre le phishing",
+      "difficulty": "Moyenne",
+      "level": 2,
+      "questions": [
+        {
+          "id": 1,
+          "question": "Quel est un signe courant d'un e-mail de phishing ?",
+          "type": "multiple_choice",
+          "answers": [
+            "L'e-mail provient d'une entreprise de confiance mais contient des fautes de grammaire",
+            "L'e-mail vous demande de vérifier immédiatement votre mot de passe",
+            "L'e-mail contient un lien vers un site web inconnu",
+            "Toutes les réponses"
+          ],
+          "correct_answers": ["Toutes les réponses"]
+        },
+        {
+          "id": 2,
+          "question": "Qu'est-ce que le 'spear phishing' ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Une attaque de phishing ciblant une personne ou une organisation spécifique",
+            "Une tentative de phishing qui utilise des faux sites web",
+            "Une tentative de phishing par appel téléphonique",
+            "Une attaque de phishing envoyée à de nombreuses personnes au hasard"
+          ],
+          "correct_answers": [
+            "Une attaque de phishing ciblant une personne ou une organisation spécifique"
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Quelle action réduit le risque de devenir victime d'une tentative de phishing ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Cliquer sur des liens inconnus uniquement s'ils semblent légitimes",
+            "Vérifier l'adresse e-mail de l'expéditeur avant de répondre",
+            "Fournir des informations personnelles lorsqu'elles sont demandées",
+            "Ignorer les mises à jour des logiciels de sécurité"
+          ],
+          "correct_answers": [
+            "Vérifier l'adresse e-mail de l'expéditeur avant de répondre"
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Classez les étapes à suivre après avoir reçu un e-mail de phishing dans le bon ordre.",
+          "type": "order",
+          "answers": [
+            "Supprimer l'e-mail",
+            "Signaler la tentative de phishing à votre fournisseur de messagerie",
+            "Ne pas cliquer sur les liens ou les pièces jointes",
+            "Vérifier l'authenticité de l'expéditeur"
+          ],
+          "correct_order": [
+            "Ne pas cliquer sur les liens ou les pièces jointes",
+            "Vérifier l'authenticité de l'expéditeur",
+            "Signaler la tentative de phishing à votre fournisseur de messagerie",
+            "Supprimer l'e-mail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Maîtrise de la sécurité des mots de passe",
+      "difficulty": "Difficile",
+      "level": 3,
+      "questions": [
+        {
+          "id": 1,
+          "question": "Quelle pratique affaiblit la sécurité des mots de passe ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Utiliser un gestionnaire de mots de passe",
+            "Écrire les mots de passe dans un carnet",
+            "Activer l'authentification à deux facteurs",
+            "Utiliser des mots de passe uniques pour chaque compte"
+          ],
+          "correct_answers": ["Écrire les mots de passe dans un carnet"]
+        },
+        {
+          "id": 2,
+          "question": "Quel est l'avantage de l'authentification à deux facteurs (2FA) ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Elle nécessite une vérification supplémentaire au-delà du mot de passe",
+            "Elle simplifie la connexion en utilisant des codes à usage unique",
+            "Elle réinitialise automatiquement votre mot de passe périodiquement",
+            "Elle crypte vos communications en ligne"
+          ],
+          "correct_answers": [
+            "Elle nécessite une vérification supplémentaire au-delà du mot de passe"
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Quelle méthode est considérée comme la plus sécurisée pour stocker les mots de passe ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Utiliser un gestionnaire de mots de passe",
+            "Les sauvegarder dans un fichier texte sur votre ordinateur",
+            "Se souvenir des mots de passe uniquement",
+            "Les écrire sur du papier"
+          ],
+          "correct_answers": ["Utiliser un gestionnaire de mots de passe"]
+        },
+        {
+          "id": 4,
+          "question": "Classez les bonnes pratiques de gestion des mots de passe dans l'ordre d'importance.",
+          "type": "order",
+          "answers": [
+            "Utiliser un gestionnaire de mots de passe",
+            "Activer l'authentification à deux facteurs",
+            "Utiliser des mots de passe complexes et uniques",
+            "Éviter de partager vos mots de passe avec d'autres personnes"
+          ],
+          "correct_order": [
+            "Utiliser des mots de passe complexes et uniques",
+            "Activer l'authentification à deux facteurs",
+            "Utiliser un gestionnaire de mots de passe",
+            "Éviter de partager vos mots de passe avec d'autres personnes"
+          ]
+        }
+      ]
+    }
+  ]
+}

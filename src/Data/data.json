@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "user": "ProfessorOak",
     "title": "New Pokemon Discovery!",
     "content": "Scientists have discovered a new species of Pokémon in the Kanto region.",
     "like": 120,
@@ -22,6 +23,7 @@
   },
   {
     "id": 2,
+    "user": "EliteTrainer",
     "title": "Top 10 Battle Strategies",
     "content": "These battle strategies have been proven to help trainers win more battles.",
     "like": 95,
@@ -37,6 +39,7 @@
   },
   {
     "id": 3,
+    "user": "UnovaExplorer",
     "title": "Rare Pokémon Found in Unova",
     "content": "A trainer recently found an incredibly rare Pokémon while exploring Unova.",
     "like": 200,
@@ -58,6 +61,7 @@
   },
   {
     "id": 4,
+    "user": "BreederMax",
     "title": "Tips for Breeding Pokémon",
     "content": "Learn how to breed your Pokémon effectively and get the best stats.",
     "like": 75,
@@ -73,6 +77,7 @@
   },
   {
     "id": 5,
+    "user": "SilverHunter",
     "title": "Legendary Pokémon Spotted!",
     "content": "Rumors are circulating that a legendary Pokémon has been spotted near Mount Silver.",
     "like": 310,
@@ -88,6 +93,7 @@
   },
   {
     "id": 6,
+    "user": "PokeNewbie",
     "title": "Pokémon Go: Tips for Beginners",
     "content": "If you're just starting out with Pokémon Go, here are some tips to get you started.",
     "like": 60,
@@ -96,6 +102,7 @@
   },
   {
     "id": 7,
+    "user": "ShinyHunter",
     "title": "Shiny Pokémon Hunting Guide",
     "content": "Learn the best methods for finding shiny Pokémon in the wild.",
     "like": 150,
@@ -111,6 +118,7 @@
   },
   {
     "id": 8,
+    "user": "EeveeFanatic",
     "title": "Eevee Evolutions: Which is Best?",
     "content": "A detailed comparison of all the Eevee evolutions to help you choose the best one.",
     "like": 230,
@@ -126,6 +134,7 @@
   },
   {
     "id": 9,
+    "user": "CardCollector",
     "title": "Pokémon Card Collecting Tips",
     "content": "How to start a successful Pokémon card collection and find rare cards.",
     "like": 80,
@@ -134,6 +143,7 @@
   },
   {
     "id": 10,
+    "user": "GameVisionary",
     "title": "The Future of Pokémon Games",
     "content": "What can we expect from the next generation of Pokémon games?",
     "like": 180,

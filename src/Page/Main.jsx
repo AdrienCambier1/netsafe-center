@@ -11,7 +11,8 @@ import {
   SignUp,
   AccountCenter,
   ClassesList,
-  QuizzList,
+  QuizList,
+  Quiz,
   UsefulTools,
   KnowledgeArea,
   Forum,
@@ -27,10 +28,12 @@ import {
   PasswordAndSecurity,
   PersonalData,
 } from "./Routes/AccountCenterContent";
+import { Question } from "./Routes/QuizContent";
+import QuizData from "../Data/quiz.json";
 
 export default function Main() {
   return (
-    <main className="min-h-screen pt-16 bg-gradient-to-r from-purple-50 to-purple-100 overflow-auto">
+    <main className="min-h-screen pt-16 bg-gradient-to-r from-purple-50 to-purple-100 flex justify-center">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -51,7 +54,7 @@ export default function Main() {
             />
           </Route>
           <Route path="classes_list" element={<ClassesList />} />
-          <Route path="quizz_list" element={<QuizzList />} />
+          <Route path="quiz_list" element={<QuizList />} />
           <Route path="useful_tools" element={<UsefulTools />} />
           <Route path="knowledge_area" element={<KnowledgeArea />} />
           <Route path="forum" element={<Forum />}>
@@ -60,6 +63,11 @@ export default function Main() {
             <Route path="most_liked_posts" element={<MostLikedPosts />} />
             <Route path="saved_posts" element={<SavedPosts />} />
             <Route path="user_posts" element={<UserPosts />} />
+          </Route>
+          <Route path="quiz" element={<Navigate to="1" />} />
+          <Route path="quiz/:quizId" element={<Quiz />}>
+            <Route path="question" element={<Navigate to="1" />} />
+            <Route path="question/:questionId" element={<Question />} />
           </Route>
         </Routes>
       </Router>

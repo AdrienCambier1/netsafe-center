@@ -41,7 +41,7 @@ export default function Header() {
       <div className="hidden lg:flex gap-4 h-full items-center relative">
         <HeaderButton value="Espace de connaissance" link="/knowledge_area" />
         <HeaderButton value="Outils pratiques" link="/useful_tools" />
-        <HeaderButton value="Quizz d'apprentissage" link="/quizz_list" />
+        <HeaderButton value="Quizz d'apprentissage" link="/quiz_list" />
         <HeaderButton value="Cours" link="/classes_list" />
       </div>
       <div className="flex gap-2 lg:gap-4 h-full items-center">

@@ -2,8 +2,9 @@ export default function ModalBackground({ isOpen, onClick }) {
   if (isOpen) {
     document.body.style.overflowY = "hidden";
   } else {
-    document.body.style.overflowY = "auto";
+    document.body.style.removeProperty("overflow-y");
   }
+
   return (
     <div
       onClick={onClick}

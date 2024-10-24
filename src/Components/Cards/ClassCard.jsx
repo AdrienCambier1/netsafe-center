@@ -1,10 +1,9 @@
-import { WhiteCard } from "../Cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
 
-export default function ClassCard({ title }) {
+export default function ClassCard({ title, button, status }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
@@ -20,8 +19,8 @@ export default function ClassCard({ title }) {
   }, []);
 
   return (
-    <WhiteCard>
-      <div className="flex justify-between md:flex-col items-center gap-4 p-2">
+    <div className="bg-white rounded-xl p-2">
+      <div className="h-full flex md:flex-col items-center justify-between gap-4 p-2">
         <div className="flex md:flex-col w-full gap-4">
           <div className="bg-indigo-50 rounded-full flex items-center justify-center p-4 w-fit">
             <FontAwesomeIcon
@@ -39,13 +38,13 @@ export default function ClassCard({ title }) {
           </div>
         </div>
         <div className="md:w-full">
-          {isSmallScreen ? (
-            <HeavyPurpleButton icon={faArrowLeft} />
-          ) : (
-            <HeavyPurpleButton icon={faArrowLeft} value="Commencer" />
-          )}
+          {isSmallScreen
+            ? button && <HeavyPurpleButton icon={faArrowLeft} />
+            : button && (
+                <HeavyPurpleButton icon={faArrowLeft} value="Commencer" />
+              )}
         </div>
       </div>
-    </WhiteCard>
+    </div>
   );
 }

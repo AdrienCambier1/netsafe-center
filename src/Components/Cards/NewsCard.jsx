@@ -27,7 +27,7 @@ export default function NewsCard({
         <SecondTitle value={title} />
         <div className="flex items-center">
           <AccountImage image={image} />
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center ml-2">
             <p className="text-zinc-600 font-['Raleway'] font-medium text-sm">
               {user}
             </p>

@@ -3,7 +3,7 @@ import { KnowledgeCard } from "../../Components/Cards";
 
 export default function KnowledgeArea() {
   return (
-    <div className="relative p-8 max-w-[70rem] left-1/2 -translate-x-1/2">
+    <div className="p-8 w-full max-w-[70rem]">
       <div className="border-b border-gray-300/50 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
         <FirstTitle value="Espace de connaissances" />
       </div>
