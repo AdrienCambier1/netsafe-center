@@ -18,7 +18,8 @@
           ],
           "correct_answers": [
             "Utiliser un mélange de lettres, de chiffres et de caractères spéciaux"
-          ]
+          ],
+          "explanation": "Un mot de passe sécurisé doit être complexe pour résister aux tentatives de piratage."
         },
         {
           "id": 2,
@@ -30,7 +31,8 @@
             "Transférer l'e-mail à vos amis",
             "Répondre à l'expéditeur pour demander plus d'informations"
           ],
-          "correct_answers": ["Marquer l'e-mail comme spam et le supprimer"]
+          "correct_answers": ["Marquer l'e-mail comme spam et le supprimer"],
+          "explanation": "Il est important de ne pas ouvrir de pièces jointes suspectes, car elles peuvent contenir des logiciels malveillants."
         },
         {
           "id": 3,
@@ -42,24 +44,34 @@
             "Votre titre de poste",
             "Le jouet préféré de votre animal"
           ],
-          "correct_answers": ["Votre nom complet et votre adresse"]
+          "correct_answers": ["Votre nom complet et votre adresse"],
+          "explanation": "Les informations personnelles identifiables (PII) comprennent des données qui peuvent être utilisées pour identifier une personne."
         },
         {
           "id": 4,
-          "question": "Classez les étapes suivantes dans l'ordre correct pour vous connecter en toute sécurité à un réseau Wi-Fi public.",
-          "type": "order",
+          "question": "Quelle option est la plus sûre pour naviguer sur Internet ?",
+          "type": "multiple_choice",
           "answers": [
-            "Activer le VPN",
-            "Éviter d'accéder à des sites sensibles",
-            "Se connecter au réseau",
-            "Vérifier que le réseau est légitime"
+            "Utiliser le mode incognito de votre navigateur",
+            "Utiliser un réseau privé virtuel (VPN)",
+            "Naviguer sans protection",
+            "Utiliser un moteur de recherche non sécurisé"
           ],
-          "correct_order": [
-            "Vérifier que le réseau est légitime",
-            "Se connecter au réseau",
-            "Activer le VPN",
-            "Éviter d'accéder à des sites sensibles"
-          ]
+          "correct_answers": ["Utiliser un réseau privé virtuel (VPN)"],
+          "explanation": "Un VPN chiffre votre connexion Internet, offrant une meilleure sécurité contre l'espionnage."
+        },
+        {
+          "id": 5,
+          "question": "Pourquoi est-il important de mettre à jour régulièrement vos logiciels ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Pour avoir de nouvelles fonctionnalités",
+            "Pour corriger des failles de sécurité",
+            "Pour augmenter la vitesse de l'ordinateur",
+            "Pour changer l'interface utilisateur"
+          ],
+          "correct_answers": ["Pour corriger des failles de sécurité"],
+          "explanation": "Les mises à jour logicielles corrigent souvent des vulnérabilités qui pourraient être exploitées par des attaquants."
         }
       ]
     },
@@ -79,7 +91,8 @@
             "L'e-mail contient un lien vers un site web inconnu",
             "Toutes les réponses"
           ],
-          "correct_answers": ["Toutes les réponses"]
+          "correct_answers": ["Toutes les réponses"],
+          "explanation": "Les e-mails de phishing contiennent souvent des erreurs grammaticales et des demandes urgentes pour tromper les destinataires."
         },
         {
           "id": 2,
@@ -93,7 +106,8 @@
           ],
           "correct_answers": [
             "Une attaque de phishing ciblant une personne ou une organisation spécifique"
-          ]
+          ],
+          "explanation": "Le spear phishing est plus ciblé et vise souvent des individus ou des groupes particuliers."
         },
         {
           "id": 3,
@@ -107,24 +121,36 @@
           ],
           "correct_answers": [
             "Vérifier l'adresse e-mail de l'expéditeur avant de répondre"
-          ]
+          ],
+          "explanation": "Vérifier l'adresse e-mail de l'expéditeur aide à s'assurer que vous ne répondez pas à un imposteur."
         },
         {
           "id": 4,
-          "question": "Classez les étapes à suivre après avoir reçu un e-mail de phishing dans le bon ordre.",
-          "type": "order",
+          "question": "Quel est le meilleur moyen de signaler un e-mail suspect ?",
+          "type": "multiple_choice",
           "answers": [
-            "Supprimer l'e-mail",
-            "Signaler la tentative de phishing à votre fournisseur de messagerie",
-            "Ne pas cliquer sur les liens ou les pièces jointes",
-            "Vérifier l'authenticité de l'expéditeur"
+            "Le supprimer sans rien faire",
+            "Répondre à l'e-mail pour demander si c'est un vrai",
+            "Utiliser la fonction de signalement de votre fournisseur de messagerie",
+            "Transférer l'e-mail à tous vos contacts"
           ],
-          "correct_order": [
-            "Ne pas cliquer sur les liens ou les pièces jointes",
-            "Vérifier l'authenticité de l'expéditeur",
-            "Signaler la tentative de phishing à votre fournisseur de messagerie",
-            "Supprimer l'e-mail"
-          ]
+          "correct_answers": [
+            "Utiliser la fonction de signalement de votre fournisseur de messagerie"
+          ],
+          "explanation": "Signaliser l'e-mail à votre fournisseur aide à protéger d'autres utilisateurs des tentatives de phishing."
+        },
+        {
+          "id": 5,
+          "question": "Quel type de lien est généralement suspect dans un e-mail ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Un lien qui commence par 'https://'",
+            "Un lien qui redirige vers un site de confiance",
+            "Un lien qui utilise un raccourcisseur d'URL",
+            "Un lien qui mène vers un site bien connu"
+          ],
+          "correct_answers": ["Un lien qui utilise un raccourcisseur d'URL"],
+          "explanation": "Les liens raccourcis masquent la véritable destination, ce qui peut être dangereux."
         }
       ]
     },
@@ -144,7 +170,8 @@
             "Activer l'authentification à deux facteurs",
             "Utiliser des mots de passe uniques pour chaque compte"
           ],
-          "correct_answers": ["Écrire les mots de passe dans un carnet"]
+          "correct_answers": ["Écrire les mots de passe dans un carnet"],
+          "explanation": "Écrire des mots de passe dans un carnet les rend vulnérables à une perte ou à un vol."
         },
         {
           "id": 2,
@@ -158,7 +185,8 @@
           ],
           "correct_answers": [
             "Elle nécessite une vérification supplémentaire au-delà du mot de passe"
-          ]
+          ],
+          "explanation": "La 2FA renforce la sécurité en exigeant un second niveau d'authentification."
         },
         {
           "id": 3,
@@ -170,24 +198,36 @@
             "Se souvenir des mots de passe uniquement",
             "Les écrire sur du papier"
           ],
-          "correct_answers": ["Utiliser un gestionnaire de mots de passe"]
+          "correct_answers": ["Utiliser un gestionnaire de mots de passe"],
+          "explanation": "Les gestionnaires de mots de passe cryptent vos mots de passe, les protégeant ainsi de l'accès non autorisé."
         },
         {
           "id": 4,
-          "question": "Classez les bonnes pratiques de gestion des mots de passe dans l'ordre d'importance.",
-          "type": "order",
+          "question": "Quelle longueur est recommandée pour un mot de passe sécurisé ?",
+          "type": "multiple_choice",
           "answers": [
-            "Utiliser un gestionnaire de mots de passe",
-            "Activer l'authentification à deux facteurs",
-            "Utiliser des mots de passe complexes et uniques",
-            "Éviter de partager vos mots de passe avec d'autres personnes"
+            "4-6 caractères",
+            "8-12 caractères",
+            "12-16 caractères",
+            "16 caractères ou plus"
           ],
-          "correct_order": [
-            "Utiliser des mots de passe complexes et uniques",
-            "Activer l'authentification à deux facteurs",
-            "Utiliser un gestionnaire de mots de passe",
-            "Éviter de partager vos mots de passe avec d'autres personnes"
-          ]
+          "correct_answers": ["16 caractères ou plus"],
+          "explanation": "Un mot de passe long est plus difficile à craquer, surtout s'il contient des caractères variés."
+        },
+        {
+          "id": 5,
+          "question": "Pourquoi éviter de réutiliser les mots de passe ?",
+          "type": "multiple_choice",
+          "answers": [
+            "Parce que cela rend plus facile le mémorisation",
+            "Parce que si un compte est compromis, les autres le sont aussi",
+            "Parce que les sites Web le recommandent",
+            "Parce que cela prend trop de temps"
+          ],
+          "correct_answers": [
+            "Parce que si un compte est compromis, les autres le sont aussi"
+          ],
+          "explanation": "La réutilisation des mots de passe augmente le risque que plusieurs comptes soient piratés en cas de violation de données."
         }
       ]
     }

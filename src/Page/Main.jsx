@@ -66,8 +66,7 @@ export default function Main() {
           </Route>
           <Route path="quiz" element={<Navigate to="1" />} />
           <Route path="quiz/:quizId" element={<Quiz />}>
-            <Route path="question" element={<Navigate to="1" />} />
-            <Route path="question/:questionId" element={<Question />} />
+            <Route path="question" element={<Question />} />
           </Route>
         </Routes>
       </Router>

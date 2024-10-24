@@ -30,7 +30,7 @@ export default function MenuModal({ isOpen, onClick }) {
             value="Quizz d'apprentissage"
             link="/quiz_list"
           ></HeaderButton>
-          <HeaderButton value="Cours" link="classes_list"></HeaderButton>
+          <HeaderButton value="Cours" link="/classes_list"></HeaderButton>
         </div>
         <HeavyPurpleButton
           icon={faUser}

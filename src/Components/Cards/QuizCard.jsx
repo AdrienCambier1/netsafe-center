@@ -50,8 +50,8 @@ export default function QuizCard({
         </div>
         <div
           className={`${
-            status ? "items-center" : "items-end"
-          } w-full flex flex-col gap-4`}
+            status ? "items-center w-full" : "items-end"
+          } md:w-full flex flex-col gap-4`}
         >
           {isSmallScreen
             ? button && <HeavyPurpleButton icon={faArrowLeft} link={link} />

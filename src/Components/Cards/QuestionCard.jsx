@@ -1,27 +1,118 @@
 import { WhiteCard } from "../Cards";
-import { SecondTitle } from "../Titles";
-import { HeavyPurpleButton, GrayButton } from "../Buttons";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
+import { SecondTitle, FourthTitle } from "../Titles";
+import { HeavyPurpleButton, QuizButton } from "../Buttons";
+import {
+  faArrowLeft,
+  faCheck,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function QuestionCard({ question, answers, onClick }) {
+export default function QuestionCard({
+  question,
+  answers,
+  correctAnswers,
+  onClick,
+  type,
+  explanation,
+}) {
+  const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+  const [results, setResults] = useState([]);
+
+  const toggleSelectedAnswer = (answer) => {
+    setSelectedAnswers((prev) => {
+      if (prev.includes(answer)) {
+        return prev.filter((item) => item !== answer);
+      } else {
+        return [...prev, answer];
+      }
+    });
+  };
+
+  const validateAnswers = () => {
+    setResults(
+      answers.map((answer) => ({
+        answer,
+        isSelected: selectedAnswers.includes(answer),
+        isCorrect: correctAnswers.includes(answer),
+      }))
+    );
+    setShowResults(true);
+  };
+
+  const getAnswerClass = (isCorrect, isSelected) => {
+    if (isSelected) {
+      return isCorrect ? "text-teal-500" : "text-red-500"; // Coche verte ou croix rouge
+    } else {
+      return "text-zinc-300";
+    }
+  };
+
+  const typeText = {
+    single_choice: "Choisissez une réponse",
+    multiple_choice: "Choisissez une ou plusieurs réponses",
+  };
+
   return (
     <WhiteCard>
       <div className="flex flex-col p-2 gap-8">
         <SecondTitle value={question} />
-        <div className="grid grid-cols-2 gap-4">
-          {answers.map((answer) => (
-            <div className="flex gap-2 items-center">
-              <GrayButton icon={faCircle} />
-              {answer}
-            </div>
-          ))}
+        <div className="flex flex-col gap-4">
+          <FourthTitle value={typeText[type]} />
+          <div className="grid grid-cols-2 gap-4">
+            {answers.map((answer, index) => {
+              const result = results[index] || {};
+              const isCorrect = result.isCorrect || false;
+              const isSelected = result.isSelected || false;
+
+              return (
+                <div key={index} className="flex gap-2 items-center">
+                  {showResults ? (
+                    isSelected ? (
+                      <FontAwesomeIcon
+                        className={`p-2.5 h-4 w-4 ${getAnswerClass(
+                          isCorrect,
+                          isSelected
+                        )}`}
+                        icon={isCorrect ? faCheck : faXmark}
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        className={`p-2.5 h-4 w-4 ${getAnswerClass(
+                          isCorrect,
+                          isSelected
+                        )}`}
+                        icon={isCorrect ? faCheck : faXmark}
+                      />
+                    )
+                  ) : (
+                    <QuizButton
+                      onClick={() => toggleSelectedAnswer(answer)}
+                      isChecked={selectedAnswers.includes(answer)}
+                    />
+                  )}
+                  {answer}
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <HeavyPurpleButton
-          value="Valider"
-          icon={faArrowLeft}
-          onClick={onClick}
-        />
+        {showResults ? (
+          <p className="text-zinc-400 font-['Raleway'] font-medium text-xs border-t border-gray-300/50 pt-2 w-full text-center">
+            {explanation}
+          </p>
+        ) : (
+          <HeavyPurpleButton
+            value="Valider"
+            icon={faArrowLeft}
+            onClick={() => {
+              validateAnswers();
+              onClick();
+            }}
+          />
+        )}
       </div>
     </WhiteCard>
   );

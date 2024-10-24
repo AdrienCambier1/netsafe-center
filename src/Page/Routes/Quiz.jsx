@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 import { QuizCard } from "../../Components/Cards";
 
 export default function Quiz() {
-  const { quizId, questionId } = useParams();
+  const { quizId } = useParams();
   const quizIndex = parseInt(quizId) - 1;
 
   const quiz = QuizData.quizzes[quizIndex];
