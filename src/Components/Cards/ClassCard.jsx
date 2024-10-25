@@ -19,7 +19,7 @@ export default function ClassCard({ title, button, status }) {
   }, []);
 
   return (
-    <div className="bg-white rounded-xl p-2">
+    <div className="bg-white rounded-xl p-2 shadow-md shadow-purple-200/50">
       <div className="h-full flex md:flex-col items-center justify-between gap-4 p-2">
         <div className="flex md:flex-col w-full gap-4">
           <div className="bg-indigo-50 rounded-full flex items-center justify-center p-4 w-fit">

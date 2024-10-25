@@ -94,7 +94,9 @@ export default function QuestionCard({
                       isChecked={selectedAnswers.includes(answer)}
                     />
                   )}
-                  {answer}
+                  <p className="font-['Raleway'] text-sm font-medium text-zinc-600">
+                    {answer}
+                  </p>
                 </div>
               );
             })}

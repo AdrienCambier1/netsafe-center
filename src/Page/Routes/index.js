@@ -9,3 +9,4 @@ export { default as QuizList } from "./QuizList";
 export { default as SignUp } from "./SignUp";
 export { default as UsefulTools } from "./UsefulTools";
 export { default as Quiz } from "./Quiz";
+export { default as Class } from "./Class";

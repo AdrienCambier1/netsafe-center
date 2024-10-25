@@ -68,7 +68,11 @@ export default function Home() {
             <LightPurpleButton icon={faCaretLeft} value="Accueil" />
             <LightPurpleButton icon={faCaretLeft} value="Vos cours" />
           </div>
-          <HeavyPurpleButton icon={faPenNib} value="Testez vos connaissances" />
+          <HeavyPurpleButton
+            icon={faPenNib}
+            value="Testez vos connaissances"
+            link="quiz_list"
+          />
           <div className="hidden sm:flex lg:hidden flex-col gap-8">
             <div className="border-t gray-300/50" />
             {asideElement()}

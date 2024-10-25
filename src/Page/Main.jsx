@@ -16,6 +16,7 @@ import {
   UsefulTools,
   KnowledgeArea,
   Forum,
+  Class,
 } from "./Routes";
 import {
   MostLikedPosts,
@@ -66,6 +67,8 @@ export default function Main() {
         <Route path="quiz/:quizId" element={<Quiz />}>
           <Route path="question" element={<Question />} />
         </Route>
+        <Route path="class" element={<Navigate to="1" />} />
+        <Route path="class/:classId" element={<Class />} />
       </Routes>
     </main>
   );
