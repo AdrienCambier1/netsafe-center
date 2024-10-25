@@ -3,8 +3,8 @@ import { FirstTitle } from "../../Components/Titles";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import {
   LightPurpleButton,
-  LightRedButton,
   WhiteButton,
+  LightRedButton,
 } from "../../Components/Buttons";
 import {
   faLock,

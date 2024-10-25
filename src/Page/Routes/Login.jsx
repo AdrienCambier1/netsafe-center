@@ -7,13 +7,14 @@ import {
 import { TextInput } from "../../Components/Inputs";
 import { SecondTitle } from "../../Components/Titles";
 import { HalfWhiteCard } from "../../Components/Cards";
-import { PurpleGradientBackground } from "../../Components/Backgrounds";
+import { RawBackground } from "../../Components/Backgrounds";
 import OrSplitter from "../../Components/OrSplitter";
 import LoginBackground from "../../Images/background_login.png";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <PurpleGradientBackground>
+    <RawBackground>
       <HalfWhiteCard image={LoginBackground}>
         <div className="absolute top-2 right-2">
           <GrayButton link="/" icon={faHome}></GrayButton>
@@ -24,15 +25,18 @@ export default function Login() {
           <OrSplitter value="ou" />
           <TextInput value="Adresse e-mail" icon={faUser} />
           <TextInput value="Mot de passe" type="password" icon={faLock} />
-          <HeavyPurpleButton value="Se connecter"></HeavyPurpleButton>
+          <HeavyPurpleButton value="Se connecter" />
           <p className="text-sm font-['Raleway'] text-zinc-600">
             Pas de compte ?{" "}
-            <a href="register" className="text-purple-500 font-bold underline">
+            <Link
+              to="/register"
+              className="text-purple-500 font-bold underline"
+            >
               S'inscrire
-            </a>
+            </Link>
           </p>
         </form>
       </HalfWhiteCard>
-    </PurpleGradientBackground>
+    </RawBackground>
   );
 }

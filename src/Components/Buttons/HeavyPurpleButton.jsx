@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 export default function HeavyPurpleButton({ link, onClick, icon, value }) {
   return (
-    <a
-      href={link}
+    <Link
+      to={link}
       onClick={onClick}
       className={`${value ? "p-2 w-full" : "w-fit"} flex gap-2 items-center ${
         icon ? null : " justify-center"
@@ -22,6 +23,6 @@ export default function HeavyPurpleButton({ link, onClick, icon, value }) {
           {value}
         </p>
       ) : null}
-    </a>
+    </Link>
   );
 }

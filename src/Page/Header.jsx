@@ -3,6 +3,7 @@ import { faComment } from "@fortawesome/free-solid-svg-icons";
 import MenuModal from "../Modals/MenuModal";
 import { useEffect, useState } from "react";
 import { GrayButton, HeaderButton } from "../Components/Buttons";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [OpenMenu, setOpenMenu] = useState(false);
@@ -29,14 +30,11 @@ export default function Header() {
   return (
     <header className="z-10 fixed bg-white shadow-md shadow-purple-200/50 h-16 w-full flex items-center justify-between px-8">
       <div className="flex gap-4 h-full items-center relative">
-        <a href="/">
-          <p
-            className="text-lg text-zinc-800 font-['Raleway'] font-medium uppercase"
-            value="Netsafe Center"
-          >
+        <Link to="/">
+          <p className="text-lg text-zinc-800 font-['Raleway'] font-medium uppercase">
             Netsafe Center
           </p>
-        </a>
+        </Link>
       </div>
       <div className="hidden lg:flex gap-4 h-full items-center relative">
         <HeaderButton value="Espace de connaissance" link="/knowledge_area" />

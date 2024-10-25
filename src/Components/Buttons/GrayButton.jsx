@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 export default function GrayButton({ link, onClick, icon, background, value }) {
   return (
-    <a
-      href={link}
+    <Link
+      to={link}
       onClick={onClick}
       className={`${background ? `bg-zinc-100` : null} ${
         value ? "p-2 w-full" : null
@@ -11,6 +12,6 @@ export default function GrayButton({ link, onClick, icon, background, value }) {
     >
       <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon}></FontAwesomeIcon>
       {value}
-    </a>
+    </Link>
   );
 }

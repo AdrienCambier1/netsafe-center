@@ -1,23 +1,39 @@
 import { useParams } from "react-router-dom";
 import { QuestionCard } from "../../../Components/Cards";
 import QuizData from "../../../Data/quiz.json";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { QuestionContext } from "../../../Contexts/QuestionContext";
+import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
+import { LightPurpleButton } from "../../../Components/Buttons";
+import { useEffect } from "react";
 
 export default function Question() {
   const { whichQuestion, setWhichQuestion } = useContext(QuestionContext);
   const { quizId } = useParams();
+  const [isEnded, setIsEnded] = useState(false);
 
   const quiz = QuizData.quizzes[quizId - 1];
 
   const handleNextQuestion = () => {
     if (whichQuestion < quiz.questions.length) {
       setWhichQuestion(whichQuestion + 1);
-      console.log("Next Question:", whichQuestion + 1);
     } else {
-      console.log("Fin du quiz");
+      setIsEnded(true);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [handleNextQuestion]);
+
+  useEffect(() => {
+    return () => {
+      setWhichQuestion(1);
+    };
+  }, []);
 
   return (
     <>
@@ -32,6 +48,13 @@ export default function Question() {
           explanation={question.explanation}
         />
       ))}
+      {isEnded && (
+        <LightPurpleButton
+          value="Retour à la liste des quizz"
+          icon={faCaretLeft}
+          link="/quiz_list"
+        />
+      )}
     </>
   );
 }

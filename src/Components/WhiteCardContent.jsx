@@ -1,4 +1,5 @@
 import { FourthTitle } from "./Titles";
+import { Link } from "react-router-dom";
 
 export default function WhiteCardContent({ description, value, button }) {
   return (
@@ -11,9 +12,9 @@ export default function WhiteCardContent({ description, value, button }) {
       </div>
       <div className="w-1/2 text-right">
         {button ? (
-          <a className="break-words font-['Raleway'] text-sm text-purple-500 font-semibold hover:opacity-75 cursor-pointer">
+          <Link className="break-words font-['Raleway'] text-sm text-purple-500 font-semibold hover:opacity-75 cursor-pointer">
             {button}
-          </a>
+          </Link>
         ) : null}
       </div>
     </div>

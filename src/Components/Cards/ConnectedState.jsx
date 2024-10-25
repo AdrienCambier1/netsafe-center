@@ -7,7 +7,7 @@ export default function ConnectedState({ value, name, link }) {
     <WhiteCard>
       <div className="flex flex-col gap-4 p-2">
         <div className="flex items-center border-b border-gray-300/50 pb-2">
-          <AccountImage></AccountImage>
+          <AccountImage />
           <p className="text-zinc-600 font-medium font-['Raleway'] text-sm ml-2">
             Guess
           </p>
@@ -31,7 +31,7 @@ export default function ConnectedState({ value, name, link }) {
         <HeavyPurpleButton
           value={value ? "Mon profil" : "Se connecter"}
           link={link}
-        ></HeavyPurpleButton>
+        />
       </div>
     </WhiteCard>
   );

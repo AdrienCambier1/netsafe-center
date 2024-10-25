@@ -3,17 +3,26 @@ import Main from "./Page/Main";
 import Footer from "./Page/Footer";
 import { SearchProvider } from "./Contexts/SearchContext";
 import { QuestionProvider } from "./Contexts/QuestionContext";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+  BrowserRouter,
+} from "react-router-dom";
 
 function App() {
   return (
     <>
-      <QuestionProvider>
-        <SearchProvider>
-          <Header></Header>
-          <Main></Main>
-          <Footer></Footer>
-        </SearchProvider>
-      </QuestionProvider>
+      <Router>
+        <QuestionProvider>
+          <SearchProvider>
+            <Header></Header>
+            <Main></Main>
+            <Footer></Footer>
+          </SearchProvider>
+        </QuestionProvider>
+      </Router>
     </>
   );
 }

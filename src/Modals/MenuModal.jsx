@@ -21,22 +21,26 @@ export default function MenuModal({ isOpen, onClick }) {
           <HeaderButton
             value="Espace de connaissance"
             link="/knowledge_area"
-          ></HeaderButton>
+            onClick={onClick}
+          />
           <HeaderButton
             value="Outils pratiques"
             link="/useful_tools"
-          ></HeaderButton>
+            onClick={onClick}
+          />
           <HeaderButton
             value="Quizz d'apprentissage"
             link="/quiz_list"
-          ></HeaderButton>
-          <HeaderButton value="Cours" link="/classes_list"></HeaderButton>
+            onClick={onClick}
+          />
+          <HeaderButton value="Cours" link="/classes_list" onClick={onClick} />
         </div>
         <HeavyPurpleButton
           icon={faUser}
           value="Se connecter"
           link="/login"
-        ></HeavyPurpleButton>
+          onClick={onClick}
+        />
       </div>
     </>
   );

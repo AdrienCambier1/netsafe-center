@@ -1,4 +1,4 @@
-import { WhiteCard, UserComment } from "../Cards";
+import { WhiteCard, FeedCard } from "../Cards";
 import { FourthTitle, SecondTitle } from "../Titles";
 import { GrayButton, HeavyPurpleButton, RoundedGrayButton } from "../Buttons";
 import {
@@ -8,7 +8,8 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 import AccountImage from "../AccountImage";
-import { TextInput } from "../Inputs";
+import { SearchInput } from "../Inputs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function NewsCard({
   title,
@@ -39,7 +40,7 @@ export default function NewsCard({
         <div className="font-medium font-['Raleway'] text-sm text-zinc-600">
           {content}
         </div>
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+        <div className="flex justify-between items-start lg:items-center">
           <div className="flex gap-2">
             <RoundedGrayButton icon={faBookmark} />
             <RoundedGrayButton
@@ -59,23 +60,34 @@ export default function NewsCard({
           <div className="border-t border-gray-300/50 my-2" />
           <div className="flex flex-col p-2 gap-4">
             <div className="flex gap-2">
-              <TextInput value="Rédiger un commentaire" icon={faComment} />
+              <SearchInput
+                placeholder="Rédiger un commentaire"
+                icon={faComment}
+              />
               <HeavyPurpleButton icon={faPaperPlane} />
             </div>
             <div className="flex flex-col gap-2">
               <div className="my-2">
                 <FourthTitle value="Tous les commentaires" />
               </div>
+
               {comments.length > 0 ? (
-                comments.map((comment, index) => (
-                  <UserComment
-                    key={index}
-                    date={comment.date}
-                    comment={comment.comment}
-                    like={comment.like}
-                    user={comment.user}
-                  />
-                ))
+                <ul
+                  aria-label="User feed"
+                  role="feed"
+                  className="relative flex flex-col gap-12 py-12 pl-8 before:absolute before:top-0 before:left-8 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-6 after:left-8 after:bottom-6 after:-translate-x-1/2 after:border after:border-slate-200 "
+                >
+                  {comments.map((comment, index) => (
+                    <FeedCard
+                      key={index}
+                      date={comment.date}
+                      comment={comment.comment}
+                      like={comment.like}
+                      user={comment.user}
+                      isAccount={true}
+                    />
+                  ))}
+                </ul>
               ) : (
                 <p className="text-zinc-600 text-sm font-['Raleway'] font-medium">
                   Aucun commentaire

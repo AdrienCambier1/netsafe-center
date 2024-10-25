@@ -2,9 +2,14 @@ import { FirstTitle } from "../../Components/Titles";
 import { Outlet, useParams } from "react-router-dom";
 import QuizData from "../../Data/quiz.json";
 import { Navigate } from "react-router-dom";
-import { QuizCard } from "../../Components/Cards";
+import { FeedCard, QuizCard } from "../../Components/Cards";
+import { LightBlueButton } from "../../Components/Buttons";
+import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
+import { QuestionContext } from "../../Contexts/QuestionContext";
+import { useContext } from "react";
 
 export default function Quiz() {
+  const { whichQuestion, setWhichQuestion } = useContext(QuestionContext);
   const { quizId } = useParams();
   const quizIndex = parseInt(quizId) - 1;
 
@@ -29,6 +34,27 @@ export default function Quiz() {
               title={quiz.name}
               status="Complété"
             />
+            <ul
+              aria-label="User feed"
+              role="feed"
+              className="relative flex flex-col gap-12 py-12 pl-8 before:absolute before:top-0 before:left-8 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-6 after:left-8 after:bottom-6 after:-translate-x-1/2 after:border after:border-slate-200"
+            >
+              {quiz.questions.slice(0, whichQuestion - 1).map((question, i) => (
+                <FeedCard
+                  key={i}
+                  user={question.question}
+                  date={question.type}
+                  status={true}
+                />
+              ))}
+              {quiz.questions[whichQuestion] && (
+                <FeedCard
+                  user={quiz.questions[whichQuestion].question}
+                  date={quiz.questions[whichQuestion].type}
+                  isActive={true}
+                />
+              )}
+            </ul>
           </div>
         </div>
         <div className="flex flex-col col-span-2 gap-4">

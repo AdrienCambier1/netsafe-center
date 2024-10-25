@@ -2,12 +2,12 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton, GrayButton } from "../../Components/Buttons";
 import { SecondTitle } from "../../Components/Titles";
 import { HalfWhiteCard } from "../../Components/Cards";
-import { PurpleGradientBackground } from "../../Components/Backgrounds";
+import { RawBackground } from "../../Components/Backgrounds";
 import Error404 from "../../Images/404.png";
 
 export default function NotFound() {
   return (
-    <PurpleGradientBackground>
+    <RawBackground>
       <HalfWhiteCard image={Error404}>
         <div className="absolute top-2 right-2">
           <GrayButton link="/" icon={faHome}></GrayButton>
@@ -17,11 +17,8 @@ export default function NotFound() {
         <p className="text-center text-sm font-['Raleway'] text-zinc-600">
           La page que vous recherchez n'éxiste pas
         </p>
-        <HeavyPurpleButton
-          value="Retour à l'accueil"
-          link="/"
-        ></HeavyPurpleButton>
+        <HeavyPurpleButton value="Retour à l'accueil" link="/" />
       </HalfWhiteCard>
-    </PurpleGradientBackground>
+    </RawBackground>
   );
 }
