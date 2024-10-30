@@ -3,7 +3,7 @@ import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
 
-export default function ClassCard({ title, button, status }) {
+export default function ClassCard({ title, button, status, link }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,11 @@ export default function ClassCard({ title, button, status }) {
 
   return (
     <div className="bg-white rounded-xl p-2 shadow-md shadow-purple-200/50">
-      <div className="h-full flex md:flex-col items-center justify-between gap-4 p-2">
+      <div
+        className={`${
+          status ? "flex-col" : null
+        } h-full flex md:flex-col items-center justify-between gap-4 p-2`}
+      >
         <div className="flex md:flex-col w-full gap-4">
           <div className="bg-indigo-50 rounded-full flex items-center justify-center p-4 w-fit">
             <FontAwesomeIcon
@@ -37,12 +41,40 @@ export default function ClassCard({ title, button, status }) {
             </p>
           </div>
         </div>
-        <div className="md:w-full">
+        <div
+          className={`${
+            status ? "items-center w-full" : "items-end"
+          } md:w-full flex flex-col gap-4`}
+        >
           {isSmallScreen
-            ? button && <HeavyPurpleButton icon={faArrowLeft} />
+            ? button && <HeavyPurpleButton icon={faArrowLeft} link={link} />
             : button && (
-                <HeavyPurpleButton icon={faArrowLeft} value="Commencer" />
+                <HeavyPurpleButton
+                  icon={faArrowLeft}
+                  value="Commencer"
+                  link={link}
+                />
               )}
+          {status &&
+            (status === "Complété" ? (
+              <>
+                <p className="text-zinc-400 font-['Raleway'] font-medium text-xs border-t border-gray-300/50 pt-2 w-full text-center">
+                  Vous avez déjà terminé ce quiz
+                </p>
+                <div className="bg-teal-50 border-teal-100 text-teal-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
+                  {status}
+                </div>
+              </>
+            ) : status === "En cours" ? (
+              <>
+                <p className="text-zinc-400 font-['Raleway'] font-medium text-xs border-t border-gray-300/50 pt-2 w-full text-center">
+                  Vous n'avez pas encore terminé le quizz
+                </p>
+                <div className="bg-red-50 border-red-100 text-red-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
+                  {status}
+                </div>
+              </>
+            ) : null)}
         </div>
       </div>
     </div>

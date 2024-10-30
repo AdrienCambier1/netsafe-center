@@ -1,5 +1,6 @@
 import { FirstTitle, FourthTitle } from "../../Components/Titles";
 import { ClassCard } from "../../Components/Cards";
+import ClassData from "../../Data/class.json";
 
 export default function ClassesList() {
   return (
@@ -10,7 +11,11 @@ export default function ClassesList() {
       <div className="pt-4 flex flex-col gap-4">
         <FourthTitle value="Retrouvez l'intégralité de nos cours en libre accès" />
         <div className="flex flex-col md:grid grid-cols-4 gap-4">
-          <ClassCard title="Apprendre le ping pong" button={true} />
+          <ClassCard
+            title={ClassData.course.title}
+            link="/class/1/section/1"
+            button={true}
+          />
           <ClassCard title="Apprendre le ping pong" button={true} />
           <ClassCard title="Apprendre le ping pong" button={true} />
         </div>

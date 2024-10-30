@@ -30,6 +30,7 @@ import {
   PersonalData,
 } from "./Routes/AccountCenterContent";
 import { Question } from "./Routes/QuizContent";
+import { ClassSection } from "./Routes/ClassContent";
 
 export default function Main() {
   return (
@@ -65,10 +66,13 @@ export default function Main() {
         </Route>
         <Route path="quiz" element={<Navigate to="1" />} />
         <Route path="quiz/:quizId" element={<Quiz />}>
-          <Route path="question" element={<Question />} />
+          <Route path="" element={<Question />} />
         </Route>
         <Route path="class" element={<Navigate to="1" />} />
-        <Route path="class/:classId" element={<Class />} />
+        <Route path="class/:classId" element={<Class />}>
+          <Route path="section" element={<Navigate to="1" />} />
+          <Route path="section/:sectionId" element={<ClassSection />} />
+        </Route>
       </Routes>
     </main>
   );

@@ -84,7 +84,7 @@ export default function NewsCard({
                       comment={comment.comment}
                       like={comment.like}
                       user={comment.user}
-                      isAccount={true}
+                      type="isAccount"
                     />
                   ))}
                 </ul>

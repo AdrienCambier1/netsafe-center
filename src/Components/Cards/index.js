@@ -9,3 +9,4 @@ export { default as ToolsCard } from "./ToolsCard";
 export { default as WhiteCard } from "./WhiteCard";
 export { default as FeedCard } from "./FeedCard";
 export { default as QuestionCard } from "./QuestionCard";
+export { default as HighlightCard } from "./HighlightCard";

@@ -1,0 +1,162 @@
+{
+  "course": {
+    "id": "course1",
+    "title": "Protection de la vie privée en ligne",
+    "description": "Ce cours vous guide à travers les principes essentiels pour protéger votre vie privée en ligne, en abordant les meilleures pratiques et les outils de confidentialité.",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Introduction à la vie privée en ligne",
+        "lessons": [
+          {
+            "id": "lesson1.1",
+            "title": "Pourquoi la vie privée en ligne est-elle importante ?",
+            "content": {
+              "introduction": "La vie privée en ligne est essentielle pour protéger vos informations personnelles et sensibles. Sans une protection adéquate, vos données peuvent être exploitées de manière malveillante.",
+              "objectives": [
+                "Comprendre les enjeux de la protection de la vie privée en ligne.",
+                "Identifier les principales menaces pesant sur la vie privée.",
+                "Apprendre à gérer et protéger ses données personnelles."
+              ],
+              "mainContent": [
+                {
+                  "heading": "Les données personnelles en ligne",
+                  "text": "Les données personnelles comprennent des informations comme votre nom, adresse, numéro de téléphone et informations financières. Sur Internet, ces informations sont collectées pour des services ou des applications, mais peuvent aussi être compromises."
+                },
+                {
+                  "heading": "Risque de vol de données",
+                  "text": "Des pirates ou des entreprises peu scrupuleuses peuvent recueillir et vendre des informations personnelles sans consentement, ce qui peut entraîner un vol d'identité, des fraudes financières, ou une exploitation de vos préférences pour la publicité."
+                }
+              ],
+              "tips": [
+                "Utilisez des mots de passe forts pour protéger vos comptes.",
+                "Évitez de partager des informations sensibles sur les réseaux sociaux.",
+                "Consultez les paramètres de confidentialité de chaque service utilisé."
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Paramètres de confidentialité des applications et services",
+        "lessons": [
+          {
+            "id": "lesson2.1",
+            "title": "Configurer les paramètres de confidentialité des réseaux sociaux",
+            "content": {
+              "introduction": "Les réseaux sociaux possèdent des paramètres de confidentialité permettant de limiter l'accès à vos informations personnelles. En configurant ces paramètres, vous pouvez mieux contrôler ce que vous partagez.",
+              "objectives": [
+                "Apprendre à gérer la confidentialité sur les réseaux sociaux.",
+                "Limiter l'accès à vos informations par des tiers.",
+                "Utiliser les paramètres de confidentialité pour mieux contrôler vos données."
+              ],
+              "mainContent": [
+                {
+                  "heading": "Utilisation des paramètres de visibilité",
+                  "text": "La plupart des réseaux sociaux permettent de restreindre la visibilité de vos informations à des amis uniquement, de garder vos publications privées ou de limiter ce que des tiers peuvent voir."
+                },
+                {
+                  "heading": "Gestion des autorisations des applications",
+                  "text": "Il est essentiel de vérifier régulièrement les applications connectées à vos comptes de réseaux sociaux et de révoquer l'accès à celles dont vous n'avez plus besoin."
+                }
+              ],
+              "tips": [
+                "Limitez la visibilité de vos informations personnelles aux amis ou contacts proches.",
+                "Désactivez l'accès de géolocalisation sur vos publications, sauf si nécessaire.",
+                "Vérifiez régulièrement les applications tierces connectées à votre compte."
+              ]
+            }
+          },
+          {
+            "id": "lesson2.2",
+            "title": "Gérer la confidentialité des navigateurs et moteurs de recherche",
+            "content": {
+              "introduction": "Votre navigateur et votre moteur de recherche collectent de nombreuses informations sur votre comportement en ligne. Comprendre les paramètres de confidentialité permet de limiter ces données collectées.",
+              "objectives": [
+                "Paramétrer les navigateurs pour limiter le suivi.",
+                "Utiliser des moteurs de recherche orientés sur la vie privée.",
+                "Naviguer de manière anonyme en limitant les traces numériques."
+              ],
+              "mainContent": [
+                {
+                  "heading": "Paramètres de confidentialité des navigateurs",
+                  "text": "Les navigateurs comme Chrome, Firefox et Safari permettent de désactiver les cookies de suivi, bloquer les pop-ups et configurer des paramètres de confidentialité."
+                },
+                {
+                  "heading": "Utilisation de moteurs de recherche respectueux de la vie privée",
+                  "text": "Des moteurs de recherche comme DuckDuckGo ou Qwant ne collectent pas d'informations sur leurs utilisateurs, ce qui aide à préserver votre confidentialité en ligne."
+                }
+              ],
+              "tips": [
+                "Activez la navigation privée lorsque vous consultez des sites sensibles.",
+                "Utilisez des extensions de blocage de traqueurs comme uBlock Origin.",
+                "Privilégiez des moteurs de recherche qui respectent la confidentialité."
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "title": "Outils et pratiques pour protéger sa vie privée",
+        "lessons": [
+          {
+            "id": "lesson3.1",
+            "title": "Utilisation des VPN pour une navigation sécurisée",
+            "content": {
+              "introduction": "Un VPN (réseau privé virtuel) chiffre votre connexion et rend vos activités en ligne plus difficiles à suivre.",
+              "objectives": [
+                "Comprendre le rôle d’un VPN dans la protection de la vie privée.",
+                "Apprendre à configurer un VPN.",
+                "Naviguer en toute sécurité sur des réseaux Wi-Fi publics."
+              ],
+              "mainContent": [
+                {
+                  "heading": "Pourquoi utiliser un VPN ?",
+                  "text": "Un VPN chiffre vos données, ce qui signifie qu'elles ne sont pas lisibles par des tiers, même si vous êtes connecté à un réseau Wi-Fi public."
+                },
+                {
+                  "heading": "Choisir un VPN de confiance",
+                  "text": "Tous les VPN ne sont pas égaux ; privilégiez ceux qui ne collectent pas les données et qui offrent une politique de non-conservation des logs."
+                }
+              ],
+              "tips": [
+                "Optez pour un VPN payant, souvent plus fiable que les versions gratuites.",
+                "Utilisez un VPN pour protéger vos données lors de connexions sur des réseaux publics.",
+                "Évitez de vous connecter à des comptes sensibles sans VPN sur des réseaux non sécurisés."
+              ]
+            }
+          },
+          {
+            "id": "lesson3.2",
+            "title": "Paramétrer des outils de blocage de traqueurs et publicités",
+            "content": {
+              "introduction": "Les traqueurs et publicités sur les sites web collectent des informations sur vos comportements. Utiliser des outils de blocage limite cette collecte.",
+              "objectives": [
+                "Comprendre le fonctionnement des traqueurs en ligne.",
+                "Installer des bloqueurs de traqueurs pour limiter la collecte de données.",
+                "Naviguer sans être suivi pour une meilleure protection de la vie privée."
+              ],
+              "mainContent": [
+                {
+                  "heading": "Bloqueurs de traqueurs et de publicités",
+                  "text": "Des extensions comme uBlock Origin et Privacy Badger permettent de bloquer les traqueurs et publicités qui suivent votre activité en ligne."
+                },
+                {
+                  "heading": "Contrôler les cookies de sites web",
+                  "text": "De nombreux sites installent des cookies qui traquent vos habitudes. Vous pouvez configurer votre navigateur pour demander l’autorisation avant d’accepter les cookies."
+                }
+              ],
+              "tips": [
+                "Installez des extensions de blocage de traqueurs sur vos navigateurs.",
+                "Paramétrez les cookies pour refuser ceux qui ne sont pas essentiels.",
+                "Évitez les sites qui exigent des cookies invasifs pour fonctionner."
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

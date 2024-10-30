@@ -10,9 +10,10 @@ import { useEffect } from "react";
 export default function Question() {
   const { whichQuestion, setWhichQuestion } = useContext(QuestionContext);
   const { quizId } = useParams();
+  const quizIndex = parseInt(quizId) - 1;
   const [isEnded, setIsEnded] = useState(false);
 
-  const quiz = QuizData.quizzes[quizId - 1];
+  const quiz = QuizData.quizzes[quizIndex];
 
   const handleNextQuestion = () => {
     if (whichQuestion < quiz.questions.length) {

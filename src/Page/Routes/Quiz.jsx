@@ -1,7 +1,6 @@
 import { FirstTitle } from "../../Components/Titles";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams, Navigate } from "react-router-dom";
 import QuizData from "../../Data/quiz.json";
-import { Navigate } from "react-router-dom";
 import { FeedCard, QuizCard } from "../../Components/Cards";
 import { LightBlueButton } from "../../Components/Buttons";
 import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
@@ -44,14 +43,14 @@ export default function Quiz() {
                   key={i}
                   user={question.question}
                   date={question.type}
-                  status={true}
+                  type="isCompleted"
                 />
               ))}
               {quiz.questions[whichQuestion - 1] && (
                 <FeedCard
                   user={quiz.questions[whichQuestion - 1].question}
                   date={quiz.questions[whichQuestion - 1].type}
-                  isActive={true}
+                  type="isActive"
                 />
               )}
             </ul>
