@@ -41,15 +41,15 @@ export default function Quiz() {
               {quiz.questions.slice(0, whichQuestion - 1).map((question, i) => (
                 <FeedCard
                   key={i}
-                  user={question.question}
-                  date={question.type}
+                  title={question.question}
+                  description={question.type}
                   type="isCompleted"
                 />
               ))}
               {quiz.questions[whichQuestion - 1] && (
                 <FeedCard
-                  user={quiz.questions[whichQuestion - 1].question}
-                  date={quiz.questions[whichQuestion - 1].type}
+                  title={quiz.questions[whichQuestion - 1].question}
+                  description={quiz.questions[whichQuestion - 1].type}
                   type="isActive"
                 />
               )}

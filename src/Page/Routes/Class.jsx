@@ -29,7 +29,7 @@ export default function Class() {
               className="relative flex flex-col gap-12 py-12 pl-8 before:absolute before:top-0 before:left-8 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-6 after:left-8 after:bottom-6 after:-translate-x-1/2 after:border after:border-slate-200"
             >
               {ClassData.course.sections.map((section, i) => (
-                <FeedCard key={i} user={section.title} type="isActive" />
+                <FeedCard key={i} title={section.title} type="isActive" />
               ))}
             </ul>
           </div>

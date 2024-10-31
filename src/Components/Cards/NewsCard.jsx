@@ -1,4 +1,4 @@
-import { WhiteCard, FeedCard } from "../Cards";
+import { WhiteCard, FeedCard, CommentCard } from "../Cards";
 import { FourthTitle, SecondTitle } from "../Titles";
 import { GrayButton, HeavyPurpleButton, RoundedGrayButton } from "../Buttons";
 import {
@@ -6,6 +6,7 @@ import {
   faComment,
   faHeart,
   faPaperPlane,
+  faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 import AccountImage from "../AccountImage";
 import { SearchInput } from "../Inputs";
@@ -50,7 +51,7 @@ export default function NewsCard({
             />
           </div>
           <div className="flex items-center justify-end w-full">
-            <GrayButton icon={faHeart} />
+            <GrayButton icon={faThumbsUp} />
             <p className="text-zinc-600 font-['Raleway'] text-sm">{like}</p>
           </div>
         </div>
@@ -72,22 +73,16 @@ export default function NewsCard({
               </div>
 
               {comments.length > 0 ? (
-                <ul
-                  aria-label="User feed"
-                  role="feed"
-                  className="relative flex flex-col gap-12 py-12 pl-8 before:absolute before:top-0 before:left-8 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-6 after:left-8 after:bottom-6 after:-translate-x-1/2 after:border after:border-slate-200 "
-                >
-                  {comments.map((comment, index) => (
-                    <FeedCard
-                      key={index}
-                      date={comment.date}
-                      comment={comment.comment}
-                      like={comment.like}
-                      user={comment.user}
-                      type="isAccount"
-                    />
-                  ))}
-                </ul>
+                comments.map((comment, index) => (
+                  <CommentCard
+                    key={index}
+                    date={comment.date}
+                    comment={comment.comment}
+                    like={comment.like}
+                    user={comment.user}
+                    type="isAccount"
+                  />
+                ))
               ) : (
                 <p className="text-zinc-600 text-sm font-['Raleway'] font-medium">
                   Aucun commentaire
