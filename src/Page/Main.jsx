@@ -34,7 +34,7 @@ import { ClassSection } from "./Routes/ClassContent";
 
 export default function Main() {
   return (
-    <main className="min-h-screen pt-16 bg-purple-50 flex justify-center">
+    <main className="min-h-screen pt-16 bg-gradient-to-bl from-purple-50 to-yellow-50 flex justify-center">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />

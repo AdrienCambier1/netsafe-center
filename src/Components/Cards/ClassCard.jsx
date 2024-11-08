@@ -19,7 +19,7 @@ export default function ClassCard({ title, button, status, link }) {
   }, []);
 
   return (
-    <div className="bg-white rounded-xl p-2 shadow-md shadow-purple-200/50">
+    <div className="bg-white rounded-xl p-2 shadow-md shadow-gray-200/50">
       <div
         className={`${
           status ? "flex-col" : null

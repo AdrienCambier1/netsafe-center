@@ -28,7 +28,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="z-10 fixed bg-white shadow-md shadow-purple-200/50 h-16 w-full flex items-center justify-between px-8">
+    <header className="z-10 fixed bg-white shadow-md shadow-gray-200/50 h-16 w-full flex items-center justify-between px-8">
       <div className="flex gap-4 h-full items-center relative">
         <Link to="/">
           <p className="text-lg text-zinc-800 font-['Raleway'] font-medium uppercase">

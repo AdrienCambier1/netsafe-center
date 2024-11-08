@@ -14,7 +14,7 @@ export default function LightPurpleButton({
       onClick={onClick}
       className={`${
         isOnRight && "justify-end"
-      } group p-2.5 flex gap-2 items-center hover:bg-white w-full h-fit rounded-xl hover:shadow-md hover:shadow-purple-200/50 cursor-pointer transition-all ease-in-out`}
+      } group p-2.5 flex gap-2 items-center hover:bg-white w-full h-fit rounded-xl hover:shadow-md hover:shadow-gray-200/50 cursor-pointer transition-all ease-in-out`}
     >
       {isOnRight ? (
         <>
