@@ -9,15 +9,12 @@ export default function PersonalData() {
         <div className="py-2 border-b border-gray-300/50">
           <ThirdTitle value="Informations personnelles" />
         </div>
-        <WhiteCardContent
-          description="Identifiant"
-          value="xrayzun_"
-        ></WhiteCardContent>
+        <WhiteCardContent description="Identifiant" value="xrayzun_" />
         <WhiteCardContent
           description="Adresse e-mail"
           value="bertrand06@gmail.com"
           button="Modifier l'adresse e-mail associé"
-        ></WhiteCardContent>
+        />
       </div>
     </WhiteCard>
   );

@@ -12,7 +12,7 @@ export default function QuizButton({ onClick, isChecked }) {
       <FontAwesomeIcon
         className="p-2.5 h-4 w-4"
         icon={isChecked ? faCheck : faCircle}
-      ></FontAwesomeIcon>
+      />
     </Link>
   );
 }

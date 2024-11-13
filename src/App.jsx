@@ -4,6 +4,10 @@ import Footer from "./Page/Footer";
 import { SearchProvider } from "./Contexts/SearchContext";
 import { QuestionProvider } from "./Contexts/QuestionContext";
 import {
+  CreatePostProvider,
+  PostErrorProvider,
+} from "./Contexts/CreatePostContext";
+import {
   BrowserRouter as Router,
   Route,
   Routes,
@@ -15,13 +19,17 @@ function App() {
   return (
     <>
       <Router>
-        <QuestionProvider>
-          <SearchProvider>
-            <Header></Header>
-            <Main></Main>
-            <Footer></Footer>
-          </SearchProvider>
-        </QuestionProvider>
+        <PostErrorProvider>
+          <CreatePostProvider>
+            <QuestionProvider>
+              <SearchProvider>
+                <Header />
+                <Main />
+                <Footer />
+              </SearchProvider>
+            </QuestionProvider>
+          </CreatePostProvider>
+        </PostErrorProvider>
       </Router>
     </>
   );

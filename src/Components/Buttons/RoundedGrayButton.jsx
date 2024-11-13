@@ -13,7 +13,7 @@ export default function RoundedGrayButton({ link, onClick, icon, value }) {
       <FontAwesomeIcon
         className={`${value ? "py-2.5" : "p-2.5"} h-4 w-4`}
         icon={icon}
-      ></FontAwesomeIcon>
+      />
       {value ? (
         <p className="font-['Raleway'] font-medium text-sm text-zinc-600">
           {value}

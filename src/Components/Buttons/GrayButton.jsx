@@ -10,7 +10,7 @@ export default function GrayButton({ link, onClick, icon, background, value }) {
         value ? "p-2 w-full" : null
       } flex gap-2 items-center justify-center text-zinc-300 hover:text-zinc-600 rounded-xl cursor-pointer transition-all ease-in-out w-fit`}
     >
-      <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon}></FontAwesomeIcon>
+      <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon} />
       {value}
     </Link>
   );

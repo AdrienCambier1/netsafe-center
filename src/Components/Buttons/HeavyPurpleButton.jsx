@@ -13,7 +13,7 @@ export default function HeavyPurpleButton({ link, onClick, icon, value }) {
       <FontAwesomeIcon
         className={`${value ? `bg-purple-400 rounded-xl` : null} p-2.5 h-4 w-4`}
         icon={icon}
-      ></FontAwesomeIcon>
+      />
       {value ? (
         <p
           className={`font-['Raleway'] font-medium text-sm overflow-hidden text-ellipsis ${

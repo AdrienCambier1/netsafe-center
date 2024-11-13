@@ -7,7 +7,7 @@ export default function WhiteButton({ value, icon, onClick }) {
       <WhiteCard>
         <div className="flex gap-4 justify-between items-center text-zinc-600 text-sm font-['Raleway'] group-hover:text-purple-500">
           <p>{value}</p>
-          <FontAwesomeIcon icon={icon}></FontAwesomeIcon>
+          <FontAwesomeIcon icon={icon} />
         </div>
       </WhiteCard>
     </div>

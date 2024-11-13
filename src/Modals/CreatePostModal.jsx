@@ -4,8 +4,38 @@ import { GrayButton, HeavyPurpleButton } from "../Components/Buttons";
 import { ModalBackground } from "../Components/Backgrounds";
 import { TextInput, TextArea } from "../Components/Inputs";
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
+import {
+  CreatePostContext,
+  PostErrorContext,
+} from "../Contexts/CreatePostContext";
+import { useContext, useState } from "react";
 
 export default function CreatePostModal({ isOpen, onClose }) {
+  const { createPost, setCreatePost } = useContext(CreatePostContext);
+  const { postError, setPostError } = useContext(PostErrorContext);
+
+  const handleCreatePost = () => {
+    setCreatePost(true);
+    onClose();
+    resetForm();
+    setTimeout(() => {
+      setCreatePost(false);
+    }, 5000);
+  };
+
+  const handleClose = () => {
+    onClose();
+    resetForm();
+  };
+
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  const resetForm = () => {
+    setTitle("");
+    setContent("");
+  };
+
   return ReactDOM.createPortal(
     <div
       className={`${
@@ -18,15 +48,24 @@ export default function CreatePostModal({ isOpen, onClose }) {
         <SecondTitle value="Rédigez votre post" />
         <div className="w-full flex flex-col gap-2">
           <FourthTitle value="Titre" />
-          <TextInput value="Titre du post" icon={faHeading} />
+          <TextInput
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Titre du post"
+            icon={faHeading}
+            value={title}
+          />
         </div>
         <div className="w-full flex flex-col gap-2">
           <FourthTitle value="Contenu du post" />
-          <TextArea value="Rédigez votre texte" />
+          <TextArea
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="Rédigez votre texte"
+            value={content}
+          />
         </div>
         <div className="flex gap-4 w-full">
-          <GrayButton background={true} value="Annuler" onClick={onClose} />
-          <HeavyPurpleButton value="Envoyer" />
+          <GrayButton background={true} value="Annuler" onClick={handleClose} />
+          <HeavyPurpleButton value="Envoyer" onClick={handleCreatePost} />
         </div>
       </div>
     </div>,

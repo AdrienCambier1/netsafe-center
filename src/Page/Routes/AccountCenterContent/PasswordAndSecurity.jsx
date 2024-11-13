@@ -13,7 +13,7 @@ export default function PasswordAndSecurity() {
           description="Mot de passe"
           value="Ceci est un mdp"
           button="Mettre à jour"
-        ></WhiteCardContent>
+        />
       </div>
     </WhiteCard>
   );

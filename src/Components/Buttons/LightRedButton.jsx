@@ -11,7 +11,7 @@ export default function LightRedButton({ link, onClick, icon, value }) {
       <FontAwesomeIcon
         className="h-4 w-4 p-2.5 bg-red-100 rounded-xl text-red-300 group-hover:text-red-500 flex items-center hover:text-zinc-600 transition-all ease-in-out"
         icon={icon}
-      ></FontAwesomeIcon>
+      />
       <p className="text-zinc-600 font-medium font-['Raleway'] text-sm ml-2 overflow-hidden text-ellipsis">
         {value}
       </p>
