@@ -11,8 +11,17 @@ import { RawBackground } from "../../Components/Backgrounds";
 import { OrSplitter } from "../../Components";
 import LoginBackground from "../../Images/background_login.png";
 import { Link } from "react-router-dom";
+import { ModalContext } from "../../Contexts";
+import { useContext, useEffect } from "react";
 
 export default function Login() {
+  const { modals, toggleModal, setModalState, resetModals } =
+    useContext(ModalContext);
+
+  useEffect(() => {
+    resetModals();
+  }, []);
+
   return (
     <RawBackground>
       <HalfWhiteCard image={LoginBackground}>

@@ -1,9 +1,17 @@
+import { useEffect } from "react";
+
 export default function ModalBackground({ isOpen, onClick }) {
-  if (isOpen) {
-    document.body.style.overflowY = "hidden";
-  } else {
-    document.body.style.removeProperty("overflow-y");
-  }
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.removeProperty("overflow-y");
+    }
+
+    return () => {
+      document.body.style.removeProperty("overflow-y");
+    };
+  }, [isOpen]);
 
   return (
     <div

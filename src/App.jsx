@@ -1,9 +1,5 @@
 import { Header, Main, Footer, Modals } from "./Page";
 import {
-  CreatePostProvider,
-  PostErrorProvider,
-} from "./Contexts/CreatePostContext";
-import {
   BrowserRouter as Router,
   Route,
   Routes,
@@ -17,18 +13,14 @@ function App() {
     <>
       <Router>
         <ModalProvider>
-          <PostErrorProvider>
-            <CreatePostProvider>
-              <QuestionProvider>
-                <SearchProvider>
-                  <Header />
-                  <Main />
-                  <Footer />
-                  <Modals />
-                </SearchProvider>
-              </QuestionProvider>
-            </CreatePostProvider>
-          </PostErrorProvider>
+          <QuestionProvider>
+            <SearchProvider>
+              <Header />
+              <Main />
+              <Footer />
+              <Modals />
+            </SearchProvider>
+          </QuestionProvider>
         </ModalProvider>
       </Router>
     </>

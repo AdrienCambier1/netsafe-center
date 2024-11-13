@@ -1,5 +1,5 @@
 import { WhiteCard } from "../../../Components/Cards";
-import AccountImage from "../../../Components/AccountImage";
+import { AccountImage } from "../../../Components";
 
 export default function ProfilPicture() {
   return (

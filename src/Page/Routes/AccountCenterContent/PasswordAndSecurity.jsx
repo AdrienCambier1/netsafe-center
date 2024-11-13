@@ -1,6 +1,6 @@
 import { WhiteCard } from "../../../Components/Cards";
 import { ThirdTitle } from "../../../Components/Titles";
-import WhiteCardContent from "../../../Components/WhiteCardContent";
+import { WhiteCardContent } from "../../../Components";
 
 export default function PasswordAndSecurity() {
   return (

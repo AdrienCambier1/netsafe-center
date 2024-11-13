@@ -1,6 +1,4 @@
-import PersonalData from "./PersonalData";
-import PasswordAndSecurity from "./PasswordAndSecurity";
-import ProfilPicture from "./ProfilPicture";
+import { ProfilPicture, PersonalData, PasswordAndSecurity } from "./";
 
 export default function AccountOverview() {
   return (

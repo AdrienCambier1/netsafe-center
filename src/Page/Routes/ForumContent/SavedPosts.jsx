@@ -1,29 +1,22 @@
 import { PostHeaderCard, NewsCard } from "../../../Components/Cards";
-import { CreatePostModal } from "../../../Modals";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ModalContext } from "../../../Contexts";
 
 export default function SavedPosts() {
-  const [isCreatePostModalOpen, setIsCreatePostModalOpen] = useState(false);
-
-  const toggleCreatePostModal = () => {
-    setIsCreatePostModalOpen(!isCreatePostModalOpen);
-  };
+  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const [openComments, setOpenComments] = useState(false);
 
   return (
     <>
       <PostHeaderCard
         title="Posts enregistrés"
         description="Ajoutez un post"
-        onClick={toggleCreatePostModal}
+        onClick={() => toggleModal("CreatePostModal")}
       />
       <NewsCard value="test" title="test" like="10" />
       <NewsCard value="test" title="test" like="10" />
       <NewsCard value="test" title="test" like="10" />
       <NewsCard value="test" title="test" like="10" />
-      <CreatePostModal
-        isOpen={isCreatePostModalOpen}
-        onClose={toggleCreatePostModal}
-      />
     </>
   );
 }

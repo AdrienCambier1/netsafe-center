@@ -12,26 +12,14 @@ import {
 } from "../../Components/Cards";
 import { FourthTitle } from "../../Components/Titles";
 import { LightPurpleButton, HeavyPurpleButton } from "../../Components/Buttons";
-import CreatePostModal from "../../Modals/CreatePostModal";
 import { useContext, useState } from "react";
 import Data from "../../Data/data.json";
 import { faTiktok, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import AlertModal from "../../Modals/AlertModal";
-import {
-  CreatePostContext,
-  PostErrorContext,
-} from "../../Contexts/CreatePostContext";
+import { ModalContext } from "../../Contexts";
 
 export default function Home() {
-  const [isCreatePostModalOpen, setIsCreatePostModalOpen] = useState(false);
-
-  const toggleCreatePostModal = () => {
-    setIsCreatePostModalOpen(!isCreatePostModalOpen);
-  };
-
-  const [OpenComments, setOpenComments] = useState(false);
-  const { createPost, setCreatePost } = useContext(CreatePostContext);
-  const { postError, setPostError } = useContext(PostErrorContext);
+  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const [openComments, setOpenComments] = useState(false);
 
   const toggleOpenComments = (id) => {
     setOpenComments((prev) => ({
@@ -91,7 +79,7 @@ export default function Home() {
         <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l border-t border-gray-300/50">
           <PostHeaderCard
             description="Ajoutez un post"
-            onClick={toggleCreatePostModal}
+            onClick={() => toggleModal("CreatePostModal")}
           />
           {Data.sort((a, b) => b.date - a.date)
             .slice(0, 4)
@@ -104,7 +92,7 @@ export default function Home() {
                 user={post.user}
                 date={post.date}
                 like={post.like}
-                isCommentOpen={OpenComments[post.id]}
+                isCommentOpen={openComments[post.id]}
                 openComment={() => toggleOpenComments(post.id)}
                 comments={post.comments}
               />
@@ -116,15 +104,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <CreatePostModal
-        isOpen={isCreatePostModalOpen}
-        onClose={toggleCreatePostModal}
-      />
-      <AlertModal
-        isError={postError}
-        isActive={createPost}
-        value="Carte ajoutée avec succès"
-      />
     </>
   );
 }

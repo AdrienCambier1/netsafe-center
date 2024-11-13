@@ -1,17 +1,12 @@
 import { PostHeaderCard, NewsCard } from "../../../Components/Cards";
-import { CreatePostModal } from "../../../Modals";
 import { useState, useContext } from "react";
 import Data from "../../../Data/data.json";
-import { SearchContext } from "../../../Contexts/SearchContext";
+import { SearchContext, ModalContext } from "../../../Contexts";
 
 export default function MostLikedPosts() {
-  const [isCreatePostModalOpen, setIsCreatePostModalOpen] = useState(false);
-
-  const toggleCreatePostModal = () => {
-    setIsCreatePostModalOpen(!isCreatePostModalOpen);
-  };
-
-  const [OpenComments, setOpenComments] = useState(false);
+  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const { searchTerm, setSearchTerm } = useContext(SearchContext);
+  const [openComments, setOpenComments] = useState(false);
 
   const toggleOpenComments = (id) => {
     setOpenComments((prev) => ({
@@ -19,8 +14,6 @@ export default function MostLikedPosts() {
       [id]: !prev[id],
     }));
   };
-
-  const { searchTerm, setSearchTerm } = useContext(SearchContext);
 
   const filteredPosts = Data.filter((post) =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -30,7 +23,7 @@ export default function MostLikedPosts() {
     <>
       <PostHeaderCard
         title="Posts les plus aimés"
-        onClick={toggleCreatePostModal}
+        onClick={() => toggleModal("CreatePostModal")}
       />
       {filteredPosts.length > 0 ? (
         filteredPosts.map((post) => (
@@ -42,7 +35,7 @@ export default function MostLikedPosts() {
             user={post.user}
             date={post.date}
             like={post.like}
-            isCommentOpen={OpenComments[post.id]}
+            isCommentOpen={openComments[post.id]}
             openComment={() => toggleOpenComments(post.id)}
             comments={post.comments}
           />
@@ -52,10 +45,6 @@ export default function MostLikedPosts() {
           Aucun post trouvé
         </p>
       )}
-      <CreatePostModal
-        isOpen={isCreatePostModalOpen}
-        onClose={toggleCreatePostModal}
-      />
     </>
   );
 }

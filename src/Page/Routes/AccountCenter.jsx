@@ -12,15 +12,11 @@ import {
   faUser,
   faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { DialogModal } from "../../Modals";
+import { useState, useContext } from "react";
+import { ModalContext } from "../../Contexts";
 
 export default function AccountCenter() {
-  const [OpenDialog, setOpenDialog] = useState(false);
-
-  const toggleOpenDialog = () => {
-    setOpenDialog(!OpenDialog);
-  };
+  const { modals, toggleModal, setModalState } = useContext(ModalContext);
 
   return (
     <div className="p-8 w-full max-w-[70rem]">
@@ -53,7 +49,7 @@ export default function AccountCenter() {
             <LightRedButton
               icon={faRightToBracket}
               value="Se déconnecter"
-              onClick={toggleOpenDialog}
+              onClick={() => toggleModal("logoutDialog")}
             />
           </div>
         </div>
@@ -61,12 +57,6 @@ export default function AccountCenter() {
           <Outlet />
         </div>
       </div>
-      <DialogModal
-        isOpen={OpenDialog}
-        onClose={toggleOpenDialog}
-        title="Déconnexion"
-        description="Etes-vous sûr de vouloir vous déconnecter ?"
-      />
     </div>
   );
 }

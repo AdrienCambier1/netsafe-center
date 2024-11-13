@@ -2,6 +2,8 @@ import ReactDOM from "react-dom";
 import { ModalBackground } from "../Components/Backgrounds";
 import { HeavyPurpleButton, GrayButton } from "../Components/Buttons";
 import { SecondTitle } from "../Components/Titles";
+import { useContext } from "react";
+import { ModalContext } from "../Contexts";
 
 export default function DialogModal({
   isOpen,
@@ -9,7 +11,20 @@ export default function DialogModal({
   onClick,
   title,
   description,
+  action,
+  alertId,
 }) {
+  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+
+  const handleSubmission = (id) => {
+    setModalState(id, true);
+    onClose();
+    onClick && onClick();
+    setTimeout(() => {
+      setModalState(id, false);
+    }, 4000);
+  };
+
   if (isOpen) {
     return ReactDOM.createPortal(
       <div className="flex fixed inset-0 items-center justify-center z-50">
@@ -22,7 +37,10 @@ export default function DialogModal({
           </p>
           <div className="flex gap-4 w-full">
             <GrayButton background={true} value="Annuler" onClick={onClose} />
-            <HeavyPurpleButton value="Se déconnecter" onClick={onClick} />
+            <HeavyPurpleButton
+              value={action}
+              onClick={() => handleSubmission(alertId)}
+            />
           </div>
         </div>
       </div>,

@@ -4,15 +4,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactDOM from "react-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function AlertModal({ value, isActive, isError }) {
   const [show, setShow] = useState(isActive);
+  let timer = useRef(null);
 
   useEffect(() => {
     if (isActive) {
       setShow(true);
-      const timer = setTimeout(() => setShow(false), 4000);
+      timer = setTimeout(() => setShow(false), 3500);
       return () => clearTimeout(timer);
     }
   }, [isActive]);

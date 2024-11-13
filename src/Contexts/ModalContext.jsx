@@ -4,8 +4,12 @@ export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
   const [modals, setModals] = useState({
-    createPost: false,
+    postAlert: false,
     postError: false,
+    logoutAlert: false,
+    logoutError: false,
+    CreatePostModal: false,
+    logoutDialog: false,
   });
 
   const toggleModal = (modalName) => {
@@ -22,8 +26,20 @@ export const ModalProvider = ({ children }) => {
     }));
   };
 
+  const resetModals = () => {
+    setModals((prev) => {
+      const resetState = Object.keys(prev).reduce((acc, key) => {
+        acc[key] = false;
+        return acc;
+      }, {});
+      return resetState;
+    });
+  };
+
   return (
-    <ModalContext.Provider value={{ modals, toggleModal, setModalState }}>
+    <ModalContext.Provider
+      value={{ modals, toggleModal, setModalState, resetModals }}
+    >
       {children}
     </ModalContext.Provider>
   );
