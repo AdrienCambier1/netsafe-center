@@ -1,5 +1,5 @@
 import { PostHeaderCard, NewsCard } from "../../../Components/Cards";
-import CreatePostModal from "../../../Modals/CreatePostModal";
+import { CreatePostModal } from "../../../Modals";
 import { useState } from "react";
 
 export default function SavedPosts() {

@@ -13,7 +13,7 @@ import {
   faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import DialogModal from "../../Modals/DialogModal";
+import { DialogModal } from "../../Modals";
 
 export default function AccountCenter() {
   const [OpenDialog, setOpenDialog] = useState(false);

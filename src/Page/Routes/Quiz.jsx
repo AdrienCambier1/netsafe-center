@@ -2,9 +2,7 @@ import { FirstTitle } from "../../Components/Titles";
 import { Outlet, useParams, Navigate } from "react-router-dom";
 import QuizData from "../../Data/quiz.json";
 import { FeedCard, QuizCard } from "../../Components/Cards";
-import { LightBlueButton } from "../../Components/Buttons";
-import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
-import { QuestionContext } from "../../Contexts/QuestionContext";
+import { QuestionContext } from "../../Contexts";
 import { useContext } from "react";
 
 export default function Quiz() {

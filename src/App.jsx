@@ -1,8 +1,4 @@
-import Header from "./Page/Header";
-import Main from "./Page/Main";
-import Footer from "./Page/Footer";
-import { SearchProvider } from "./Contexts/SearchContext";
-import { QuestionProvider } from "./Contexts/QuestionContext";
+import { Header, Main, Footer, Modals } from "./Page";
 import {
   CreatePostProvider,
   PostErrorProvider,
@@ -14,22 +10,26 @@ import {
   Navigate,
   BrowserRouter,
 } from "react-router-dom";
+import { ModalProvider, QuestionProvider, SearchProvider } from "./Contexts";
 
 function App() {
   return (
     <>
       <Router>
-        <PostErrorProvider>
-          <CreatePostProvider>
-            <QuestionProvider>
-              <SearchProvider>
-                <Header />
-                <Main />
-                <Footer />
-              </SearchProvider>
-            </QuestionProvider>
-          </CreatePostProvider>
-        </PostErrorProvider>
+        <ModalProvider>
+          <PostErrorProvider>
+            <CreatePostProvider>
+              <QuestionProvider>
+                <SearchProvider>
+                  <Header />
+                  <Main />
+                  <Footer />
+                  <Modals />
+                </SearchProvider>
+              </QuestionProvider>
+            </CreatePostProvider>
+          </PostErrorProvider>
+        </ModalProvider>
       </Router>
     </>
   );

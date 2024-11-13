@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
 import { QuestionCard } from "../../../Components/Cards";
 import QuizData from "../../../Data/quiz.json";
-import { useContext, useState } from "react";
-import { QuestionContext } from "../../../Contexts/QuestionContext";
+import { useContext, useState, useEffect } from "react";
+import { QuestionContext } from "../../../Contexts";
 import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 import { LightPurpleButton } from "../../../Components/Buttons";
-import { useEffect } from "react";
 
 export default function Question() {
   const { whichQuestion, setWhichQuestion } = useContext(QuestionContext);

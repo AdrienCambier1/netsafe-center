@@ -1,11 +1,10 @@
-import { WhiteCard } from "../../../Components/Cards";
 import {
   SecondTitle,
   ThirdTitle,
   FourthTitle,
 } from "../../../Components/Titles";
 import ClassData from "../../../Data/class.json";
-import { HighlightCard } from "../../../Components/Cards";
+import { HighlightCard, WhiteCard } from "../../../Components/Cards";
 import { LightPurpleButton } from "../../../Components/Buttons";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";

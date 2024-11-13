@@ -1,6 +1,6 @@
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
-import MenuModal from "../Modals/MenuModal";
+import { MenuModal } from "../Modals";
 import { useEffect, useState } from "react";
 import { GrayButton, HeaderButton } from "../Components/Buttons";
 import { Link } from "react-router-dom";

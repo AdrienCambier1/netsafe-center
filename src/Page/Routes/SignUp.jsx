@@ -7,7 +7,7 @@ import {
 import { TextInput } from "../../Components/Inputs";
 import { SecondTitle } from "../../Components/Titles";
 import { HalfWhiteCard } from "../../Components/Cards";
-import OrSplitter from "../../Components/OrSplitter";
+import { OrSplitter } from "../../Components";
 import { RawBackground } from "../../Components/Backgrounds";
 import LoginBackground from "../../Images/background_login.png";
 import { Link } from "react-router-dom";
@@ -23,8 +23,8 @@ export default function SignUp() {
         <form className="flex flex-col gap-4 items-center w-full">
           <GoogleAuthentication></GoogleAuthentication>
           <OrSplitter value="ou" />
-          <TextInput value="Adresse e-mail" icon={faUser} />
-          <TextInput value="Mot de passe" type="password" icon={faLock} />
+          <TextInput placeholder="Adresse e-mail" icon={faUser} />
+          <TextInput placeholder="Mot de passe" type="password" icon={faLock} />
           <HeavyPurpleButton value="S'inscrire" />
           <p className="text-sm font-['Raleway'] text-zinc-600">
             Déjà un compte ?{" "}
