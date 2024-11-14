@@ -14,6 +14,10 @@ export default function Modals() {
         value="Poste ajoutée avec succès"
       />
       <AlertModal
+        isActive={modals["textCopied"]}
+        value="Copié dans le presse-papiers"
+      />
+      <AlertModal
         isError={modals["logoutError"]}
         isActive={modals["logoutAlert"]}
         value="Déconnecté avec succès"

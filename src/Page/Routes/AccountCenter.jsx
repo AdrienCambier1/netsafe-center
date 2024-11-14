@@ -18,6 +18,14 @@ import { ModalContext } from "../../Contexts";
 export default function AccountCenter() {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(704838134);
+    setModalState("textCopied", true);
+    setTimeout(() => {
+      setModalState("textCopied", false);
+    }, 4000);
+  };
+
   return (
     <div className="p-8 w-full max-w-[70rem]">
       <div className="border-b border-gray-300/50 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
@@ -25,7 +33,7 @@ export default function AccountCenter() {
         <WhiteButton
           value="ID : 704838134"
           icon={faCopy}
-          onClick={() => navigator.clipboard.writeText(704838134)}
+          onClick={handleCopy}
         />
       </div>
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
