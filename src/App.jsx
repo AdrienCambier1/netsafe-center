@@ -7,11 +7,13 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import { ModalProvider, QuestionProvider, SearchProvider } from "./Contexts";
+import { ScrollToTop } from "./Functions";
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <ModalProvider>
           <QuestionProvider>
             <SearchProvider>
