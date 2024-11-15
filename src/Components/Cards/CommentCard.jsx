@@ -10,26 +10,28 @@ export default function CommentCard({ user, comment, date, like }) {
           <AccountImage />
         </div>
         <div className="pt-2 h-full gap-1 w-full flex flex-col items-center">
-          <div className="w-[1px] h-full bg-gray-300/50" />
+          <div className="w-[1px] h-full dark:bg-zinc-700 bg-gray-300/50" />
         </div>
       </div>
       <div className="flex flex-col">
         <div className="flex flex-col gap-2">
-          <p className="font-medium font-['Raleway'] text-sm text-zinc-600">
+          <p className="font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600">
             {user}
           </p>
-          <p className="font-medium font-['Raleway'] text-sm text-zinc-600">
+          <p className="font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600">
             {comment}
           </p>
         </div>
         <div className="flex gap-2 items-center justify-between">
-          <p className="text-zinc-400 font-['Raleway'] font-medium text-xs">
+          <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs">
             {date} | J'aime
           </p>
 
           <div className="flex items-center">
             <GrayButton icon={faThumbsUp} />
-            <p className="text-zinc-600 font-['Raleway'] text-sm">{like}</p>
+            <p className="dark:text-zinc-400 text-zinc-600 font-['Raleway'] text-sm">
+              {like}
+            </p>
           </div>
         </div>
       </div>

@@ -10,11 +10,11 @@ export default function NotFound() {
     <RawBackground>
       <HalfWhiteCard image={Error404}>
         <div className="absolute top-2 right-2">
-          <GrayButton link="/" icon={faHome}></GrayButton>
+          <GrayButton link="/" icon={faHome} />
         </div>
         <SecondTitle value="Page introuvable" />
 
-        <p className="text-center text-sm font-['Raleway'] text-zinc-600">
+        <p className="text-center text-sm font-['Raleway'] dark:text-zinc-400 text-zinc-600">
           La page que vous recherchez n'éxiste pas
         </p>
         <HeavyPurpleButton value="Retour à l'accueil" link="/" />

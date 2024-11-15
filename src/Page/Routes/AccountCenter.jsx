@@ -11,8 +11,9 @@ import {
   faAddressCard,
   faUser,
   faRightToBracket,
+  faPaintBrush,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { ModalContext } from "../../Contexts";
 
 export default function AccountCenter() {
@@ -28,7 +29,7 @@ export default function AccountCenter() {
 
   return (
     <div className="p-8 w-full max-w-[70rem]">
-      <div className="border-b border-gray-300/50 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
+      <div className="border-b dark:border-zinc-700 border-gray-300/50 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
         <FirstTitle value="Gestion du compte" />
         <WhiteButton
           value="ID : 704838134"
@@ -53,6 +54,11 @@ export default function AccountCenter() {
               icon={faLock}
               value="Mot de passe et sécurité"
               link="/account_center/password_and_security"
+            />
+            <LightPurpleButton
+              icon={faPaintBrush}
+              value="Apparance du site"
+              link="/account_center/appearance"
             />
             <LightRedButton
               icon={faRightToBracket}

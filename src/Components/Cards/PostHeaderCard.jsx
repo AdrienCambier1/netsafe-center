@@ -9,13 +9,13 @@ export default function PostHeaderCard({ title, description, onClick }) {
     <WhiteCard>
       <div className={`${title && "p-2"} flex flex-col gap-4`}>
         {title && (
-          <div className="py-2 border-b border-gray-300/50">
+          <div className="py-2 border-b dark:border-zinc-700 border-gray-300/50">
             <ThirdTitle value={title} />
           </div>
         )}
         <div className="flex gap-4 justify-between items-center">
           {description ? (
-            <p className="text-zinc-400 font-['Raleway'] text-sm">
+            <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] text-sm">
               {description}
             </p>
           ) : (

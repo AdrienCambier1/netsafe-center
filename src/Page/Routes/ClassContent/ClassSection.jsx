@@ -25,7 +25,7 @@ export default function ClassSection() {
               <>
                 <div className="flex flex-col gap-4">
                   <ThirdTitle value={lesson.title} />
-                  <p className="text-sm font-['Raleway'] font-medium text-zinc-600">
+                  <p className="text-sm font-['Raleway'] font-medium dark:text-zinc-400 text-zinc-600">
                     {lesson.content.introduction}
                   </p>
                 </div>
@@ -37,7 +37,7 @@ export default function ClassSection() {
                   return (
                     <div className="flex flex-col gap-4">
                       <FourthTitle value={content.heading} />
-                      <p className="text-sm font-['Raleway'] font-medium text-zinc-600">
+                      <p className="text-sm font-['Raleway'] font-medium dark:text-zinc-400 text-zinc-600">
                         {content.text}
                       </p>
                     </div>

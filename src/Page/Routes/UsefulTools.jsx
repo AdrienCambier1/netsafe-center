@@ -4,7 +4,7 @@ import { ToolsCard } from "../../Components/Cards";
 export default function UsefulTools() {
   return (
     <div className="p-8 w-full max-w-[70rem]">
-      <div className="border-b border-gray-300/50 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
+      <div className="border-b dark:border-zinc-700 border-gray-300/50 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
         <FirstTitle value="Outils pratiques" />
       </div>
       <div className="pt-4 flex flex-col gap-4">

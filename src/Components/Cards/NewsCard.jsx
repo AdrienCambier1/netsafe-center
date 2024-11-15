@@ -30,15 +30,15 @@ export default function NewsCard({
         <div className="flex items-center">
           <AccountImage image={image} />
           <div className="flex gap-2 items-center ml-2">
-            <p className="text-zinc-600 font-['Raleway'] font-medium text-sm">
+            <p className="dark:text-zinc-400 text-zinc-600 font-['Raleway'] font-medium text-sm">
               {user}
             </p>
-            <p className="text-zinc-400 font-['Raleway'] font-medium text-xs">
+            <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs">
               {date}
             </p>
           </div>
         </div>
-        <div className="font-medium font-['Raleway'] text-sm text-zinc-600">
+        <div className="font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600">
           {content}
         </div>
         <div className="flex justify-between items-start lg:items-center">
@@ -52,13 +52,15 @@ export default function NewsCard({
           </div>
           <div className="flex items-center justify-end w-full">
             <GrayButton icon={faThumbsUp} />
-            <p className="text-zinc-600 font-['Raleway'] text-sm">{like}</p>
+            <p className="dark:text-zinc-400 text-zinc-600 font-['Raleway'] text-sm">
+              {like}
+            </p>
           </div>
         </div>
       </div>
       {isCommentOpen && (
         <>
-          <div className="border-t border-gray-300/50 my-2" />
+          <div className="border-t dark:border-zinc-700 border-gray-300/50 my-2" />
           <div className="flex flex-col p-2 gap-4">
             <div className="flex gap-2">
               <SearchInput
@@ -84,7 +86,7 @@ export default function NewsCard({
                   />
                 ))
               ) : (
-                <p className="text-zinc-600 text-sm font-['Raleway'] font-medium">
+                <p className="dark:text-zinc-400 text-zinc-600 text-sm font-['Raleway'] font-medium">
                   Aucun commentaire
                 </p>
               )}

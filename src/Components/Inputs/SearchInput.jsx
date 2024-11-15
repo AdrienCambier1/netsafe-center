@@ -10,12 +10,12 @@ export default function SearchInput({ placeholder, icon }) {
   };
 
   return (
-    <div className="flex gap-1 bg-zinc-50 border border-zinc-100 rounded-xl w-full transition-all ease-out">
-      <GrayButton icon={icon}></GrayButton>
+    <div className="flex gap-1 dark:bg-zinc-800 bg-zinc-50 dark:border-transparent border border-zinc-100 rounded-xl w-full transition-all ease-out">
+      <GrayButton icon={icon} />
       <input
         placeholder={placeholder}
         value={searchTerm}
-        className="flex items-end bg-inherit rounded-xl placeholder:text-zinc-300 focus:outline-none w-full pr-2 font-medium font-['Raleway'] text-sm text-zinc-600"
+        className="flex items-end bg-inherit rounded-xl dark:placeholder:text-zinc-700 placeholder:text-zinc-300 focus:outline-none w-full pr-2 font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600"
         onChange={handleChange}
       ></input>
     </div>

@@ -7,3 +7,4 @@ export { default as LightRedButton } from "./LightRedButton";
 export { default as RoundedGrayButton } from "./RoundedGrayButton";
 export { default as WhiteButton } from "./WhiteButton";
 export { default as QuizButton } from "./QuizButton";
+export { default as ThemeButton } from "./ThemeButton";

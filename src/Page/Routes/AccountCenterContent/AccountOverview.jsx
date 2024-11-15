@@ -1,4 +1,9 @@
-import { ProfilPicture, PersonalData, PasswordAndSecurity } from "./";
+import {
+  ProfilPicture,
+  PersonalData,
+  PasswordAndSecurity,
+  Appeareance,
+} from "./";
 
 export default function AccountOverview() {
   return (
@@ -6,6 +11,7 @@ export default function AccountOverview() {
       <ProfilPicture />
       <PersonalData />
       <PasswordAndSecurity />
+      <Appeareance />
     </>
   );
 }

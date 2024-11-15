@@ -6,7 +6,7 @@ export default function HeaderButton({ link, onClick, value }) {
     <Link
       to={link}
       onClick={onClick}
-      className="header-button min-h-10 px-1 font-medium font-['Raleway'] text-sm flex items-center justify-center h-full w-fit relative cursor-pointer text-zinc-600 hover:text-zinc-800 transition-all ease-in-out"
+      className="header-button min-h-10 px-1 font-medium font-['Raleway'] text-sm flex items-center justify-center h-full w-fit relative cursor-pointer dark:text-zinc-400 text-zinc-600 hover:text-zinc-800 transition-all ease-in-out"
     >
       {value}
     </Link>

@@ -6,7 +6,12 @@ import {
   Navigate,
   BrowserRouter,
 } from "react-router-dom";
-import { ModalProvider, QuestionProvider, SearchProvider } from "./Contexts";
+import {
+  ThemeProvider,
+  ModalProvider,
+  QuestionProvider,
+  SearchProvider,
+} from "./Contexts";
 import { ScrollToTop } from "./Functions";
 
 function App() {
@@ -14,16 +19,18 @@ function App() {
     <>
       <Router>
         <ScrollToTop />
-        <ModalProvider>
-          <QuestionProvider>
-            <SearchProvider>
-              <Header />
-              <Main />
-              <Footer />
-              <Modals />
-            </SearchProvider>
-          </QuestionProvider>
-        </ModalProvider>
+        <ThemeProvider>
+          <ModalProvider>
+            <QuestionProvider>
+              <SearchProvider>
+                <Header />
+                <Main />
+                <Footer />
+                <Modals />
+              </SearchProvider>
+            </QuestionProvider>
+          </ModalProvider>
+        </ThemeProvider>
       </Router>
     </>
   );

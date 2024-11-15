@@ -19,14 +19,14 @@ export default function ClassCard({ title, button, status, link }) {
   }, []);
 
   return (
-    <div className="bg-white rounded-xl p-2 shadow-md shadow-gray-200/50">
+    <div className="dark:bg-zinc-900 bg-white rounded-xl p-2 border border-transparent dark:border-zinc-700 dark:shadow-none shadow-md shadow-gray-200/50">
       <div
         className={`${
           status ? "flex-col" : null
         } h-full flex md:flex-col items-center justify-between gap-4 p-2`}
       >
         <div className="flex md:flex-col w-full gap-4">
-          <div className="bg-indigo-50 rounded-full flex items-center justify-center p-4 w-fit">
+          <div className="dark:bg-indigo-950 bg-indigo-50 rounded-full flex items-center justify-center p-4 w-fit">
             <FontAwesomeIcon
               className=" p-4 h-4 w-4 text-indigo-500"
               icon={faBook}
@@ -36,7 +36,7 @@ export default function ClassCard({ title, button, status, link }) {
             <p className="text-indigo-500 font-['Raleway'] text-sm font-bold">
               Leçon en ligne
             </p>
-            <p className="text-sm font-['Raleway'] font-medium text-zinc-600">
+            <p className="text-sm font-['Raleway'] font-medium dark:text-zinc-400 text-zinc-600">
               {title}
             </p>
           </div>
@@ -58,19 +58,19 @@ export default function ClassCard({ title, button, status, link }) {
           {status &&
             (status === "Complété" ? (
               <>
-                <p className="text-zinc-400 font-['Raleway'] font-medium text-xs border-t border-gray-300/50 pt-2 w-full text-center">
+                <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-700 border-gray-300/50 pt-2 w-full text-center">
                   Vous avez déjà terminé ce quiz
                 </p>
-                <div className="bg-teal-50 border-teal-100 text-teal-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
+                <div className="dark:bg-teal-950 bg-teal-50 dark:border-teal-900 border-teal-100 text-teal-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
                   {status}
                 </div>
               </>
             ) : status === "En cours" ? (
               <>
-                <p className="text-zinc-400 font-['Raleway'] font-medium text-xs border-t border-gray-300/50 pt-2 w-full text-center">
+                <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-700 border-gray-300/50 pt-2 w-full text-center">
                   Vous n'avez pas encore terminé le quizz
                 </p>
-                <div className="bg-red-50 border-red-100 text-red-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
+                <div className="dark:bg-red-950 bg-red-50 dark:border-red-900 border-red-100 text-red-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
                   {status}
                 </div>
               </>

@@ -30,12 +30,12 @@ export default function Login() {
         </div>
         <SecondTitle value="Connectez-vous" />
         <form className="flex flex-col gap-4 items-center w-full">
-          <GoogleAuthentication></GoogleAuthentication>
+          <GoogleAuthentication />
           <OrSplitter value="ou" />
           <TextInput placeholder="Adresse e-mail" icon={faUser} />
           <TextInput placeholder="Mot de passe" type="password" icon={faLock} />
           <HeavyPurpleButton value="Se connecter" />
-          <p className="text-sm font-['Raleway'] text-zinc-600">
+          <p className="text-sm font-['Raleway'] dark:text-zinc-400 text-zinc-600">
             Pas de compte ?{" "}
             <Link
               to="/register"

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import {
   Home,
   NotFound,
@@ -23,13 +23,24 @@ import {
   AccountOverview,
   PasswordAndSecurity,
   PersonalData,
+  Appeareance,
 } from "./Routes/AccountCenterContent";
 import { Question } from "./Routes/QuizContent";
 import { ClassSection } from "./Routes/ClassContent";
+import { ThemeContext } from "../Contexts";
+import { useContext } from "react";
 
 export default function Main() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <main className="min-h-screen pt-16 bg-gradient-to-bl from-purple-50 to-yellow-50 flex justify-center">
+    <main
+      className={`${
+        theme === "dark"
+          ? "bg-black"
+          : "bg-gradient-to-bl from-purple-50 to-yellow-50"
+      } min-h-screen pt-16 flex justify-center`}
+    >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
@@ -42,6 +53,7 @@ export default function Main() {
             path="password_and_security"
             element={<PasswordAndSecurity />}
           />
+          <Route path="appearance" element={<Appeareance />} />
         </Route>
         <Route path="classes_list" element={<ClassesList />} />
         <Route path="quiz_list" element={<QuizList />} />

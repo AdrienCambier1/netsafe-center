@@ -25,7 +25,7 @@ export default function AlertModal({ value, isActive, isError }) {
           show ? "opacity-100" : "opacity-0"
         } transition-all duration-500 fixed ${
           isError ? "border-red-500/50" : "border-green-500/50"
-        } border bg-white py-4 px-8 bottom-8 right-8 rounded-xl z-20`}
+        } border dark:bg-zinc-950 bg-white py-4 px-8 bottom-8 right-8 rounded-xl z-20`}
       >
         <div className="flex gap-4 items-center">
           {isError ? (
@@ -39,7 +39,7 @@ export default function AlertModal({ value, isActive, isError }) {
               className="h-4 w-4 text-green-500"
             />
           )}
-          <p className="font-medium font-['Raleway'] text-sm text-zinc-600">
+          <p className="font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600">
             {value}
           </p>
         </div>

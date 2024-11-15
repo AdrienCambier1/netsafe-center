@@ -7,7 +7,7 @@ export default function ProfilPicture() {
       <div className="p-2 flex justify-between items-center">
         <div className="flex gap-2 items-center">
           <AccountImage />
-          <p className="text-sm font-['Raleway'] font-medium text-zinc-800">
+          <p className="text-sm font-['Raleway'] font-medium dark:text-zinc-200 text-zinc-800">
             xrayzun_
           </p>
         </div>

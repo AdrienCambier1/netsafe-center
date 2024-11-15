@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect } from "react";
 
 export default function QuestionCard({
   question,
@@ -45,9 +44,9 @@ export default function QuestionCard({
 
   const getAnswerClass = (isCorrect, isSelected) => {
     if (isSelected) {
-      return isCorrect ? "text-teal-500" : "text-red-500"; // Coche verte ou croix rouge
+      return isCorrect ? "text-teal-500" : "text-red-500";
     } else {
-      return "text-zinc-300";
+      return "dark:text-zinc-700 text-zinc-300";
     }
   };
 
@@ -94,7 +93,7 @@ export default function QuestionCard({
                       isChecked={selectedAnswers.includes(answer)}
                     />
                   )}
-                  <p className="font-['Raleway'] text-sm font-medium text-zinc-600">
+                  <p className="font-['Raleway'] text-sm font-medium dark:text-zinc-400 text-zinc-600">
                     {answer}
                   </p>
                 </div>
@@ -103,7 +102,7 @@ export default function QuestionCard({
           </div>
         </div>
         {showResults ? (
-          <p className="text-zinc-400 font-['Raleway'] font-medium text-xs border-t border-gray-300/50 pt-2 w-full text-center">
+          <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-700 border-gray-300/50 pt-2 w-full text-center">
             {explanation}
           </p>
         ) : (
