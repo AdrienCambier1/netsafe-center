@@ -6,6 +6,7 @@ import {
   faCircle,
   faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
+import { DefaultText } from "../Titles";
 
 export default function Comment({ title, description, content, type }) {
   return (
@@ -38,16 +39,12 @@ export default function Comment({ title, description, content, type }) {
           )}
         </div>
         <h4 className="flex flex-col md:gap-2 items-start text-lg font-medium leading-8 text-slate-700 md:flex-row lg:items-center">
-          <span className="dark:text-zinc-400 text-zinc-600 font-['Raleway'] font-medium text-sm">
-            {title}
-          </span>
+          <DefaultText value={title} />
           <span className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs">
             {description}
           </span>
         </h4>
-        <p className="font-medium font-['Raleway'] text-sm text-zinc-600">
-          {content}
-        </p>
+        <DefaultText value={content} />
       </div>
     </li>
   );

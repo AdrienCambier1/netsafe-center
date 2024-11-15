@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { ModalBackground } from "../Components/Backgrounds";
 import { HeavyPurpleButton, GrayButton } from "../Components/Buttons";
-import { SecondTitle } from "../Components/Titles";
+import { SecondTitle, DefaultText } from "../Components/Titles";
 import { useContext } from "react";
 import { ModalContext } from "../Contexts";
 
@@ -32,9 +32,7 @@ export default function DialogModal({
 
         <div className="w-[30rem] p-8 rounded-xl dark:bg-zinc-950 border border-transparent dark:border-zinc-800 bg-white z-50 flex flex-col gap-6 items-center max-h-full overflow-y-scroll">
           <SecondTitle value={title} />
-          <p className="font-['Raleway'] text-sm font-medium dark:text-zinc-400 text-zinc-600">
-            {description}
-          </p>
+          <DefaultText value={description} />
           <div className="flex gap-4 w-full">
             <GrayButton background={true} value="Annuler" onClick={onClose} />
             <HeavyPurpleButton

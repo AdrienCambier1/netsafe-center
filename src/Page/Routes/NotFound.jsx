@@ -1,6 +1,6 @@
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton, GrayButton } from "../../Components/Buttons";
-import { SecondTitle } from "../../Components/Titles";
+import { SecondTitle, DefaultText } from "../../Components/Titles";
 import { HalfWhiteCard } from "../../Components/Cards";
 import { RawBackground } from "../../Components/Backgrounds";
 import Error404 from "../../Images/404.png";
@@ -14,9 +14,7 @@ export default function NotFound() {
         </div>
         <SecondTitle value="Page introuvable" />
 
-        <p className="text-center text-sm font-['Raleway'] dark:text-zinc-400 text-zinc-600">
-          La page que vous recherchez n'éxiste pas
-        </p>
+        <DefaultText value="La page que vous recherchez n'éxiste pas" />
         <HeavyPurpleButton value="Retour à l'accueil" link="/" />
       </HalfWhiteCard>
     </RawBackground>

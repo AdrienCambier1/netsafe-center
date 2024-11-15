@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
+import { DefaultText, DarkText } from "../Titles";
+import { Status } from "../Tags";
 
 export default function ClassCard({ title, button, status, link }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -36,9 +38,7 @@ export default function ClassCard({ title, button, status, link }) {
             <p className="text-indigo-500 font-['Raleway'] text-sm font-bold">
               Leçon en ligne
             </p>
-            <p className="text-sm font-['Raleway'] font-medium dark:text-zinc-400 text-zinc-600">
-              {title}
-            </p>
+            <DefaultText value={title} />
           </div>
         </div>
         <div
@@ -58,21 +58,17 @@ export default function ClassCard({ title, button, status, link }) {
           {status &&
             (status === "Complété" ? (
               <>
-                <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
-                  Vous avez déjà terminé ce quiz
-                </p>
-                <div className="dark:bg-teal-950 bg-teal-50 dark:border-teal-900 border-teal-100 text-teal-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
-                  {status}
+                <div className=" border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
+                  <DarkText value="Vous avez déjà terminé ce cours" />
                 </div>
+                <Status isOk={true} value={status} />
               </>
             ) : status === "En cours" ? (
               <>
-                <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
-                  Vous n'avez pas encore terminé le quizz
-                </p>
-                <div className="dark:bg-red-950 bg-red-50 dark:border-red-900 border-red-100 text-red-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
-                  {status}
+                <div className=" border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
+                  <DarkText value="Vous n'avez pas encore terminé ce cours" />
                 </div>
+                <Status isOk={false} value={status} />
               </>
             ) : null)}
         </div>

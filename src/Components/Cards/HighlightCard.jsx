@@ -1,3 +1,5 @@
+import { DefaultText } from "../Titles";
+
 export default function HighlightCard({ data, type }) {
   return (
     <div
@@ -16,13 +18,15 @@ export default function HighlightCard({ data, type }) {
           ? "Objectifs"
           : "Undefined"}
       </p>
-      <p className="text-sm font-['Raleway'] font-medium dark:text-zinc-400 text-zinc-600 list-disc list-inside">
-        {type === "tips"
-          ? "Voici quelques conseils pour bien comprendre cette leçon :"
-          : type === "objectives"
-          ? "Avec cette leçon, vous serez capable de :"
-          : "Undefined"}
-      </p>
+      <DefaultText
+        value={
+          type === "tips"
+            ? "Voici quelques conseils pour bien comprendre cette leçon :"
+            : type === "objectives"
+            ? "Avec cette leçon, vous serez capable de :"
+            : "Undefined"
+        }
+      />
       <ul className="pl-8">
         {data.map((tips, index) => (
           <li

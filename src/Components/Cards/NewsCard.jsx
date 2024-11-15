@@ -1,5 +1,5 @@
 import { WhiteCard, CommentCard } from "../Cards";
-import { FourthTitle, SecondTitle } from "../Titles";
+import { FourthTitle, SecondTitle, DefaultText, DarkText } from "../Titles";
 import { GrayButton, HeavyPurpleButton, RoundedGrayButton } from "../Buttons";
 import {
   faBookmark,
@@ -46,12 +46,8 @@ export default function NewsCard({
         <div className="flex items-center">
           <AccountImage image={image} />
           <div className="flex gap-2 items-center ml-2">
-            <p className="dark:text-zinc-400 text-zinc-600 font-['Raleway'] font-medium text-sm">
-              {user}
-            </p>
-            <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs">
-              {date}
-            </p>
+            <DefaultText value={user} />
+            <DarkText value={date} />
           </div>
         </div>
         <div className="font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600">
@@ -68,9 +64,7 @@ export default function NewsCard({
           </div>
           <div className="flex items-center justify-end w-full">
             <GrayButton icon={faThumbsUp} />
-            <p className="dark:text-zinc-400 text-zinc-600 font-['Raleway'] text-sm">
-              {like}
-            </p>
+            <DefaultText value={like} />
           </div>
         </div>
       </div>
@@ -107,9 +101,7 @@ export default function NewsCard({
                   />
                 ))
               ) : (
-                <p className="dark:text-zinc-400 text-zinc-600 text-sm font-['Raleway'] font-medium">
-                  Aucun commentaire
-                </p>
+                <DefaultText value="Aucun commentaire" />
               )}
             </div>
           </div>

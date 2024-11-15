@@ -5,6 +5,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactDOM from "react-dom";
 import { useState, useEffect, useRef } from "react";
+import { DefaultText } from "../Components/Titles";
 
 export default function AlertModal({ value, isActive, isError }) {
   const [show, setShow] = useState(isActive);
@@ -39,9 +40,7 @@ export default function AlertModal({ value, isActive, isError }) {
               className="h-4 w-4 text-green-500"
             />
           )}
-          <p className="font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600">
-            {value}
-          </p>
+          <DefaultText value={value} />
         </div>
       </div>,
       document.querySelector("body")

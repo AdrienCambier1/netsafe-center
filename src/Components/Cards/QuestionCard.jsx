@@ -1,5 +1,5 @@
 import { WhiteCard } from "../Cards";
-import { SecondTitle, FourthTitle } from "../Titles";
+import { SecondTitle, FourthTitle, DefaultText, DarkText } from "../Titles";
 import { HeavyPurpleButton, QuizButton } from "../Buttons";
 import {
   faArrowLeft,
@@ -93,18 +93,16 @@ export default function QuestionCard({
                       isChecked={selectedAnswers.includes(answer)}
                     />
                   )}
-                  <p className="font-['Raleway'] text-sm font-medium dark:text-zinc-400 text-zinc-600">
-                    {answer}
-                  </p>
+                  <DefaultText value={answer} />
                 </div>
               );
             })}
           </div>
         </div>
         {showResults ? (
-          <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
-            {explanation}
-          </p>
+          <div className="border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
+            <DarkText value={explanation} />
+          </div>
         ) : (
           <HeavyPurpleButton
             value="Valider"

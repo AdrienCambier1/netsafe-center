@@ -5,7 +5,7 @@ import {
   GrayButton,
 } from "../../Components/Buttons";
 import { TextInput } from "../../Components/Inputs";
-import { SecondTitle } from "../../Components/Titles";
+import { SecondTitle, DefaultText } from "../../Components/Titles";
 import { HalfWhiteCard } from "../../Components/Cards";
 import { RawBackground } from "../../Components/Backgrounds";
 import { OrSplitter } from "../../Components";
@@ -35,15 +35,15 @@ export default function Login() {
           <TextInput placeholder="Adresse e-mail" icon={faUser} />
           <TextInput placeholder="Mot de passe" type="password" icon={faLock} />
           <HeavyPurpleButton value="Se connecter" />
-          <p className="text-sm font-['Raleway'] dark:text-zinc-400 text-zinc-600">
-            Pas de compte ?{" "}
+          <DefaultText value="Pas de compte ?">
             <Link
               to="/register"
               className="text-purple-500 font-bold underline"
             >
+              {" "}
               S'inscrire
             </Link>
-          </p>
+          </DefaultText>
         </form>
       </HalfWhiteCard>
     </RawBackground>
