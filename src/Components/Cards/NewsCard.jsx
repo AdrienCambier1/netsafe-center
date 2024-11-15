@@ -4,13 +4,14 @@ import { GrayButton, HeavyPurpleButton, RoundedGrayButton } from "../Buttons";
 import {
   faBookmark,
   faComment,
-  faPaperPlane,
+  faPencilAlt,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { AccountImage } from "../";
 import { SubmitInput } from "../Inputs";
 import { ModalContext } from "../../Contexts";
 import { useContext, useState } from "react";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 
 export default function NewsCard({
   title,
@@ -80,7 +81,7 @@ export default function NewsCard({
             <div className="flex gap-2">
               <SubmitInput
                 placeholder="Rédiger un commentaire"
-                icon={faComment}
+                icon={faPencilAlt}
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
               />
