@@ -21,12 +21,18 @@ export default function Comment({ title, description, content, type }) {
           }`}
         >
           {type === "isActive" ? (
-            <FontAwesomeIcon className="h-4 w-4 text-white" icon={faQuestion} />
+            <FontAwesomeIcon
+              className="h-4 w-4 dark:text-black text-white"
+              icon={faQuestion}
+            />
           ) : type === "isCompleted" ? (
-            <FontAwesomeIcon className="h-4 w-4 text-white" icon={faCheck} />
+            <FontAwesomeIcon
+              className="h-4 w-4 dark:text-black text-white"
+              icon={faCheck}
+            />
           ) : (
             <FontAwesomeIcon
-              className="h-4 w-4 text-white"
+              className="h-4 w-4 dark:text-black text-white"
               icon={faCaretRight}
             />
           )}
