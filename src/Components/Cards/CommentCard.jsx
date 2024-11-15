@@ -10,7 +10,7 @@ export default function CommentCard({ user, comment, date, like }) {
           <AccountImage />
         </div>
         <div className="pt-2 h-full gap-1 w-full flex flex-col items-center">
-          <div className="w-[1px] h-full dark:bg-zinc-700 bg-gray-300/50" />
+          <div className="w-[1px] h-full dark:bg-zinc-800 bg-gray-300/50" />
         </div>
       </div>
       <div className="flex flex-col">

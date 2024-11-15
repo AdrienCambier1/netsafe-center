@@ -60,7 +60,7 @@ export default function NewsCard({
       </div>
       {isCommentOpen && (
         <>
-          <div className="border-t dark:border-zinc-700 border-gray-300/50 my-2" />
+          <div className="border-t dark:border-zinc-800 border-gray-300/50 my-2" />
           <div className="flex flex-col p-2 gap-4">
             <div className="flex gap-2">
               <SearchInput

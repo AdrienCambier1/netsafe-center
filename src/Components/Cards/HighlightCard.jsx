@@ -5,7 +5,7 @@ export default function HighlightCard({ data, type }) {
         type === "tips"
           ? "dark:bg-teal-950 bg-teal-50 dark:border-teal-900 border-teal-100"
           : type === "objectives"
-          ? "dark:bg-amber-950 bg-amber-50 dark:border-amber-900 border-amber-100"
+          ? "dark:bg-yellow-950 bg-yellow-50 dark:border-yellow-900 border-yellow-100"
           : "dark:bg-zinc-950 bg-zinc-50 dark:border-zinc-900 border-zinc-100"
       }`}
     >

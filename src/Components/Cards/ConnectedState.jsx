@@ -6,7 +6,7 @@ export default function ConnectedState({ value, name, link }) {
   return (
     <WhiteCard>
       <div className="flex flex-col gap-4 p-2">
-        <div className="flex items-center border-b dark:border-zinc-700 border-gray-300/50 pb-2">
+        <div className="flex items-center border-b dark:border-zinc-800 border-gray-300/50 pb-2">
           <AccountImage />
           <p className="dark:text-zinc-400 text-zinc-600 font-medium font-['Raleway'] text-sm ml-2">
             Guess

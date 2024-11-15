@@ -102,7 +102,7 @@ export default function QuestionCard({
           </div>
         </div>
         {showResults ? (
-          <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-700 border-gray-300/50 pt-2 w-full text-center">
+          <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
             {explanation}
           </p>
         ) : (

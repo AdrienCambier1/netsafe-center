@@ -8,8 +8,8 @@ export default function TextInput({
   icon,
 }) {
   return (
-    <div className="flex gap-1 border dark:bg-zinc-950 bg-zinc-50 rounded-xl dark:border-zinc-700 border-zinc-100 w-full transition-all ease-out overflow-hidden">
-      <GrayButton icon={icon}></GrayButton>
+    <div className="flex gap-1 border dark:bg-zinc-900 bg-zinc-50 rounded-xl dark:border-transparent border-zinc-100 w-full transition-all ease-out overflow-hidden">
+      <GrayButton icon={icon} />
       <input
         onChange={onChange}
         type={type}

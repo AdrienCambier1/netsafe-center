@@ -3,7 +3,7 @@ import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 export default function KnowledgeCard({ brand, title }) {
   return (
-    <div className="dark:bg-zinc-900 bg-white rounded-xl w-full border dark:border-zinc-700 border-gray-300/50 p-2 dark:hover:border-teal-500 hover:border-teal-500 cursor-pointer flex gap-4 items-center">
+    <div className="dark:bg-zinc-950 bg-white rounded-xl w-full border dark:border-zinc-800 border-gray-300/50 p-2 dark:hover:border-teal-500 hover:border-teal-500 cursor-pointer flex gap-4 items-center">
       <div className="dark:bg-teal-950 bg-teal-50 rounded-xl flex items-center justify-center p-4 w-fit">
         <FontAwesomeIcon
           className="p-4 h-4 w-4 text-teal-500"

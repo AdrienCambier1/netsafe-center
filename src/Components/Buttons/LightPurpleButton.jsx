@@ -18,7 +18,7 @@ export default function LightPurpleButton({
     >
       {isOnRight ? (
         <>
-          <p className="text-zinc-600 font-medium font-['Raleway'] text-sm mr-2 overflow-hidden text-ellipsis">
+          <p className="dark:text-zinc-400 text-zinc-600 font-medium font-['Raleway'] text-sm mr-2 overflow-hidden text-ellipsis">
             {value}
           </p>
           <FontAwesomeIcon
@@ -29,10 +29,10 @@ export default function LightPurpleButton({
       ) : (
         <>
           <FontAwesomeIcon
-            className="h-4 w-4 p-2.5 dark:bg-purple-900 bg-purple-100 rounded-xl dark:text-purple-700 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-zinc-600 transition-all ease-in-out"
+            className="h-4 w-4 p-2.5 dark:bg-purple-950 bg-purple-100 rounded-xl dark:text-purple-500 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-zinc-600 transition-all ease-in-out"
             icon={icon}
           />
-          <p className="text-zinc-600 dark:text-zinc-400 font-medium font-['Raleway'] text-sm ml-2 overflow-hidden text-ellipsis">
+          <p className="dark:text-zinc-400 text-zinc-600 font-medium font-['Raleway'] text-sm ml-2 overflow-hidden text-ellipsis">
             {value}
           </p>
         </>

@@ -19,7 +19,7 @@ export default function ClassCard({ title, button, status, link }) {
   }, []);
 
   return (
-    <div className="dark:bg-zinc-900 bg-white rounded-xl p-2 border border-transparent dark:border-zinc-700 dark:shadow-none shadow-md shadow-gray-200/50">
+    <div className="dark:bg-zinc-950 bg-white rounded-xl p-2 border border-transparent dark:border-zinc-800 dark:shadow-none shadow-md shadow-gray-200/50">
       <div
         className={`${
           status ? "flex-col" : null
@@ -58,7 +58,7 @@ export default function ClassCard({ title, button, status, link }) {
           {status &&
             (status === "Complété" ? (
               <>
-                <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-700 border-gray-300/50 pt-2 w-full text-center">
+                <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
                   Vous avez déjà terminé ce quiz
                 </p>
                 <div className="dark:bg-teal-950 bg-teal-50 dark:border-teal-900 border-teal-100 text-teal-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
@@ -67,7 +67,7 @@ export default function ClassCard({ title, button, status, link }) {
               </>
             ) : status === "En cours" ? (
               <>
-                <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-700 border-gray-300/50 pt-2 w-full text-center">
+                <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
                   Vous n'avez pas encore terminé le quizz
                 </p>
                 <div className="dark:bg-red-950 bg-red-50 dark:border-red-900 border-red-100 text-red-500 w-fit border rounded-full px-4 py-1 text-sm font-['Raleway']">
