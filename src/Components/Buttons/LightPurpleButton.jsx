@@ -22,7 +22,7 @@ export default function LightPurpleButton({
             {value}
           </p>
           <FontAwesomeIcon
-            className="h-4 w-4 p-2.5 dark:bg-zinc-900 bg-purple-100 rounded-xl dark:texp-purple-700 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-zinc-600 transition-all ease-in-out"
+            className="h-4 w-4 p-2.5 dark:bg-zinc-900 bg-purple-100 rounded-xl dark:text-purple-700 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-zinc-600 transition-all ease-in-out"
             icon={icon}
           />
         </>
