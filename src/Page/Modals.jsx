@@ -22,6 +22,11 @@ export default function Modals() {
         isActive={modals["logoutAlert"]}
         value="Déconnecté avec succès"
       />
+      <AlertModal
+        isError={modals["commentError"]}
+        isActive={modals["commentAlert"]}
+        value="Commentaire ajouté"
+      />
       <DialogModal
         isOpen={modals["logoutDialog"]}
         onClose={() => toggleModal("logoutDialog")}

@@ -1,16 +1,16 @@
-import { WhiteCard, FeedCard, CommentCard } from "../Cards";
+import { WhiteCard, CommentCard } from "../Cards";
 import { FourthTitle, SecondTitle } from "../Titles";
 import { GrayButton, HeavyPurpleButton, RoundedGrayButton } from "../Buttons";
 import {
   faBookmark,
   faComment,
-  faHeart,
   faPaperPlane,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
-import AccountImage from "../AccountImage";
-import { SearchInput } from "../Inputs";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AccountImage } from "../";
+import { SubmitInput } from "../Inputs";
+import { ModalContext } from "../../Contexts";
+import { useContext, useState } from "react";
 
 export default function NewsCard({
   title,
@@ -23,6 +23,21 @@ export default function NewsCard({
   openComment,
   comments,
 }) {
+  const { setModalState } = useContext(ModalContext);
+  const [comment, setComment] = useState("");
+
+  const handleCommentSubmit = () => {
+    setModalState("commentAlert", true);
+    resetComment();
+    setTimeout(() => {
+      setModalState("commentAlert", false);
+    }, 4000);
+  };
+
+  const resetComment = () => {
+    setComment("");
+  };
+
   return (
     <WhiteCard>
       <div className="flex flex-col p-2 gap-4">
@@ -63,11 +78,16 @@ export default function NewsCard({
           <div className="border-t dark:border-zinc-800 border-gray-300/50 my-2" />
           <div className="flex flex-col p-2 gap-4">
             <div className="flex gap-2">
-              <SearchInput
+              <SubmitInput
                 placeholder="Rédiger un commentaire"
                 icon={faComment}
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
               />
-              <HeavyPurpleButton icon={faPaperPlane} />
+              <HeavyPurpleButton
+                onClick={handleCommentSubmit}
+                icon={faPaperPlane}
+              />
             </div>
             <div className="flex flex-col gap-2">
               <div className="my-2">
