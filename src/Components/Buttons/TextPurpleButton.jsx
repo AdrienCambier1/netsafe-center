@@ -4,7 +4,7 @@ export default function TextPurpleButton({ value, onClick, link }) {
   return (
     <Link
       onClick={onClick}
-      link={link}
+      to={link}
       className="font-['Raleway'] text-sm text-purple-500 font-semibold hover:opacity-75 cursor-pointer"
     >
       {value}
