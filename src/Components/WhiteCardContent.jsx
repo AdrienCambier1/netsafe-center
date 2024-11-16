@@ -1,13 +1,9 @@
 import { FourthTitle } from "./Titles";
 import { Link } from "react-router-dom";
 import { DefaultText } from "./Texts";
+import { TextPurpleButton } from "./Buttons";
 
-export default function WhiteCardContent({
-  description,
-  value,
-  button,
-  children,
-}) {
+export default function WhiteCardContent({ description, value, button }) {
   return (
     <div className="flex justify-between rounded-xl py-2 items-center gap-2">
       <div className={`${button ? "w-1/2" : "w-full"} flex flex-col gap-1`}>
@@ -17,9 +13,7 @@ export default function WhiteCardContent({
 
       {button && (
         <div className="w-1/2 text-right">
-          <Link className="font-['Raleway'] text-sm text-purple-500 font-semibold hover:opacity-75 cursor-pointer">
-            {button}
-          </Link>
+          <TextPurpleButton value={button} />
         </div>
       )}
     </div>

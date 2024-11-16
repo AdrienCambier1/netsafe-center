@@ -50,12 +50,13 @@ export default function Header() {
         <HeaderButton value="Cours" link="/classes_list" />
       </div>
       <div className="flex gap-2 lg:gap-4 h-full items-center">
-        {theme === "dark" ? (
-          <GrayButton icon={faSun} onClick={() => setTheme("light")} />
-        ) : (
-          <GrayButton icon={faMoon} onClick={() => setTheme("dark")} />
-        )}
-
+        <div className="hidden lg:block">
+          {theme === "dark" ? (
+            <GrayButton icon={faSun} onClick={() => setTheme("light")} />
+          ) : (
+            <GrayButton icon={faMoon} onClick={() => setTheme("dark")} />
+          )}
+        </div>
         <GrayButton
           icon={faComment}
           background={true}
