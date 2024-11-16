@@ -1,7 +1,7 @@
 import AccountImage from "../AccountImage";
 import { GrayButton } from "../../Components/Buttons";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-import { DefaultText, DarkText } from "../Titles";
+import { DefaultText, SmallerDarkText } from "../Texts";
 
 export default function CommentCard({ user, comment, date, like }) {
   return (
@@ -20,7 +20,7 @@ export default function CommentCard({ user, comment, date, like }) {
           <DefaultText value={comment} />
         </div>
         <div className="flex gap-2 items-center justify-between">
-          <DarkText value={`${date} | J'aime`} />
+          <SmallerDarkText value={`${date} | J'aime`} />
 
           <div className="flex items-center">
             <GrayButton icon={faThumbsUp} />

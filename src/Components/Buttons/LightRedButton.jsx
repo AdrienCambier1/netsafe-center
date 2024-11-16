@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { DefaultText } from "../Titles";
+import { DefaultText } from "../Texts";
 
 export default function LightRedButton({ link, onClick, icon, value }) {
   return (

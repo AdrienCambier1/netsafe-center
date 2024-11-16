@@ -5,7 +5,7 @@ import {
   GrayButton,
 } from "../../Components/Buttons";
 import { TextInput } from "../../Components/Inputs";
-import { SecondTitle, DefaultText } from "../../Components/Titles";
+import { SecondTitle } from "../../Components/Titles";
 import { HalfWhiteCard } from "../../Components/Cards";
 import { OrSplitter } from "../../Components";
 import { RawBackground } from "../../Components/Backgrounds";
@@ -13,14 +13,14 @@ import LoginBackground from "../../Images/background_login.png";
 import { Link } from "react-router-dom";
 import { ModalContext } from "../../Contexts";
 import { useContext, useEffect } from "react";
+import { DefaultText } from "../../Components/Texts";
 
 export default function SignUp() {
-  const { modals, toggleModal, setModalState, resetModals } =
-    useContext(ModalContext);
+  const { resetModals } = useContext(ModalContext);
 
   useEffect(() => {
     resetModals();
-  }, []);
+  }, [resetModals]);
 
   return (
     <RawBackground>

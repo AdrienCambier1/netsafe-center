@@ -3,6 +3,7 @@ import { ThirdTitle } from "../Titles";
 import { SearchInput } from "../Inputs";
 import { HeavyPurpleButton } from "../Buttons";
 import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { DarkText } from "../Texts";
 
 export default function PostHeaderCard({ title, description, onClick }) {
   return (
@@ -15,9 +16,7 @@ export default function PostHeaderCard({ title, description, onClick }) {
         )}
         <div className="flex gap-4 justify-between items-center">
           {description ? (
-            <p className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] text-sm">
-              {description}
-            </p>
+            <DarkText value={description} />
           ) : (
             <SearchInput placeholder="Rechercher un post" icon={faSearch} />
           )}

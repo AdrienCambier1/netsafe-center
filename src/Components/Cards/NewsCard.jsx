@@ -1,5 +1,6 @@
 import { WhiteCard, CommentCard } from "../Cards";
-import { FourthTitle, SecondTitle, DefaultText, DarkText } from "../Titles";
+import { FourthTitle, SecondTitle } from "../Titles";
+import { DefaultText, SmallerDarkText } from "../Texts";
 import { GrayButton, HeavyPurpleButton, RoundedGrayButton } from "../Buttons";
 import {
   faBookmark,
@@ -47,7 +48,7 @@ export default function NewsCard({
           <AccountImage image={image} />
           <div className="flex gap-2 items-center ml-2">
             <DefaultText value={user} />
-            <DarkText value={date} />
+            <SmallerDarkText value={date} />
           </div>
         </div>
         <div className="font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600">

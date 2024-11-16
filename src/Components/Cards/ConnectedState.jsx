@@ -1,7 +1,7 @@
 import AccountImage from "../AccountImage";
 import { HeavyPurpleButton } from "../Buttons";
 import { WhiteCard } from "../Cards";
-import { DefaultText } from "../Titles";
+import { DefaultText, DarkText } from "../Texts";
 import { Status } from "../Tags";
 
 export default function ConnectedState({ value, name, link }) {
@@ -18,11 +18,13 @@ export default function ConnectedState({ value, name, link }) {
           ) : (
             <Status isOk={false} value="Déconnecté" />
           )}
-          <p className="text-center dark:text-zinc-600 text-zinc-400 text-sm font-['Raleway']">
-            {value
-              ? `Bonjour ${name}, ravie de vous revoir`
-              : "Veuillez vous connecter afin d'effectuer les cours"}
-          </p>
+          <div className="text-center">
+            {value ? (
+              <DarkText value={`Bonjour ${name}, ravie de vous revoir`} />
+            ) : (
+              <DarkText value="Veuillez vous connecter afin d'effectuer les cours" />
+            )}
+          </div>
         </div>
         <HeavyPurpleButton
           value={value ? "Mon profil" : "Se connecter"}

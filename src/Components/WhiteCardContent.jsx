@@ -1,6 +1,6 @@
 import { FourthTitle } from "./Titles";
 import { Link } from "react-router-dom";
-import { DefaultText } from "./Titles";
+import { DefaultText } from "./Texts";
 
 export default function WhiteCardContent({
   description,

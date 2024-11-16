@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
-import { DefaultText } from "../Titles";
+import { DefaultText, ColoredText } from "../Texts";
 
 export default function ToolsCard({ brand, title }) {
   return (
@@ -12,9 +12,7 @@ export default function ToolsCard({ brand, title }) {
         />
       </div>
       <div className="flex flex-col gap-2">
-        <p className="text-purple-500 font-['Raleway'] text-sm font-bold">
-          {brand}
-        </p>
+        <ColoredText value={brand} color="purple-500" />
         <DefaultText value={title} />
       </div>
     </div>

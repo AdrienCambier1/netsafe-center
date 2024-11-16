@@ -1,5 +1,5 @@
 import GoogleLogo from "../../Images/google_logo.svg";
-import { DefaultText } from "../Titles";
+import { DefaultText } from "../Texts";
 
 export default function GoogleAuthentication() {
   return (

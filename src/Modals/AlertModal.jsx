@@ -5,7 +5,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactDOM from "react-dom";
 import { useState, useEffect, useRef } from "react";
-import { DefaultText } from "../Components/Titles";
+import { DefaultText } from "../Components/Texts";
 
 export default function AlertModal({ value, isActive, isError }) {
   const [show, setShow] = useState(isActive);
@@ -14,8 +14,13 @@ export default function AlertModal({ value, isActive, isError }) {
   useEffect(() => {
     if (isActive) {
       setShow(true);
-      timer = setTimeout(() => setShow(false), 3500);
-      return () => clearTimeout(timer);
+      timer.current = setTimeout(() => setShow(false), 3500);
+
+      return () => {
+        if (timer.current) {
+          clearTimeout(timer.current);
+        }
+      };
     }
   }, [isActive]);
 

@@ -1,12 +1,19 @@
-import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faMoon,
+  faSun,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { MenuModal } from "../Modals";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { GrayButton, HeaderButton } from "../Components/Buttons";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../Contexts";
 
 export default function Header() {
   const [OpenMenu, setOpenMenu] = useState(false);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleOpenMenu = () => {
     setOpenMenu(!OpenMenu);
@@ -43,6 +50,12 @@ export default function Header() {
         <HeaderButton value="Cours" link="/classes_list" />
       </div>
       <div className="flex gap-2 lg:gap-4 h-full items-center">
+        {theme === "dark" ? (
+          <GrayButton icon={faSun} onClick={() => setTheme("light")} />
+        ) : (
+          <GrayButton icon={faMoon} onClick={() => setTheme("dark")} />
+        )}
+
         <GrayButton
           icon={faComment}
           background={true}

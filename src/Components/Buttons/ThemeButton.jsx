@@ -1,4 +1,4 @@
-import { DefaultText } from "../Titles";
+import { DefaultText } from "../Texts";
 
 export default function ThemeButton({ img, value, selected, onClick }) {
   return (
@@ -6,6 +6,7 @@ export default function ThemeButton({ img, value, selected, onClick }) {
       <img
         onClick={onClick}
         src={img}
+        alt={img}
         className={`${
           selected
             ? "outline-purple-500"

@@ -1,12 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AccountImage from "../AccountImage";
 import {
   faCaretRight,
   faCheck,
-  faCircle,
   faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
-import { DefaultText } from "../Titles";
+import { DefaultText } from "../Texts";
 
 export default function Comment({ title, description, content, type }) {
   return (

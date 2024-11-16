@@ -1,9 +1,10 @@
 import ReactDOM from "react-dom";
 import { ModalBackground } from "../Components/Backgrounds";
 import { HeavyPurpleButton, GrayButton } from "../Components/Buttons";
-import { SecondTitle, DefaultText } from "../Components/Titles";
+import { SecondTitle } from "../Components/Titles";
 import { useContext } from "react";
 import { ModalContext } from "../Contexts";
+import { DefaultText } from "../Components/Texts";
 
 export default function DialogModal({
   isOpen,
@@ -14,7 +15,7 @@ export default function DialogModal({
   action,
   alertId,
 }) {
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const { setModalState } = useContext(ModalContext);
 
   const handleSubmission = (id) => {
     setModalState(id, true);

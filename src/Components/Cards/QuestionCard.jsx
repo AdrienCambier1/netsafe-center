@@ -1,5 +1,6 @@
 import { WhiteCard } from "../Cards";
-import { SecondTitle, FourthTitle, DefaultText, DarkText } from "../Titles";
+import { SecondTitle, FourthTitle } from "../Titles";
+import { DefaultText, SmallerDarkText } from "../Texts";
 import { HeavyPurpleButton, QuizButton } from "../Buttons";
 import {
   faArrowLeft,
@@ -101,7 +102,7 @@ export default function QuestionCard({
         </div>
         {showResults ? (
           <div className="border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
-            <DarkText value={explanation} />
+            <SmallerDarkText value={explanation} />
           </div>
         ) : (
           <HeavyPurpleButton

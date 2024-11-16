@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
-import { DefaultText, DarkText } from "../Titles";
+import { DefaultText, SmallerDarkText, ColoredText } from "../Texts";
 import { Status } from "../Tags";
 
 export default function ClassCard({ title, button, status, link }) {
@@ -35,9 +35,7 @@ export default function ClassCard({ title, button, status, link }) {
             />
           </div>
           <div className="flex flex-col gap-2 justify-center">
-            <p className="text-indigo-500 font-['Raleway'] text-sm font-bold">
-              Leçon en ligne
-            </p>
+            <ColoredText value="Leçon en ligne" color="indigo-500" />
             <DefaultText value={title} />
           </div>
         </div>
@@ -59,14 +57,14 @@ export default function ClassCard({ title, button, status, link }) {
             (status === "Complété" ? (
               <>
                 <div className=" border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
-                  <DarkText value="Vous avez déjà terminé ce cours" />
+                  <SmallerDarkText value="Vous avez déjà terminé ce cours" />
                 </div>
                 <Status isOk={true} value={status} />
               </>
             ) : status === "En cours" ? (
               <>
                 <div className=" border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
-                  <DarkText value="Vous n'avez pas encore terminé ce cours" />
+                  <SmallerDarkText value="Vous n'avez pas encore terminé ce cours" />
                 </div>
                 <Status isOk={false} value={status} />
               </>

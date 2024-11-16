@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
-import { DefaultText } from "../Titles";
+import { DefaultText, ColoredText } from "../Texts";
 
 export default function KnowledgeCard({ brand, title }) {
   return (
@@ -12,9 +12,7 @@ export default function KnowledgeCard({ brand, title }) {
         />
       </div>
       <div className="flex flex-col gap-2">
-        <p className="text-teal-500 font-['Raleway'] text-sm font-bold">
-          {brand}
-        </p>
+        <ColoredText value={brand} color="teal-500" />
         <DefaultText value={title} />
       </div>
     </div>
