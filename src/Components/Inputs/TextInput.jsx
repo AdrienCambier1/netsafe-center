@@ -8,7 +8,7 @@ export default function TextInput({
   icon,
 }) {
   return (
-    <div className="flex gap-1 border dark:bg-zinc-900 bg-zinc-50 rounded-xl dark:border-transparent border-zinc-100 w-full transition-all ease-out overflow-hidden">
+    <div className="flex gap-1 border dark:bg-zinc-900 bg-zinc-50 rounded-xl dark:border-transparent border-zinc-100 w-full overflow-hidden">
       <GrayButton icon={icon} />
       <input
         onChange={onChange}

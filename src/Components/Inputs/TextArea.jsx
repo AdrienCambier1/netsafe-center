@@ -1,6 +1,6 @@
 export default function TextArea({ onChange, value, placeholder }) {
   return (
-    <div className="p-2 flex gap-1 dark:bg-zinc-900 border dark:border-transparent bg-zinc-50 rounded-xl border-zinc-100 w-full transition-all ease-out overflow-hidden">
+    <div className="p-2 flex gap-1 dark:bg-zinc-900 border dark:border-transparent bg-zinc-50 rounded-xl border-zinc-100 w-full overflow-hidden">
       <textarea
         onChange={onChange}
         value={value}

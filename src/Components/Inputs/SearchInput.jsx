@@ -10,7 +10,7 @@ export default function SearchInput({ placeholder, icon }) {
   };
 
   return (
-    <div className="flex gap-1 dark:bg-zinc-900 bg-zinc-50 dark:border-transparent border border-zinc-100 rounded-xl w-full transition-all ease-out">
+    <div className="flex gap-1 dark:bg-zinc-900 bg-zinc-50 dark:border-transparent border border-zinc-100 rounded-xl w-full">
       <GrayButton icon={icon} />
       <input
         placeholder={placeholder}
