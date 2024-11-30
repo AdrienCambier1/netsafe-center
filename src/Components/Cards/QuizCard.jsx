@@ -66,14 +66,14 @@ export default function QuizCard({
           {status &&
             (status === "Complété" ? (
               <>
-                <div className="border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
+                <div className="border-t dark:border-zinc-800 border-zinc-200 pt-2 w-full text-center">
                   <SmallerDarkText value="Vous avez déjà terminé ce quizz" />
                 </div>
                 <Status isOk={true} value={status} />
               </>
             ) : status === "En cours" ? (
               <>
-                <div className="border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
+                <div className="border-t dark:border-zinc-800 border-zinc-200 pt-2 w-full text-center">
                   <SmallerDarkText value="Vous n'avez pas encore terminé le quizz" />
                 </div>
                 <Status isOk={false} value={status} />

@@ -101,7 +101,7 @@ export default function QuestionCard({
           </div>
         </div>
         {showResults ? (
-          <div className="border-t dark:border-zinc-800 border-gray-300/50 pt-2 w-full text-center">
+          <div className="border-t dark:border-zinc-800 border-zinc-200 pt-2 w-full text-center">
             <SmallerDarkText value={explanation} />
           </div>
         ) : (

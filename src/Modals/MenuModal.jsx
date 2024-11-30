@@ -33,7 +33,7 @@ export default function MenuModal({ isOpen, onClick }) {
             )}
           </div>
         </div>
-        <div className="my-8 py-4 border-t dark:border-zinc-800 border-gray-300/50 flex flex-col gap-2">
+        <div className="my-8 py-4 border-t dark:border-zinc-800 border-200 flex flex-col gap-2">
           <HeaderButton
             value="Espace de connaissance"
             link="/knowledge_area"

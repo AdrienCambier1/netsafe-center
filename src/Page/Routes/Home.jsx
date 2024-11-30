@@ -76,7 +76,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l border-t sm:border-t-0 dark:border-zinc-800 border-gray-300/50">
+        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l border-t sm:border-t-0 dark:border-zinc-800 border-zinc-200">
           <PostHeaderCard
             description="Ajoutez un post"
             onClick={() => toggleModal("CreatePostModal")}
@@ -98,7 +98,7 @@ export default function Home() {
               />
             ))}
         </div>
-        <div className="block sm:hidden lg:block col-span-1 p-8 lg:border-l border-t sm:border-t-0 dark:border-zinc-800 border-gray-300/50">
+        <div className="block sm:hidden lg:block col-span-1 p-8 lg:border-l border-t sm:border-t-0 dark:border-zinc-800 border-zinc-200">
           <div className="flex flex-col gap-8 sticky top-24">
             {asideElement()}
           </div>
