@@ -1,5 +1,5 @@
 import {
-  faBullseye,
+  faCheck,
   faLightbulb,
   faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +21,7 @@ export default function HighlightCard({ data, type }) {
           <IconWithBackground
             icon={faLightbulb}
             customBackground="bg-teal-400 dark:bg-teal-600"
-            customColor="text-teal-100 dark:text-teal-900"
+            customColor="text-teal-50 dark:text-teal-950"
           />
           <p className="text-md font-['Raleway'] font-semibold dark:text-zinc-200 text-zinc-800">
             Conseils
@@ -30,9 +30,9 @@ export default function HighlightCard({ data, type }) {
       ) : type === "objectives" ? (
         <div className="flex gap-2 items-center">
           <IconWithBackground
-            icon={faBullseye}
+            icon={faCheck}
             customBackground="bg-yellow-400 dark:bg-yellow-600"
-            customColor="text-yellow-100 dark:text-yellow-900"
+            customColor="text-yellow-50 dark:text-yellow-950"
           />
           <p className="text-md font-['Raleway'] font-semibold dark:text-zinc-200 text-zinc-800">
             Objectifs
