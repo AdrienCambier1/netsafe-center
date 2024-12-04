@@ -8,7 +8,7 @@ export default function ConnectedState({ value, name, link }) {
   return (
     <WhiteCard>
       <div className="flex flex-col gap-4 p-2">
-        <div className="flex items-center gap-2 border-b dark:border-zinc-800 border-zinc-200 pb-2">
+        <div className="flex items-center gap-2 border-b dark:border-neutral-800 border-neutral-200 pb-2">
           <AccountImage />
           <DefaultText value="Guess" />
         </div>

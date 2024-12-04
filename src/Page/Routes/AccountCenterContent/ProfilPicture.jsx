@@ -7,11 +7,11 @@ export default function ProfilPicture() {
   return (
     <WhiteCard>
       <div className="p-2 flex justify-between items-center">
-        <div className="flex gap-2 items-center">
+        <div className="w-1/2 pr-2 flex gap-2 items-center">
           <AccountImage />
           <DefaultText value="xrayzun_" />
         </div>
-        <div>
+        <div className="w-1/2 pl-2 text-right">
           <TextPurpleButton value="Modifier la photo" />
         </div>
       </div>

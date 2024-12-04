@@ -9,3 +9,4 @@ export { default as WhiteButton } from "./WhiteButton";
 export { default as QuizButton } from "./QuizButton";
 export { default as ThemeButton } from "./ThemeButton";
 export { default as TextPurpleButton } from "./TextPurpleButton";
+export { default as MultipleButton } from "./MultipleButton";

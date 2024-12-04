@@ -10,7 +10,7 @@ export default function WhiteButton({ value, icon, onClick }) {
           <DefaultText value={value} custom="group-hover:text-purple-500" />
           <FontAwesomeIcon
             icon={icon}
-            className="group-hover:text-purple-500 text-zinc-600 dark:text-zinc-400"
+            className="group-hover:text-purple-500 text-neutral-600 dark:text-neutral-400"
           />
         </div>
       </WhiteCard>

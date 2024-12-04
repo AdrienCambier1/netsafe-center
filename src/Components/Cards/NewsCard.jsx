@@ -1,18 +1,20 @@
-import { WhiteCard, CommentCard } from "../Cards";
-import { FourthTitle, SecondTitle } from "../Titles";
-import { DefaultText, SmallerDarkText } from "../Texts";
-import { GrayButton, HeavyPurpleButton, RoundedGrayButton } from "../Buttons";
+import { useRef, useEffect, useContext, useState } from "react";
 import {
   faBookmark,
   faComment,
-  faPencilAlt,
+  faEllipsisH,
   faThumbsUp,
+  faEdit,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { WhiteCard, CommentCard } from "../Cards";
+import { FourthTitle, SecondTitle } from "../Titles";
+import { DefaultText, SmallerDarkText } from "../Texts";
+import { GrayButton, MultipleButton, RoundedGrayButton } from "../Buttons";
 import { AccountImage } from "../";
 import { SubmitInput } from "../Inputs";
 import { ModalContext } from "../../Contexts";
-import { useContext, useState } from "react";
-import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 
 export default function NewsCard({
   title,
@@ -21,12 +23,28 @@ export default function NewsCard({
   user,
   date,
   like,
-  isCommentOpen,
-  openComment,
   comments,
+  canModify,
 }) {
   const { setModalState } = useContext(ModalContext);
   const [comment, setComment] = useState("");
+  const [activeButtons, setActiveButtons] = useState(false);
+  const [isCommentOpen, setIsCommentOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setActiveButtons(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
 
   const handleCommentSubmit = () => {
     setModalState("commentAlert", true);
@@ -40,18 +58,38 @@ export default function NewsCard({
     setComment("");
   };
 
+  const buttons = [
+    { icon: faEdit, value: "Modifier" },
+    { icon: faTrash, value: "Supprimer", isDangerous: true },
+  ];
+
   return (
     <WhiteCard>
       <div className="flex flex-col p-2 gap-4">
-        <SecondTitle value={title} />
-        <div className="flex items-center">
-          <AccountImage image={image} />
-          <div className="flex gap-2 items-center ml-2">
-            <DefaultText value={user} />
-            <SmallerDarkText value={date} />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <AccountImage image={image} />
+            <div className="flex gap-2 items-center ml-2">
+              <DefaultText value={user} />
+              <SmallerDarkText value={date} />
+            </div>
           </div>
+          {canModify && (
+            <div className="relative" ref={menuRef}>
+              <GrayButton
+                icon={faEllipsisH}
+                onClick={() => setActiveButtons(!activeButtons)}
+              />
+              {activeButtons && (
+                <div className="absolute right-0">
+                  <MultipleButton buttons={buttons} />
+                </div>
+              )}
+            </div>
+          )}
         </div>
-        <div className="font-medium font-['Raleway'] text-sm dark:text-zinc-400 text-zinc-600">
+        <SecondTitle value={title} />
+        <div className="font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600">
           {content}
         </div>
         <div className="flex justify-between items-start lg:items-center">
@@ -60,7 +98,7 @@ export default function NewsCard({
             <RoundedGrayButton
               icon={faComment}
               value="Commentaires"
-              onClick={openComment}
+              onClick={() => setIsCommentOpen(!isCommentOpen)}
             />
           </div>
           <div className="flex items-center justify-end w-full">
@@ -71,7 +109,7 @@ export default function NewsCard({
       </div>
       {isCommentOpen && (
         <>
-          <div className="border-t dark:border-zinc-800 border-zinc-200 my-2" />
+          <div className="border-t dark:border-neutral-800 border-neutral-200 my-2" />
           <div className="flex flex-col p-2 gap-4">
             <div className="flex gap-2">
               <SubmitInput

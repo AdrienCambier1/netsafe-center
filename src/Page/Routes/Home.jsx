@@ -19,14 +19,6 @@ import { ModalContext } from "../../Contexts";
 
 export default function Home() {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const [openComments, setOpenComments] = useState(false);
-
-  const toggleOpenComments = (id) => {
-    setOpenComments((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
 
   const asideElement = () => {
     return (
@@ -70,13 +62,13 @@ export default function Home() {
               link="quiz_list"
             />
             <div className="hidden sm:flex lg:hidden flex-col gap-8">
-              <div className="border-t dark:border-zinc-800 gray-300/50" />
+              <div className="border-t dark:border-neutral-800 gray-300/50" />
               {asideElement()}
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l border-t sm:border-t-0 dark:border-zinc-800 border-zinc-200">
+        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l border-t sm:border-t-0 dark:border-neutral-800 border-neutral-200">
           <PostHeaderCard
             description="Ajoutez un post"
             onClick={() => toggleModal("CreatePostModal")}
@@ -92,13 +84,11 @@ export default function Home() {
                 user={post.user}
                 date={post.date}
                 like={post.like}
-                isCommentOpen={openComments[post.id]}
-                openComment={() => toggleOpenComments(post.id)}
                 comments={post.comments}
               />
             ))}
         </div>
-        <div className="block sm:hidden lg:block col-span-1 p-8 lg:border-l border-t sm:border-t-0 dark:border-zinc-800 border-zinc-200">
+        <div className="block sm:hidden lg:block col-span-1 p-8 lg:border-l border-t sm:border-t-0 dark:border-neutral-800 border-neutral-200">
           <div className="flex flex-col gap-8 sticky top-24">
             {asideElement()}
           </div>

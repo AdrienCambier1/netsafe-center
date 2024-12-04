@@ -11,7 +11,7 @@ export default function ThemeButton({ img, value, selected, onClick }) {
           selected
             ? "outline-purple-500"
             : "hover:outline-purple-500 outline-transparent"
-        } outline outline-2 outline-offset-2 rounded-xl border dark:border-zinc-800 border-zinc-200`}
+        } outline outline-2 outline-offset-2 rounded-xl border dark:border-neutral-800 border-neutral-200`}
       />
       <DefaultText value={value} />
     </div>

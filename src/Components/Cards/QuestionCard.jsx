@@ -47,7 +47,7 @@ export default function QuestionCard({
     if (isSelected) {
       return isCorrect ? "text-teal-500" : "text-red-500";
     } else {
-      return "dark:text-zinc-700 text-zinc-300";
+      return "dark:text-neutral-700 text-neutral-300";
     }
   };
 
@@ -101,7 +101,7 @@ export default function QuestionCard({
           </div>
         </div>
         {showResults ? (
-          <div className="border-t dark:border-zinc-800 border-zinc-200 pt-2 w-full text-center">
+          <div className="border-t dark:border-neutral-800 border-neutral-200 pt-2 w-full text-center">
             <SmallerDarkText value={explanation} />
           </div>
         ) : (

@@ -7,7 +7,7 @@ export default function QuizButton({ onClick, isChecked }) {
   return (
     <Link
       onClick={onClick}
-      className="dark:text-zinc-700 text-zinc-300 dark:hover:text-zinc-400 hover:text-zinc-600 flex gap-2 items-center justify-center rounded-xl cursor-pointer w-fit"
+      className="dark:text-neutral-700 text-neutral-300 dark:hover:text-neutral-400 hover:text-neutral-600 flex gap-2 items-center justify-center rounded-xl cursor-pointer w-fit"
     >
       <FontAwesomeIcon
         className="p-2.5 h-4 w-4"

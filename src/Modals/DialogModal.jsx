@@ -5,6 +5,7 @@ import { SecondTitle } from "../Components/Titles";
 import { useContext } from "react";
 import { ModalContext } from "../Contexts";
 import { DefaultText } from "../Components/Texts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function DialogModal({
   isOpen,
@@ -14,6 +15,9 @@ export default function DialogModal({
   description,
   action,
   alertId,
+  icon,
+  customBackground,
+  customColor,
 }) {
   const { setModalState } = useContext(ModalContext);
 
@@ -31,9 +35,19 @@ export default function DialogModal({
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={onClose} />
 
-        <div className="w-[30rem] p-8 rounded-xl dark:bg-neutral-950 border border-transparent dark:border-zinc-800 bg-white z-50 flex flex-col gap-6 items-center max-h-full overflow-y-scroll">
-          <SecondTitle value={title} />
-          <DefaultText custom="text-center" value={description} />
+        <div className="w-[30rem] p-8 rounded-xl dark:bg-neutral-950 border border-transparent dark:border-neutral-800 bg-white z-50 flex flex-col gap-8 max-h-full items-center overflow-y-scroll">
+          <div
+            className={`${customBackground} rounded-full flex items-center justify-center p-4 w-fit`}
+          >
+            <FontAwesomeIcon
+              className={`p-4 h-4 w-4 ${customColor}`}
+              icon={icon}
+            />
+          </div>
+          <div className="flex flex-col gap-2 items-center">
+            <SecondTitle value={title} />
+            <DefaultText custom="text-center" value={description} />
+          </div>
           <div className="flex flex-col gap-4 w-full">
             <HeavyPurpleButton
               value={action}

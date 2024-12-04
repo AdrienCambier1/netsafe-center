@@ -16,7 +16,7 @@ export default function Comment({ title, description, content, type }) {
               ? "bg-yellow-500 shadow-md shadow-yellow-500/50"
               : type === "isCompleted"
               ? "bg-teal-500 shadow-md shadow-teal-500/50"
-              : "dark:bg-zinc-700 bg-zinc-300"
+              : "dark:bg-neutral-700 bg-neutral-300"
           }`}
         >
           {type === "isActive" ? (
@@ -38,7 +38,7 @@ export default function Comment({ title, description, content, type }) {
         </div>
         <h4 className="flex flex-col md:gap-2 items-start text-lg font-medium leading-8 text-slate-700 md:flex-row lg:items-center">
           <DefaultText value={title} />
-          <span className="dark:text-zinc-600 text-zinc-400 font-['Raleway'] font-medium text-xs">
+          <span className="dark:text-neutral-600 text-neutral-400 font-['Raleway'] font-medium text-xs">
             {description}
           </span>
         </h4>

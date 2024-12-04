@@ -4,13 +4,11 @@ import { ModalContext } from "../../../Contexts";
 
 export default function SavedPosts() {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const [openComments, setOpenComments] = useState(false);
 
   return (
     <>
       <PostHeaderCard
         title="Posts enregistrés"
-        description="Ajoutez un post"
         onClick={() => toggleModal("CreatePostModal")}
       />
       <NewsCard value="test" title="test" like="10" />

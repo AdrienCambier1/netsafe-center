@@ -21,7 +21,7 @@ export default function HighlightCard({ data, type }) {
             customBackground="bg-teal-400 dark:bg-teal-600"
             customColor="text-teal-50 dark:text-teal-950"
           />
-          <p className="text-md font-['Raleway'] font-semibold dark:text-zinc-200 text-zinc-800">
+          <p className="text-md font-['Raleway'] font-semibold dark:text-neutral-200 text-neutral-800">
             Conseils
           </p>
         </div>
@@ -32,12 +32,12 @@ export default function HighlightCard({ data, type }) {
             customBackground="bg-yellow-400 dark:bg-yellow-600"
             customColor="text-yellow-50 dark:text-yellow-950"
           />
-          <p className="text-md font-['Raleway'] font-semibold dark:text-zinc-200 text-zinc-800">
+          <p className="text-md font-['Raleway'] font-semibold dark:text-neutral-200 text-neutral-800">
             Objectifs
           </p>
         </div>
       )}
-      <p className="text-sm font-['Raleway'] font-medium dark:text-zinc-200 text-zinc-800">
+      <p className="text-sm font-['Raleway'] font-medium dark:text-neutral-200 text-neutral-800">
         {type === "tips"
           ? "Voici quelques conseils pour bien comprendre cette leçon :"
           : type === "objectives"
@@ -48,7 +48,7 @@ export default function HighlightCard({ data, type }) {
         {data.map((tips, index) => (
           <li
             key={index}
-            className="text-sm font-['Raleway'] font-medium dark:text-zinc-200 text-zinc-800 list-disc list-inside"
+            className="text-sm font-['Raleway'] font-medium dark:text-neutral-200 text-neutral-800 list-disc list-inside"
           >
             {tips}
           </li>

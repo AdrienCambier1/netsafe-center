@@ -1,6 +1,7 @@
 import { AlertModal, CreatePostModal, DialogModal } from "../Modals";
 import { ModalContext } from "../Contexts";
 import { useContext } from "react";
+import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 
 export default function Modals() {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
@@ -34,6 +35,9 @@ export default function Modals() {
         title="Déconnexion"
         description="Etes-vous sûr de vouloir vous déconnecter ?"
         action="Se déconnecter"
+        icon={faSignOut}
+        customBackground="dark:bg-red-950 bg-red-50"
+        customColor="text-red-500"
       />
     </>
   );
