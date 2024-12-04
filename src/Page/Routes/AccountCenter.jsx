@@ -57,7 +57,7 @@ export default function AccountCenter() {
             />
             <LightPurpleButton
               icon={faPaintBrush}
-              value="Apparance du site"
+              value="Apparence du site"
               link="/account_center/appearance"
             />
             <LightRedButton

@@ -29,7 +29,7 @@ export default function AlertModal({ value, isActive, isError }) {
       <div
         className={`${
           show ? "opacity-100" : "opacity-0"
-        } transition-all duration-500 fixed ${
+        } transition-opacity duration-500 fixed ${
           isError ? "border-red-500/50" : "border-green-500/50"
         } border dark:bg-neutral-950 bg-white py-4 px-8 bottom-8 right-8 rounded-xl z-20`}
       >
