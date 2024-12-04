@@ -20,7 +20,7 @@ export default function MenuModal({ isOpen, onClick }) {
       <div
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } p-4 top-0 right-0 w-60 max-w-full h-full fixed border-l border-transparent dark:border-zinc-800 dark:bg-zinc-900 bg-white transition-transform ease-in-out block lg:hidden overflow-y-auto`}
+        } p-4 top-0 right-0 w-60 max-w-full h-full fixed border-l border-transparent dark:border-zinc-800 dark:bg-neutral-950 bg-white transition-transform ease-in-out block lg:hidden overflow-y-auto`}
       >
         <div className="flex justify-between items-center">
           <HeavyPurpleButton icon={faClose} onClick={onClick} />

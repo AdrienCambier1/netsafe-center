@@ -11,9 +11,7 @@ export default function HighlightCard({ data, type }) {
       className={`flex flex-col gap-2 rounded-xl p-4 border ${
         type === "tips"
           ? "dark:bg-teal-950 bg-teal-50 dark:border-teal-900 border-teal-100"
-          : type === "objectives"
-          ? "dark:bg-yellow-950 bg-yellow-50 dark:border-yellow-900 border-yellow-100"
-          : "dark:bg-zinc-950 bg-zinc-50 dark:border-zinc-900 border-zinc-100"
+          : "dark:bg-yellow-950 bg-yellow-50 dark:border-yellow-900 border-yellow-100"
       }`}
     >
       {type === "tips" ? (
@@ -27,7 +25,7 @@ export default function HighlightCard({ data, type }) {
             Conseils
           </p>
         </div>
-      ) : type === "objectives" ? (
+      ) : (
         <div className="flex gap-2 items-center">
           <IconWithBackground
             icon={faCheck}
@@ -36,17 +34,6 @@ export default function HighlightCard({ data, type }) {
           />
           <p className="text-md font-['Raleway'] font-semibold dark:text-zinc-200 text-zinc-800">
             Objectifs
-          </p>
-        </div>
-      ) : (
-        <div className="flex gap-2 items-center">
-          <IconWithBackground
-            icon={faQuestionCircle}
-            customBackground="bg-zinc-400 dark:bg-zinc-600"
-            customColor="text-zinc-100 dark:text-zinc-900"
-          />
-          <p className="text-md font-['Raleway'] font-semibold dark:text-zinc-200 text-zinc-800">
-            Undefined
           </p>
         </div>
       )}

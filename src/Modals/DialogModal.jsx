@@ -31,7 +31,7 @@ export default function DialogModal({
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={onClose} />
 
-        <div className="w-[30rem] p-8 rounded-xl dark:bg-zinc-900 border border-transparent dark:border-zinc-800 bg-white z-50 flex flex-col gap-6 items-center max-h-full overflow-y-scroll">
+        <div className="w-[30rem] p-8 rounded-xl dark:bg-neutral-950 border border-transparent dark:border-zinc-800 bg-white z-50 flex flex-col gap-6 items-center max-h-full overflow-y-scroll">
           <SecondTitle value={title} />
           <DefaultText value={description} />
           <div className="flex flex-col gap-4 w-full">

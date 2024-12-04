@@ -20,7 +20,7 @@ export default function ClassCard({ title, button, link }) {
   }, []);
 
   return (
-    <div className="dark:bg-zinc-900 bg-white rounded-xl p-2 border border-transparent dark:border-zinc-800 dark:shadow-none shadow-md shadow-gray-200/50">
+    <div className="dark:bg-neutral-950 bg-white rounded-xl p-2 border border-transparent dark:border-zinc-800 dark:shadow-none shadow-md shadow-gray-200/50">
       <div className="h-full flex md:flex-col items-center justify-between gap-4 p-2">
         <div className="flex md:flex-col w-full gap-4">
           <div className="dark:bg-indigo-950 bg-indigo-50 rounded-full flex items-center justify-center p-4 w-fit">
