@@ -6,7 +6,7 @@ export default function PersonalData() {
   return (
     <WhiteCard>
       <div className="p-2 flex flex-col gap-4">
-        <div className="py-2 border-b dark:border-zinc-700 border-gray-300/50">
+        <div className="py-2 border-b dark:border-zinc-800 border-zinc-200">
           <ThirdTitle value="Informations personnelles" />
         </div>
         <WhiteCardContent description="Identifiant" value="xrayzun_" />

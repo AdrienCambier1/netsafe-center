@@ -1,6 +1,6 @@
 import { FirstTitle } from "../../Components/Titles";
 import { useParams, Navigate, Outlet } from "react-router-dom";
-import { FeedCard, ClassCard } from "../../Components/Cards";
+import { FeedCard, ClassAdvancementCard } from "../../Components/Cards";
 import ClassData from "../../Data/class.json";
 
 export default function Class() {
@@ -18,10 +18,10 @@ export default function Class() {
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div>
           <div className="flex flex-col gap-2 sticky top-24">
-            <ClassCard
+            <ClassAdvancementCard
               key="test"
               title={ClassData.course.title}
-              status="Complété"
+              status={true}
             />
             <ul
               aria-label="User feed"

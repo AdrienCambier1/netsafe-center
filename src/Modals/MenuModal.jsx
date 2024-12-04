@@ -20,7 +20,7 @@ export default function MenuModal({ isOpen, onClick }) {
       <div
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } p-4 top-0 right-0 w-60 max-w-full h-full fixed border-l border-transparent dark:border-zinc-800 dark:bg-zinc-950 bg-white transition-all ease-in-out block lg:hidden overflow-y-auto`}
+        } p-4 top-0 right-0 w-60 max-w-full h-full fixed border-l border-transparent dark:border-zinc-800 dark:bg-zinc-900 bg-white transition-transform ease-in-out block lg:hidden overflow-y-auto`}
       >
         <div className="flex justify-between items-center">
           <HeavyPurpleButton icon={faClose} onClick={onClick} />
@@ -33,7 +33,7 @@ export default function MenuModal({ isOpen, onClick }) {
             )}
           </div>
         </div>
-        <div className="my-8 py-4 border-t dark:border-zinc-800 border-200 flex flex-col gap-2">
+        <div className="my-8 py-4 border-t dark:border-zinc-800 border-zinc-200 flex flex-col gap-2">
           <HeaderButton
             value="Espace de connaissance"
             link="/knowledge_area"

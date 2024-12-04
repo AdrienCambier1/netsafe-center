@@ -2,17 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
-import { DefaultText, SmallerDarkText, ColoredText } from "../Texts";
-import { Status } from "../Tags";
+import { DefaultText, ColoredText } from "../Texts";
 
-export default function QuizCard({
-  title,
-  level,
-  difficulty,
-  link,
-  button,
-  status,
-}) {
+export default function QuizCard({ title, level, difficulty, link, button }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
@@ -28,12 +20,8 @@ export default function QuizCard({
   }, []);
 
   return (
-    <div className="dark:bg-zinc-950 border dark:border-zinc-800 border-transparent bg-white rounded-xl p-2 dark:shadow-none shadow-md shadow-gray-200/50">
-      <div
-        className={`${
-          status ? "flex-col" : null
-        } h-full flex md:flex-col items-center justify-between gap-4 p-2`}
-      >
+    <div className="dark:bg-zinc-900 border dark:border-zinc-800 border-transparent bg-white rounded-xl p-2 dark:shadow-none shadow-md shadow-gray-200/50">
+      <div className="h-full flex md:flex-col items-center justify-between gap-4 p-2">
         <div className="flex md:flex-col w-full gap-4">
           <div className="dark:bg-yellow-950 bg-yellow-50 rounded-full flex items-center justify-center p-4 w-fit">
             <FontAwesomeIcon
@@ -49,11 +37,7 @@ export default function QuizCard({
             <DefaultText value={title} />
           </div>
         </div>
-        <div
-          className={`${
-            status ? "items-center w-full" : "items-end"
-          } md:w-full flex flex-col gap-4`}
-        >
+        <div className="items-end md:w-full flex flex-col gap-4">
           {isSmallScreen
             ? button && <HeavyPurpleButton icon={faArrowLeft} link={link} />
             : button && (
@@ -63,22 +47,6 @@ export default function QuizCard({
                   link={link}
                 />
               )}
-          {status &&
-            (status === "Complété" ? (
-              <>
-                <div className="border-t dark:border-zinc-800 border-zinc-200 pt-2 w-full text-center">
-                  <SmallerDarkText value="Vous avez déjà terminé ce quizz" />
-                </div>
-                <Status isOk={true} value={status} />
-              </>
-            ) : status === "En cours" ? (
-              <>
-                <div className="border-t dark:border-zinc-800 border-zinc-200 pt-2 w-full text-center">
-                  <SmallerDarkText value="Vous n'avez pas encore terminé le quizz" />
-                </div>
-                <Status isOk={false} value={status} />
-              </>
-            ) : null)}
         </div>
       </div>
     </div>

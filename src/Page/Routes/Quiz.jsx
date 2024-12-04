@@ -1,7 +1,7 @@
 import { FirstTitle } from "../../Components/Titles";
 import { Outlet, useParams, Navigate } from "react-router-dom";
 import QuizData from "../../Data/quiz.json";
-import { FeedCard, QuizCard } from "../../Components/Cards";
+import { FeedCard, QuizAdvancementCard } from "../../Components/Cards";
 import { QuestionContext } from "../../Contexts";
 import { useContext } from "react";
 
@@ -24,12 +24,12 @@ export default function Quiz() {
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div>
           <div className="flex flex-col gap-2 sticky top-24">
-            <QuizCard
+            <QuizAdvancementCard
               key={quiz.id}
               difficulty={quiz.difficulty}
               level={quiz.level}
               title={quiz.name}
-              status="Complété"
+              status={true}
             />
             <ul
               aria-label="User feed"

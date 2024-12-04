@@ -31,7 +31,7 @@ export default function AlertModal({ value, isActive, isError }) {
           show ? "opacity-100" : "opacity-0"
         } transition-all duration-500 fixed ${
           isError ? "border-red-500/50" : "border-green-500/50"
-        } border dark:bg-zinc-950 bg-white py-4 px-8 bottom-8 right-8 rounded-xl z-20`}
+        } border dark:bg-zinc-900 bg-white py-4 px-8 bottom-8 right-8 rounded-xl z-20`}
       >
         <div className="flex gap-4 items-center">
           {isError ? (
