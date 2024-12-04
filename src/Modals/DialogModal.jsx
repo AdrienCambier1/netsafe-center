@@ -33,7 +33,7 @@ export default function DialogModal({
 
         <div className="w-[30rem] p-8 rounded-xl dark:bg-neutral-950 border border-transparent dark:border-zinc-800 bg-white z-50 flex flex-col gap-6 items-center max-h-full overflow-y-scroll">
           <SecondTitle value={title} />
-          <DefaultText value={description} />
+          <DefaultText custom="text-center" value={description} />
           <div className="flex flex-col gap-4 w-full">
             <HeavyPurpleButton
               value={action}
