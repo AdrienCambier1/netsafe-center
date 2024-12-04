@@ -76,13 +76,10 @@ export default function NewsCard({
             <div className="flex gap-2">
               <SubmitInput
                 placeholder="Rédiger un commentaire"
-                icon={faPencilAlt}
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-              />
-              <HeavyPurpleButton
-                onClick={handleCommentSubmit}
                 icon={faPaperPlane}
+                value={comment}
+                onClick={handleCommentSubmit}
+                onChange={(e) => setComment(e.target.value)}
               />
             </div>
             <div className="flex flex-col gap-2">

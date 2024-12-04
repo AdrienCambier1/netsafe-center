@@ -55,13 +55,13 @@ export default function CreatePostModal({ isOpen }) {
               value={content}
             />
           </div>
-          <div className="flex gap-4 w-full">
+          <div className="flex flex-col gap-4 w-full">
+            <HeavyPurpleButton value="Envoyer" onClick={handleCreatePost} />
             <GrayButton
               background={true}
               value="Annuler"
               onClick={handleClose}
             />
-            <HeavyPurpleButton value="Envoyer" onClick={handleCreatePost} />
           </div>
         </div>
       </div>,

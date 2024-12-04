@@ -8,7 +8,7 @@ export default function TextInput({
   icon,
 }) {
   return (
-    <div className="hover:border-zinc-600 focus-within:border-zinc-600 dark:hover:border-zinc-400 dark:focus-within:border-zinc-400 flex gap-1 border-2 rounded-xl dark:border-zinc-800 border-zinc-200 w-full overflow-hidden">
+    <div className="hover:border-zinc-600 focus-within:border-zinc-600 dark:hover:border-zinc-400 dark:focus-within:border-zinc-400 flex gap-1 border-2 rounded-xl dark:border-zinc-800 border-zinc-200 w-full h-10 overflow-hidden">
       <GrayButton icon={icon} />
       <input
         onChange={onChange}
