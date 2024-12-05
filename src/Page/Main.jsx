@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import {
   Home,
   NotFound,
@@ -43,9 +43,7 @@ export default function Main() {
     >
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<SignUp />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/" />} />
         <Route path="account_center" element={<AccountCenter />}>
           <Route path="account_overview" element={<AccountOverview />} />
           <Route path="personal_data" element={<PersonalData />} />

@@ -1,4 +1,10 @@
-import { AlertModal, CreatePostModal, DialogModal } from "../Modals";
+import {
+  AlertModal,
+  CreatePostModal,
+  DialogModal,
+  LoginModal,
+  RegisterModal,
+} from "../Modals";
 import { ModalContext } from "../Contexts";
 import { useContext } from "react";
 import { faSignOut } from "@fortawesome/free-solid-svg-icons";
@@ -38,6 +44,14 @@ export default function Modals() {
         icon={faSignOut}
         customBackground="dark:bg-red-950 bg-red-50"
         customColor="text-red-500"
+      />
+      <LoginModal
+        isOpen={modals["loginModal"]}
+        onClose={() => toggleModal("loginModal")}
+      />
+      <RegisterModal
+        isOpen={modals["registerModal"]}
+        onClose={() => toggleModal("registerModal")}
       />
     </>
   );

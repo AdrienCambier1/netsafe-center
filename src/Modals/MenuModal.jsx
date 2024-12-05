@@ -7,11 +7,12 @@ import {
 import { FourthTitle } from "../Components/Titles";
 import { ModalBackground } from "../Components/Backgrounds";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-import { ThemeContext } from "../Contexts";
+import { ThemeContext, ModalContext } from "../Contexts";
 import { useContext } from "react";
 
 export default function MenuModal({ isOpen, onClick }) {
   const { theme, setTheme } = useContext(ThemeContext);
+  const { modals, toggleModal, setModalState } = useContext(ModalContext);
 
   return (
     <>
@@ -54,8 +55,7 @@ export default function MenuModal({ isOpen, onClick }) {
         <HeavyPurpleButton
           icon={faUser}
           value="Se connecter"
-          link="/login"
-          onClick={onClick}
+          onClick={() => toggleModal("loginModal")}
         />
       </div>
     </>

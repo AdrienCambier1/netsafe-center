@@ -13,3 +13,4 @@ export { default as HighlightCard } from "./HighlightCard";
 export { default as CommentCard } from "./CommentCard";
 export { default as ClassAdvancementCard } from "./ClassAdvancementCard";
 export { default as QuizAdvancementCard } from "./QuizAdvancementCard";
+export { default as ModalCard } from "./ModalCard";

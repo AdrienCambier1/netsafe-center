@@ -9,11 +9,12 @@ import { MenuModal } from "../Modals";
 import { useEffect, useState, useContext } from "react";
 import { GrayButton, HeaderButton } from "../Components/Buttons";
 import { Link } from "react-router-dom";
-import { ThemeContext } from "../Contexts";
+import { ThemeContext, ModalContext } from "../Contexts";
 
 export default function Header() {
   const [OpenMenu, setOpenMenu] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
+  const { modals, toggleModal, setModalState } = useContext(ModalContext);
 
   const toggleOpenMenu = () => {
     setOpenMenu(!OpenMenu);
@@ -62,7 +63,11 @@ export default function Header() {
           background={true}
           link="/forum/recent_posts"
         />
-        <GrayButton icon={faUser} background={true} link="/login" />
+        <GrayButton
+          icon={faUser}
+          background={true}
+          onClick={() => toggleModal("loginModal")}
+        />
         <div className="block lg:hidden">
           <GrayButton onClick={toggleOpenMenu} className="none" icon={faBars} />
         </div>

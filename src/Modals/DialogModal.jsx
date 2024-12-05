@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { ModalContext } from "../Contexts";
 import { DefaultText } from "../Components/Texts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ModalCard } from "../Components/Cards";
 
 export default function DialogModal({
   isOpen,
@@ -35,7 +36,7 @@ export default function DialogModal({
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={onClose} />
 
-        <div className="w-[30rem] p-8 rounded-xl dark:bg-neutral-950 border border-transparent dark:border-neutral-800 bg-white z-50 flex flex-col gap-8 max-h-full items-center overflow-y-scroll">
+        <ModalCard>
           <div
             className={`${customBackground} rounded-full flex items-center justify-center p-4 w-fit`}
           >
@@ -55,7 +56,7 @@ export default function DialogModal({
             />
             <GrayButton background={true} value="Annuler" onClick={onClose} />
           </div>
-        </div>
+        </ModalCard>
       </div>,
 
       document.querySelector("body")
