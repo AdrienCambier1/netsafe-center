@@ -35,7 +35,6 @@ export default function DialogModal({
     return ReactDOM.createPortal(
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={onClose} />
-
         <ModalCard>
           <div
             className={`${customBackground} rounded-full flex items-center justify-center p-4 w-fit`}

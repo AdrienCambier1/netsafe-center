@@ -20,6 +20,13 @@ export default function Header() {
     setOpenMenu(!OpenMenu);
   };
 
+  const ScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1024) {
@@ -38,7 +45,7 @@ export default function Header() {
   return (
     <header className="z-10 fixed dark:shadow-none dark:bg-neutral-950 border-b border-transparent dark:border-neutral-800 bg-white shadow-md shadow-gray-200/50 h-16 w-full flex items-center justify-between px-8">
       <div className="flex gap-4 h-full items-center relative">
-        <Link to="/">
+        <Link to="/" onClick={() => ScrollToTop()}>
           <p className="text-lg dark:text-neutral-200 text-neutral-800 font-['Raleway'] font-medium uppercase">
             Netsafe Center
           </p>

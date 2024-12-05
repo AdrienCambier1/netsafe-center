@@ -19,7 +19,6 @@ export default function QuizList() {
                 level={quiz.level}
                 title={quiz.name}
                 link={`/quiz/${quiz.id}`}
-                button={true}
               />
             );
           })}

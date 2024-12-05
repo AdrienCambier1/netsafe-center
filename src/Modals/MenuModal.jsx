@@ -18,7 +18,6 @@ export default function MenuModal({ isOpen, onClick }) {
   return (
     <>
       <ModalBackground isOpen={isOpen} onClick={onClick} />
-
       <div
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"

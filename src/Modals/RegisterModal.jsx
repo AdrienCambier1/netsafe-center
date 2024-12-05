@@ -112,7 +112,6 @@ export default function RegisterModal({ isOpen, onClose }) {
     return ReactDOM.createPortal(
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={handleClose} />
-
         <ModalCard>
           <div className="absolute top-2 right-2">
             <GrayButton onClick={handleClose} icon={faXmark} />

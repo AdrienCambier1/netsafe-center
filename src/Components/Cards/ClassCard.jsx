@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
-import { HeavyPurpleButton } from "../Buttons";
+import { HeavyPurpleButton, IconPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
 import { DefaultText, ColoredText } from "../Texts";
 
-export default function ClassCard({ title, button, link }) {
+export default function ClassCard({ title, link }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
@@ -35,15 +35,15 @@ export default function ClassCard({ title, button, link }) {
           </div>
         </div>
         <div className="items-end md:w-full flex flex-col gap-4">
-          {isSmallScreen
-            ? button && <HeavyPurpleButton icon={faArrowLeft} link={link} />
-            : button && (
-                <HeavyPurpleButton
-                  icon={faArrowLeft}
-                  value="Commencer"
-                  link={link}
-                />
-              )}
+          {isSmallScreen ? (
+            <IconPurpleButton icon={faArrowLeft} link={link} />
+          ) : (
+            <HeavyPurpleButton
+              icon={faArrowLeft}
+              value="Commencer"
+              link={link}
+            />
+          )}
         </div>
       </div>
     </div>
