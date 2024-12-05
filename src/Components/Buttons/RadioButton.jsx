@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-export default function QuizButton({ onClick, isChecked }) {
+export default function RadioButton({ onClick, isChecked }) {
   return (
     <Link
       onClick={onClick}

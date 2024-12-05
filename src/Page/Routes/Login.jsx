@@ -35,12 +35,11 @@ export default function Login() {
           <TextInput placeholder="Adresse e-mail" icon={faUser} />
           <TextInput placeholder="Mot de passe" type="password" icon={faLock} />
           <HeavyPurpleButton value="Se connecter" />
-          <DefaultText value="Pas de compte ?">
+          <DefaultText value="Pas de compte ? ">
             <Link
               to="/register"
               className="text-purple-500 font-bold underline"
             >
-              {" "}
               S'inscrire
             </Link>
           </DefaultText>

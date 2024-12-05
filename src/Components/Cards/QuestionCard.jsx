@@ -1,14 +1,9 @@
 import { WhiteCard } from "../Cards";
 import { SecondTitle, FourthTitle } from "../Titles";
 import { DefaultText, SmallerDarkText } from "../Texts";
-import { HeavyPurpleButton, QuizButton } from "../Buttons";
-import {
-  faArrowLeft,
-  faCheck,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import { HeavyPurpleButton, RadioButton, RadioAnswerButton } from "../Buttons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function QuestionCard({
   question,
@@ -43,14 +38,6 @@ export default function QuestionCard({
     setShowResults(true);
   };
 
-  const getAnswerClass = (isCorrect, isSelected) => {
-    if (isSelected) {
-      return isCorrect ? "text-teal-500" : "text-red-500";
-    } else {
-      return "dark:text-neutral-700 text-neutral-300";
-    }
-  };
-
   const typeText = {
     single_choice: "Choisissez une réponse",
     multiple_choice: "Choisissez une ou plusieurs réponses",
@@ -71,25 +58,12 @@ export default function QuestionCard({
               return (
                 <div key={index} className="flex gap-2 items-center">
                   {showResults ? (
-                    isSelected ? (
-                      <FontAwesomeIcon
-                        className={`p-2.5 h-4 w-4 ${getAnswerClass(
-                          isCorrect,
-                          isSelected
-                        )}`}
-                        icon={isCorrect ? faCheck : faXmark}
-                      />
-                    ) : (
-                      <FontAwesomeIcon
-                        className={`p-2.5 h-4 w-4 ${getAnswerClass(
-                          isCorrect,
-                          isSelected
-                        )}`}
-                        icon={isCorrect ? faCheck : faXmark}
-                      />
-                    )
+                    <RadioAnswerButton
+                      isCorrect={isCorrect}
+                      isSelected={isSelected}
+                    />
                   ) : (
-                    <QuizButton
+                    <RadioButton
                       onClick={() => toggleSelectedAnswer(answer)}
                       isChecked={selectedAnswers.includes(answer)}
                     />
