@@ -1,11 +1,15 @@
 import { WhiteCard } from "../Cards";
 import { ThirdTitle } from "../Titles";
 import { SearchInput } from "../Inputs";
-import { HeavyPurpleButton } from "../Buttons";
+import { IconPurpleButton } from "../Buttons";
 import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { DarkText } from "../Texts";
+import { useContext } from "react";
+import { ModalContext } from "../../Contexts";
 
-export default function PostHeaderCard({ title, description, onClick }) {
+export default function PostHeaderCard({ title, description }) {
+  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+
   return (
     <WhiteCard>
       <div className={`${title && "p-2"} flex flex-col gap-4`}>
@@ -16,11 +20,20 @@ export default function PostHeaderCard({ title, description, onClick }) {
         )}
         <div className="flex gap-4 justify-between items-center">
           {description ? (
-            <DarkText value={description} />
+            <>
+              <DarkText value={description} />
+              <IconPurpleButton
+                icon={faPlus}
+                onClick={() => toggleModal("createPostModal")}
+              />
+            </>
           ) : (
-            <SearchInput placeholder="Rechercher un post" icon={faSearch} />
+            <SearchInput
+              placeholder="Rechercher un post"
+              icon={faSearch}
+              onClick={() => toggleModal("createPostModal")}
+            />
           )}
-          <HeavyPurpleButton icon={faPlus} onClick={onClick} />
         </div>
       </div>
     </WhiteCard>

@@ -1,8 +1,9 @@
-import { GrayButton } from "../Buttons";
+import { GrayButton, IconPurpleButton } from "../Buttons";
 import { useContext } from "react";
 import { SearchContext } from "../../Contexts/SearchContext";
+import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-export default function SearchInput({ placeholder, icon }) {
+export default function SearchInput({ placeholder, onClick }) {
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
 
   const handleChange = (event) => {
@@ -10,14 +11,15 @@ export default function SearchInput({ placeholder, icon }) {
   };
 
   return (
-    <div className="hover:border-neutral-600 focus-within:border-neutral-600 dark:hover:border-neutral-400 dark:focus-within:border-neutral-400 flex gap-1 border-2 rounded-xl dark:border-neutral-800 border-neutral-200 w-full h-10 overflow-hidden">
-      <GrayButton icon={icon} />
+    <div className="dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full dark:border-neutral-800 border-neutral-200 w-full">
+      <GrayButton icon={faSearch} />
       <input
         placeholder={placeholder}
         value={searchTerm}
-        className="flex items-end bg-inherit rounded-xl dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full pr-2 font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
+        className="flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
         onChange={handleChange}
       />
+      <IconPurpleButton icon={faPlus} onClick={onClick} isRoundedFull={true} />
     </div>
   );
 }

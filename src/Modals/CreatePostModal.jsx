@@ -15,7 +15,7 @@ export default function CreatePostModal({ isOpen }) {
 
   const handleCreatePost = () => {
     setModalState("postAlert", true);
-    toggleModal("CreatePostModal");
+    toggleModal("createPostModal");
     resetForm();
     setTimeout(() => {
       setModalState("postAlert", false);
@@ -23,7 +23,7 @@ export default function CreatePostModal({ isOpen }) {
   };
 
   const handleClose = () => {
-    toggleModal("CreatePostModal");
+    toggleModal("createPostModal");
     resetForm();
   };
 

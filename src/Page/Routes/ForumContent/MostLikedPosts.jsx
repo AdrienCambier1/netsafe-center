@@ -1,11 +1,10 @@
 import { PostHeaderCard, NewsCard } from "../../../Components/Cards";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Data from "../../../Data/data.json";
-import { SearchContext, ModalContext } from "../../../Contexts";
+import { SearchContext } from "../../../Contexts";
 import { DefaultText } from "../../../Components/Texts";
 
 export default function MostLikedPosts() {
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
 
   const filteredPosts = Data.filter((post) =>
@@ -14,10 +13,7 @@ export default function MostLikedPosts() {
 
   return (
     <>
-      <PostHeaderCard
-        title="Posts les plus aimés"
-        onClick={() => toggleModal("CreatePostModal")}
-      />
+      <PostHeaderCard title="Posts les plus aimés" />
       {filteredPosts.length > 0 ? (
         filteredPosts.map((post) => (
           <NewsCard

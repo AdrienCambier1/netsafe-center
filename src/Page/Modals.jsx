@@ -14,7 +14,7 @@ export default function Modals() {
 
   return (
     <>
-      <CreatePostModal isOpen={modals["CreatePostModal"]} />
+      <CreatePostModal isOpen={modals["createPostModal"]} />
       <AlertModal
         isError={modals["postError"]}
         isActive={modals["postAlert"]}

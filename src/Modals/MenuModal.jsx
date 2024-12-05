@@ -3,6 +3,7 @@ import {
   HeavyPurpleButton,
   HeaderButton,
   GrayButton,
+  IconPurpleButton,
 } from "../Components/Buttons";
 import { FourthTitle } from "../Components/Titles";
 import { ModalBackground } from "../Components/Backgrounds";
@@ -24,7 +25,7 @@ export default function MenuModal({ isOpen, onClick }) {
         } p-4 top-0 right-0 w-60 max-w-full h-full fixed border-l border-transparent dark:border-neutral-800 dark:bg-neutral-950 bg-white transition-transform ease-in-out block lg:hidden overflow-y-auto`}
       >
         <div className="flex justify-between items-center">
-          <HeavyPurpleButton icon={faClose} onClick={onClick} />
+          <IconPurpleButton icon={faClose} onClick={onClick} />
           <div className="flex gap-2 items-center">
             <FourthTitle value="Menu" />
             {theme === "dark" ? (

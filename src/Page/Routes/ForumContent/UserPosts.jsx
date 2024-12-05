@@ -1,17 +1,10 @@
 import { PostHeaderCard, NewsCard } from "../../../Components/Cards";
-import { useState, useContext } from "react";
-import { ModalContext } from "../../../Contexts";
 import Data from "../../../Data/data.json";
 
 export default function UserPosts() {
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
-
   return (
     <>
-      <PostHeaderCard
-        title="Vos posts"
-        onClick={() => toggleModal("CreatePostModal")}
-      />
+      <PostHeaderCard title="Vos posts" />
       {Data.sort((a, b) => b.date - a.date)
         .slice(0, 4)
         .map((post) => (

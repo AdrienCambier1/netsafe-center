@@ -8,8 +8,8 @@ export default function RoundedGrayButton({ link, onClick, icon, value }) {
       to={link}
       onClick={onClick}
       className={`${
-        value ? "px-4" : null
-      } dark:bg-neutral-900 bg-neutral-100 flex gap-2 items-center dark:text-neutral-700 text-neutral-300 dark:hover:text-neutral-400 hover:text-neutral-600 rounded-full cursor-pointer w-fit`}
+        value ? "px-4 w-fit" : null
+      } dark:bg-neutral-900 bg-neutral-100 flex gap-2 justify-center items-center dark:text-neutral-700 text-neutral-300 dark:hover:text-neutral-400 hover:text-neutral-600 rounded-full cursor-pointer`}
     >
       <FontAwesomeIcon
         className={`${value ? "py-2.5" : "p-2.5"} h-4 w-4`}

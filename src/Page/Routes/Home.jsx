@@ -18,8 +18,6 @@ import { faTiktok, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { ModalContext } from "../../Contexts";
 
 export default function Home() {
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
-
   const asideElement = () => {
     return (
       <>
@@ -69,10 +67,7 @@ export default function Home() {
         </div>
 
         <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l border-t sm:border-t-0 dark:border-neutral-800 border-neutral-200">
-          <PostHeaderCard
-            description="Ajoutez un post"
-            onClick={() => toggleModal("CreatePostModal")}
-          />
+          <PostHeaderCard description="Ajoutez un post" />
           {Data.sort((a, b) => b.date - a.date)
             .slice(0, 4)
             .map((post) => (

@@ -1,11 +1,10 @@
 import { PostHeaderCard, NewsCard } from "../../../Components/Cards";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Data from "../../../Data/data.json";
-import { SearchContext, ModalContext } from "../../../Contexts";
+import { SearchContext } from "../../../Contexts";
 import { DefaultText } from "../../../Components/Texts";
 
 export default function RecentPosts() {
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
 
   const filteredPosts = Data.filter((post) =>
@@ -14,10 +13,7 @@ export default function RecentPosts() {
 
   return (
     <>
-      <PostHeaderCard
-        title="Posts récents"
-        onClick={() => toggleModal("CreatePostModal")}
-      />
+      <PostHeaderCard title="Posts récents" />
       {filteredPosts.length > 0 ? (
         filteredPosts.map((post) => (
           <NewsCard

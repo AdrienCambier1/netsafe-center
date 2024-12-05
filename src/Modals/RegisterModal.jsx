@@ -29,6 +29,7 @@ export default function RegisterModal({ isOpen, onClose }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [connectionState, setConnectionState] = useState("email");
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const [confidentiality, setConfidentiality] = useState(false);
 
   const handleLogin = () => {
     toggleModal("loginModal");
@@ -37,6 +38,7 @@ export default function RegisterModal({ isOpen, onClose }) {
 
   const handleClose = () => {
     setConnectionState("email");
+    setConfidentiality(false);
     onClose();
   };
 
@@ -61,7 +63,10 @@ export default function RegisterModal({ isOpen, onClose }) {
         <TextInput placeholder="Adresse e-mail" icon={faUser} />
         <div className="flex flex-col items-start w-full">
           <div className="flex gap-2 items-center">
-            <RadioButton is />
+            <RadioButton
+              isChecked={confidentiality}
+              onClick={() => setConfidentiality(!confidentiality)}
+            />
             <DefaultText value="J'ai lu et accepté la ">
               <Link className="text-purple-500 font-bold">
                 Politique de confidentialité

@@ -1,4 +1,5 @@
-import { GrayButton } from "../Buttons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { IconPurpleButton, GrayButton } from "../Buttons";
 
 export default function SubmitInput({
   placeholder,
@@ -8,14 +9,15 @@ export default function SubmitInput({
   onClick,
 }) {
   return (
-    <div className="hover:border-neutral-600 focus-within:border-neutral-600 dark:hover:border-neutral-400 dark:focus-within:border-neutral-400 flex gap-1 border-2 rounded-xl dark:border-neutral-800 border-neutral-200 w-full h-10 overflow-hidden">
+    <div className="dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full dark:border-neutral-800 border-neutral-200 w-full">
+      <GrayButton icon={faPen} />
       <input
         placeholder={placeholder}
         value={value}
-        className="pl-2 flex items-end bg-inherit rounded-xl dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
+        className="flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
         onChange={onChange}
       />
-      <GrayButton icon={icon} onClick={onClick} />
+      <IconPurpleButton icon={icon} onClick={onClick} />
     </div>
   );
 }
