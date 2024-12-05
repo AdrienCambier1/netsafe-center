@@ -89,9 +89,7 @@ export default function NewsCard({
           )}
         </div>
         <SecondTitle value={title} />
-        <div className="font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600">
-          {content}
-        </div>
+        <DefaultText value={content} />
         <div className="flex justify-between items-start lg:items-center">
           <div className="flex gap-2">
             <RoundedGrayButton icon={faBookmark} />

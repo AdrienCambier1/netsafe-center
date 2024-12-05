@@ -15,7 +15,7 @@ export default function SearchInput({ placeholder, icon }) {
       <input
         placeholder={placeholder}
         value={searchTerm}
-        className="flex items-end bg-inherit rounded-xl dark:placeholder:text-neutral-700 placeholder:text-neutral-300 focus:outline-none w-full pr-2 font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
+        className="flex items-end bg-inherit rounded-xl dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full pr-2 font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
         onChange={handleChange}
       />
     </div>

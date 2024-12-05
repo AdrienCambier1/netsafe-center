@@ -12,7 +12,7 @@ export default function SubmitInput({
       <input
         placeholder={placeholder}
         value={value}
-        className="pl-2 flex items-end bg-inherit rounded-xl dark:placeholder:text-neutral-700 placeholder:text-neutral-300 focus:outline-none w-full font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
+        className="pl-2 flex items-end bg-inherit rounded-xl dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
         onChange={onChange}
       />
       <GrayButton icon={icon} onClick={onClick} />
