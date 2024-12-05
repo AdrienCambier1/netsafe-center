@@ -1,6 +1,5 @@
 export { default as ClassCard } from "./ClassCard";
 export { default as ConnectedState } from "./ConnectedState";
-export { default as HalfWhiteCard } from "./HalfWhiteCard";
 export { default as KnowledgeCard } from "./KnowledgeCard";
 export { default as NewsCard } from "./NewsCard";
 export { default as PostHeaderCard } from "./PostHeaderCard";
