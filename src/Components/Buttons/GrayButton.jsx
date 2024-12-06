@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { DefaultText } from "../Texts";
 
 export default function GrayButton({
   link,

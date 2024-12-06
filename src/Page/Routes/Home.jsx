@@ -4,6 +4,7 @@ import {
   faBook,
   faPenNib,
   faArrowLeft,
+  faFileAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   ConnectedState,
@@ -47,12 +48,16 @@ export default function Home() {
                 value="Posts enregistrés"
                 link="/forum/saved_posts"
               />
-              <LightPurpleButton icon={faBook} value="Vos cours" />
+              <LightPurpleButton
+                icon={faFileAlt}
+                value="Vos posts"
+                link="/forum/user_posts"
+              />
             </div>
             <div className="flex flex-col gap-2">
-              <FourthTitle value="Cours actuels" />
-              <LightPurpleButton icon={faCaretLeft} value="Accueil" />
-              <LightPurpleButton icon={faCaretLeft} value="Vos cours" />
+              <FourthTitle value="Vos avancées" />
+              <LightPurpleButton icon={faCaretLeft} value="Les quiz" />
+              <LightPurpleButton icon={faCaretLeft} value="Les cours" />
             </div>
             <HeavyPurpleButton
               icon={faPenNib}

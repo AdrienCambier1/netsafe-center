@@ -11,6 +11,7 @@ import {
   ModalProvider,
   QuestionProvider,
   SearchProvider,
+  ConnectionProvider,
 } from "./Contexts";
 import { ScrollToTop } from "./Functions";
 
@@ -19,18 +20,20 @@ function App() {
     <>
       <Router>
         <ScrollToTop />
-        <ThemeProvider>
-          <ModalProvider>
-            <QuestionProvider>
-              <SearchProvider>
-                <Header />
-                <Main />
-                <Footer />
-                <Modals />
-              </SearchProvider>
-            </QuestionProvider>
-          </ModalProvider>
-        </ThemeProvider>
+        <ConnectionProvider>
+          <ThemeProvider>
+            <ModalProvider>
+              <QuestionProvider>
+                <SearchProvider>
+                  <Header />
+                  <Main />
+                  <Footer />
+                  <Modals />
+                </SearchProvider>
+              </QuestionProvider>
+            </ModalProvider>
+          </ThemeProvider>
+        </ConnectionProvider>
       </Router>
     </>
   );

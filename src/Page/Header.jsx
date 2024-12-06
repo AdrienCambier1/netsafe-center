@@ -9,12 +9,13 @@ import { MenuModal } from "../Modals";
 import { useEffect, useState, useContext } from "react";
 import { GrayButton, HeaderButton } from "../Components/Buttons";
 import { Link } from "react-router-dom";
-import { ThemeContext, ModalContext } from "../Contexts";
+import { ThemeContext, ModalContext, ConnectionContext } from "../Contexts";
 
 export default function Header() {
   const [OpenMenu, setOpenMenu] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const { connection } = useContext(ConnectionContext);
 
   const toggleOpenMenu = () => {
     setOpenMenu(!OpenMenu);
@@ -54,7 +55,7 @@ export default function Header() {
       <div className="hidden lg:flex gap-4 h-full items-center relative">
         <HeaderButton value="Espace de connaissance" link="/knowledge_area" />
         <HeaderButton value="Outils pratiques" link="/useful_tools" />
-        <HeaderButton value="Quizz d'apprentissage" link="/quiz_list" />
+        <HeaderButton value="Quiz d'apprentissage" link="/quiz_list" />
         <HeaderButton value="Cours" link="/classes_list" />
       </div>
       <div className="flex gap-2 lg:gap-4 h-full items-center">
@@ -73,7 +74,9 @@ export default function Header() {
         <GrayButton
           icon={faUser}
           background={true}
-          onClick={() => toggleModal("loginModal")}
+          {...(connection
+            ? { link: "/account_center/account_overview" }
+            : { onClick: () => toggleModal("loginModal") })}
         />
         <div className="block lg:hidden">
           <GrayButton onClick={toggleOpenMenu} className="none" icon={faBars} />
