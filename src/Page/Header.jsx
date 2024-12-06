@@ -12,14 +12,9 @@ import { Link } from "react-router-dom";
 import { ThemeContext, ModalContext, ConnectionContext } from "../Contexts";
 
 export default function Header() {
-  const [OpenMenu, setOpenMenu] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
   const { connection } = useContext(ConnectionContext);
-
-  const toggleOpenMenu = () => {
-    setOpenMenu(!OpenMenu);
-  };
 
   const ScrollToTop = () => {
     window.scrollTo({
@@ -31,7 +26,7 @@ export default function Header() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1024) {
-        setOpenMenu(false);
+        setModalState("menuModal", false);
       }
     };
 
@@ -71,18 +66,30 @@ export default function Header() {
           background={true}
           link="/forum/recent_posts"
         />
-        <GrayButton
-          icon={faUser}
-          background={true}
-          {...(connection
-            ? { link: "/account_center/account_overview" }
-            : { onClick: () => toggleModal("loginModal") })}
-        />
+        {connection === true ? (
+          <GrayButton
+            icon={faUser}
+            background={true}
+            link="/account_center/account_overview"
+          />
+        ) : (
+          <GrayButton
+            icon={faUser}
+            background={true}
+            onClick={() => toggleModal("loginModal")}
+          />
+        )}
         <div className="block lg:hidden">
-          <GrayButton onClick={toggleOpenMenu} className="none" icon={faBars} />
+          <GrayButton
+            onClick={() => setModalState("menuModal", true)}
+            icon={faBars}
+          />
         </div>
       </div>
-      <MenuModal isOpen={OpenMenu} onClick={toggleOpenMenu} />
+      <MenuModal
+        isOpen={modals["menuModal"]}
+        onClose={() => setModalState("menuModal", false)}
+      />
     </header>
   );
 }

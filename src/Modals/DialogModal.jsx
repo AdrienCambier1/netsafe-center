@@ -19,6 +19,7 @@ export default function DialogModal({
   icon,
   customBackground,
   customColor,
+  link,
 }) {
   const { setModalState } = useContext(ModalContext);
 
@@ -48,6 +49,7 @@ export default function DialogModal({
           <div className="flex flex-col gap-4 w-full">
             <HeavyPurpleButton
               value={action}
+              link={link}
               onClick={() => handleSubmission(alertId)}
             />
             <GrayButton background={true} value="Annuler" onClick={onClose} />

@@ -20,12 +20,14 @@ import { Link } from "react-router-dom";
 import { ModalBackground } from "../Components/Backgrounds";
 import { ModalCard } from "../Components/Cards";
 import { useContext, useState } from "react";
-import { ModalContext } from "../Contexts";
+import { ModalContext, ConnectionContext } from "../Contexts";
 
 export default function LoginModal({ isOpen, onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const { modals, toggleModal, setModalState, resetModals } =
+    useContext(ModalContext);
+  const { setConnection } = useContext(ConnectionContext);
 
   const handleRegister = () => {
     onClose();
@@ -33,7 +35,16 @@ export default function LoginModal({ isOpen, onClose }) {
     resetForm();
   };
 
+  const handleConnection = () => {
+    setConnection(true);
+    setModalState("loginAlert", true);
+    setModalState("menuModal", false);
+    onClose();
+    resetForm();
+  };
+
   const handleClose = () => {
+    setModalState("menuModal", false);
     onClose();
     resetForm();
   };
@@ -73,6 +84,8 @@ export default function LoginModal({ isOpen, onClose }) {
             <HeavyPurpleButton
               value="Se connecter"
               disabled={isSubmitDisabled}
+              onClick={handleConnection}
+              link="/"
             />
             <DefaultText value="Pas de compte ? ">
               <Link

@@ -26,20 +26,8 @@ export const ModalProvider = ({ children }) => {
     }));
   };
 
-  const resetModals = () => {
-    setModals((prev) => {
-      const resetState = Object.keys(prev).reduce((acc, key) => {
-        acc[key] = false;
-        return acc;
-      }, {});
-      return resetState;
-    });
-  };
-
   return (
-    <ModalContext.Provider
-      value={{ modals, toggleModal, setModalState, resetModals }}
-    >
+    <ModalContext.Provider value={{ modals, toggleModal, setModalState }}>
       {children}
     </ModalContext.Provider>
   );

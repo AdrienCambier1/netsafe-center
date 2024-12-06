@@ -5,12 +5,13 @@ import {
   LoginModal,
   RegisterModal,
 } from "../Modals";
-import { ModalContext } from "../Contexts";
+import { ConnectionContext, ModalContext } from "../Contexts";
 import { useContext } from "react";
 import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 
 export default function Modals() {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const { setConnection } = useContext(ConnectionContext);
 
   return (
     <>
@@ -27,6 +28,11 @@ export default function Modals() {
         value="Copié dans le presse-papiers"
       />
       <AlertModal
+        modal="loginAlert"
+        isActive={modals["loginAlert"]}
+        value="Connecté avec succès"
+      />
+      <AlertModal
         modal="logoutAlert"
         isError={modals["logoutError"]}
         isActive={modals["logoutAlert"]}
@@ -41,6 +47,7 @@ export default function Modals() {
       <DialogModal
         isOpen={modals["logoutDialog"]}
         onClose={() => toggleModal("logoutDialog")}
+        onClick={() => setConnection(false)}
         alertId="logoutAlert"
         title="Déconnexion"
         description="Etes-vous sûr de vouloir vous déconnecter ?"
@@ -48,6 +55,7 @@ export default function Modals() {
         icon={faSignOut}
         customBackground="dark:bg-red-950 bg-red-50"
         customColor="text-red-500"
+        link="/"
       />
       <LoginModal
         isOpen={modals["loginModal"]}

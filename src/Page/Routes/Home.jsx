@@ -22,7 +22,7 @@ export default function Home() {
   const asideElement = () => {
     return (
       <>
-        <ConnectedState value={true} link="/account_center/account_overview" />
+        <ConnectedState link="/account_center/account_overview" />
         <div className="flex flex-col gap-2">
           <FourthTitle value="Nos réseaux" />
           <LightPurpleButton icon={faTiktok} value="Tiktok" />
