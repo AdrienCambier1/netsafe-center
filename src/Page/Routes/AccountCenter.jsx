@@ -22,9 +22,6 @@ export default function AccountCenter() {
   const handleCopy = () => {
     navigator.clipboard.writeText(704838134);
     setModalState("textCopied", true);
-    setTimeout(() => {
-      setModalState("textCopied", false);
-    }, 4000);
   };
 
   return (

@@ -34,13 +34,24 @@ export default function RegisterModal({ isOpen, onClose }) {
   const handleLogin = () => {
     toggleModal("loginModal");
     handleClose();
+    resetForm();
   };
 
   const handleClose = () => {
+    onClose();
+    resetForm();
+  };
+
+  const resetForm = () => {
+    setEmail("");
+    setPassword("");
+    setPasswordConfirmation("");
     setConnectionState("email");
     setConfidentiality(false);
-    onClose();
   };
+
+  const isSubmitEmailDisabled = !email || !confidentiality;
+  const isSubmitPasswordDisabled = !password || !passwordConfirmation;
 
   const alreadyHaveAccount = () => {
     return (
@@ -60,7 +71,12 @@ export default function RegisterModal({ isOpen, onClose }) {
       <>
         <GoogleAuthentication />
         <OrSplitter value="ou" />
-        <TextInput placeholder="Adresse e-mail" icon={faUser} />
+        <TextInput
+          placeholder="Adresse e-mail"
+          icon={faUser}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <div className="flex flex-col items-start w-full">
           <div className="flex gap-2 items-center">
             <RadioButton
@@ -77,6 +93,7 @@ export default function RegisterModal({ isOpen, onClose }) {
         <HeavyPurpleButton
           onClick={() => setConnectionState("password")}
           value="Suivant"
+          disabled={isSubmitEmailDisabled}
         />
         {alreadyHaveAccount()}
       </>
@@ -86,11 +103,19 @@ export default function RegisterModal({ isOpen, onClose }) {
   const PasswordForm = () => {
     return (
       <>
-        <TextInput placeholder="Mot de passe" type="password" icon={faLock} />
+        <TextInput
+          placeholder="Mot de passe"
+          type="password"
+          icon={faLock}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <TextInput
           placeholder="Confirmation du mot de passe"
           type="password"
           icon={faLock}
+          value={passwordConfirmation}
+          onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
         <div className="flex flex-col items-start w-full">
           <div className="flex gap-2 items-center">
@@ -102,7 +127,10 @@ export default function RegisterModal({ isOpen, onClose }) {
             <DefaultText value="Un chiffre et un caractère spécial" />
           </div>
         </div>
-        <HeavyPurpleButton value="S'inscrire" />
+        <HeavyPurpleButton
+          value="S'inscrire"
+          disabled={isSubmitPasswordDisabled}
+        />
         {alreadyHaveAccount()}
       </>
     );

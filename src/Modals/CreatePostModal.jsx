@@ -15,12 +15,9 @@ export default function CreatePostModal({ isOpen }) {
   const [content, setContent] = useState("");
 
   const handleCreatePost = () => {
-    setModalState("postAlert", true);
     toggleModal("createPostModal");
+    setModalState("postAlert", true);
     resetForm();
-    setTimeout(() => {
-      setModalState("postAlert", false);
-    }, 4000);
   };
 
   const handleClose = () => {
@@ -32,6 +29,8 @@ export default function CreatePostModal({ isOpen }) {
     setTitle("");
     setContent("");
   };
+
+  const isSubmitDisabled = !title || !content;
 
   if (isOpen) {
     return ReactDOM.createPortal(
@@ -57,7 +56,11 @@ export default function CreatePostModal({ isOpen }) {
             />
           </div>
           <div className="flex flex-col gap-4 w-full">
-            <HeavyPurpleButton value="Envoyer" onClick={handleCreatePost} />
+            <HeavyPurpleButton
+              value="Envoyer"
+              onClick={handleCreatePost}
+              disabled={isSubmitDisabled}
+            />
             <GrayButton
               background={true}
               value="Annuler"

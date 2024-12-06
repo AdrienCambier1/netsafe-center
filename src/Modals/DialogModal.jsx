@@ -26,9 +26,6 @@ export default function DialogModal({
     setModalState(id, true);
     onClose();
     onClick && onClick();
-    setTimeout(() => {
-      setModalState(id, false);
-    }, 4000);
   };
 
   if (isOpen) {

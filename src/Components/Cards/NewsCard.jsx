@@ -50,9 +50,6 @@ export default function NewsCard({
   const handleCommentSubmit = () => {
     setModalState("commentAlert", true);
     resetComment();
-    setTimeout(() => {
-      setModalState("commentAlert", false);
-    }, 4000);
   };
 
   const resetComment = () => {
@@ -63,6 +60,8 @@ export default function NewsCard({
     { icon: faEdit, value: "Modifier" },
     { icon: faTrash, value: "Supprimer", isDangerous: true },
   ];
+
+  const isSubmitDisabled = !comment;
 
   return (
     <WhiteCard>
@@ -117,6 +116,7 @@ export default function NewsCard({
                 value={comment}
                 onClick={handleCommentSubmit}
                 onChange={(e) => setComment(e.target.value)}
+                disabled={isSubmitDisabled}
               />
             </div>
             <div className="flex flex-col gap-2">

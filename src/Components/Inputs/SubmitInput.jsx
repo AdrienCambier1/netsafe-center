@@ -7,6 +7,7 @@ export default function SubmitInput({
   value,
   onChange,
   onClick,
+  disabled,
 }) {
   return (
     <div className="dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full dark:border-neutral-800 border-neutral-200 w-full">
@@ -17,7 +18,7 @@ export default function SubmitInput({
         className="flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
         onChange={onChange}
       />
-      <IconPurpleButton icon={icon} onClick={onClick} />
+      <IconPurpleButton icon={icon} onClick={onClick} disabled={disabled} />
     </div>
   );
 }

@@ -14,7 +14,6 @@ export default function TextInput({
         onChange={onChange}
         type={type}
         value={value}
-        S
         placeholder={placeholder}
         className="flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full pr-2 font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
       />

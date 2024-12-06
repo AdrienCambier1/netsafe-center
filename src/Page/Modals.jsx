@@ -16,20 +16,24 @@ export default function Modals() {
     <>
       <CreatePostModal isOpen={modals["createPostModal"]} />
       <AlertModal
+        modal="postAlert"
         isError={modals["postError"]}
         isActive={modals["postAlert"]}
         value="Poste ajoutée avec succès"
       />
       <AlertModal
+        modal="textCopied"
         isActive={modals["textCopied"]}
         value="Copié dans le presse-papiers"
       />
       <AlertModal
+        modal="logoutAlert"
         isError={modals["logoutError"]}
         isActive={modals["logoutAlert"]}
         value="Déconnecté avec succès"
       />
       <AlertModal
+        modal="commentAlert"
         isError={modals["commentError"]}
         isActive={modals["commentAlert"]}
         value="Commentaire ajouté"

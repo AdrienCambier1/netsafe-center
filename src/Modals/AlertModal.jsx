@@ -4,21 +4,28 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactDOM from "react-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { DefaultText } from "../Components/Texts";
+import { ModalContext } from "../Contexts";
 
-export default function AlertModal({ value, isActive, isError }) {
+export default function AlertModal({ value, isActive, isError, modal }) {
   const [show, setShow] = useState(isActive);
-  let timer = useRef(null);
+  const { toggleModal } = useContext(ModalContext);
+  let showTimer = useRef(null);
+  let modalTimer = useRef(null);
 
   useEffect(() => {
     if (isActive) {
       setShow(true);
-      timer.current = setTimeout(() => setShow(false), 3500);
+      showTimer.current = setTimeout(() => setShow(false), 3500);
+      modalTimer.current = setTimeout(() => toggleModal(modal), 4000);
 
       return () => {
-        if (timer.current) {
-          clearTimeout(timer.current);
+        if (showTimer.current) {
+          clearTimeout(showTimer.current);
+        }
+        if (modalTimer.current) {
+          clearTimeout(modalTimer.current);
         }
       };
     }
