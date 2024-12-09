@@ -9,10 +9,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { DarkText } from "../Texts";
 import { useContext } from "react";
-import { ModalContext } from "../../Contexts";
+import { ConnectionContext, ModalContext } from "../../Contexts";
 
 export default function PostHeaderCard({ title, description }) {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const { connection } = useContext(ConnectionContext);
 
   return (
     <WhiteCard>
@@ -30,12 +31,14 @@ export default function PostHeaderCard({ title, description }) {
                   icon={faNewspaper}
                   background={true}
                   link="/forum/user_posts"
+                  connectionRequired={true}
                 />
                 <DarkText value={description} />
               </div>
               <IconPurpleButton
                 icon={faPlus}
                 onClick={() => toggleModal("createPostModal")}
+                connectionRequired={true}
               />
             </>
           ) : (

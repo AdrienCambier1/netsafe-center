@@ -44,7 +44,6 @@ export default function LoginModal({ isOpen, onClose }) {
   };
 
   const handleClose = () => {
-    setModalState("menuModal", false);
     onClose();
     resetForm();
   };

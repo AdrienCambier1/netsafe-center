@@ -48,10 +48,28 @@ export default function Header() {
         </Link>
       </div>
       <div className="hidden lg:flex gap-4 h-full items-center relative">
-        <HeaderButton value="Espace de connaissance" link="/knowledge_area" />
-        <HeaderButton value="Outils pratiques" link="/useful_tools" />
-        <HeaderButton value="Quiz d'apprentissage" link="/quiz_list" />
-        <HeaderButton value="Cours" link="/classes_list" />
+        <HeaderButton
+          value="Espace de connaissance"
+          link="/knowledge_area"
+          onClick={() => ScrollToTop()}
+        />
+        <HeaderButton
+          value="Outils pratiques"
+          link="/useful_tools"
+          onClick={() => ScrollToTop()}
+        />
+        <HeaderButton
+          value="Quiz d'apprentissage"
+          link="/quiz_list"
+          onClick={() => ScrollToTop()}
+          connectionRequired={true}
+        />
+        <HeaderButton
+          value="Cours"
+          link="/classes_list"
+          onClick={() => ScrollToTop()}
+          connectionRequired={true}
+        />
       </div>
       <div className="flex gap-2 lg:gap-4 h-full items-center">
         <div className="hidden lg:block">
@@ -65,12 +83,14 @@ export default function Header() {
           icon={faComment}
           background={true}
           link="/forum/recent_posts"
+          onClick={() => ScrollToTop()}
         />
         {connection === true ? (
           <GrayButton
             icon={faUser}
             background={true}
             link="/account_center/account_overview"
+            onClick={() => ScrollToTop()}
           />
         ) : (
           <GrayButton

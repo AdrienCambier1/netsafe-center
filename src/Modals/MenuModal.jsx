@@ -16,6 +16,18 @@ export default function MenuModal({ isOpen, onClose }) {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
   const { connection } = useContext(ConnectionContext);
 
+  const ScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleClose = () => {
+    onClose();
+    ScrollToTop();
+  };
+
   return (
     <>
       <ModalBackground isOpen={isOpen} onClick={onClose} />
@@ -39,26 +51,32 @@ export default function MenuModal({ isOpen, onClose }) {
           <HeaderButton
             value="Espace de connaissance"
             link="/knowledge_area"
-            onClick={onClose}
+            onClick={() => handleClose()}
           />
           <HeaderButton
             value="Outils pratiques"
             link="/useful_tools"
-            onClick={onClose}
+            onClick={() => handleClose()}
           />
           <HeaderButton
-            value="Quizz d'apprentissage"
+            value="Quiz d'apprentissage"
             link="/quiz_list"
-            onClick={onClose}
+            onClick={() => handleClose()}
+            connectionRequired={true}
           />
-          <HeaderButton value="Cours" link="/classes_list" onClick={onClose} />
+          <HeaderButton
+            value="Cours"
+            link="/classes_list"
+            onClick={() => handleClose()}
+            connectionRequired={true}
+          />
         </div>
         {connection === true ? (
           <HeavyPurpleButton
             icon={faUser}
             value="Votre profil"
             link="/account_center/account_overview"
-            onClick={onClose}
+            onClick={() => handleClose()}
           />
         ) : (
           <HeavyPurpleButton

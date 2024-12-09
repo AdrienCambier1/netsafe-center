@@ -7,7 +7,7 @@ import {
 } from "../Modals";
 import { ConnectionContext, ModalContext } from "../Contexts";
 import { useContext } from "react";
-import { faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { faSignOut, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Modals() {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
@@ -56,6 +56,17 @@ export default function Modals() {
         customBackground="dark:bg-red-950 bg-red-50"
         customColor="text-red-500"
         link="/"
+      />
+      <DialogModal
+        isOpen={modals["connectionRequirementDialog"]}
+        onClose={() => toggleModal("connectionRequirementDialog")}
+        onClick={() => toggleModal("loginModal")}
+        title="Connexion requise"
+        description="Veuillez vous connecter pour accéder à toutes les fonctionnalités"
+        action="Se connecter"
+        icon={faUser}
+        customBackground={`dark:bg-amber-950 bg-amber-50`}
+        customColor="text-amber-500"
       />
       <LoginModal
         isOpen={modals["loginModal"]}

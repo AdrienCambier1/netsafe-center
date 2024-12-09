@@ -47,22 +47,35 @@ export default function Home() {
                 icon={faBookmark}
                 value="Posts enregistrés"
                 link="/forum/saved_posts"
+                connectionRequired={true}
               />
               <LightPurpleButton
                 icon={faFileAlt}
                 value="Vos posts"
                 link="/forum/user_posts"
+                connectionRequired={true}
               />
             </div>
             <div className="flex flex-col gap-2">
               <FourthTitle value="Vos avancées" />
-              <LightPurpleButton icon={faCaretLeft} value="Les quiz" />
-              <LightPurpleButton icon={faCaretLeft} value="Les cours" />
+              <LightPurpleButton
+                icon={faCaretLeft}
+                value="Les quiz"
+                link="/quiz_list"
+                connectionRequired={true}
+              />
+              <LightPurpleButton
+                icon={faCaretLeft}
+                value="Les cours"
+                link="classes_list"
+                connectionRequired={true}
+              />
             </div>
             <HeavyPurpleButton
               icon={faPenNib}
               value="Testez vos connaissances"
               link="quiz_list"
+              connectionRequired={true}
             />
             <div className="hidden sm:flex lg:hidden flex-col gap-8">
               <div className="border-t dark:border-neutral-800 gray-300/50" />

@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { DefaultText } from "../Texts";
+import { ConnectionContext, ModalContext } from "../../Contexts";
 
 export default function LightPurpleButton({
   link,
@@ -8,11 +10,27 @@ export default function LightPurpleButton({
   icon,
   value,
   isOnRight,
+  connectionRequired,
 }) {
+  const { connection } = useContext(ConnectionContext);
+  const { toggleModal } = useContext(ModalContext);
+
+  const handleClick = (e) => {
+    if (connectionRequired) {
+      if (!connection) {
+        toggleModal("connectionRequirementDialog");
+      } else if (onClick) {
+        onClick(e);
+      }
+    } else if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
     <Link
-      to={link}
-      onClick={onClick}
+      to={connectionRequired && !connection ? "#" : link}
+      onClick={handleClick}
       className={`${
         isOnRight && "justify-end"
       } group p-2.5 flex gap-4 items-center dark:hover:bg-neutral-800 hover:bg-white w-full h-fit rounded-xl hover:shadow-md dark:hover:shadow-none hover:shadow-gray-200/50 cursor-pointer`}
