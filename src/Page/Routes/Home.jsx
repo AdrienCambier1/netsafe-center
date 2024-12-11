@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative">
+      <div className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative">
         <div className="col-span-1 p-8">
           <div className="flex flex-col gap-8 sticky top-24">
             <div className="flex flex-col gap-2">
@@ -77,14 +77,14 @@ export default function Home() {
               link="quiz_list"
               connectionRequired={true}
             />
-            <div className="hidden sm:flex lg:hidden flex-col gap-8">
+            <div className="hidden md:flex lg:hidden flex-col gap-8">
               <div className="border-t dark:border-neutral-800 gray-300/50" />
               {asideElement()}
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 sm:border-l border-t sm:border-t-0 dark:border-neutral-800 border-neutral-200">
+        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 md:border-l border-t md:border-t-0 dark:border-neutral-800 border-neutral-200">
           <PostHeaderCard description="Ajoutez un post" />
           {Data.sort((a, b) => b.date - a.date)
             .slice(0, 4)
@@ -101,7 +101,7 @@ export default function Home() {
               />
             ))}
         </div>
-        <div className="block sm:hidden lg:block col-span-1 p-8 lg:border-l border-t sm:border-t-0 dark:border-neutral-800 border-neutral-200">
+        <div className="block md:hidden lg:block col-span-1 p-8 lg:border-l border-t md:border-t-0 dark:border-neutral-800 border-neutral-200">
           <div className="flex flex-col gap-8 sticky top-24">
             {asideElement()}
           </div>
