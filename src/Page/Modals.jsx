@@ -20,7 +20,7 @@ export default function Modals() {
         modal="postAlert"
         isError={modals["postError"]}
         isActive={modals["postAlert"]}
-        value="Poste ajoutée avec succès"
+        value="Post ajouté avec succès"
       />
       <AlertModal
         modal="textCopied"
