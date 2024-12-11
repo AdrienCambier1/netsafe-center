@@ -7,7 +7,7 @@ import {
 } from "../Modals";
 import { ConnectionContext, ModalContext } from "../Contexts";
 import { useContext } from "react";
-import { faSignOut, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faSignOut, faUser, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Modals() {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
@@ -42,7 +42,13 @@ export default function Modals() {
         modal="commentAlert"
         isError={modals["commentError"]}
         isActive={modals["commentAlert"]}
-        value="Commentaire ajouté"
+        value="Commentaire ajouté avec succès"
+      />
+      <AlertModal
+        modal="removePostAlert"
+        isError={modals["removePostError"]}
+        isActive={modals["removePostAlert"]}
+        value="Post supprimé avec succès"
       />
       <DialogModal
         isOpen={modals["logoutDialog"]}
@@ -67,6 +73,17 @@ export default function Modals() {
         icon={faUser}
         customBackground={`dark:bg-amber-950 bg-amber-50`}
         customColor="text-amber-500"
+      />
+      <DialogModal
+        isOpen={modals["removePostDialog"]}
+        onClose={() => toggleModal("removePostDialog")}
+        alertId="removePostAlert"
+        title="Supprimer le post"
+        description="Etes-vous sûr de vouloir supprimer ce post ?"
+        action="Supprimer"
+        icon={faTrash}
+        customBackground={`dark:bg-red-950 bg-red-50`}
+        customColor="text-red-500"
       />
       <LoginModal
         isOpen={modals["loginModal"]}

@@ -27,7 +27,7 @@ export default function NewsCard({
   comments,
   canModify,
 }) {
-  const { setModalState } = useContext(ModalContext);
+  const { setModalState, toggleModal } = useContext(ModalContext);
   const [comment, setComment] = useState("");
   const [activeButtons, setActiveButtons] = useState(false);
   const [isCommentOpen, setIsCommentOpen] = useState(false);
@@ -58,7 +58,12 @@ export default function NewsCard({
 
   const buttons = [
     { icon: faEdit, value: "Modifier" },
-    { icon: faTrash, value: "Supprimer", isDangerous: true },
+    {
+      icon: faTrash,
+      value: "Supprimer",
+      isDangerous: true,
+      onClick: () => toggleModal("removePostDialog"),
+    },
   ];
 
   const isSubmitDisabled = !comment;
