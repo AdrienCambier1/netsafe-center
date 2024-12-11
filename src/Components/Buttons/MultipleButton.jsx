@@ -5,7 +5,7 @@ import { DefaultText } from "../Texts";
 export default function MultipleButton({ buttons, customPosition }) {
   return (
     <div className={`${customPosition}`}>
-      <div className="flex flex-col p-2 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-950">
+      <div className="shadow-md shadow-gray-200/50 dark:shadow-none flex flex-col p-2 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-950">
         {buttons.map((button) => (
           <Link
             className="group flex gap-4 items-center justify-between hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-md p-2"
