@@ -5,10 +5,10 @@ import { DefaultText } from "../Texts";
 export default function MultipleButton({ buttons, customPosition }) {
   return (
     <div className={`${customPosition}`}>
-      <div className="shadow-md shadow-gray-300/50 dark:shadow-none flex flex-col p-2 border border-gray-300/50 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-950">
+      <div className="flex flex-col p-2 rounded-xl bg-neutral-100 dark:bg-neutral-900">
         {buttons.map((button) => (
           <Link
-            className="group flex gap-4 items-center justify-between hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-md p-2"
+            className="group flex gap-4 items-center justify-between rounded-md p-2"
             onClick={button.onClick}
           >
             {button.value && button.isDangerous ? (
