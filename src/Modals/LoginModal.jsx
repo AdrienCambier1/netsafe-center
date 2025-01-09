@@ -1,11 +1,4 @@
-import {
-  faHome,
-  faUser,
-  faLock,
-  faCross,
-  faCrosshairs,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser, faLock, faXmark } from "@fortawesome/free-solid-svg-icons";
 import {
   GrayButton,
   GoogleAuthentication,
@@ -29,17 +22,47 @@ export default function LoginModal({ isOpen, onClose }) {
     useContext(ModalContext);
   const { setConnection } = useContext(ConnectionContext);
 
+  const handleConnection = async () => {
+    try {
+      setModalState("isLoading", true);
+
+      const requestBody = {
+        username: email,
+        password: password,
+      };
+
+      const response = await fetch("http://localhost:3000/Login/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (!response.ok) {
+        throw new Error(response);
+      }
+
+      const data = await response.json();
+      if (data.success) {
+        setConnection(true);
+        setModalState("loginAlert", true);
+        setModalState("menuModal", false);
+        resetForm();
+        onClose();
+      } else {
+        setModalState("tryLoginAlert", true);
+      }
+    } catch (error) {
+      setModalState("tryLoginAlert", true);
+    } finally {
+      setModalState("isLoading", false);
+    }
+  };
+
   const handleRegister = () => {
     onClose();
     toggleModal("registerModal");
-    resetForm();
-  };
-
-  const handleConnection = () => {
-    setConnection(true);
-    setModalState("loginAlert", true);
-    setModalState("menuModal", false);
-    onClose();
     resetForm();
   };
 
@@ -57,7 +80,7 @@ export default function LoginModal({ isOpen, onClose }) {
 
   if (isOpen) {
     return ReactDOM.createPortal(
-      <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
+      <div className="z-30 center-modal">
         <ModalBackground isOpen={isOpen} onClick={handleClose} />
         <ModalCard>
           <div className="absolute top-2 right-2">
@@ -69,6 +92,7 @@ export default function LoginModal({ isOpen, onClose }) {
             <OrSplitter value="ou" />
             <TextInput
               placeholder="Adresse e-mail"
+              type="email"
               icon={faUser}
               value={email}
               onChange={(e) => setEmail(e.target.value)}

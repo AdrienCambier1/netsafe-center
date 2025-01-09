@@ -1,5 +1,6 @@
 import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { IconPurpleButton, GrayButton } from "../Buttons";
+import { IconPurpleButton } from "../Buttons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function SubmitInput({
   placeholder,
@@ -10,8 +11,8 @@ export default function SubmitInput({
   disabled,
 }) {
   return (
-    <div className="dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full dark:border-neutral-800 border-neutral-200 w-full">
-      <GrayButton icon={faPen} />
+    <div className="group search-input">
+      <FontAwesomeIcon className="gray-icon" icon={faPen} />
       <input
         placeholder={placeholder}
         value={value}

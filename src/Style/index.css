@@ -29,3 +29,47 @@
   transform: translateX(0);
   transition: transform 0.5s ease-in-out;
 }
+
+.gray-icon {
+  @apply p-2.5 h-4 w-4 text-neutral-300 dark:text-neutral-700 group-hover:text-neutral-600 dark:group-hover:text-neutral-400;
+}
+
+.search-input {
+  @apply dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full dark:border-neutral-800 border-neutral-200 w-full;
+}
+
+.text-input {
+  @apply flex items-center justify-between bg-neutral-100 dark:bg-neutral-900 focus-within:border-neutral-600 dark:focus-within:border-neutral-400 border rounded-xl dark:border-neutral-800 border-neutral-200 relative;
+}
+
+.center-modal {
+  @apply flex fixed inset-0 items-center justify-center px-8;
+}
+
+.transparent-background {
+  @apply bg-black/50 dark:bg-white/25 backdrop-blur-[2px];
+}
+
+.opacity-transition {
+  @apply transition-opacity duration-500;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #d4d4d4;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}

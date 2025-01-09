@@ -2,8 +2,10 @@ import {
   AlertModal,
   CreatePostModal,
   DialogModal,
+  LoaderModal,
   LoginModal,
   RegisterModal,
+  MessageModal,
 } from "../Modals";
 import { ConnectionContext, ModalContext } from "../Contexts";
 import { useContext } from "react";
@@ -31,6 +33,11 @@ export default function Modals() {
         modal="loginAlert"
         isActive={modals["loginAlert"]}
         value="Connecté avec succès"
+      />
+      <AlertModal
+        modal="registerAlert"
+        isActive={modals["registerAlert"]}
+        value="Compte créé avec succès"
       />
       <AlertModal
         modal="logoutAlert"
@@ -92,6 +99,17 @@ export default function Modals() {
       <RegisterModal
         isOpen={modals["registerModal"]}
         onClose={() => toggleModal("registerModal")}
+      />
+      <LoaderModal isLoading={modals["isLoading"]} />
+      <MessageModal
+        modal="tryLoginAlert"
+        isActive={modals["tryLoginAlert"]}
+        value="Email ou mot de passe incorrect"
+      />
+      <MessageModal
+        modal="tryRegisterAlert"
+        isActive={modals["tryRegisterAlert"]}
+        value="Erreur lors de l'inscription"
       />
     </>
   );

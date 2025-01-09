@@ -8,7 +8,6 @@ import {
   faTrash,
   faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
-import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { WhiteCard, CommentCard } from "../Cards";
 import { FourthTitle, SecondTitle } from "../Titles";
 import { DefaultText, SmallerDarkText } from "../Texts";

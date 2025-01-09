@@ -21,15 +21,56 @@ import { Link } from "react-router-dom";
 import { ModalBackground } from "../Components/Backgrounds";
 import { ModalCard } from "../Components/Cards";
 import { useState, useContext, useEffect } from "react";
-import { ModalContext } from "../Contexts";
+import { ModalContext, ConnectionContext } from "../Contexts";
 
 export default function RegisterModal({ isOpen, onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [connectionState, setConnectionState] = useState("email");
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
   const [confidentiality, setConfidentiality] = useState(false);
+  const { setConnection } = useContext(ConnectionContext);
+
+  const handleRegister = async () => {
+    try {
+      setModalState("isLoading", true);
+
+      const requestBody = {
+        identifiant: user,
+        mail: email,
+        password: password,
+      };
+
+      const response = await fetch("http://localhost:3000/Login/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (!response.ok) {
+        throw new Error(response);
+      }
+
+      const data = await response.json();
+      if (data.success) {
+        setConnection(true);
+        setModalState("registerAlert", true);
+        setModalState("menuModal", false);
+        resetForm();
+        onClose();
+      } else {
+        setModalState("tryRegisterAlert", true);
+      }
+    } catch (error) {
+      setModalState("tryRegisterAlert", true);
+    } finally {
+      setModalState("isLoading", false);
+    }
+  };
 
   const handleLogin = () => {
     toggleModal("loginModal");
@@ -46,6 +87,7 @@ export default function RegisterModal({ isOpen, onClose }) {
     setEmail("");
     setPassword("");
     setPasswordConfirmation("");
+    setUser("");
     setConnectionState("email");
     setConfidentiality(false);
   };
@@ -73,6 +115,7 @@ export default function RegisterModal({ isOpen, onClose }) {
         <OrSplitter value="ou" />
         <TextInput
           placeholder="Adresse e-mail"
+          type="email"
           icon={faUser}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -104,6 +147,13 @@ export default function RegisterModal({ isOpen, onClose }) {
     return (
       <>
         <TextInput
+          placeholder="Nom d'utilisateur"
+          icon={faUser}
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
+        />
+        <OrSplitter value="et" />
+        <TextInput
           placeholder="Mot de passe"
           type="password"
           icon={faLock}
@@ -130,6 +180,7 @@ export default function RegisterModal({ isOpen, onClose }) {
         <HeavyPurpleButton
           value="S'inscrire"
           disabled={isSubmitPasswordDisabled}
+          onClick={handleRegister}
         />
         {alreadyHaveAccount()}
       </>

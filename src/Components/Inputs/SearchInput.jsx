@@ -1,7 +1,8 @@
-import { GrayButton, IconPurpleButton } from "../Buttons";
+import { IconPurpleButton } from "../Buttons";
 import { useContext } from "react";
 import { SearchContext } from "../../Contexts/SearchContext";
 import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function SearchInput({ placeholder, onClick }) {
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
@@ -11,8 +12,8 @@ export default function SearchInput({ placeholder, onClick }) {
   };
 
   return (
-    <div className="dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full dark:border-neutral-800 border-neutral-200 w-full">
-      <GrayButton icon={faSearch} />
+    <div className="group search-input">
+      <FontAwesomeIcon className="gray-icon" icon={faSearch} />
       <input
         placeholder={placeholder}
         value={searchTerm}

@@ -1,14 +1,8 @@
-import {
-  faCheckCircle,
-  faXmarkCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactDOM from "react-dom";
 import { useState, useEffect, useRef, useContext } from "react";
-import { DefaultText } from "../Components/Texts";
 import { ModalContext } from "../Contexts";
 
-export default function AlertModal({ value, isActive, isError, modal }) {
+export default function MessageModal({ value, isActive, modal }) {
   const [show, setShow] = useState(isActive);
   const { toggleModal } = useContext(ModalContext);
   let showTimer = useRef(null);
@@ -36,24 +30,11 @@ export default function AlertModal({ value, isActive, isError, modal }) {
       <div
         className={`${
           show ? "opacity-100" : "opacity-0"
-        } opacity-transition fixed ${
-          isError ? "border-red-500/50" : "border-green-500/50"
-        } border dark:bg-neutral-950 bg-white py-4 px-8 bottom-8 right-8 rounded-xl z-20`}
+        } opacity-transition z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translte-y-1/2 transparent-background rounded-md py-2 px-4`}
       >
-        <div className="flex gap-4 items-center">
-          {isError ? (
-            <FontAwesomeIcon
-              icon={faXmarkCircle}
-              className="h-4 w-4 text-red-500"
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={faCheckCircle}
-              className="h-4 w-4 text-green-500"
-            />
-          )}
-          <DefaultText value={value} />
-        </div>
+        <p className="text-sm font-['Raleway'] font-medium text-neutral-300">
+          {value}
+        </p>
       </div>,
       document.querySelector("body")
     );
