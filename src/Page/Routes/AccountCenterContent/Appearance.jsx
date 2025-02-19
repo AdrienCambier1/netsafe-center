@@ -1,6 +1,5 @@
-import { WhiteCard } from "../../../Components/Cards";
-import { ThirdTitle } from "../../../Components/Titles";
-import { WhiteCardContent } from "../../../Components";
+import { CustomTitle } from "../../../Components";
+import { CardContent } from "../../../Components";
 import DarkPreview from "../../../Images/dark-preview.svg";
 import LightPreview from "../../../Images/light-preview.svg";
 import { ThemeButton } from "../../../Components/Buttons";
@@ -11,12 +10,12 @@ export default function Appearance() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <WhiteCard>
+    <div className="card">
       <div className="p-2 flex flex-col gap-4">
         <div className="py-2 border-b dark:border-neutral-800 border-neutral-200">
-          <ThirdTitle value="Apparence du site" />
+          <CustomTitle value="Apparence du site" />
         </div>
-        <WhiteCardContent
+        <CardContent
           description="Thème"
           value="Choisissez le thème de couleur pour votre confort visuel"
         />
@@ -35,6 +34,6 @@ export default function Appearance() {
           />
         </div>
       </div>
-    </WhiteCard>
+    </div>
   );
 }

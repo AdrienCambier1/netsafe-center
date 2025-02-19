@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import { FirstTitle } from "../../Components/Titles";
 import { LightPurpleButton } from "../../Components/Buttons";
 import {
   faBookmark,
@@ -18,7 +17,7 @@ export default function Forum() {
   return (
     <div className="p-8 w-full max-w-[70rem]">
       <div className="border-b dark:border-neutral-800 border-neutral-200 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
-        <FirstTitle value="Forum d'entraide" />
+        <h1 className="first-title">Forum d'entraide</h1>
       </div>
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div>

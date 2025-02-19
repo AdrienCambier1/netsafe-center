@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { DefaultText } from "../Texts";
 
 export default function LightRedButton({ link, onClick, icon, value }) {
   return (
@@ -13,7 +12,7 @@ export default function LightRedButton({ link, onClick, icon, value }) {
         className="h-4 w-4 p-2.5 dark:bg-neutral-900 bg-red-100 rounded-xl dark:text-red-700 text-red-300 group-hover:text-red-500 flex items-center hover:text-neutral-600"
         icon={icon}
       />
-      <DefaultText value={value} />
+      <p className="default-text">{value}</p>
     </Link>
   );
 }

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
-import { DefaultText, SmallerDarkText, ColoredText } from "../Texts";
 import { Status } from "../Tags";
 
 export default function QuizAdvancementCard({
@@ -20,25 +19,28 @@ export default function QuizAdvancementCard({
             />
           </div>
           <div className="flex flex-col gap-2 justify-center">
-            <ColoredText
-              value={`Niveau ${level} | ${difficulty}`}
-              color="yellow-500"
-            />
-            <DefaultText value={title} />
+            <p className="font-['Raleway'] text-sm font-bold text-yellow-500">
+              Niveau ${level} | ${difficulty}
+            </p>
+            <p className="default-text">{title}</p>
           </div>
         </div>
         <div className="items-center w-full md:w-full flex flex-col gap-4">
           {status ? (
             <>
               <div className="border-t dark:border-neutral-800 border-neutral-200 pt-2 w-full text-center">
-                <SmallerDarkText value="Vous avez déjà terminé ce quizz" />
+                <p className="smaller-dark-text">
+                  Vous avez déjà terminé ce quizz
+                </p>
               </div>
               <Status isOk={true} value="Complété" />
             </>
           ) : (
             <>
               <div className="border-t dark:border-neutral-800 border-neutral-200 pt-2 w-full text-center">
-                <SmallerDarkText value="Vous n'avez pas encore terminé le quizz" />
+                <p className="smaller-dark-text">
+                  Vous n'avez pas encore terminé le quizz
+                </p>
               </div>
               <Status isOk={false} value="En cours" />
             </>

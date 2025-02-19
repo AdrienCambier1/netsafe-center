@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton, IconPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
-import { DefaultText, ColoredText } from "../Texts";
 
 export default function ClassCard({ title, link }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -30,8 +29,10 @@ export default function ClassCard({ title, link }) {
             />
           </div>
           <div className="flex flex-col gap-2 justify-center">
-            <ColoredText value="Leçon en ligne" color="indigo-500" />
-            <DefaultText value={title} />
+            <p className="font-['Raleway'] text-sm font-bold text-indigo-500">
+              Leçon en ligne
+            </p>
+            <p className="default-text">{title}</p>
           </div>
         </div>
         <div className="items-end md:w-full flex flex-col gap-4">

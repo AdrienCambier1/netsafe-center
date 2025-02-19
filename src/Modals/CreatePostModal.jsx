@@ -1,12 +1,10 @@
 import ReactDOM from "react-dom";
-import { SecondTitle } from "../Components/Titles";
 import { GrayButton, HeavyPurpleButton } from "../Components/Buttons";
 import { ModalBackground } from "../Components/Backgrounds";
 import { TextInput, TextArea } from "../Components/Inputs";
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
 import { ModalContext } from "../Contexts";
 import { useContext, useState } from "react";
-import { DefaultText } from "../Components/Texts";
 import { ModalCard } from "../Components/Cards";
 
 export default function CreatePostModal({ isOpen }) {
@@ -37,9 +35,9 @@ export default function CreatePostModal({ isOpen }) {
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={handleClose} />
         <ModalCard>
-          <SecondTitle value="Rédigez votre post" />
+          <h2 className="second-title">Rédigez votre post</h2>
           <div className="w-full flex flex-col gap-2">
-            <DefaultText value="Titre" />
+            <p className="default-text">Titre</p>
             <TextInput
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Titre du post"
@@ -48,7 +46,7 @@ export default function CreatePostModal({ isOpen }) {
             />
           </div>
           <div className="w-full flex flex-col gap-2">
-            <DefaultText value="Contenu du post" />
+            <p className="default-text">Contenu du post</p>
             <TextArea
               onChange={(e) => setContent(e.target.value)}
               placeholder="Rédigez votre texte"

@@ -8,9 +8,7 @@ import {
   faTrash,
   faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
-import { WhiteCard, CommentCard } from "../Cards";
-import { FourthTitle, SecondTitle } from "../Titles";
-import { DefaultText, SmallerDarkText } from "../Texts";
+import { CommentCard } from "../Cards";
 import { GrayButton, MultipleButton, RoundedGrayButton } from "../Buttons";
 import { AccountImage } from "../";
 import { SubmitInput } from "../Inputs";
@@ -68,14 +66,14 @@ export default function NewsCard({
   const isSubmitDisabled = !comment;
 
   return (
-    <WhiteCard>
+    <div className="card">
       <div className="flex flex-col p-2 gap-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <AccountImage image={image} />
             <div className="flex gap-2 items-center ml-2">
-              <DefaultText value={user} />
-              <SmallerDarkText value={date} />
+              <p className="default-text">{user}</p>
+              <p className="smaller-dark-text">{date}</p>
             </div>
           </div>
           {canModify && (
@@ -92,8 +90,8 @@ export default function NewsCard({
             </div>
           )}
         </div>
-        <SecondTitle value={title} />
-        <DefaultText value={content} />
+        <h2 className="second-title">{title}</h2>
+        <p className="default-text">{content}</p>
         <div className="flex justify-between items-start lg:items-center">
           <div className="flex gap-2">
             <RoundedGrayButton icon={faBookmark} />
@@ -105,7 +103,7 @@ export default function NewsCard({
           </div>
           <div className="flex items-center justify-end w-full">
             <GrayButton icon={faThumbsUp} />
-            <DefaultText value={like} />
+            <p className="default-text ml-1">{like}</p>
           </div>
         </div>
       </div>
@@ -125,7 +123,7 @@ export default function NewsCard({
             </div>
             <div className="flex flex-col gap-2">
               <div className="my-2">
-                <FourthTitle value="Tous les commentaires" />
+                <h4 className="fourth-title">Tous les commentaires</h4>
               </div>
 
               {comments.length > 0 ? (
@@ -140,12 +138,12 @@ export default function NewsCard({
                   />
                 ))
               ) : (
-                <DefaultText value="Aucun commentaire" />
+                <p className="default-text">Aucun commentaire</p>
               )}
             </div>
           </div>
         </>
       )}
-    </WhiteCard>
+    </div>
   );
 }

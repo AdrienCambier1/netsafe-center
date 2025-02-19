@@ -1,6 +1,3 @@
-import { WhiteCard } from "../Cards";
-import { SecondTitle, FourthTitle } from "../Titles";
-import { DefaultText, SmallerDarkText } from "../Texts";
 import { HeavyPurpleButton, RadioButton, RadioAnswerButton } from "../Buttons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -44,11 +41,11 @@ export default function QuestionCard({
   };
 
   return (
-    <WhiteCard>
+    <div className="card">
       <div className="flex flex-col p-2 gap-8">
-        <SecondTitle value={question} />
+        <h2 className="second-title">{question}</h2>
         <div className="flex flex-col gap-4">
-          <FourthTitle value={typeText[type]} />
+          <h4 className="fourth-title">{typeText[type]}</h4>
           <div className="grid grid-cols-2 gap-4">
             {answers.map((answer, index) => {
               const result = results[index] || {};
@@ -68,7 +65,7 @@ export default function QuestionCard({
                       isChecked={selectedAnswers.includes(answer)}
                     />
                   )}
-                  <DefaultText value={answer} />
+                  <p className="default-text">{answer}</p>
                 </div>
               );
             })}
@@ -76,7 +73,7 @@ export default function QuestionCard({
         </div>
         {showResults ? (
           <div className="border-t dark:border-neutral-800 border-neutral-200 pt-2 w-full text-center">
-            <SmallerDarkText value={explanation} />
+            <p className="smaller-dark-text">{explanation}</p>
           </div>
         ) : (
           <HeavyPurpleButton
@@ -89,6 +86,6 @@ export default function QuestionCard({
           />
         )}
       </div>
-    </WhiteCard>
+    </div>
   );
 }

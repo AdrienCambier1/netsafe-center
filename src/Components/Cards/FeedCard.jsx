@@ -4,7 +4,6 @@ import {
   faCheck,
   faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
-import { DefaultText } from "../Texts";
 
 export default function Comment({ title, description, content, type }) {
   return (
@@ -37,12 +36,12 @@ export default function Comment({ title, description, content, type }) {
           )}
         </div>
         <h4 className="flex flex-col md:gap-2 items-start text-lg font-medium leading-8 text-slate-700 md:flex-row lg:items-center">
-          <DefaultText value={title} />
+          <p className="default-text">{title}</p>
           <span className="dark:text-neutral-600 text-neutral-400 font-['Raleway'] font-medium text-xs">
             {description}
           </span>
         </h4>
-        <DefaultText value={content} />
+        <p className="default-text">{content}</p>
       </div>
     </li>
   );

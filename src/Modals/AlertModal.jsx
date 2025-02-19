@@ -5,7 +5,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactDOM from "react-dom";
 import { useState, useEffect, useRef, useContext } from "react";
-import { DefaultText } from "../Components/Texts";
 import { ModalContext } from "../Contexts";
 
 export default function AlertModal({ value, isActive, isError, modal }) {
@@ -52,7 +51,7 @@ export default function AlertModal({ value, isActive, isError, modal }) {
               className="h-4 w-4 text-green-500"
             />
           )}
-          <DefaultText value={value} />
+          <p className="default-text">{value}</p>
         </div>
       </div>,
       document.querySelector("body")

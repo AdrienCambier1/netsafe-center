@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { DefaultText } from "../Texts";
 
 export default function RoundedGrayButton({ link, onClick, icon, value }) {
   return (
@@ -9,13 +8,17 @@ export default function RoundedGrayButton({ link, onClick, icon, value }) {
       onClick={onClick}
       className={`${
         value ? "px-4 w-fit" : null
-      } dark:bg-neutral-900 bg-neutral-100 flex gap-2 justify-center items-center dark:text-neutral-700 text-neutral-300 dark:hover:text-neutral-400 hover:text-neutral-600 rounded-full cursor-pointer`}
+      } hover:opacity-75 dark:bg-neutral-900 bg-neutral-100 flex gap-2 justify-center items-center dark:text-neutral-600 text-neutral-400 rounded-full cursor-pointer`}
     >
       <FontAwesomeIcon
         className={`${value ? "py-2.5" : "p-2.5"} h-4 w-4`}
         icon={icon}
       />
-      {value && <DefaultText value={value} />}
+      {value && (
+        <p className="text-sm font-['Raleway'] font-medium text-neutral-400 dark:text-neutral-600">
+          {value}
+        </p>
+      )}
     </Link>
   );
 }

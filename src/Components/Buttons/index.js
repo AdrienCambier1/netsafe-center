@@ -5,7 +5,7 @@ export { default as HeavyPurpleButton } from "./HeavyPurpleButton";
 export { default as LightPurpleButton } from "./LightPurpleButton";
 export { default as LightRedButton } from "./LightRedButton";
 export { default as RoundedGrayButton } from "./RoundedGrayButton";
-export { default as WhiteButton } from "./WhiteButton";
+export { default as CardButton } from "./CardButton";
 export { default as RadioButton } from "./RadioButton";
 export { default as ThemeButton } from "./ThemeButton";
 export { default as TextPurpleButton } from "./TextPurpleButton";

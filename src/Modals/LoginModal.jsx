@@ -5,9 +5,7 @@ import {
   HeavyPurpleButton,
 } from "../Components/Buttons";
 import { TextInput } from "../Components/Inputs";
-import { SecondTitle } from "../Components/Titles";
 import { OrSplitter } from "../Components";
-import { DefaultText } from "../Components/Texts";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import { ModalBackground } from "../Components/Backgrounds";
@@ -86,7 +84,7 @@ export default function LoginModal({ isOpen, onClose }) {
           <div className="absolute top-2 right-2">
             <GrayButton onClick={handleClose} icon={faXmark} />
           </div>
-          <SecondTitle value="Connectez-vous" />
+          <h2 className="second-title">Connectez-vous</h2>
           <form className="flex flex-col gap-4 items-center w-full">
             <GoogleAuthentication />
             <OrSplitter value="ou" />
@@ -110,14 +108,15 @@ export default function LoginModal({ isOpen, onClose }) {
               onClick={handleConnection}
               link="/"
             />
-            <DefaultText value="Pas de compte ? ">
+            <p className="default-text">
+              Pas de compte ?
               <Link
                 onClick={handleRegister}
                 className="text-purple-500 font-bold underline"
               >
                 S'inscrire
               </Link>
-            </DefaultText>
+            </p>
           </form>
         </ModalCard>
       </div>,

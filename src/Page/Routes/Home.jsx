@@ -11,7 +11,6 @@ import {
   NewsCard,
   PostHeaderCard,
 } from "../../Components/Cards";
-import { FourthTitle } from "../../Components/Titles";
 import { LightPurpleButton, HeavyPurpleButton } from "../../Components/Buttons";
 import { useContext, useState } from "react";
 import Data from "../../Data/data.json";
@@ -24,7 +23,7 @@ export default function Home() {
       <>
         <ConnectedState link="/account_center/account_overview" />
         <div className="flex flex-col gap-2">
-          <FourthTitle value="Nos réseaux" />
+          <h4 className="fourth-title">Nos réseaux</h4>
           <LightPurpleButton icon={faTiktok} value="Tiktok" />
           <LightPurpleButton icon={faYoutube} value="Youtube" />
         </div>
@@ -57,7 +56,7 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <FourthTitle value="Vos avancées" />
+              <h4 className="fourth-title">Vos avancées</h4>
               <LightPurpleButton
                 icon={faCaretLeft}
                 value="Les quiz"

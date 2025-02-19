@@ -1,19 +1,18 @@
-import { WhiteCard } from "../Cards";
+import { Card } from "../Cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DefaultText } from "../Texts";
 
-export default function WhiteButton({ value, icon, onClick }) {
+export default function CardButton({ value, icon, onClick }) {
   return (
     <div className="group cursor-pointer" onClick={onClick}>
-      <WhiteCard>
+      <div class="card">
         <div className={`flex gap-4 justify-between items-center`}>
-          <DefaultText value={value} custom="group-hover:text-purple-500" />
+          <p className="default-text group-hover:text-purple-500">{value}</p>
           <FontAwesomeIcon
             icon={icon}
             className="group-hover:text-purple-500 text-neutral-600 dark:text-neutral-400"
           />
         </div>
-      </WhiteCard>
+      </div>
     </div>
   );
 }

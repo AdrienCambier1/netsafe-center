@@ -5,7 +5,6 @@ import {
   GrayButton,
   IconPurpleButton,
 } from "../Components/Buttons";
-import { FourthTitle } from "../Components/Titles";
 import { ModalBackground } from "../Components/Backgrounds";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext, ModalContext, ConnectionContext } from "../Contexts";
@@ -39,7 +38,7 @@ export default function MenuModal({ isOpen, onClose }) {
         <div className="flex justify-between items-center">
           <IconPurpleButton icon={faClose} onClick={onClose} />
           <div className="flex gap-2 items-center">
-            <FourthTitle value="Menu" />
+            <h4 className="fourth-title">Menu</h4>
             {theme === "dark" ? (
               <GrayButton icon={faSun} onClick={() => setTheme("light")} />
             ) : (

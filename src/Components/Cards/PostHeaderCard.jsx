@@ -1,5 +1,4 @@
-import { WhiteCard } from "../Cards";
-import { ThirdTitle } from "../Titles";
+import { CustomTitle } from "../../Components";
 import { SearchInput } from "../Inputs";
 import { IconPurpleButton, GrayButton } from "../Buttons";
 import {
@@ -7,7 +6,6 @@ import {
   faPlus,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import { DarkText } from "../Texts";
 import { useContext } from "react";
 import { ConnectionContext, ModalContext } from "../../Contexts";
 
@@ -16,11 +14,11 @@ export default function PostHeaderCard({ title, description }) {
   const { connection } = useContext(ConnectionContext);
 
   return (
-    <WhiteCard>
+    <div className="card">
       <div className={`${title && "p-2"} flex flex-col gap-4`}>
         {title && (
           <div className="py-2 border-b dark:border-neutral-800 border-neutral-200">
-            <ThirdTitle value={title} />
+            <CustomTitle value={title} />
           </div>
         )}
         <div className="flex gap-4 justify-between items-center">
@@ -33,7 +31,7 @@ export default function PostHeaderCard({ title, description }) {
                   link="/forum/user_posts"
                   connectionRequired={true}
                 />
-                <DarkText value={description} />
+                <p className="dark-text">{description}</p>
               </div>
               <IconPurpleButton
                 icon={faPlus}
@@ -50,6 +48,6 @@ export default function PostHeaderCard({ title, description }) {
           )}
         </div>
       </div>
-    </WhiteCard>
+    </div>
   );
 }

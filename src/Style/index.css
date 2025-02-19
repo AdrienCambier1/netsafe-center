@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-yellow-50/50 dark:bg-black;
+}
+
 .header-button::after {
   content: "";
   background-color: #a855f7;
@@ -31,7 +35,7 @@
 }
 
 .gray-icon {
-  @apply p-2.5 h-4 w-4 text-neutral-300 dark:text-neutral-700 group-hover:text-neutral-600 dark:group-hover:text-neutral-400;
+  @apply p-2.5 h-4 w-4 text-neutral-400 dark:text-neutral-600;
 }
 
 .search-input {
@@ -39,7 +43,7 @@
 }
 
 .text-input {
-  @apply flex items-center justify-between bg-neutral-100 dark:bg-neutral-900 focus-within:border-neutral-600 dark:focus-within:border-neutral-400 border rounded-xl dark:border-neutral-800 border-neutral-200 relative;
+  @apply flex items-center justify-between bg-neutral-100 dark:bg-neutral-900 focus-within:border-neutral-400 dark:focus-within:border-neutral-600 border rounded-xl dark:border-neutral-800 border-neutral-200 relative;
 }
 
 .center-modal {
@@ -52,6 +56,42 @@
 
 .opacity-transition {
   @apply transition-opacity duration-500;
+}
+
+.card {
+  @apply dark:bg-neutral-950 border border-transparent dark:border-neutral-800 dark:shadow-none bg-white relative rounded-xl h-fit w-full shadow-md shadow-gray-200/50 p-2;
+}
+
+/* Titles */
+
+.first-title {
+  @apply font-['Raleway'] text-2xl font-bold text-zinc-800 dark:text-zinc-200;
+}
+
+.second-title {
+  @apply text-xl text-zinc-800 dark:text-zinc-200 font-['Raleway'] font-bold;
+}
+
+.third-title {
+  @apply text-xl text-zinc-800 dark:text-zinc-200 font-['Raleway'] font-medium;
+}
+
+.fourth-title {
+  @apply text-zinc-400 dark:text-zinc-600 font-['Raleway'] font-semibold;
+}
+
+/* Texts */
+
+.dark-text {
+  @apply dark:text-neutral-600 text-neutral-400 text-sm font-['Raleway'];
+}
+
+.smaller-dark-text {
+  @apply dark:text-neutral-600 text-neutral-400 font-['Raleway'] font-medium text-xs;
+}
+
+.default-text {
+  @apply text-sm font-['Raleway'] font-medium text-neutral-600 dark:text-neutral-400;
 }
 
 /* HTML: <div class="loader"></div> */

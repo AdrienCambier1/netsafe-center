@@ -1,4 +1,3 @@
-import { FirstTitle } from "../../Components/Titles";
 import { useParams, Navigate, Outlet } from "react-router-dom";
 import { FeedCard, ClassAdvancementCard } from "../../Components/Cards";
 import ClassData from "../../Data/class.json";
@@ -13,7 +12,7 @@ export default function Class() {
   return (
     <div className="p-8 w-full max-w-[70rem]">
       <div className="border-b dark:border-neutral-800 border-neutral-200 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
-        <FirstTitle value="Cours en ligne" />
+        <h1 className="first-title">Cours en ligne</h1>
       </div>
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div>

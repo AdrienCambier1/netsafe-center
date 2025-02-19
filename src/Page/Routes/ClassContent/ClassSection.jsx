@@ -1,10 +1,6 @@
-import {
-  SecondTitle,
-  ThirdTitle,
-  FourthTitle,
-} from "../../../Components/Titles";
+import { CustomTitle } from "../../../Components";
 import ClassData from "../../../Data/class.json";
-import { HighlightCard, WhiteCard } from "../../../Components/Cards";
+import { HighlightCard } from "../../../Components/Cards";
 import { LightPurpleButton } from "../../../Components/Buttons";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
@@ -17,14 +13,14 @@ export default function ClassSection() {
 
   return (
     <>
-      <WhiteCard>
+      <div className="card">
         <div className="p-2 flex flex-col gap-8">
-          <SecondTitle value={section.title} />
+          <h2 className="second-title">{section.title}</h2>
           {section.lessons.map((lesson, index) => {
             return (
               <>
                 <div className="flex flex-col gap-4">
-                  <ThirdTitle value={lesson.title} />
+                  <CustomTitle value={lesson.title} />
                   <p className="text-sm font-['Raleway'] font-medium dark:text-neutral-400 text-neutral-600">
                     {lesson.content.introduction}
                   </p>
@@ -36,7 +32,7 @@ export default function ClassSection() {
                 {lesson.content.mainContent.map((content, index) => {
                   return (
                     <div className="flex flex-col gap-4">
-                      <FourthTitle value={content.heading} />
+                      <h4 className="fourth-title">{content.heading}</h4>
                       <p className="text-sm font-['Raleway'] font-medium dark:text-neutral-400 text-neutral-600">
                         {content.text}
                       </p>
@@ -48,7 +44,7 @@ export default function ClassSection() {
             );
           })}
         </div>
-      </WhiteCard>
+      </div>
       {ClassData.course.sections[sectionIndex - 1] ? (
         <div className="flex gap-4">
           <LightPurpleButton

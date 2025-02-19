@@ -1,9 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { FirstTitle } from "../../Components/Titles";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import {
   LightPurpleButton,
-  WhiteButton,
+  CardButton,
   LightRedButton,
 } from "../../Components/Buttons";
 import {
@@ -27,12 +26,8 @@ export default function AccountCenter() {
   return (
     <div className="p-8 w-full max-w-[70rem]">
       <div className="border-b dark:border-neutral-800 border-neutral-200 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
-        <FirstTitle value="Gestion du compte" />
-        <WhiteButton
-          value="ID : 704838134"
-          icon={faCopy}
-          onClick={handleCopy}
-        />
+        <h1 className="first-title">Gestion du compte</h1>
+        <CardButton value="ID : 704838134" icon={faCopy} onClick={handleCopy} />
       </div>
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div>

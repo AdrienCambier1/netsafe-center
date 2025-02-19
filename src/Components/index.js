@@ -1,4 +1,5 @@
 export { default as AccountImage } from "./AccountImage";
 export { default as OrSplitter } from "./OrSplitter";
-export { default as WhiteCardContent } from "./WhiteCardContent";
+export { default as CardContent } from "./CardContent";
 export { default as IconWithBackground } from "./IconWithBackground";
+export { default as CustomTitle } from "./CustomTitle";

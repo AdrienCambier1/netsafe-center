@@ -2,7 +2,6 @@ import { PostHeaderCard, NewsCard } from "../../../Components/Cards";
 import { useContext } from "react";
 import Data from "../../../Data/data.json";
 import { SearchContext } from "../../../Contexts";
-import { DefaultText } from "../../../Components/Texts";
 
 export default function RecentPosts() {
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
@@ -28,7 +27,7 @@ export default function RecentPosts() {
           />
         ))
       ) : (
-        <DefaultText value="Aucun post trouvé" />
+        <p className="default-text">Aucun post trouvé</p>
       )}
     </>
   );

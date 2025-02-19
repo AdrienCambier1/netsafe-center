@@ -1,10 +1,8 @@
 import ReactDOM from "react-dom";
 import { ModalBackground } from "../Components/Backgrounds";
 import { HeavyPurpleButton, GrayButton } from "../Components/Buttons";
-import { SecondTitle } from "../Components/Titles";
 import { useContext } from "react";
 import { ModalContext } from "../Contexts";
-import { DefaultText } from "../Components/Texts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ModalCard } from "../Components/Cards";
 
@@ -43,8 +41,8 @@ export default function DialogModal({
             />
           </div>
           <div className="flex flex-col gap-2 items-center">
-            <SecondTitle value={title} />
-            <DefaultText custom="text-center" value={description} />
+            <h2 className="second-title">{title}</h2>
+            <p className="default-text text-center">{description}</p>
           </div>
           <div className="flex flex-col gap-4 w-full">
             <HeavyPurpleButton

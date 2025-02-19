@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import { HeavyPurpleButton, IconPurpleButton } from "../Buttons";
 import { useEffect, useState } from "react";
-import { DefaultText, ColoredText } from "../Texts";
 
 export default function QuizCard({ title, level, difficulty, link }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -30,11 +29,10 @@ export default function QuizCard({ title, level, difficulty, link }) {
             />
           </div>
           <div className="flex flex-col gap-2 justify-center">
-            <ColoredText
-              value={`Niveau ${level} | ${difficulty}`}
-              color="yellow-500"
-            />
-            <DefaultText value={title} />
+            <p className="font-['Raleway'] text-sm font-bold text-yellow-500">
+              Niveau ${level} | ${difficulty}
+            </p>
+            <p className="default-text">{title}</p>
           </div>
         </div>
         <div className="items-end md:w-full flex flex-col gap-4">

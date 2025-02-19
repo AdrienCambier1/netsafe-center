@@ -1,11 +1,4 @@
-import {
-  faHome,
-  faUser,
-  faLock,
-  faCross,
-  faCrosshairs,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser, faLock, faXmark } from "@fortawesome/free-solid-svg-icons";
 import {
   GrayButton,
   GoogleAuthentication,
@@ -13,14 +6,12 @@ import {
   RadioButton,
 } from "../Components/Buttons";
 import { TextInput } from "../Components/Inputs";
-import { SecondTitle } from "../Components/Titles";
 import { OrSplitter } from "../Components";
-import { DefaultText } from "../Components/Texts";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import { ModalBackground } from "../Components/Backgrounds";
 import { ModalCard } from "../Components/Cards";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
 
 export default function RegisterModal({ isOpen, onClose }) {
@@ -97,14 +88,15 @@ export default function RegisterModal({ isOpen, onClose }) {
 
   const alreadyHaveAccount = () => {
     return (
-      <DefaultText value="Déjà un compte ? ">
+      <p className="default-text">
+        Déjà un compte ?
         <Link
           onClick={handleLogin}
           className="text-purple-500 font-bold underline"
         >
           Se connecter
         </Link>
-      </DefaultText>
+      </p>
     );
   };
 
@@ -126,11 +118,12 @@ export default function RegisterModal({ isOpen, onClose }) {
               isChecked={confidentiality}
               onClick={() => setConfidentiality(!confidentiality)}
             />
-            <DefaultText value="J'ai lu et accepté la ">
+            <p className="default-text">
+              J'ai lu et accepté la
               <Link className="text-purple-500 font-bold">
                 Politique de confidentialité
               </Link>
-            </DefaultText>
+            </p>
           </div>
         </div>
         <HeavyPurpleButton
@@ -170,11 +163,11 @@ export default function RegisterModal({ isOpen, onClose }) {
         <div className="flex flex-col items-start w-full">
           <div className="flex gap-2 items-center">
             <RadioButton />
-            <DefaultText value="Au moins 8 caractères" />
+            <p className="default-text">Au moins 8 caractères</p>
           </div>
           <div className="flex gap-2 items-center">
             <RadioButton />
-            <DefaultText value="Un chiffre et un caractère spécial" />
+            <p className="default-text">Un chiffre et un caractère spécial</p>
           </div>
         </div>
         <HeavyPurpleButton
@@ -195,7 +188,7 @@ export default function RegisterModal({ isOpen, onClose }) {
           <div className="absolute top-2 right-2">
             <GrayButton onClick={handleClose} icon={faXmark} />
           </div>
-          <SecondTitle value="Inscrivez-vous" />
+          <h2 className="second-title">Inscrivez-vous</h2>
           <form className="flex flex-col gap-4 items-center w-full">
             {connectionState === "email"
               ? EmailForm()

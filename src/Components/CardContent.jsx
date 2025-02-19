@@ -1,16 +1,13 @@
-import { FourthTitle } from "./Titles";
-import { Link } from "react-router-dom";
-import { DefaultText } from "./Texts";
 import { TextPurpleButton } from "./Buttons";
 
-export default function WhiteCardContent({ description, value, button }) {
+export default function CardContent({ description, value, button }) {
   return (
     <div className="flex justify-between rounded-xl py-2 items-center">
       <div
         className={`${button ? "w-1/2 pr-2" : "w-full"} flex flex-col gap-1`}
       >
-        <FourthTitle value={description} />
-        {value && <DefaultText custom="break-words" value={value} />}
+        <h4 className="fourth-title">{description}</h4>
+        {value && <p className="break-words default-text">{value}</p>}
       </div>
 
       {button && (

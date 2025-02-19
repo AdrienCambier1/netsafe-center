@@ -35,13 +35,7 @@ export default function Main() {
   const { connection } = useContext(ConnectionContext);
 
   return (
-    <main
-      className={`${
-        theme === "dark"
-          ? "bg-black"
-          : "bg-gradient-to-bl from-purple-50 to-yellow-50"
-      } min-h-screen pt-16 flex justify-center`}
-    >
+    <main className=" min-h-screen pt-16 flex justify-center">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />

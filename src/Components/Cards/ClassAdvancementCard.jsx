@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
-import { DefaultText, SmallerDarkText, ColoredText } from "../Texts";
 import { Status } from "../Tags";
 
 export default function ClassAdvancementCard({ title, status }) {
@@ -15,22 +14,28 @@ export default function ClassAdvancementCard({ title, status }) {
             />
           </div>
           <div className="flex flex-col gap-2 justify-center">
-            <ColoredText value="Leçon en ligne" color="indigo-500" />
-            <DefaultText value={title} />
+            <p className="font-['Raleway'] text-sm font-bold text-indigo-500">
+              Leçon en ligne
+            </p>
+            <p className="default-text">{title}</p>
           </div>
         </div>
         <div className="items-center w-full md:w-full flex flex-col gap-4">
           {status ? (
             <>
               <div className="border-t dark:border-neutral-800 border-neutral-200 pt-2 w-full text-center">
-                <SmallerDarkText value="Vous avez déjà terminé ce cours" />
+                <p className="smaller-dark-text">
+                  Vous avez déjà terminé ce cours
+                </p>
               </div>
               <Status isOk={true} value="Complété" />
             </>
           ) : (
             <>
               <div className="border-t dark:border-neutral-800 border-neutral-200 pt-2 w-full text-center">
-                <SmallerDarkText value="Vous n'avez pas encore terminé ce cours" />
+                <p className="smaller-dark-text">
+                  Vous n'avez pas encore terminé ce cours
+                </p>
               </div>
               <Status isOk={false} value="En cours" />
             </>

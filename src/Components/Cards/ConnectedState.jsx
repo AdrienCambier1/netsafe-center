@@ -1,7 +1,5 @@
 import AccountImage from "../AccountImage";
 import { HeavyPurpleButton } from "../Buttons";
-import { WhiteCard } from "../Cards";
-import { DefaultText, DarkText } from "../Texts";
 import { Status } from "../Tags";
 import { ConnectionContext, ModalContext } from "../../Contexts";
 import { useContext } from "react";
@@ -11,11 +9,11 @@ export default function ConnectedState({ name }) {
   const { toggleModal } = useContext(ModalContext);
 
   return (
-    <WhiteCard>
+    <div className="card">
       <div className="flex flex-col gap-4 p-2">
         <div className="flex items-center gap-2 border-b dark:border-neutral-800 border-neutral-200 pb-2">
           <AccountImage />
-          <DefaultText value="Guess" />
+          <p className="default-text">Guess</p>
         </div>
         <div className="flex flex-col gap-2 items-center">
           {connection === true ? (
@@ -25,9 +23,12 @@ export default function ConnectedState({ name }) {
           )}
           <div className="text-center">
             {connection === true ? (
-              <DarkText value={`Bonjour ${name}, ravie de vous revoir`} />
+              <p className="dark-text">Bonjour ${name}, ravie de vous revoir</p>
             ) : (
-              <DarkText value="Veuillez vous connecter afin d'avoir accès à toutes les fonctionnalités" />
+              <p className="dark-text">
+                Veuillez vous connecter afin d'avoir accès à toutes les
+                fonctionnalités
+              </p>
             )}
           </div>
         </div>
@@ -43,6 +44,6 @@ export default function ConnectedState({ name }) {
           />
         )}
       </div>
-    </WhiteCard>
+    </div>
   );
 }
