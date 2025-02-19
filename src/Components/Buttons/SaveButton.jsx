@@ -2,16 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ConnectionContext, ModalContext } from "../../Contexts";
+import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
-export default function GrayButton({
-  link,
-  onClick,
-  icon,
-  background,
-  value,
-  custom,
-  connectionRequired,
-}) {
+export default function SaveButton({ link, onClick, connectionRequired }) {
   const { connection } = useContext(ConnectionContext);
   const { toggleModal } = useContext(ModalContext);
 
@@ -31,16 +24,9 @@ export default function GrayButton({
     <Link
       to={connectionRequired && !connection ? "#" : link}
       onClick={handleClick}
-      className={`${
-        background
-          ? "dark:bg-neutral-900 bg-neutral-100"
-          : "hover:bg-neutral-100 dark:hover:bg-neutral-900"
-      } ${
-        value && "p-2 w-full h-10"
-      } hover:opacity-75 transition flex gap-2 items-center justify-center dark:text-neutral-600 text-neutral-400 rounded-xl cursor-pointer w-fit ${custom}`}
+      className="dark:bg-neutral-900 dark:hover:bg-indigo-950 bg-neutral-100 hover:bg-indigo-50 transition flex items-center justify-center dark:text-neutral-600 text-neutral-400 hover:text-indigo-500 dark:hover:text-indigo-500 rounded-full cursor-pointer"
     >
-      <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon} />
-      {value}
+      <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={faBookmark} />
     </Link>
   );
 }

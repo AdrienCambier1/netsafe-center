@@ -88,7 +88,7 @@ export default function RegisterModal({ isOpen, onClose }) {
   const alreadyHaveAccount = () => {
     return (
       <p className="default-text">
-        Déjà un compte ?
+        Déjà un compte ?{" "}
         <Link
           onClick={handleLogin}
           className="text-purple-500 font-bold underline"
@@ -118,7 +118,7 @@ export default function RegisterModal({ isOpen, onClose }) {
               onClick={() => setConfidentiality(!confidentiality)}
             />
             <p className="default-text">
-              J'ai lu et accepté la
+              J'ai lu et accepté la{" "}
               <Link className="text-purple-500 font-bold">
                 Politique de confidentialité
               </Link>

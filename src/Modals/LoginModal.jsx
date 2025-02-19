@@ -108,7 +108,7 @@ export default function LoginModal({ isOpen, onClose }) {
               link="/"
             />
             <p className="default-text">
-              Pas de compte ?
+              Pas de compte ?{" "}
               <Link
                 onClick={handleRegister}
                 className="text-purple-500 font-bold underline"

@@ -3,7 +3,6 @@ import {
   faBookmark,
   faComment,
   faEllipsisH,
-  faThumbsUp,
   faEdit,
   faTrash,
   faArrowUp,
@@ -14,6 +13,7 @@ import {
   LikeButton,
   MultipleButton,
   RoundedGrayButton,
+  SaveButton,
 } from "../Buttons";
 import { AccountImage } from "../";
 import { SubmitInput } from "../Inputs";
@@ -87,11 +87,15 @@ export default function NewsCard({
                 icon={faEllipsisH}
                 onClick={() => setActiveMultipleButton(!activeMultipleButton)}
               />
-              {activeMultipleButton && (
-                <div className="absolute right-0">
-                  <MultipleButton buttons={buttons} />
-                </div>
-              )}
+              <div
+                className={`${
+                  activeMultipleButton
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                } transition absolute right-0`}
+              >
+                <MultipleButton buttons={buttons} />
+              </div>
             </div>
           )}
         </div>
@@ -99,7 +103,7 @@ export default function NewsCard({
         <p className="default-text">{content}</p>
         <div className="flex justify-between items-start lg:items-center">
           <div className="flex gap-2">
-            <RoundedGrayButton icon={faBookmark} />
+            <SaveButton />
             <RoundedGrayButton
               icon={faComment}
               value="Commentaires"

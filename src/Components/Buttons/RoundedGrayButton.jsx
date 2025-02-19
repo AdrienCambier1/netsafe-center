@@ -7,7 +7,7 @@ export default function RoundedGrayButton({ link, onClick, icon, value }) {
       to={link}
       onClick={onClick}
       className={`${
-        value ? "px-4 w-fit" : null
+        value && "px-4 w-fit"
       } transition hover:opacity-75 dark:bg-neutral-900 bg-neutral-100 flex gap-2 justify-center items-center dark:text-neutral-600 text-neutral-400 rounded-full cursor-pointer`}
     >
       <FontAwesomeIcon
