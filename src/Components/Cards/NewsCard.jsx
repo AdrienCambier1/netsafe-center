@@ -106,9 +106,7 @@ export default function NewsCard({
               onClick={() => setIsCommentOpen(!isCommentOpen)}
             />
           </div>
-          <div className="flex items-center justify-end w-full">
-            <LikeButton value={like} connectionRequired={true} />
-          </div>
+          <LikeButton value={like} connectionRequired={true} />
         </div>
       </div>
       {isCommentOpen && (
