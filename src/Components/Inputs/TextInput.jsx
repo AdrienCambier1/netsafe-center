@@ -17,7 +17,7 @@ export default function TextInput({
   };
 
   return (
-    <div className="group text-input w-full h-10 overflow-hidden">
+    <div className="transition group text-input w-full h-10 overflow-hidden">
       <FontAwesomeIcon className="gray-icon z-10" icon={icon} />
       <input
         onChange={onChange}

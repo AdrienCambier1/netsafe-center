@@ -39,7 +39,7 @@ export default function HeavyPurpleButton({
         icon ? null : "justify-center"
       } ${
         disabled ? "opacity-50 cursor-not-allowed" : "hover:opacity-75"
-      } min-h-10 text-white dark:bg-purple-700 bg-purple-500 shadow-md dark:shadow-purple-700/50 shadow-purple-500/50 rounded-xl cursor-pointer`}
+      } transition min-h-10 text-white dark:bg-purple-700 bg-purple-500 shadow-md dark:shadow-purple-700/50 shadow-purple-500/50 rounded-xl cursor-pointer`}
     >
       <FontAwesomeIcon
         className="dark:bg-purple-600 bg-purple-400 rounded-xl

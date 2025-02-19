@@ -1,8 +1,10 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ConnectionContext, ModalContext } from "../../Contexts";
+import { faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 
-export default function HeaderButton({
+export default function LikeButton({
   link,
   onClick,
   value,
@@ -27,9 +29,15 @@ export default function HeaderButton({
     <Link
       to={connectionRequired && !connection ? "#" : link}
       onClick={handleClick}
-      className="transition header-button min-h-10 px-1 font-medium font-['Raleway'] text-sm flex items-center justify-center h-full w-fit relative cursor-pointer dark:text-neutral-400 text-neutral-600 hover:text-neutral-800 dark:hover:text-neutral-200"
+      className="group flex items-center justify-center dark:text-neutral-600 text-neutral-400 rounded-xl cursor-pointer w-fit"
     >
-      {value}
+      <FontAwesomeIcon
+        className="transition p-2.5 h-4 w-4 group-hover:bg-red-50 group-hover:dark:bg-red-950 rounded-full group-hover:text-red-500 "
+        icon={faThumbsUp}
+      />
+      <p className="transition default-text group-hover:text-red-500 ml-1">
+        {value}
+      </p>
     </Link>
   );
 }

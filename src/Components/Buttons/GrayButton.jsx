@@ -37,7 +37,7 @@ export default function GrayButton({
           : "hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:opacity-75"
       } ${
         value ? "p-2 w-full h-10" : null
-      } flex gap-2 items-center justify-center dark:text-neutral-600 text-neutral-400 rounded-xl cursor-pointer w-fit ${custom}`}
+      } transition flex gap-2 items-center justify-center dark:text-neutral-600 text-neutral-400 rounded-xl cursor-pointer w-fit ${custom}`}
     >
       <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon} />
       {value}

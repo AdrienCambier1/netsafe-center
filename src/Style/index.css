@@ -15,13 +15,11 @@ body {
   border-radius: 10px;
   position: absolute;
   transform: scaleX(0);
-  transform-origin: right;
   transition: transform 0.25s ease-in-out;
 }
 
 .header-button:hover::after {
   transform: scaleX(1);
-  transform-origin: left;
 }
 
 @font-face {
@@ -60,6 +58,10 @@ body {
 
 .card {
   @apply dark:bg-neutral-950 border border-transparent dark:border-neutral-800 dark:shadow-none bg-white relative rounded-xl h-fit w-full shadow-md shadow-gray-200/50 p-2;
+}
+
+.transition {
+  @apply transition-all duration-200 ease-in-out;
 }
 
 /* Titles */

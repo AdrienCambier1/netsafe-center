@@ -9,7 +9,12 @@ import {
   faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { CommentCard } from "../Cards";
-import { GrayButton, MultipleButton, RoundedGrayButton } from "../Buttons";
+import {
+  GrayButton,
+  LikeButton,
+  MultipleButton,
+  RoundedGrayButton,
+} from "../Buttons";
 import { AccountImage } from "../";
 import { SubmitInput } from "../Inputs";
 import { ModalContext } from "../../Contexts";
@@ -26,14 +31,14 @@ export default function NewsCard({
 }) {
   const { setModalState, toggleModal } = useContext(ModalContext);
   const [comment, setComment] = useState("");
-  const [activeButtons, setActiveButtons] = useState(false);
+  const [activeMultipleButton, setActiveMultipleButton] = useState(false);
   const [isCommentOpen, setIsCommentOpen] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setActiveButtons(false);
+        setActiveMultipleButton(false);
       }
     };
 
@@ -80,9 +85,9 @@ export default function NewsCard({
             <div className="relative" ref={menuRef}>
               <GrayButton
                 icon={faEllipsisH}
-                onClick={() => setActiveButtons(!activeButtons)}
+                onClick={() => setActiveMultipleButton(!activeMultipleButton)}
               />
-              {activeButtons && (
+              {activeMultipleButton && (
                 <div className="absolute right-0">
                   <MultipleButton buttons={buttons} />
                 </div>
@@ -102,8 +107,7 @@ export default function NewsCard({
             />
           </div>
           <div className="flex items-center justify-end w-full">
-            <GrayButton icon={faThumbsUp} />
-            <p className="default-text ml-1">{like}</p>
+            <LikeButton value={like} connectionRequired={true} />
           </div>
         </div>
       </div>
