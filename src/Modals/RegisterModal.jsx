@@ -10,7 +10,6 @@ import { OrSplitter } from "../Components";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import { ModalBackground } from "../Components/Backgrounds";
-import { ModalCard } from "../Components/Cards";
 import { useState, useContext } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
 
@@ -184,7 +183,7 @@ export default function RegisterModal({ isOpen, onClose }) {
     return ReactDOM.createPortal(
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={handleClose} />
-        <ModalCard>
+        <div className="modal-card">
           <div className="absolute top-2 right-2">
             <GrayButton onClick={handleClose} icon={faXmark} />
           </div>
@@ -196,7 +195,7 @@ export default function RegisterModal({ isOpen, onClose }) {
               ? PasswordForm()
               : null}
           </form>
-        </ModalCard>
+        </div>
       </div>,
       document.querySelector("body")
     );

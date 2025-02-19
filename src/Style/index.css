@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-yellow-50/50 dark:bg-black;
+  @apply bg-amber-50/50 dark:bg-black;
 }
 
 .header-button::after {
@@ -57,11 +57,19 @@ body {
 }
 
 .card {
-  @apply dark:bg-neutral-950 border border-transparent dark:border-neutral-800 dark:shadow-none bg-white relative rounded-xl h-fit w-full shadow-md shadow-gray-200/50 p-2;
+  @apply dark:bg-neutral-950 border border-transparent dark:border-neutral-800 shadow-md dark:shadow-none bg-white relative rounded-xl w-full shadow-gray-200/50 p-2;
+}
+
+.alt-card {
+  @apply dark:bg-neutral-950 bg-white rounded-xl w-full border dark:border-neutral-800 border-neutral-200 p-2  cursor-pointer flex gap-4 items-center;
 }
 
 .transition {
   @apply transition-all duration-200 ease-in-out;
+}
+
+.modal-card {
+  @apply relative w-[30rem] p-8 rounded-xl dark:bg-neutral-950 border border-transparent dark:border-neutral-800 bg-white z-50 flex flex-col gap-8 max-h-full items-center overflow-y-scroll;
 }
 
 /* Titles */

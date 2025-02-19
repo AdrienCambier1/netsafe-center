@@ -5,7 +5,6 @@ import { TextInput, TextArea } from "../Components/Inputs";
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
 import { ModalContext } from "../Contexts";
 import { useContext, useState } from "react";
-import { ModalCard } from "../Components/Cards";
 
 export default function CreatePostModal({ isOpen }) {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
@@ -34,7 +33,7 @@ export default function CreatePostModal({ isOpen }) {
     return ReactDOM.createPortal(
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={handleClose} />
-        <ModalCard>
+        <div className="modal-card">
           <h2 className="second-title">Rédigez votre post</h2>
           <div className="w-full flex flex-col gap-2">
             <p className="default-text">Titre</p>
@@ -65,7 +64,7 @@ export default function CreatePostModal({ isOpen }) {
               onClick={handleClose}
             />
           </div>
-        </ModalCard>
+        </div>
       </div>,
       document.querySelector("body")
     );

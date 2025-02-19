@@ -4,7 +4,6 @@ import { HeavyPurpleButton, GrayButton } from "../Components/Buttons";
 import { useContext } from "react";
 import { ModalContext } from "../Contexts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ModalCard } from "../Components/Cards";
 
 export default function DialogModal({
   isOpen,
@@ -31,7 +30,7 @@ export default function DialogModal({
     return ReactDOM.createPortal(
       <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
         <ModalBackground isOpen={isOpen} onClick={onClose} />
-        <ModalCard>
+        <div className="modal-card">
           <div
             className={`${customBackground} rounded-full flex items-center justify-center p-4 w-fit`}
           >
@@ -52,7 +51,7 @@ export default function DialogModal({
             />
             <GrayButton background={true} value="Annuler" onClick={onClose} />
           </div>
-        </ModalCard>
+        </div>
       </div>,
 
       document.querySelector("body")
