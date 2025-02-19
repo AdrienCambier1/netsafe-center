@@ -6,6 +6,10 @@ body {
   @apply bg-amber-50/50 dark:bg-black;
 }
 
+header {
+  @apply z-10 fixed dark:bg-neutral-950 border-b border-transparent dark:border-neutral-800 bg-white shadow-[0px_0px_16px_rgba(17,17,26,0.1)] h-16 w-full flex items-center justify-between px-8;
+}
+
 .header-button::after {
   content: "";
   background-color: #a855f7;
@@ -57,7 +61,7 @@ body {
 }
 
 .card {
-  @apply dark:bg-neutral-950 border border-transparent dark:border-neutral-800 shadow-md dark:shadow-none bg-white relative rounded-xl w-full shadow-gray-200/50 p-2;
+  @apply dark:bg-neutral-950 border border-transparent dark:border-neutral-800 shadow-[0px_0px_16px_rgba(17,17,26,0.1)] bg-white relative rounded-xl w-full p-2;
 }
 
 .alt-card {
@@ -70,6 +74,10 @@ body {
 
 .modal-card {
   @apply relative w-[30rem] p-8 rounded-xl dark:bg-neutral-950 border border-transparent dark:border-neutral-800 bg-white z-50 flex flex-col gap-8 max-h-full items-center overflow-y-scroll;
+}
+
+.light-btn-bg {
+  @apply p-2.5 flex gap-4 items-center dark:hover:bg-neutral-800 hover:bg-white w-full h-fit rounded-xl hover:shadow-[0px_0px_16px_rgba(17,17,26,0.1)] cursor-pointer;
 }
 
 /* Titles */

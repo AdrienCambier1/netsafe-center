@@ -30,9 +30,7 @@ export default function LightPurpleButton({
     <Link
       to={connectionRequired && !connection ? "#" : link}
       onClick={handleClick}
-      className={`${
-        isOnRight && "justify-end"
-      } transition group p-2.5 flex gap-4 items-center dark:hover:bg-neutral-800 hover:bg-white w-full h-fit rounded-xl hover:shadow-md dark:hover:shadow-none hover:shadow-gray-200/50 cursor-pointer`}
+      className={`${isOnRight && "justify-end"} transition light-btn-bg group`}
     >
       {isOnRight ? (
         <>
