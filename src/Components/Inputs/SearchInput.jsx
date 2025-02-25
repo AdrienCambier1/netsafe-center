@@ -20,7 +20,12 @@ export default function SearchInput({ placeholder, onClick }) {
         className="flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium text-sm dark:text-neutral-400 text-neutral-600"
         onChange={handleChange}
       />
-      <IconPurpleButton icon={faPlus} onClick={onClick} isRoundedFull={true} />
+      <IconPurpleButton
+        icon={faPlus}
+        onClick={onClick}
+        isRoundedFull={true}
+        connectionRequired={true}
+      />
     </div>
   );
 }
