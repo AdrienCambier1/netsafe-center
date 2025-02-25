@@ -1,21 +1,27 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactFocusLock from "react-focus-lock";
 
-export default function MultipleButton({ buttons, customPosition }) {
+export default function MultipleButton({ buttons, isOpen }) {
   return (
-    <div className={`${customPosition}`}>
-      <div className="flex flex-col p-2 rounded-xl backdrop-blur-sm bg-neutral-100/75 dark:bg-neutral-900/75">
+    <div className={`${isOpen ? "visible" : "invisible"}  absolute right-0`}>
+      <ReactFocusLock
+        disabled={!isOpen}
+        className={`${
+          isOpen ? "opacity-100" : "opacity-0"
+        } transition flex flex-col p-2 rounded-xl backdrop-blur-sm bg-neutral-100/75 dark:bg-neutral-900/75`}
+      >
         {buttons.map((button) => (
           <Link
             className="group flex gap-4 items-center justify-between rounded-md p-2"
             onClick={button.onClick}
           >
             {button.value && button.isDangerous ? (
-              <p className="text-sm font-['Raleway'] font-medium text-red-400 dark:text-red-600 group-hover:underline">
+              <p className="text-sm font-medium text-red-400 dark:text-red-600 group-hover:underline">
                 {button.value}
               </p>
             ) : (
-              <p className="text-sm font-['Raleway'] font-medium text-neutral-400 dark:text-neutral-600 group-hover:underline">
+              <p className="text-sm font-medium text-neutral-400 dark:text-neutral-600 group-hover:underline">
                 {button.value}
               </p>
             )}
@@ -31,7 +37,7 @@ export default function MultipleButton({ buttons, customPosition }) {
             )}
           </Link>
         ))}
-      </div>
+      </ReactFocusLock>
     </div>
   );
 }

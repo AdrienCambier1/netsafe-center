@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { ModalBackground } from "../Components/Backgrounds";
 import { useContext, useState } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
+import ReactFocusLock from "react-focus-lock";
 
 export default function LoginModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -90,59 +91,58 @@ export default function LoginModal({ isOpen, onClose }) {
 
   const isSubmitDisabled = !formData.email || !formData.password;
 
-  if (isOpen) {
-    return ReactDOM.createPortal(
-      <div className="z-30 center-modal">
-        <ModalBackground isOpen={isOpen} onClick={handleClose} />
-        <div className="modal-card">
-          <div className="absolute top-2 right-2">
-            <GrayButton onClick={handleClose} icon={faXmark} />
-          </div>
-          <h2 className="second-title">Connectez-vous</h2>
-          <form
-            onSubmit={handleConnectionSubmit}
-            className="flex flex-col gap-4 items-center w-full"
-          >
-            <GoogleAuthentication />
-            <OrSplitter value="ou" />
-            <TextInput
-              placeholder="Adresse e-mail"
-              type="text"
-              icon={faUser}
-              value={formData.email}
-              onChange={handleChange("email")}
-            />
-            <TextInput
-              placeholder="Mot de passe"
-              type="password"
-              icon={faLock}
-              value={formData.password}
-              onChange={handleChange("password")}
-            />
-            <button
-              className="heavy-purple-btn justify-center"
-              type="submit"
-              disabled={isSubmitDisabled}
-            >
-              Se connecter
-            </button>
-
-            <p className="default-text">
-              Pas de compte ?{" "}
-              <Link
-                onClick={handleRegister}
-                className="text-purple-500 font-bold underline"
-              >
-                S'inscrire
-              </Link>
-            </p>
-          </form>
+  return ReactDOM.createPortal(
+    <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
+      <ModalBackground isOpen={isOpen} onClick={handleClose} />
+      <ReactFocusLock
+        disabled={!isOpen}
+        className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
+      >
+        <div className="absolute top-2 right-2">
+          <GrayButton onClick={handleClose} icon={faXmark} />
         </div>
-      </div>,
+        <h2 className="second-title">Connectez-vous</h2>
+        <form
+          onSubmit={handleConnectionSubmit}
+          className="flex flex-col gap-4 items-center w-full"
+        >
+          <GoogleAuthentication />
+          <OrSplitter value="ou" />
+          <TextInput
+            placeholder="Adresse e-mail"
+            type="text"
+            icon={faUser}
+            value={formData.email}
+            onChange={handleChange("email")}
+          />
+          <TextInput
+            placeholder="Mot de passe"
+            type="password"
+            icon={faLock}
+            value={formData.password}
+            onChange={handleChange("password")}
+          />
+          <button
+            className="heavy-purple-btn justify-center"
+            type="submit"
+            disabled={isSubmitDisabled}
+          >
+            Se connecter
+          </button>
 
-      document.querySelector("body")
-    );
-  } else {
-    return null;
-  }
+          <p className="default-text">
+            Pas de compte ?{" "}
+            <Link
+              onClick={handleRegister}
+              className="text-purple-500 font-bold underline"
+            >
+              S'inscrire
+            </Link>
+          </p>
+        </form>
+      </ReactFocusLock>
+    </div>,
+
+    document.querySelector("body")
+  );
 }

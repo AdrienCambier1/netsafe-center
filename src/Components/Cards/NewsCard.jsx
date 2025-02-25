@@ -87,15 +87,7 @@ export default function NewsCard({
                 icon={faEllipsisH}
                 onClick={() => setActiveMultipleButton(!activeMultipleButton)}
               />
-              <div
-                className={`${
-                  activeMultipleButton
-                    ? "opacity-100"
-                    : "opacity-0 pointer-events-none"
-                } transition absolute right-0`}
-              >
-                <MultipleButton buttons={buttons} />
-              </div>
+              <MultipleButton buttons={buttons} isOpen={activeMultipleButton} />
             </div>
           )}
         </div>

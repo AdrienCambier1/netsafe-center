@@ -52,10 +52,6 @@ header {
   @apply bg-black/50 dark:bg-white/25 backdrop-blur-[2px];
 }
 
-.opacity-transition {
-  @apply transition-opacity duration-500;
-}
-
 .transition {
   @apply transition-all duration-200 ease-in-out;
 }

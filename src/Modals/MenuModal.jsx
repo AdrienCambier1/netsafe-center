@@ -9,6 +9,7 @@ import { ModalBackground } from "../Components/Backgrounds";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext, ModalContext, ConnectionContext } from "../Contexts";
 import { useContext } from "react";
+import ReactFocusLock from "react-focus-lock";
 
 export default function MenuModal({ isOpen, onClose }) {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -28,12 +29,13 @@ export default function MenuModal({ isOpen, onClose }) {
   };
 
   return (
-    <>
+    <div className={`${isOpen ? "visible" : "invisible"} z-30 absolute`}>
       <ModalBackground isOpen={isOpen} onClick={onClose} />
-      <div
+      <ReactFocusLock
+        disabled={!isOpen || modals["loginModal"] || modals["registerModal"]}
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } p-4 top-0 right-0 w-60 max-w-full h-full fixed border-l border-transparent dark:border-neutral-800 dark:bg-neutral-950 bg-white transition-transform ease-in-out block lg:hidden overflow-y-auto`}
+        } p-4 top-0 right-0 w-60 max-w-full h-full fixed border-l border-transparent dark:border-neutral-800 dark:bg-neutral-950 bg-white transition block lg:hidden overflow-y-auto`}
       >
         <div className="flex justify-between items-center">
           <IconPurpleButton icon={faClose} onClick={onClose} />
@@ -84,7 +86,7 @@ export default function MenuModal({ isOpen, onClose }) {
             onClick={() => toggleModal("loginModal")}
           />
         )}
-      </div>
-    </>
+      </ReactFocusLock>
+    </div>
   );
 }

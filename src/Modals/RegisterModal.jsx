@@ -7,7 +7,6 @@ import {
 import {
   GrayButton,
   GoogleAuthentication,
-  HeavyPurpleButton,
   RadioButton,
 } from "../Components/Buttons";
 import { TextInput } from "../Components/Inputs";
@@ -15,8 +14,9 @@ import { OrSplitter } from "../Components";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import { ModalBackground } from "../Components/Backgrounds";
-import { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
+import ReactFocusLock from "react-focus-lock";
 
 export default function RegisterModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -275,35 +275,34 @@ export default function RegisterModal({ isOpen, onClose }) {
     );
   };
 
-  if (isOpen) {
-    return ReactDOM.createPortal(
-      <div className="flex fixed inset-0 items-center justify-center z-50 px-8">
-        <ModalBackground isOpen={isOpen} onClick={handleClose} />
-        <div className="modal-card">
-          <div
-            className={`absolute top-2 px-2 flex w-full ${
-              connectionState === "email" ? "justify-end" : "justify-between"
-            }`}
-          >
-            {connectionState === "password" && (
-              <GrayButton
-                onClick={() => setConnectionState("email")}
-                icon={faArrowLeft}
-              />
-            )}
-            <GrayButton onClick={handleClose} icon={faXmark} />
-          </div>
-          <h2 className="second-title">Inscrivez-vous</h2>
-          {connectionState === "email"
-            ? EmailForm()
-            : connectionState === "password"
-            ? PasswordForm()
-            : null}
+  return ReactDOM.createPortal(
+    <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
+      <ModalBackground isOpen={isOpen} onClick={handleClose} />
+      <ReactFocusLock
+        disabled={!isOpen}
+        className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
+      >
+        <div
+          className={`absolute top-2 px-2 flex w-full ${
+            connectionState === "email" ? "justify-end" : "justify-between"
+          }`}
+        >
+          {connectionState === "password" && (
+            <GrayButton
+              onClick={() => setConnectionState("email")}
+              icon={faArrowLeft}
+            />
+          )}
+          <GrayButton onClick={handleClose} icon={faXmark} />
         </div>
-      </div>,
-      document.querySelector("body")
-    );
-  } else {
-    return null;
-  }
+        <h2 className="second-title">Inscrivez-vous</h2>
+        {connectionState === "email"
+          ? EmailForm()
+          : connectionState === "password"
+          ? PasswordForm()
+          : null}
+      </ReactFocusLock>
+    </div>,
+    document.querySelector("body")
+  );
 }
