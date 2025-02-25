@@ -13,28 +13,59 @@ import { useContext, useState } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
 
 export default function LoginModal({ isOpen, onClose }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { modals, toggleModal, setModalState, resetModals } =
-    useContext(ModalContext);
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const { toggleModal, setModalState } = useContext(ModalContext);
   const { setConnection } = useContext(ConnectionContext);
+
+  const handleChange = (field) => (e) => {
+    const value = e.target.value;
+
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleClose = () => {
+    onClose();
+    resetForm();
+  };
+
+  const handleRegister = () => {
+    onClose();
+    toggleModal("registerModal");
+    resetForm();
+  };
+
+  const resetForm = () => {
+    setFormData({ email: "", password: "" });
+  };
+
+  const handleConnectionSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!isSubmitDisabled) {
+      await handleConnection();
+    }
+  };
 
   const handleConnection = async () => {
     try {
       setModalState("isLoading", true);
 
+      const { email, password } = formData;
       const requestBody = {
         username: email,
         password: password,
       };
 
-      const response = await fetch("http://localhost:3000/Login/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestBody),
-      });
+      const response = await fetch(
+        "https://netsafe-center-backend.vercel.app/Login/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(response);
@@ -57,23 +88,7 @@ export default function LoginModal({ isOpen, onClose }) {
     }
   };
 
-  const handleRegister = () => {
-    onClose();
-    toggleModal("registerModal");
-    resetForm();
-  };
-
-  const handleClose = () => {
-    onClose();
-    resetForm();
-  };
-
-  const resetForm = () => {
-    setEmail("");
-    setPassword("");
-  };
-
-  const isSubmitDisabled = !email || !password;
+  const isSubmitDisabled = !formData.email || !formData.password;
 
   if (isOpen) {
     return ReactDOM.createPortal(
@@ -84,29 +99,34 @@ export default function LoginModal({ isOpen, onClose }) {
             <GrayButton onClick={handleClose} icon={faXmark} />
           </div>
           <h2 className="second-title">Connectez-vous</h2>
-          <form className="flex flex-col gap-4 items-center w-full">
+          <form
+            onSubmit={handleConnectionSubmit}
+            className="flex flex-col gap-4 items-center w-full"
+          >
             <GoogleAuthentication />
             <OrSplitter value="ou" />
             <TextInput
               placeholder="Adresse e-mail"
-              type="email"
+              type="text"
               icon={faUser}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={handleChange("email")}
             />
             <TextInput
               placeholder="Mot de passe"
               type="password"
               icon={faLock}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={handleChange("password")}
             />
-            <HeavyPurpleButton
-              value="Se connecter"
+            <button
+              className="heavy-purple-btn justify-center"
+              type="submit"
               disabled={isSubmitDisabled}
-              onClick={handleConnection}
-              link="/"
-            />
+            >
+              Se connecter
+            </button>
+
             <p className="default-text">
               Pas de compte ?{" "}
               <Link

@@ -31,6 +31,7 @@ export default function GrayButton({
     <Link
       to={connectionRequired && !connection ? "#" : link}
       onClick={handleClick}
+      type="button"
       className={`${
         background
           ? "dark:bg-neutral-900 bg-neutral-100"

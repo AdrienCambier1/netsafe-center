@@ -9,6 +9,7 @@ export default function TextInput({
   placeholder,
   type,
   icon,
+  error,
 }) {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -17,22 +18,24 @@ export default function TextInput({
   };
 
   return (
-    <div className="transition group text-input w-full h-10 overflow-hidden">
-      <FontAwesomeIcon className="gray-icon z-10" icon={icon} />
-      <input
-        onChange={onChange}
-        type={type === "password" && isPasswordVisible ? "text" : type}
-        value={value}
-        placeholder={placeholder}
-        className="absolute px-9 flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full h-full font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
-      />
-      {type === "password" && (
-        <GrayButton
-          icon={!isPasswordVisible ? faEyeSlash : faEye}
-          onClick={togglePasswordVisibility}
-          custom="z-10"
+    <>
+      <div className="transition group text-input w-full h-10 overflow-hidden">
+        <FontAwesomeIcon className="gray-icon z-10" icon={icon} />
+        <input
+          onChange={onChange}
+          type={type === "password" && isPasswordVisible ? "text" : type}
+          value={value}
+          placeholder={placeholder}
         />
-      )}
-    </div>
+        {type === "password" && (
+          <GrayButton
+            icon={!isPasswordVisible ? faEyeSlash : faEye}
+            onClick={togglePasswordVisibility}
+            custom="z-10"
+          />
+        )}
+      </div>
+      {error && <p className="text-error">{error}</p>}
+    </>
   );
 }

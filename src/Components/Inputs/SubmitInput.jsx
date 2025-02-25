@@ -15,7 +15,7 @@ export default function SubmitInput({
       <input
         placeholder={placeholder}
         value={value}
-        className="px-4 flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium font-['Raleway'] text-sm dark:text-neutral-400 text-neutral-600"
+        className="px-4 flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium text-sm dark:text-neutral-400 text-neutral-600"
         onChange={onChange}
       />
       <IconPurpleButton
