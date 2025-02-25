@@ -25,11 +25,6 @@ export default function Modals() {
         value="Post ajouté avec succès"
       />
       <AlertModal
-        modal="textCopied"
-        isActive={modals["textCopied"]}
-        value="Copié dans le presse-papiers"
-      />
-      <AlertModal
         modal="loginAlert"
         isActive={modals["loginAlert"]}
         value="Connecté avec succès"
@@ -110,6 +105,11 @@ export default function Modals() {
         modal="tryRegisterAlert"
         isActive={modals["tryRegisterAlert"]}
         value="Erreur lors de l'inscription"
+      />
+      <MessageModal
+        modal="textCopied"
+        isActive={modals["textCopied"]}
+        value="Copié dans le presse-papiers"
       />
     </>
   );
