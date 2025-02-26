@@ -27,7 +27,7 @@ export default function MostLikedPosts() {
           />
         ))
       ) : (
-        <p className="default-text">Aucun post trouvé</p>
+        <p className="mt-4 default-text">Aucun post trouvé</p>
       )}
     </>
   );

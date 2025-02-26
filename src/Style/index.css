@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-purple-50/50 dark:bg-neutral-950;
+  @apply bg-purple-50/50 dark:bg-black;
 }
 
 header {
-  @apply z-10 fixed dark:bg-neutral-900 bg-white shadow-[5px_12px_20px_rgba(36,37,38,0.075)] dark:shadow-black/50 h-16 w-full flex items-center justify-between px-8;
+  @apply z-10 fixed dark:bg-neutral-950 bg-white shadow-[5px_12px_20px_rgba(36,37,38,0.075)] border-b border-transparent dark:border-neutral-800 h-16 w-full flex items-center justify-between px-8;
 }
 
 @font-face {
@@ -25,7 +25,7 @@ header {
 }
 
 .gray-icon {
-  @apply p-2.5 h-4 w-4 text-neutral-400 dark:text-neutral-500;
+  @apply p-2.5 h-4 w-4 text-neutral-400 dark:text-neutral-600;
 }
 
 .center-modal {
@@ -49,7 +49,7 @@ header {
 }
 
 .alert-modal {
-  @apply py-4 px-8 bottom-8 right-8 rounded-xl z-20 border bg-white dark:bg-neutral-800;
+  @apply py-4 px-8 bottom-8 right-8 rounded-xl z-20 border bg-white dark:bg-neutral-950;
 }
 
 /* Feed colors */
@@ -127,21 +127,21 @@ header {
 /* Cards */
 
 .card {
-  @apply dark:bg-neutral-900 shadow-[5px_12px_20px_rgba(36,37,38,0.075)] dark:shadow-black/50 bg-white relative rounded-xl w-full p-2;
+  @apply dark:bg-neutral-950 shadow-[5px_12px_20px_rgba(36,37,38,0.075)] border border-transparent dark:border-neutral-800 bg-white relative rounded-xl w-full p-2;
 }
 
 .alt-card {
-  @apply border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-900 bg-white rounded-xl w-full p-2 cursor-pointer flex gap-4 items-center;
+  @apply border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-950 bg-white rounded-xl w-full p-2 cursor-pointer flex gap-4 items-center;
 }
 
 .modal-card {
-  @apply relative w-[30rem] p-8 rounded-xl dark:bg-neutral-900 bg-white z-50 flex flex-col gap-8 max-h-full items-center overflow-y-scroll;
+  @apply border border-transparent dark:border-neutral-800 relative w-[30rem] p-8 rounded-xl dark:bg-neutral-950 bg-white z-50 flex flex-col gap-8 max-h-full items-center overflow-y-scroll;
 }
 
 /* Inputs */
 
 .search-input {
-  @apply dark:bg-neutral-800 bg-neutral-100 items-center flex rounded-full w-full;
+  @apply dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full w-full;
 }
 
 .search-input input {
@@ -149,7 +149,7 @@ header {
 }
 
 .text-input {
-  @apply flex items-center justify-between bg-neutral-100 dark:bg-neutral-800 rounded-xl relative w-full overflow-hidden;
+  @apply flex items-center justify-between bg-neutral-100 dark:bg-neutral-900 rounded-xl relative w-full overflow-hidden;
 }
 
 .text-input input {
@@ -162,7 +162,7 @@ header {
 
 .text-input textarea,
 .text-input input {
-  @apply dark:placeholder:text-neutral-500 placeholder:text-neutral-400 dark:text-neutral-400 text-neutral-600;
+  @apply dark:placeholder:text-neutral-600 placeholder:text-neutral-400 dark:text-neutral-400 text-neutral-600;
 }
 
 /* Buttons */
@@ -176,11 +176,11 @@ header {
 }
 
 .light-btn {
-  @apply p-2.5 flex gap-4 items-center dark:hover:bg-neutral-700/75 hover:bg-white w-full h-fit rounded-xl hover:shadow-[5px_12px_20px_rgba(36,37,38,0.075)] cursor-pointer;
+  @apply p-2.5 flex gap-4 items-center dark:hover:bg-neutral-800 hover:bg-white w-full h-fit rounded-xl hover:shadow-[5px_12px_20px_rgba(36,37,38,0.075)] cursor-pointer;
 }
 
 .light-btn .icon {
-  @apply h-4 w-4 p-2.5 dark:bg-neutral-800 bg-purple-100 rounded-xl dark:text-purple-700 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-neutral-600;
+  @apply h-4 w-4 p-2.5 dark:bg-neutral-900 bg-purple-100 rounded-xl dark:text-purple-700 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-neutral-600;
 }
 
 .light-btn .red-icon {
@@ -192,11 +192,11 @@ header {
 }
 
 .gray-btn {
-  @apply dark:text-neutral-500 text-neutral-400 flex gap-2 items-center justify-center font-medium cursor-pointer;
+  @apply dark:text-neutral-600 text-neutral-400 flex gap-2 items-center justify-center font-medium cursor-pointer;
 }
 
 .gray-btn-bg {
-  @apply dark:bg-neutral-800 bg-neutral-100;
+  @apply dark:bg-neutral-900 bg-neutral-100;
 }
 
 .header-button {
@@ -224,7 +224,7 @@ header {
 }
 
 .multiple-btn {
-  @apply flex flex-col p-2 rounded-xl backdrop-blur-sm bg-neutral-100/75 dark:bg-neutral-800/75;
+  @apply flex flex-col p-2 rounded-xl backdrop-blur-sm bg-neutral-100/75 dark:bg-neutral-900/75;
 }
 
 /* Titles */
@@ -252,11 +252,11 @@ header {
 /* Texts */
 
 .dark-text {
-  @apply dark:text-neutral-500 text-neutral-400 text-sm;
+  @apply dark:text-neutral-600 text-neutral-400 text-sm;
 }
 
 .smaller-dark-text {
-  @apply dark:text-neutral-500 text-neutral-400 font-medium text-xs;
+  @apply dark:text-neutral-600 text-neutral-400 font-medium text-xs;
 }
 
 .default-text {

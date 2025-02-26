@@ -29,7 +29,7 @@ export default function LikeButton({
     <Link
       to={connectionRequired && !connection ? "#" : link}
       onClick={handleClick}
-      className="group flex items-center justify-center dark:text-neutral-500 text-neutral-400 rounded-xl cursor-pointer w-fit"
+      className="group flex items-center justify-center dark:text-neutral-600 text-neutral-400 rounded-xl cursor-pointer w-fit"
     >
       <FontAwesomeIcon
         className="transition p-2.5 h-4 w-4 group-hover:bg-red-50 group-hover:dark:bg-red-950 rounded-full group-hover:text-red-500"

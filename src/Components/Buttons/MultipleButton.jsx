@@ -21,7 +21,7 @@ export default function MultipleButton({ buttons, isOpen }) {
                 {button.value}
               </p>
             ) : (
-              <p className="text-sm font-medium text-neutral-400 dark:text-neutral-500 group-hover:underline">
+              <p className="text-sm font-medium text-neutral-400 dark:text-neutral-600 group-hover:underline">
                 {button.value}
               </p>
             )}
@@ -30,7 +30,7 @@ export default function MultipleButton({ buttons, isOpen }) {
                 className={`h-4 w-4 ${
                   button.isDangerous
                     ? "text-red-400 dark:text-red-600"
-                    : "text-neutral-400 dark:text-neutral-500"
+                    : "text-neutral-400 dark:text-neutral-600"
                 }`}
                 icon={button.icon}
               />
