@@ -34,11 +34,11 @@ export default function GrayButton({
       type="button"
       className={`${
         background
-          ? "dark:bg-neutral-900 bg-neutral-100"
-          : "hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          ? "gray-btn-bg"
+          : "hover:bg-neutral-100 dark:hover:bg-neutral-800"
       } ${
         value && "p-2 w-full h-10"
-      } hover:opacity-75 transition flex gap-2 items-center justify-center dark:text-neutral-600 text-neutral-400 rounded-xl cursor-pointer w-fit ${custom}`}
+      } hover:opacity-75 transition gray-btn rounded-xl w-fit ${custom}`}
     >
       <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon} />
       {value}

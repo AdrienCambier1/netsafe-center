@@ -107,7 +107,7 @@ export default function NewsCard({
       </div>
       {isCommentOpen && (
         <>
-          <div className="border-t dark:border-neutral-800 border-neutral-200 my-2" />
+          <div className="border-t border-color my-2" />
           <div className="flex flex-col p-2 gap-4">
             <div className="flex gap-2">
               <SubmitInput
@@ -120,10 +120,7 @@ export default function NewsCard({
               />
             </div>
             <div className="flex flex-col gap-2">
-              <div className="my-2">
-                <h4 className="fourth-title">Tous les commentaires</h4>
-              </div>
-
+              <h4 className="my-2 fourth-title">Tous les commentaires</h4>
               {comments.length > 0 ? (
                 comments.map((comment, index) => (
                   <CommentCard

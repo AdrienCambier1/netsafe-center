@@ -17,7 +17,7 @@ export default function PostHeaderCard({ title, description }) {
     <div className="card">
       <div className={`${title && "p-2"} flex flex-col gap-4`}>
         {title && (
-          <div className="py-2 border-b dark:border-neutral-800 border-neutral-200">
+          <div className="py-2 border-b border-color">
             <CustomTitle value={title} />
           </div>
         )}

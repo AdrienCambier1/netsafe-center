@@ -13,7 +13,7 @@ import { TextInput } from "../Components/Inputs";
 import { OrSplitter } from "../Components";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
-import { ModalBackground } from "../Components/Backgrounds";
+import { ModalBackground } from "../Components";
 import React, { useState, useContext, useEffect } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
 import ReactFocusLock from "react-focus-lock";
@@ -187,9 +187,7 @@ export default function RegisterModal({ isOpen, onClose }) {
             />
             <p className="default-text">
               J'ai lu et accepté la{" "}
-              <Link className="text-purple-500 font-bold">
-                Politique de confidentialité
-              </Link>
+              <Link className="text-purple">Politique de confidentialité</Link>
             </p>
           </div>
         </div>
@@ -265,10 +263,7 @@ export default function RegisterModal({ isOpen, onClose }) {
     return (
       <p className="default-text">
         Déjà un compte ?{" "}
-        <Link
-          onClick={handleLogin}
-          className="text-purple-500 font-bold underline"
-        >
+        <Link onClick={handleLogin} className="text-purple underline">
           Se connecter
         </Link>
       </p>

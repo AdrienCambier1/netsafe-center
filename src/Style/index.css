@@ -3,11 +3,204 @@
 @tailwind utilities;
 
 body {
-  @apply bg-purple-50/50 dark:bg-black;
+  @apply bg-purple-50/50 dark:bg-neutral-950;
 }
 
 header {
-  @apply z-10 fixed dark:bg-neutral-950 border-b border-transparent dark:border-neutral-800 bg-white shadow-[5px_12px_20px_rgba(36,37,38,0.075)] h-16 w-full flex items-center justify-between px-8;
+  @apply z-10 fixed dark:bg-neutral-900 bg-white shadow-[5px_12px_20px_rgba(36,37,38,0.075)] dark:shadow-black/50 h-16 w-full flex items-center justify-between px-8;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./font/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+  @apply font-['Raleway'];
+}
+
+.open {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.gray-icon {
+  @apply p-2.5 h-4 w-4 text-neutral-400 dark:text-neutral-500;
+}
+
+.center-modal {
+  @apply flex fixed inset-0 items-center justify-center px-8;
+}
+
+.center {
+  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.transparent-background {
+  @apply bg-black/50 dark:bg-white/25 backdrop-blur-[2px];
+}
+
+.transition {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.page-content {
+  @apply p-8 w-full max-w-[70rem];
+}
+
+.alert-modal {
+  @apply py-4 px-8 bottom-8 right-8 rounded-xl z-20 border bg-white dark:bg-neutral-800;
+}
+
+/* Feed colors */
+
+.feed-yellow {
+  @apply bg-yellow-500 shadow-md shadow-yellow-500/50;
+}
+
+.feed-teal {
+  @apply bg-teal-500 shadow-md shadow-teal-500/50;
+}
+
+.feed-red {
+  @apply bg-red-500 shadow-md shadow-red-500/50;
+}
+
+.black-and-white {
+  @apply text-white dark:text-black;
+}
+
+/* Bg colors */
+
+.bg-purple-shadow {
+  @apply bg-purple-500 dark:bg-purple-700 shadow-md dark:shadow-purple-700/50 shadow-purple-500/50;
+}
+
+.bg-teal {
+  @apply dark:bg-teal-900/50 bg-teal-50 text-teal-500;
+}
+
+.bg-purple {
+  @apply dark:bg-purple-900/50 bg-purple-50 text-purple-500;
+}
+
+.bg-yellow {
+  @apply dark:bg-yellow-900/50 bg-yellow-50 text-yellow-500;
+}
+
+.bg-indigo {
+  @apply dark:bg-indigo-950 bg-indigo-50 text-indigo-500;
+}
+
+.bg-red {
+  @apply dark:bg-red-900/50 bg-red-50 text-red-500;
+}
+
+/* Bg templates */
+
+.bg-icon-squared {
+  @apply rounded-xl flex items-center justify-center p-4 w-fit;
+}
+
+.bg-icon-rounded {
+  @apply rounded-full flex items-center justify-center p-4 w-fit;
+}
+
+/* Borders */
+
+.border-teal {
+  @apply dark:border-teal-900 border-teal-100 border;
+}
+
+.border-red {
+  @apply dark:border-red-900 border-red-100 border;
+}
+
+.border-yellow {
+  @apply dark:border-yellow-900 border-yellow-100 border;
+}
+
+.border-color {
+  @apply dark:border-neutral-800 border-neutral-200;
+}
+
+/* Cards */
+
+.card {
+  @apply dark:bg-neutral-900 shadow-[5px_12px_20px_rgba(36,37,38,0.075)] dark:shadow-black/50 bg-white relative rounded-xl w-full p-2;
+}
+
+.alt-card {
+  @apply border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-900 bg-white rounded-xl w-full p-2 cursor-pointer flex gap-4 items-center;
+}
+
+.modal-card {
+  @apply relative w-[30rem] p-8 rounded-xl dark:bg-neutral-900 bg-white z-50 flex flex-col gap-8 max-h-full items-center overflow-y-scroll;
+}
+
+/* Inputs */
+
+.search-input {
+  @apply dark:bg-neutral-800 bg-neutral-100 items-center flex rounded-full w-full;
+}
+
+.search-input input {
+  @apply flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium text-sm dark:text-neutral-400 text-neutral-600;
+}
+
+.text-input {
+  @apply flex items-center justify-between bg-neutral-100 dark:bg-neutral-800 rounded-xl relative w-full overflow-hidden;
+}
+
+.text-input input {
+  @apply absolute px-9 flex items-end bg-transparent  focus:outline-none w-full h-full font-medium text-sm;
+}
+
+.text-input textarea {
+  @apply p-2 flex items-end bg-transparent focus:outline-none w-full min-h-32 resize-none font-medium text-sm;
+}
+
+.text-input textarea,
+.text-input input {
+  @apply dark:placeholder:text-neutral-500 placeholder:text-neutral-400 dark:text-neutral-400 text-neutral-600;
+}
+
+/* Buttons */
+
+.heavy-purple-btn {
+  @apply p-2 w-full flex gap-2 items-center transition-all ease-in-out min-h-10 text-white dark:bg-purple-700 bg-purple-500 shadow-md dark:shadow-purple-700/50 shadow-purple-500/50 rounded-xl cursor-pointer hover:opacity-75 disabled:opacity-50;
+}
+
+.heavy-purple-btn p {
+  @apply font-medium text-sm overflow-hidden text-ellipsis;
+}
+
+.light-btn {
+  @apply p-2.5 flex gap-4 items-center dark:hover:bg-neutral-700/75 hover:bg-white w-full h-fit rounded-xl hover:shadow-[5px_12px_20px_rgba(36,37,38,0.075)] cursor-pointer;
+}
+
+.light-btn .icon {
+  @apply h-4 w-4 p-2.5 dark:bg-neutral-800 bg-purple-100 rounded-xl dark:text-purple-700 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-neutral-600;
+}
+
+.light-btn .red-icon {
+  @apply h-4 w-4 p-2.5 dark:bg-neutral-900 bg-red-100 rounded-xl dark:text-red-700 text-red-300 group-hover:text-red-500 flex items-center hover:text-neutral-600;
+}
+
+.text-purple-btn {
+  @apply transition text-sm text-purple-500 font-semibold hover:opacity-75 cursor-pointer break-words;
+}
+
+.gray-btn {
+  @apply dark:text-neutral-500 text-neutral-400 flex gap-2 items-center justify-center font-medium cursor-pointer;
+}
+
+.gray-btn-bg {
+  @apply dark:bg-neutral-800 bg-neutral-100;
+}
+
+.header-button {
+  @apply min-h-10 px-1 font-medium text-sm flex items-center justify-center h-full w-fit relative cursor-pointer dark:text-neutral-400 text-neutral-600 hover:text-neutral-800 dark:hover:text-neutral-200;
 }
 
 .header-button::after {
@@ -26,80 +219,12 @@ header {
   transform: scaleX(1);
 }
 
-@font-face {
-  font-family: "Raleway";
-  src: url("./font/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+.radio-btn {
+  @apply dark:text-neutral-700 text-neutral-300 dark:hover:text-neutral-400 hover:text-neutral-600 flex gap-2 items-center justify-center rounded-xl cursor-pointer w-fit;
 }
 
-* {
-  @apply font-['Raleway'];
-}
-
-.open {
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
-}
-
-.gray-icon {
-  @apply p-2.5 h-4 w-4 text-neutral-400 dark:text-neutral-600;
-}
-
-.center-modal {
-  @apply flex fixed inset-0 items-center justify-center px-8;
-}
-
-.transparent-background {
-  @apply bg-black/50 dark:bg-white/25 backdrop-blur-[2px];
-}
-
-.transition {
-  @apply transition-all duration-200 ease-in-out;
-}
-
-/* Cards */
-
-.card {
-  @apply dark:bg-neutral-950 border border-transparent dark:border-neutral-800 shadow-[5px_12px_20px_rgba(36,37,38,0.075)] bg-white relative rounded-xl w-full p-2;
-}
-
-.alt-card {
-  @apply dark:bg-neutral-950 bg-white rounded-xl w-full border dark:border-neutral-800 border-neutral-200 p-2  cursor-pointer flex gap-4 items-center;
-}
-
-.modal-card {
-  @apply relative w-[30rem] p-8 rounded-xl dark:bg-neutral-950 border border-transparent dark:border-neutral-800 bg-white z-50 flex flex-col gap-8 max-h-full items-center overflow-y-scroll;
-}
-
-/* Inputs */
-
-.search-input {
-  @apply dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full dark:border-neutral-800 border-neutral-200 w-full;
-}
-
-.text-input {
-  @apply flex items-center justify-between bg-neutral-100 dark:bg-neutral-900 focus-within:border-neutral-400 dark:focus-within:border-neutral-600 border rounded-xl dark:border-neutral-800 border-neutral-200 relative;
-}
-
-.text-input input {
-  @apply absolute px-9 flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full h-full font-medium  text-sm dark:text-neutral-400 text-neutral-600;
-}
-
-.text-input textarea {
-  @apply p-2 flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full min-h-32 resize-none font-medium text-sm dark:text-neutral-400 text-neutral-600;
-}
-
-/* Buttons */
-
-.heavy-purple-btn {
-  @apply p-2 w-full flex gap-2 items-center transition-all ease-in-out min-h-10 text-white dark:bg-purple-700 bg-purple-500 shadow-md dark:shadow-purple-700/50 shadow-purple-500/50 rounded-xl cursor-pointer hover:opacity-75 disabled:opacity-50;
-}
-
-.heavy-purple-btn p {
-  @apply font-medium text-sm overflow-hidden text-ellipsis;
-}
-
-.light-btn-bg {
-  @apply p-2.5 flex gap-4 items-center dark:hover:bg-neutral-800 hover:bg-white w-full h-fit rounded-xl hover:shadow-[5px_12px_20px_rgba(36,37,38,0.075)] cursor-pointer;
+.multiple-btn {
+  @apply flex flex-col p-2 rounded-xl backdrop-blur-sm bg-neutral-100/75 dark:bg-neutral-800/75;
 }
 
 /* Titles */
@@ -120,14 +245,18 @@ header {
   @apply text-zinc-400 dark:text-zinc-600 font-semibold;
 }
 
+.highlight-card-title {
+  @apply font-semibold dark:text-neutral-200 text-neutral-800;
+}
+
 /* Texts */
 
 .dark-text {
-  @apply dark:text-neutral-600 text-neutral-400 text-sm;
+  @apply dark:text-neutral-500 text-neutral-400 text-sm;
 }
 
 .smaller-dark-text {
-  @apply dark:text-neutral-600 text-neutral-400 font-medium text-xs;
+  @apply dark:text-neutral-500 text-neutral-400 font-medium text-xs;
 }
 
 .default-text {
@@ -136,6 +265,14 @@ header {
 
 .text-error {
   @apply mt-2 text-red-400 text-xs font-medium;
+}
+
+.text-purple {
+  @apply text-purple-500 font-bold;
+}
+
+.highlight-card-text {
+  @apply text-sm font-medium dark:text-neutral-200 text-neutral-800;
 }
 
 /* HTML: <div class="loader"></div> */

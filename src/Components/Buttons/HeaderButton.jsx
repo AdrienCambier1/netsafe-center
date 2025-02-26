@@ -27,7 +27,7 @@ export default function HeaderButton({
     <Link
       to={connectionRequired && !connection ? "#" : link}
       onClick={handleClick}
-      className="transition header-button min-h-10 px-1 font-medium font-['Raleway'] text-sm flex items-center justify-center h-full w-fit relative cursor-pointer dark:text-neutral-400 text-neutral-600 hover:text-neutral-800 dark:hover:text-neutral-200"
+      className="transition header-button"
     >
       {value}
     </Link>

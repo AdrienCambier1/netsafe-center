@@ -24,7 +24,7 @@ export default function SaveButton({ link, onClick, connectionRequired }) {
     <Link
       to={connectionRequired && !connection ? "#" : link}
       onClick={handleClick}
-      className="dark:bg-neutral-900 dark:hover:bg-indigo-950 bg-neutral-100 hover:bg-indigo-50 transition flex items-center justify-center dark:text-neutral-600 text-neutral-400 hover:text-indigo-500 dark:hover:text-indigo-500 rounded-full cursor-pointer"
+      className="dark:bg-neutral-800 dark:hover:bg-indigo-900/50 bg-neutral-100 hover:bg-indigo-50 transition flex items-center justify-center dark:text-neutral-500 text-neutral-400 hover:text-indigo-500 dark:hover:text-indigo-500 rounded-full cursor-pointer"
     >
       <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={faBookmark} />
     </Link>

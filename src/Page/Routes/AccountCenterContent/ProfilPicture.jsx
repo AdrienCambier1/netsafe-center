@@ -1,5 +1,4 @@
 import { AccountImage } from "../../../Components";
-import { TextPurpleButton } from "../../../Components/Buttons";
 
 export default function ProfilPicture() {
   return (
@@ -10,7 +9,7 @@ export default function ProfilPicture() {
           <p className="default-text">xrayzun_</p>
         </div>
         <div className="w-1/2 pl-2 text-right">
-          <TextPurpleButton value="Modifier la photo" />
+          <p className="text-purple-btn">Modifier la photo</p>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function Appearance() {
   return (
     <div className="card">
       <div className="p-2 flex flex-col gap-4">
-        <div className="py-2 border-b dark:border-neutral-800 border-neutral-200">
+        <div className="py-2 border-b border-color">
           <CustomTitle value="Apparence du site" />
         </div>
         <CardContent

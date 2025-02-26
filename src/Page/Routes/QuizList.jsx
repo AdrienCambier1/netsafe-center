@@ -3,10 +3,10 @@ import QuizData from "../../Data/quiz.json";
 
 export default function QuizList() {
   return (
-    <div className="p-8 w-full max-w-[70rem]">
-      <div className="border-b dark:border-neutral-800 border-neutral-200 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
-        <h1 className="first-title">Quiz d'apprentissage</h1>
-      </div>
+    <div className="page-content">
+      <h1 className="first-title border-b border-color pb-4">
+        Quiz d'apprentissage
+      </h1>
       <div className="pt-4 flex flex-col gap-4">
         <h4 className="fourth-title">
           Retrouvez l'intégralité de nos quizz en ligne

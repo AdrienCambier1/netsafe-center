@@ -30,22 +30,16 @@ export default function LightPurpleButton({
     <Link
       to={connectionRequired && !connection ? "#" : link}
       onClick={handleClick}
-      className={`${isOnRight && "justify-end"} transition light-btn-bg group`}
+      className={`${isOnRight && "justify-end"} transition light-btn group`}
     >
       {isOnRight ? (
         <>
           <p className="default-text text-end">{value}</p>
-          <FontAwesomeIcon
-            className="transition h-4 w-4 p-2.5 dark:bg-neutral-900 bg-purple-100 rounded-xl dark:text-purple-700 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-neutral-600"
-            icon={icon}
-          />
+          <FontAwesomeIcon className="transition icon" icon={icon} />
         </>
       ) : (
         <>
-          <FontAwesomeIcon
-            className="transition h-4 w-4 p-2.5 dark:bg-neutral-900 bg-purple-100 rounded-xl dark:text-purple-700 text-purple-300 group-hover:text-purple-500 flex items-center hover:text-neutral-600"
-            icon={icon}
-          />
+          <FontAwesomeIcon className="transition icon" icon={icon} />
           <p className="default-text text-start">{value}</p>
         </>
       )}

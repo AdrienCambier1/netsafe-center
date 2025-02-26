@@ -61,7 +61,7 @@ export default function Modals() {
         description="Etes-vous sûr de vouloir vous déconnecter ?"
         action="Se déconnecter"
         icon={faSignOut}
-        customBackground="dark:bg-red-950 bg-red-50"
+        customBackground="dark:bg-red-900/50 bg-red-50"
         customColor="text-red-500"
         link="/"
       />
@@ -73,7 +73,7 @@ export default function Modals() {
         description="Veuillez vous connecter pour accéder à toutes les fonctionnalités"
         action="Se connecter"
         icon={faUser}
-        customBackground={`dark:bg-amber-950 bg-amber-50`}
+        customBackground={`dark:bg-amber-900/50 bg-amber-50`}
         customColor="text-amber-500"
       />
       <DialogModal
@@ -84,7 +84,7 @@ export default function Modals() {
         description="Etes-vous sûr de vouloir supprimer ce post ?"
         action="Supprimer"
         icon={faTrash}
-        customBackground={`dark:bg-red-950 bg-red-50`}
+        customBackground={`dark:bg-red-900/50 bg-red-50`}
         customColor="text-red-500"
       />
       <LoginModal

@@ -8,7 +8,7 @@ import { TextInput } from "../Components/Inputs";
 import { OrSplitter } from "../Components";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
-import { ModalBackground } from "../Components/Backgrounds";
+import { ModalBackground } from "../Components";
 import { useContext, useState } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
 import ReactFocusLock from "react-focus-lock";
@@ -132,10 +132,7 @@ export default function LoginModal({ isOpen, onClose }) {
 
           <p className="default-text">
             Pas de compte ?{" "}
-            <Link
-              onClick={handleRegister}
-              className="text-purple-500 font-bold underline"
-            >
+            <Link onClick={handleRegister} className="text-purple underline">
               S'inscrire
             </Link>
           </p>

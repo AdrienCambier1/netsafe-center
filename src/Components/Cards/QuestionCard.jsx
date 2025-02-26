@@ -72,7 +72,7 @@ export default function QuestionCard({
           </div>
         </div>
         {showResults ? (
-          <div className="border-t dark:border-neutral-800 border-neutral-200 pt-2 w-full text-center">
+          <div className="border-t border-color pt-2 w-full text-center">
             <p className="smaller-dark-text">{explanation}</p>
           </div>
         ) : (

@@ -1,6 +1,6 @@
 import AccountImage from "../AccountImage";
 import { HeavyPurpleButton } from "../Buttons";
-import { Status } from "../Tags";
+import { Status } from "../";
 import { ConnectionContext, ModalContext } from "../../Contexts";
 import { useContext } from "react";
 
@@ -11,7 +11,7 @@ export default function ConnectedState({ name }) {
   return (
     <div className="card">
       <div className="flex flex-col gap-4 p-2">
-        <div className="flex items-center gap-2 border-b dark:border-neutral-800 border-neutral-200 pb-2">
+        <div className="flex items-center gap-2 border-b border-color pb-2">
           <AccountImage />
           <p className="default-text">Guess</p>
         </div>
@@ -23,7 +23,7 @@ export default function ConnectedState({ name }) {
           )}
           <div className="text-center">
             {connection === true ? (
-              <p className="dark-text">Bonjour ${name}, ravie de vous revoir</p>
+              <p className="dark-text">Bonjour toi, ravie de vous revoir</p>
             ) : (
               <p className="dark-text">
                 Veuillez vous connecter afin d'avoir accès à toutes les

@@ -9,7 +9,7 @@ export default function MultipleButton({ buttons, isOpen }) {
         disabled={!isOpen}
         className={`${
           isOpen ? "opacity-100" : "opacity-0"
-        } transition flex flex-col p-2 rounded-xl backdrop-blur-sm bg-neutral-100/75 dark:bg-neutral-900/75`}
+        } transition multiple-btn`}
       >
         {buttons.map((button) => (
           <Link
@@ -21,7 +21,7 @@ export default function MultipleButton({ buttons, isOpen }) {
                 {button.value}
               </p>
             ) : (
-              <p className="text-sm font-medium text-neutral-400 dark:text-neutral-600 group-hover:underline">
+              <p className="text-sm font-medium text-neutral-400 dark:text-neutral-500 group-hover:underline">
                 {button.value}
               </p>
             )}
@@ -30,7 +30,7 @@ export default function MultipleButton({ buttons, isOpen }) {
                 className={`h-4 w-4 ${
                   button.isDangerous
                     ? "text-red-400 dark:text-red-600"
-                    : "text-neutral-400 dark:text-neutral-600"
+                    : "text-neutral-400 dark:text-neutral-500"
                 }`}
                 icon={button.icon}
               />

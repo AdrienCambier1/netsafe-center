@@ -11,7 +11,7 @@ export default function AccountImage({ image }) {
           alt="Account"
         />
       ) : (
-        <div className="dark:bg-teal-950 bg-teal-50 text-teal-500 rounded-xl flex items-center justify-center h-10 w-10">
+        <div className="bg-teal rounded-xl flex items-center justify-center h-10 w-10">
           <FontAwesomeIcon className="h-4 w-4" icon={faUser} />
         </div>
       )}

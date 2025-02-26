@@ -5,7 +5,7 @@ import {
   GrayButton,
   IconPurpleButton,
 } from "../Components/Buttons";
-import { ModalBackground } from "../Components/Backgrounds";
+import { ModalBackground } from "../Components";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext, ModalContext, ConnectionContext } from "../Contexts";
 import { useContext } from "react";
@@ -35,7 +35,7 @@ export default function MenuModal({ isOpen, onClose }) {
         disabled={!isOpen || modals["loginModal"] || modals["registerModal"]}
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } p-4 top-0 right-0 w-60 max-w-full h-full fixed border-l border-transparent dark:border-neutral-800 dark:bg-neutral-950 bg-white transition block lg:hidden overflow-y-auto`}
+        } p-4 top-0 right-0 w-60 max-w-full h-full fixed dark:bg-neutral-900 bg-white transition block lg:hidden overflow-y-auto`}
       >
         <div className="flex justify-between items-center">
           <IconPurpleButton icon={faClose} onClick={onClose} />
@@ -48,7 +48,7 @@ export default function MenuModal({ isOpen, onClose }) {
             )}
           </div>
         </div>
-        <div className="my-8 py-4 border-t dark:border-neutral-800 border-neutral-200 flex flex-col gap-2">
+        <div className="my-8 py-4 border-t border-color flex flex-col gap-2">
           <HeaderButton
             value="Espace de connaissance"
             link="/knowledge_area"

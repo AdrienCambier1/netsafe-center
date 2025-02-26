@@ -15,9 +15,9 @@ export default function SearchInput({ placeholder, onClick }) {
     <div className="group search-input">
       <FontAwesomeIcon className="gray-icon" icon={faSearch} />
       <input
+        className="pr-4"
         placeholder={placeholder}
         value={searchTerm}
-        className="flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium text-sm dark:text-neutral-400 text-neutral-600"
         onChange={handleChange}
       />
       <IconPurpleButton

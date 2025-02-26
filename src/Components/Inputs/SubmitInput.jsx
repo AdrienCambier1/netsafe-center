@@ -13,9 +13,9 @@ export default function SubmitInput({
   return (
     <div className="group search-input">
       <input
+        className="px-4"
         placeholder={placeholder}
         value={value}
-        className="px-4 flex items-end bg-inherit dark:placeholder:text-neutral-600 placeholder:text-neutral-400 focus:outline-none w-full font-medium text-sm dark:text-neutral-400 text-neutral-600"
         onChange={onChange}
       />
       <IconPurpleButton

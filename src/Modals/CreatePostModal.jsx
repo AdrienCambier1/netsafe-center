@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import { GrayButton, HeavyPurpleButton } from "../Components/Buttons";
-import { ModalBackground } from "../Components/Backgrounds";
+import { ModalBackground } from "../Components";
 import { TextInput, TextArea } from "../Components/Inputs";
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
 import { ModalContext } from "../Contexts";

@@ -24,8 +24,8 @@ export default function AccountCenter() {
   };
 
   return (
-    <div className="p-8 w-full max-w-[70rem]">
-      <div className="border-b dark:border-neutral-800 border-neutral-200 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
+    <div className="page-content">
+      <div className="border-b border-color pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
         <h1 className="first-title">Gestion du compte</h1>
         <CardButton value="ID : 704838134" icon={faCopy} onClick={handleCopy} />
       </div>

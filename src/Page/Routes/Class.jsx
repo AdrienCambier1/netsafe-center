@@ -10,10 +10,8 @@ export default function Class() {
   }
 
   return (
-    <div className="p-8 w-full max-w-[70rem]">
-      <div className="border-b dark:border-neutral-800 border-neutral-200 pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
-        <h1 className="first-title">Cours en ligne</h1>
-      </div>
+    <div className="page-content">
+      <h1 className="first-title border-b border-color pb-4">Cours en ligne</h1>
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div>
           <div className="flex flex-col gap-2 sticky top-24">

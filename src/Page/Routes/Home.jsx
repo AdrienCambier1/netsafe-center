@@ -1,7 +1,6 @@
 import {
   faBookmark,
   faCaretLeft,
-  faBook,
   faPenNib,
   faArrowLeft,
   faFileAlt,
@@ -12,10 +11,8 @@ import {
   PostHeaderCard,
 } from "../../Components/Cards";
 import { LightPurpleButton, HeavyPurpleButton } from "../../Components/Buttons";
-import { useContext, useState } from "react";
 import Data from "../../Data/data.json";
 import { faTiktok, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { ModalContext } from "../../Contexts";
 
 export default function Home() {
   const asideElement = () => {
@@ -77,13 +74,13 @@ export default function Home() {
               connectionRequired={true}
             />
             <div className="hidden md:flex lg:hidden flex-col gap-8">
-              <div className="border-t dark:border-neutral-800 gray-300/50" />
+              <div className="border-t border-color" />
               {asideElement()}
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 md:border-l border-t md:border-t-0 dark:border-neutral-800 border-neutral-200">
+        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 md:border-l border-t md:border-t-0 border-color">
           <PostHeaderCard description="Ajoutez un post" />
           {Data.sort((a, b) => b.date - a.date)
             .slice(0, 4)
@@ -100,7 +97,7 @@ export default function Home() {
               />
             ))}
         </div>
-        <div className="block md:hidden lg:block col-span-1 p-8 lg:border-l border-t md:border-t-0 dark:border-neutral-800 border-neutral-200">
+        <div className="block md:hidden lg:block col-span-1 p-8 lg:border-l border-t md:border-t-0 border-color">
           <div className="flex flex-col gap-8 sticky top-24">
             {asideElement()}
           </div>

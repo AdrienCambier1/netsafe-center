@@ -22,7 +22,7 @@ export default function MessageModal({ value, isActive, modal }) {
     <div
       className={`${
         isActive ? "opacity-100 visible" : "opacity-0 invisible"
-      } transition z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transparent-background rounded-md py-2 px-4`}
+      } transition z-50 center transparent-background rounded-md py-2 px-4`}
     >
       <p className="text-sm font-medium text-neutral-300">{value}</p>
     </div>,

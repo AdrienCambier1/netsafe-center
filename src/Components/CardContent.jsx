@@ -1,5 +1,3 @@
-import { TextPurpleButton } from "./Buttons";
-
 export default function CardContent({ description, value, button }) {
   return (
     <div className="flex justify-between rounded-xl py-2 items-center">
@@ -12,7 +10,7 @@ export default function CardContent({ description, value, button }) {
 
       {button && (
         <div className="w-1/2 pl-2 text-right">
-          <TextPurpleButton value={button} />
+          <p className="text-purple-btn">{button}</p>
         </div>
       )}
     </div>
