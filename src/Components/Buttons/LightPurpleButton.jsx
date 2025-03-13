@@ -11,12 +11,12 @@ export default function LightPurpleButton({
   isOnRight,
   connectionRequired,
 }) {
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
   const { toggleModal } = useContext(ModalContext);
 
   const handleClick = (e) => {
     if (connectionRequired) {
-      if (!connection) {
+      if (!isAuthenticated) {
         toggleModal("connectionRequirementDialog");
       } else if (onClick) {
         onClick(e);
@@ -28,7 +28,7 @@ export default function LightPurpleButton({
 
   return (
     <Link
-      to={connectionRequired && !connection ? "#" : link}
+      to={connectionRequired && !isAuthenticated ? "#" : link}
       onClick={handleClick}
       className={`${isOnRight && "justify-end"} transition light-btn group`}
     >

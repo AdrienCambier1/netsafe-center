@@ -7,11 +7,10 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
-import { ConnectionContext, ModalContext } from "../../Contexts";
+import { ModalContext } from "../../Contexts";
 
 export default function PostHeaderCard({ title, description }) {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const { connection } = useContext(ConnectionContext);
 
   return (
     <div className="card">

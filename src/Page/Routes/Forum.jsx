@@ -12,7 +12,7 @@ import { ModalContext, ConnectionContext } from "../../Contexts";
 
 export default function Forum() {
   const { toggleModal } = useContext(ModalContext);
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
 
   return (
     <div className="page-content">
@@ -32,7 +32,7 @@ export default function Forum() {
               icon={faThumbsUp}
               link="/forum/most_liked_posts"
             />
-            {connection === true ? (
+            {isAuthenticated === true ? (
               <>
                 <LightPurpleButton
                   value="Posts enregistrés"

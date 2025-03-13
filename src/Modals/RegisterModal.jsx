@@ -12,7 +12,7 @@ import {
 import { TextInput } from "../Components/Inputs";
 import { OrSplitter } from "../Components";
 import ReactDOM from "react-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ModalBackground } from "../Components";
 import React, { useState, useContext, useEffect } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
@@ -30,7 +30,8 @@ export default function RegisterModal({ isOpen, onClose }) {
   const [errors, setErrors] = useState({});
   const [connectionState, setConnectionState] = useState("email");
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const { setConnection } = useContext(ConnectionContext);
+  const { register } = useContext(ConnectionContext);
+  const navigate = useNavigate();
 
   const handleChange = (field) => (e) => {
     const value = e.target.value;
@@ -96,31 +97,14 @@ export default function RegisterModal({ isOpen, onClose }) {
     try {
       setModalState("isLoading", true);
 
-      const { email, user, password } = formData;
-      const requestBody = {
-        identifiant: user,
-        mail: email,
-        password: password,
-      };
-
-      const response = await fetch(
-        "https://netsafe-center-backend.vercel.app/Login/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestBody),
-        }
+      const response = await register(
+        formData.user,
+        formData.email,
+        formData.password
       );
 
-      if (!response.ok) {
-        throw new Error(response);
-      }
-
-      const data = await response.json();
-      if (data.success) {
-        setConnection(true);
+      if (response.success) {
+        navigate("/");
         setModalState("registerAlert", true);
         setModalState("menuModal", false);
         resetForm();

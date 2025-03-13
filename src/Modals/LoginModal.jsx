@@ -7,7 +7,7 @@ import {
 import { TextInput } from "../Components/Inputs";
 import { OrSplitter } from "../Components";
 import ReactDOM from "react-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ModalBackground } from "../Components";
 import { useContext, useState } from "react";
 import { ModalContext, ConnectionContext } from "../Contexts";
@@ -16,7 +16,8 @@ import ReactFocusLock from "react-focus-lock";
 export default function LoginModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const { toggleModal, setModalState } = useContext(ModalContext);
-  const { setConnection } = useContext(ConnectionContext);
+  const { login } = useContext(ConnectionContext);
+  const navigate = useNavigate();
 
   const handleChange = (field) => (e) => {
     const value = e.target.value;
@@ -51,30 +52,10 @@ export default function LoginModal({ isOpen, onClose }) {
     try {
       setModalState("isLoading", true);
 
-      const { email, password } = formData;
-      const requestBody = {
-        username: email,
-        password: password,
-      };
+      const response = await login(formData.email, formData.password);
 
-      const response = await fetch(
-        "https://netsafe-center-backend.vercel.app/Login/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestBody),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(response);
-      }
-
-      const data = await response.json();
-      if (data.success) {
-        setConnection(true);
+      if (response.success) {
+        navigate("/");
         setModalState("loginAlert", true);
         setModalState("menuModal", false);
         resetForm();

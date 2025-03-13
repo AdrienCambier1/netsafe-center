@@ -1,11 +1,5 @@
 import { Header, Main, Footer, Modals } from "./Page";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-  BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import {
   ThemeProvider,
   ModalProvider,

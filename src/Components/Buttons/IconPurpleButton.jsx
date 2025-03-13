@@ -10,7 +10,7 @@ export default function IconPurpleButton({
   disabled,
   connectionRequired,
 }) {
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
   const { toggleModal } = useContext(ModalContext);
 
   const handleClick = (e) => {
@@ -20,7 +20,7 @@ export default function IconPurpleButton({
     }
 
     if (connectionRequired) {
-      if (!connection) {
+      if (!isAuthenticated) {
         toggleModal("connectionRequirementDialog");
       } else if (onClick) {
         onClick(e);
@@ -32,7 +32,7 @@ export default function IconPurpleButton({
 
   return (
     <Link
-      to={connectionRequired && !connection ? "#" : link}
+      to={connectionRequired && !isAuthenticated ? "#" : link}
       onClick={handleClick}
       className={`${
         disabled ? "opacity-50 cursor-not-allowed" : "hover:opacity-75"

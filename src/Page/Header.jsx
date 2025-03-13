@@ -14,7 +14,7 @@ import { ThemeContext, ModalContext, ConnectionContext } from "../Contexts";
 export default function Header() {
   const { theme, setTheme } = useContext(ThemeContext);
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
 
   const ScrollToTop = () => {
     window.scrollTo({
@@ -85,7 +85,7 @@ export default function Header() {
           link="/forum/recent_posts"
           onClick={() => ScrollToTop()}
         />
-        {connection === true ? (
+        {isAuthenticated === true ? (
           <GrayButton
             icon={faUser}
             background={true}

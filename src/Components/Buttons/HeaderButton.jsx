@@ -8,12 +8,12 @@ export default function HeaderButton({
   value,
   connectionRequired,
 }) {
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
   const { toggleModal } = useContext(ModalContext);
 
   const handleClick = (e) => {
     if (connectionRequired) {
-      if (!connection) {
+      if (!isAuthenticated) {
         toggleModal("connectionRequirementDialog");
       } else if (onClick) {
         onClick(e);
@@ -25,7 +25,7 @@ export default function HeaderButton({
 
   return (
     <Link
-      to={connectionRequired && !connection ? "#" : link}
+      to={connectionRequired && !isAuthenticated ? "#" : link}
       onClick={handleClick}
       className="transition header-button"
     >

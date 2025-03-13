@@ -14,7 +14,7 @@ import ReactFocusLock from "react-focus-lock";
 export default function MenuModal({ isOpen, onClose }) {
   const { theme, setTheme } = useContext(ThemeContext);
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
 
   const ScrollToTop = () => {
     window.scrollTo({
@@ -72,7 +72,7 @@ export default function MenuModal({ isOpen, onClose }) {
             connectionRequired={true}
           />
         </div>
-        {connection === true ? (
+        {isAuthenticated === true ? (
           <HeavyPurpleButton
             icon={faUser}
             value="Votre profil"

@@ -5,12 +5,12 @@ import { ConnectionContext, ModalContext } from "../../Contexts";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 export default function SaveButton({ link, onClick, connectionRequired }) {
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
   const { toggleModal } = useContext(ModalContext);
 
   const handleClick = (e) => {
     if (connectionRequired) {
-      if (!connection) {
+      if (!isAuthenticated) {
         toggleModal("connectionRequirementDialog");
       } else if (onClick) {
         onClick(e);
@@ -22,7 +22,7 @@ export default function SaveButton({ link, onClick, connectionRequired }) {
 
   return (
     <Link
-      to={connectionRequired && !connection ? "#" : link}
+      to={connectionRequired && !isAuthenticated ? "#" : link}
       onClick={handleClick}
       className="dark:bg-neutral-900 dark:hover:bg-indigo-900/50 bg-neutral-100 hover:bg-indigo-50 transition flex items-center justify-center dark:text-neutral-600 text-neutral-400 hover:text-indigo-500 dark:hover:text-indigo-500 rounded-full cursor-pointer"
     >

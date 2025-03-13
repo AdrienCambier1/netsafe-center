@@ -13,7 +13,7 @@ import { faSignOut, faUser, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Modals() {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const { setConnection } = useContext(ConnectionContext);
+  const { logout } = useContext(ConnectionContext);
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function Modals() {
       <DialogModal
         isOpen={modals["logoutDialog"]}
         onClose={() => toggleModal("logoutDialog")}
-        onClick={() => setConnection(false)}
+        onClick={() => logout()}
         alertId="logoutAlert"
         title="Déconnexion"
         description="Etes-vous sûr de vouloir vous déconnecter ?"

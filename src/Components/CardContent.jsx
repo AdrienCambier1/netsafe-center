@@ -1,18 +1,20 @@
 export default function CardContent({ description, value, button }) {
   return (
-    <div className="flex justify-between rounded-xl py-2 items-center">
-      <div
-        className={`${button ? "w-1/2 pr-2" : "w-full"} flex flex-col gap-1`}
-      >
-        <h4 className="fourth-title">{description}</h4>
-        {value && <p className="break-words default-text">{value}</p>}
-      </div>
+    <div className="flex flex-col py-2 gap-2 items-start">
+      <h4 className="fourth-title">{description}</h4>
+      <div className="flex justify-between items-center w-full gap-2">
+        {value && (
+          <p className="break-words default-text max-w-1/2 flex-1 basis-3/4">
+            {value}
+          </p>
+        )}
 
-      {button && (
-        <div className="w-1/2 pl-2 text-right">
-          <p className="text-purple-btn">{button}</p>
-        </div>
-      )}
+        {button && (
+          <p className="text-purple-btn flex-none basis-1/4 text-right">
+            {button}
+          </p>
+        )}
+      </div>
     </div>
   );
 }

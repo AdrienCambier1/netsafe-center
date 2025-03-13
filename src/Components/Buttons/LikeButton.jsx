@@ -10,12 +10,12 @@ export default function LikeButton({
   value,
   connectionRequired,
 }) {
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
   const { toggleModal } = useContext(ModalContext);
 
   const handleClick = (e) => {
     if (connectionRequired) {
-      if (!connection) {
+      if (!isAuthenticated) {
         toggleModal("connectionRequirementDialog");
       } else if (onClick) {
         onClick(e);
@@ -27,7 +27,7 @@ export default function LikeButton({
 
   return (
     <Link
-      to={connectionRequired && !connection ? "#" : link}
+      to={connectionRequired && !isAuthenticated ? "#" : link}
       onClick={handleClick}
       className="group flex items-center justify-center dark:text-neutral-600 text-neutral-400 rounded-xl cursor-pointer w-fit"
     >

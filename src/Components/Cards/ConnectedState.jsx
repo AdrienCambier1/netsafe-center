@@ -5,7 +5,7 @@ import { ConnectionContext, ModalContext } from "../../Contexts";
 import { useContext } from "react";
 
 export default function ConnectedState({ name }) {
-  const { connection } = useContext(ConnectionContext);
+  const { isAuthenticated } = useContext(ConnectionContext);
   const { toggleModal } = useContext(ModalContext);
 
   return (
@@ -16,13 +16,13 @@ export default function ConnectedState({ name }) {
           <p className="default-text">Guess</p>
         </div>
         <div className="flex flex-col gap-2 items-center">
-          {connection === true ? (
+          {isAuthenticated === true ? (
             <Status isOk={true} value="Connecté" />
           ) : (
             <Status isOk={false} value="Déconnecté" />
           )}
           <div className="text-center">
-            {connection === true ? (
+            {isAuthenticated === true ? (
               <p className="dark-text">Bonjour toi, ravie de vous revoir</p>
             ) : (
               <p className="dark-text">
@@ -32,7 +32,7 @@ export default function ConnectedState({ name }) {
             )}
           </div>
         </div>
-        {connection === true ? (
+        {isAuthenticated === true ? (
           <HeavyPurpleButton
             value="Mon profil"
             link="/account_center/account_overview"

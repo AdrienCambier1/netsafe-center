@@ -10,7 +10,7 @@ export default function PasswordAndSecurity() {
         </div>
         <CardContent
           description="Mot de passe"
-          value="Ceci est un mdp"
+          value="Sécurisez votre mot de passe en le mettant régulièrement à jour."
           button="Mettre à jour"
         />
       </div>
