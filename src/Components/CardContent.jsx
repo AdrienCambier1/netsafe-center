@@ -4,9 +4,7 @@ export default function CardContent({ description, value, button }) {
       <h4 className="fourth-title">{description}</h4>
       <div className="flex justify-between items-center w-full gap-2">
         {value && (
-          <p className="break-words default-text max-w-1/2 flex-1 basis-3/4">
-            {value}
-          </p>
+          <p className="break-words default-text flex-1 basis-3/4">{value}</p>
         )}
 
         {button && (

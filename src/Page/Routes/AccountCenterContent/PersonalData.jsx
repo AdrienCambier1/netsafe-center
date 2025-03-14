@@ -23,7 +23,7 @@ export default function PersonalData() {
         <CardContent
           description="Adresse e-mail"
           value={userData.length > 0 ? userData[0].mail : "Email inconnu"}
-          button="Modifier l'adresse e-mail associé"
+          button="Modifier le mail"
         />
       </div>
     </div>
