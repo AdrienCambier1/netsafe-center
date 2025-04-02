@@ -13,20 +13,11 @@ export default function DialogModal({
   title,
   description,
   action,
-  alertId,
   icon,
   customBackground,
   customColor,
   link,
 }) {
-  const { setModalState } = useContext(ModalContext);
-
-  const handleSubmission = (id) => {
-    setModalState(id, true);
-    onClose();
-    onClick && onClick();
-  };
-
   return ReactDOM.createPortal(
     <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
       <ModalBackground isOpen={isOpen} onClick={onClose} />
@@ -50,7 +41,7 @@ export default function DialogModal({
           <HeavyPurpleButton
             value={action}
             link={link}
-            onClick={() => handleSubmission(alertId)}
+            onClick={() => onClick()}
           />
           <GrayButton background={true} value="Annuler" onClick={onClose} />
         </div>

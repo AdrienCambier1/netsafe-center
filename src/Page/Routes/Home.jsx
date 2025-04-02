@@ -11,10 +11,53 @@ import {
   PostHeaderCard,
 } from "../../Components/Cards";
 import { LightPurpleButton, HeavyPurpleButton } from "../../Components/Buttons";
-import Data from "../../Data/data.json";
 import { faTiktok, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { useContext, useEffect, useState } from "react";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale";
+import {
+  NewsCardSkeleton,
+  PostHeaderCardSkeleton,
+} from "../../Components/Skeletons";
+import { ModalContext } from "../../Contexts";
 
 export default function Home() {
+  const [postData, setPostData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { newPost } = useContext(ModalContext);
+
+  useEffect(() => {
+    if (postData.length > 0) {
+      return;
+    }
+
+    const fetchPostData = async () => {
+      try {
+        const response = await fetch(
+          `https://netsafe-center-backend.vercel.app/posts`,
+          {
+            method: "GET",
+          }
+        );
+
+        const data = await response.json();
+        setPostData(data);
+      } catch (error) {
+        throw new Error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchPostData();
+  }, []);
+
+  useEffect(() => {
+    if (newPost) {
+      setPostData((currentPosts) => [newPost, ...currentPosts]);
+    }
+  }, [newPost]);
+
   const asideElement = () => {
     return (
       <>
@@ -81,21 +124,35 @@ export default function Home() {
         </div>
 
         <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 md:border-l border-t md:border-t-0 border-color">
-          <PostHeaderCard description="Ajoutez un post" />
-          {Data.sort((a, b) => b.date - a.date)
-            .slice(0, 4)
-            .map((post) => (
-              <NewsCard
-                key={post.id}
-                title={post.title}
-                image={post.image}
-                content={post.content}
-                user={post.user}
-                date={post.date}
-                like={post.like}
-                comments={post.comments}
-              />
-            ))}
+          {isLoading ? (
+            <>
+              <PostHeaderCardSkeleton />
+              <NewsCardSkeleton />
+              <NewsCardSkeleton />
+              <NewsCardSkeleton />
+            </>
+          ) : (
+            <>
+              <PostHeaderCard description="Ajoutez un post" />
+              {postData.length > 0 ? (
+                postData.map((post) => (
+                  <NewsCard
+                    key={post.id}
+                    id={post.id}
+                    title={post.title}
+                    content={post.content}
+                    user={post.user_name}
+                    date={format(new Date(post.created_at), "dd/MM/yyyy", {
+                      locale: fr,
+                    })}
+                    like={parseInt(post.likes_count)}
+                  />
+                ))
+              ) : (
+                <p className="mt-4 default-text">Aucun post trouvé</p>
+              )}
+            </>
+          )}
         </div>
         <div className="block md:hidden lg:block col-span-1 p-8 lg:border-l border-t md:border-t-0 border-color">
           <div className="flex flex-col gap-8 sticky top-24">

@@ -1,6 +1,5 @@
 import { useRef, useEffect, useContext, useState } from "react";
 import {
-  faBookmark,
   faComment,
   faEllipsisH,
   faEdit,
@@ -8,6 +7,7 @@ import {
   faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { CommentCard } from "../Cards";
+import { CommentCardSkeleton } from "../Skeletons";
 import {
   GrayButton,
   LikeButton,
@@ -18,22 +18,56 @@ import {
 import { AccountImage } from "../";
 import { SubmitInput } from "../Inputs";
 import { ModalContext } from "../../Contexts";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale";
 
 export default function NewsCard({
+  id,
   title,
-  image,
   content,
   user,
   date,
   like,
-  comments,
   canModify,
 }) {
-  const { setModalState, toggleModal } = useContext(ModalContext);
+  const { modals, setModalState, toggleModal, setCurrentPostId } =
+    useContext(ModalContext);
   const [comment, setComment] = useState("");
   const [activeMultipleButton, setActiveMultipleButton] = useState(false);
   const [isCommentOpen, setIsCommentOpen] = useState(false);
+  const [commentsData, setCommentsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   const menuRef = useRef(null);
+
+  useEffect(() => {
+    if (isCommentOpen) {
+      const fetchCommentsData = async () => {
+        if (commentsData.length > 0) {
+          return;
+        }
+
+        setIsLoading(true);
+        try {
+          const response = await fetch(
+            `https://netsafe-center-backend.vercel.app/posts/${id}/comments`,
+            {
+              method: "GET",
+            }
+          );
+
+          const data = await response.json();
+          setCommentsData(data);
+        } catch (error) {
+          console.error("Erreur lors du chargement des commentaires:", error);
+        } finally {
+          setIsLoading(false);
+        }
+      };
+
+      fetchCommentsData();
+    }
+  }, [isCommentOpen]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -64,7 +98,10 @@ export default function NewsCard({
       icon: faTrash,
       value: "Supprimer",
       isDangerous: true,
-      onClick: () => toggleModal("removePostDialog"),
+      onClick: () => {
+        toggleModal("removePostDialog");
+        setCurrentPostId(id);
+      },
     },
   ];
 
@@ -75,7 +112,7 @@ export default function NewsCard({
       <div className="flex flex-col p-2 gap-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <AccountImage image={image} />
+            <AccountImage />
             <div className="flex gap-2 items-center ml-2">
               <p className="default-text">{user}</p>
               <p className="smaller-dark-text">{date}</p>
@@ -121,14 +158,18 @@ export default function NewsCard({
             </div>
             <div className="flex flex-col gap-2">
               <h4 className="my-2 fourth-title">Tous les commentaires</h4>
-              {comments.length > 0 ? (
-                comments.map((comment, index) => (
+              {isLoading ? (
+                <CommentCardSkeleton />
+              ) : commentsData.length > 0 ? (
+                commentsData.map((comment, index) => (
                   <CommentCard
                     key={index}
-                    date={comment.date}
-                    comment={comment.comment}
-                    like={comment.like}
-                    user={comment.user}
+                    date={format(new Date(comment.created_at), "dd/MM/yyyy", {
+                      locale: fr,
+                    })}
+                    comment={comment.content}
+                    like={parseInt(comment.likes_count)}
+                    user={comment.user_name}
                     type="isAccount"
                   />
                 ))

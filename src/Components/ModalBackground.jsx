@@ -5,12 +5,16 @@ export default function ModalBackground({ isOpen, onClick }) {
     if (isOpen) {
       document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.removeProperty("overflow-y");
-    }
+      const anyModalOpen =
+        document.querySelectorAll(".center-modal").length > 0 &&
+        Array.from(document.querySelectorAll(".center-modal")).some(
+          (modal) => !modal.classList.contains("invisible")
+        );
 
-    return () => {
-      document.body.style.removeProperty("overflow-y");
-    };
+      if (!anyModalOpen) {
+        document.body.style.removeProperty("overflow-y");
+      }
+    }
   }, [isOpen]);
 
   return (

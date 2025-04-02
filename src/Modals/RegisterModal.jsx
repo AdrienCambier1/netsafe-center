@@ -107,8 +107,8 @@ export default function RegisterModal({ isOpen, onClose }) {
         navigate("/");
         setModalState("registerAlert", true);
         setModalState("menuModal", false);
-        resetForm();
         onClose();
+        resetForm();
       } else {
         setModalState("tryRegisterAlert", true);
       }

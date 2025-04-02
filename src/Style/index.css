@@ -106,6 +106,10 @@ header {
   @apply rounded-full flex items-center justify-center p-4 w-fit;
 }
 
+.skeleton {
+  @apply bg-neutral-200 dark:bg-neutral-800 rounded-full;
+}
+
 /* Borders */
 
 .border-teal {

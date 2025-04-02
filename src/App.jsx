@@ -4,7 +4,6 @@ import {
   ThemeProvider,
   ModalProvider,
   QuestionProvider,
-  SearchProvider,
   ConnectionProvider,
 } from "./Contexts";
 import { ScrollToTop } from "./Functions";
@@ -18,12 +17,10 @@ function App() {
           <ThemeProvider>
             <ModalProvider>
               <QuestionProvider>
-                <SearchProvider>
-                  <Header />
-                  <Main />
-                  <Footer />
-                  <Modals />
-                </SearchProvider>
+                <Header />
+                <Main />
+                <Footer />
+                <Modals />
               </QuestionProvider>
             </ModalProvider>
           </ThemeProvider>

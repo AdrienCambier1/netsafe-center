@@ -9,12 +9,17 @@ import {
 import { useContext } from "react";
 import { ModalContext } from "../../Contexts";
 
-export default function PostHeaderCard({ title, description }) {
+export default function PostHeaderCard({
+  title,
+  description,
+  searchTerm,
+  setSearchTerm,
+}) {
   const { modals, toggleModal, setModalState } = useContext(ModalContext);
 
   return (
-    <div className="card">
-      <div className={`${title && "p-2"} flex flex-col gap-4`}>
+    <div className="card ">
+      <div className="p-2 flex flex-col gap-4">
         {title && (
           <div className="py-2 border-b border-color">
             <CustomTitle value={title} />
@@ -43,6 +48,8 @@ export default function PostHeaderCard({ title, description }) {
               placeholder="Rechercher un post"
               icon={faSearch}
               onClick={() => toggleModal("createPostModal")}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           )}
         </div>

@@ -1,9 +1,5 @@
 import { faUser, faLock, faXmark } from "@fortawesome/free-solid-svg-icons";
-import {
-  GrayButton,
-  GoogleAuthentication,
-  HeavyPurpleButton,
-} from "../Components/Buttons";
+import { GrayButton, GoogleAuthentication } from "../Components/Buttons";
 import { TextInput } from "../Components/Inputs";
 import { OrSplitter } from "../Components";
 import ReactDOM from "react-dom";
@@ -58,8 +54,8 @@ export default function LoginModal({ isOpen, onClose }) {
         navigate("/");
         setModalState("loginAlert", true);
         setModalState("menuModal", false);
-        resetForm();
         onClose();
+        resetForm();
       } else {
         setModalState("tryLoginAlert", true);
       }

@@ -3,14 +3,10 @@ import { createContext, useState } from "react";
 export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
-  const [modals, setModals] = useState({
-    postAlert: false,
-    postError: false,
-    logoutAlert: false,
-    logoutError: false,
-    CreatePostModal: false,
-    logoutDialog: false,
-  });
+  const [modals, setModals] = useState({});
+  const [currentPostId, setCurrentPostId] = useState(null);
+  const [deletedPostId, setDeletedPostId] = useState(null);
+  const [newPost, setNewPost] = useState(null); // Nouvel état pour stocker les données du post créé
 
   const toggleModal = (modalName) => {
     setModals((prev) => ({
@@ -27,7 +23,19 @@ export const ModalProvider = ({ children }) => {
   };
 
   return (
-    <ModalContext.Provider value={{ modals, toggleModal, setModalState }}>
+    <ModalContext.Provider
+      value={{
+        modals,
+        toggleModal,
+        setModalState,
+        currentPostId,
+        setCurrentPostId,
+        deletedPostId,
+        setDeletedPostId,
+        newPost,
+        setNewPost,
+      }}
+    >
       {children}
     </ModalContext.Provider>
   );

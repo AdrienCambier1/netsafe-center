@@ -12,51 +12,85 @@ import { useContext } from "react";
 import { faSignOut, faUser, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Modals() {
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const { logout } = useContext(ConnectionContext);
+  const {
+    modals,
+    toggleModal,
+    setModalState,
+    currentPostId,
+    setCurrentPostId,
+    setDeletedPostId,
+  } = useContext(ModalContext);
+  const { logout, authFetch } = useContext(ConnectionContext);
+
+  const handleDeletePost = async () => {
+    if (!currentPostId) return;
+
+    setModalState("isLoading", true);
+    try {
+      const response = await authFetch(
+        `https://netsafe-center-backend.vercel.app/posts/${currentPostId}`,
+        {
+          method: "DELETE",
+        }
+      );
+      if (response.ok) {
+        setModalState("removePostAlert", true);
+        setDeletedPostId(currentPostId);
+        setCurrentPostId(null);
+        setModalState("removePostDialog", false);
+      } else {
+        setModalState("tryDeletePostAlert", true);
+      }
+    } catch (error) {
+      setModalState("tryDeletePostAlert", true);
+    } finally {
+      setModalState("isLoading", false);
+    }
+  };
 
   return (
     <>
       <CreatePostModal isOpen={modals["createPostModal"]} />
       <AlertModal
         modal="postAlert"
-        isError={modals["postError"]}
         isActive={modals["postAlert"]}
-        value="Post ajouté avec succès"
+        value="Votre post a été ajouté"
       />
       <AlertModal
         modal="loginAlert"
         isActive={modals["loginAlert"]}
-        value="Connecté avec succès"
+        value="Vous êtes connecté"
       />
       <AlertModal
         modal="registerAlert"
         isActive={modals["registerAlert"]}
-        value="Compte créé avec succès"
+        value="Votre compte a été créé"
       />
       <AlertModal
         modal="logoutAlert"
-        isError={modals["logoutError"]}
+        isError={true}
         isActive={modals["logoutAlert"]}
-        value="Déconnecté avec succès"
+        value="Vous avez été déconnecté"
       />
       <AlertModal
         modal="commentAlert"
-        isError={modals["commentError"]}
         isActive={modals["commentAlert"]}
-        value="Commentaire ajouté avec succès"
+        value="Le commentaire a été ajouté"
       />
       <AlertModal
         modal="removePostAlert"
-        isError={modals["removePostError"]}
+        isError={true}
         isActive={modals["removePostAlert"]}
-        value="Post supprimé avec succès"
+        value="Votre post a été supprimé"
       />
       <DialogModal
         isOpen={modals["logoutDialog"]}
         onClose={() => toggleModal("logoutDialog")}
-        onClick={() => logout()}
-        alertId="logoutAlert"
+        onClick={() => {
+          logout();
+          setModalState("logoutAlert", true);
+          setModalState("logoutDialog", false);
+        }}
         title="Déconnexion"
         description="Etes-vous sûr de vouloir vous déconnecter ?"
         action="Se déconnecter"
@@ -68,7 +102,10 @@ export default function Modals() {
       <DialogModal
         isOpen={modals["connectionRequirementDialog"]}
         onClose={() => toggleModal("connectionRequirementDialog")}
-        onClick={() => toggleModal("loginModal")}
+        onClick={() => {
+          toggleModal("loginModal");
+          toggleModal("connectionRequirementDialog");
+        }}
         title="Connexion requise"
         description="Veuillez vous connecter pour accéder à toutes les fonctionnalités"
         action="Se connecter"
@@ -78,7 +115,11 @@ export default function Modals() {
       />
       <DialogModal
         isOpen={modals["removePostDialog"]}
-        onClose={() => toggleModal("removePostDialog")}
+        onClose={() => {
+          toggleModal("removePostDialog");
+          setCurrentPostId(null);
+        }}
+        onClick={handleDeletePost}
         alertId="removePostAlert"
         title="Supprimer le post"
         description="Etes-vous sûr de vouloir supprimer ce post ?"
@@ -105,6 +146,16 @@ export default function Modals() {
         modal="tryRegisterAlert"
         isActive={modals["tryRegisterAlert"]}
         value="Erreur lors de l'inscription"
+      />
+      <MessageModal
+        modal="tryCreatePostAlert"
+        isActive={modals["tryCreatePostAlert"]}
+        value="Erreur lors de la création du post"
+      />
+      <MessageModal
+        modal="tryDeletePostAlert"
+        isActive={modals["tryDeletePostAlert"]}
+        value="Erreur lors de la suppression du post"
       />
       <MessageModal
         modal="textCopied"

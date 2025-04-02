@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState, useContext } from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
+import { jwtDecode } from "jwt-decode";
 
 export const ConnectionContext = createContext();
 
@@ -13,6 +14,7 @@ export const ConnectionProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(
     !!initialAuth.refreshToken
   );
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
     if (auth.refreshToken) {
@@ -26,9 +28,37 @@ export const ConnectionProvider = ({ children }) => {
 
   useEffect(() => {
     if (auth.refreshToken) {
-      isAccessTokenValid();
+      checkAndRefreshToken();
     }
   }, []);
+
+  const isTokenExpired = useCallback((token) => {
+    if (!token) return true;
+
+    try {
+      const decoded = jwtDecode(token);
+      const currentTime = Date.now() / 1000;
+
+      if (!decoded.exp || decoded.exp < currentTime) {
+        return true;
+      }
+
+      return decoded.exp - currentTime < 300;
+    } catch (error) {
+      console.error("Erreur lors du décodage du token:", error);
+      return true;
+    }
+  }, []);
+
+  const checkAndRefreshToken = useCallback(async () => {
+    if (!auth.accessToken || isRefreshing) return false;
+
+    if (!isTokenExpired(auth.accessToken)) {
+      return true;
+    }
+
+    return await refreshAccessToken();
+  }, [auth.accessToken, isRefreshing, isTokenExpired]);
 
   const login = async (mail, password) => {
     try {
@@ -60,7 +90,8 @@ export const ConnectionProvider = ({ children }) => {
 
       return { success: true };
     } catch (error) {
-      throw new Error(error);
+      console.error("Erreur lors de la connexion:", error);
+      return { success: false, error: error.message };
     }
   };
 
@@ -89,15 +120,23 @@ export const ConnectionProvider = ({ children }) => {
         return { success: false };
       }
 
-      login(mail, password);
-      return { success: true };
+      const loginResult = await login(mail, password);
+      return loginResult;
     } catch (error) {
-      throw new Error(error);
+      console.error("Erreur lors de l'inscription:", error);
+      return { success: false, error: error.message };
     }
   };
 
   const isAccessTokenValid = async () => {
     try {
+      if (!auth.accessToken) return false;
+
+      if (isTokenExpired(auth.accessToken)) {
+        const refreshed = await refreshAccessToken();
+        return refreshed;
+      }
+
       const response = await fetch(
         "https://netsafe-center-backend.vercel.app/protected",
         {
@@ -114,13 +153,23 @@ export const ConnectionProvider = ({ children }) => {
         return refreshed;
       }
 
-      console.log(response);
+      return true;
     } catch (error) {
-      throw new Error(error);
+      console.error("Erreur lors de la vérification du token:", error);
+      return false;
     }
   };
 
   const refreshAccessToken = async () => {
+    if (isRefreshing) return false;
+
+    if (!auth.refreshToken) {
+      logout();
+      return false;
+    }
+
+    setIsRefreshing(true);
+
     try {
       const response = await fetch(
         "https://netsafe-center-backend.vercel.app/Login/refresh",
@@ -142,14 +191,60 @@ export const ConnectionProvider = ({ children }) => {
         ...prevAuth,
         accessToken: data.accessToken,
       }));
+
+      return true;
     } catch (error) {
-      throw new Error(error);
+      console.error("Erreur lors du rafraîchissement du token:", error);
+      logout();
+      return false;
+    } finally {
+      setIsRefreshing(false);
     }
   };
 
+  const authFetch = async (url, options = {}) => {
+    await checkAndRefreshToken();
+
+    if (!isAuthenticated) {
+      throw new Error("Non authentifié");
+    }
+
+    const authOptions = {
+      ...options,
+      headers: {
+        ...options.headers,
+        Authorization: `Bearer ${auth.accessToken}`,
+        "Content-Type": options.headers?.["Content-Type"] || "application/json",
+      },
+    };
+
+    return fetch(url, authOptions);
+  };
+
+  useEffect(() => {
+    if (!auth.refreshToken) return;
+
+    checkAndRefreshToken();
+
+    const intervalId = setInterval(() => {
+      checkAndRefreshToken();
+    }, 3 * 60 * 1000);
+
+    return () => clearInterval(intervalId);
+  }, [auth.refreshToken, checkAndRefreshToken]);
+
   return (
     <ConnectionContext.Provider
-      value={{ isAuthenticated, auth, login, logout, register }}
+      value={{
+        isAuthenticated,
+        auth,
+        login,
+        logout,
+        register,
+        isAccessTokenValid,
+        authFetch,
+        refreshAccessToken,
+      }}
     >
       {children}
     </ConnectionContext.Provider>
