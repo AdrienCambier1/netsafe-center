@@ -34,6 +34,7 @@ export default function PostHeaderCard({
                   background={true}
                   link="/forum/user_posts"
                   connectionRequired={true}
+                  description="Vos posts"
                 />
                 <p className="dark-text">{description}</p>
               </div>

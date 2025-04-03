@@ -22,9 +22,9 @@ export default function MessageModal({ value, isActive, modal }) {
     <div
       className={`${
         isActive ? "opacity-100 visible" : "opacity-0 invisible"
-      } transition z-50 center transparent-background rounded-md py-2 px-4`}
+      } transition center transparent-background btn-description`}
     >
-      <p className="text-sm font-medium text-neutral-300">{value}</p>
+      <p>{value}</p>
     </div>,
     document.querySelector("body")
   );

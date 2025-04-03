@@ -84,6 +84,7 @@ export default function Header() {
           background={true}
           link="/forum/recent_posts"
           onClick={() => ScrollToTop()}
+          description="Forum"
         />
         {isAuthenticated === true ? (
           <GrayButton
@@ -91,12 +92,14 @@ export default function Header() {
             background={true}
             link="/account_center/account_overview"
             onClick={() => ScrollToTop()}
+            description="Mon compte"
           />
         ) : (
           <GrayButton
             icon={faUser}
             background={true}
             onClick={() => toggleModal("loginModal")}
+            description="Connexion"
           />
         )}
         <div className="block lg:hidden">
