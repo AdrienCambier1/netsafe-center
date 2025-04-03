@@ -80,7 +80,7 @@ export default function SavedPosts() {
     return (
       <>
         <PostHeaderCard
-          title="Vos posts"
+          title="Posts enregistrés"
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
         />
