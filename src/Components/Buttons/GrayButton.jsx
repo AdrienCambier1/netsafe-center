@@ -11,7 +11,6 @@ export default function GrayButton({
   value,
   custom,
   connectionRequired,
-  description,
 }) {
   const { isAuthenticated } = useContext(ConnectionContext);
   const { toggleModal } = useContext(ModalContext);
@@ -40,19 +39,11 @@ export default function GrayButton({
             : "hover:bg-neutral-100 dark:hover:bg-neutral-800"
         } ${
           value && "p-2 w-full h-10"
-        } hover:opacity-75 transition gray-btn rounded-xl w-fit ${custom} peer`}
+        } hover:opacity-75 transition gray-btn rounded-xl w-fit ${custom}`}
       >
         <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon} />
         {value}
       </Link>
-      {description && (
-        <div
-          className="opacity-0 invisible peer-hover:opacity-100 peer-hover:visible
-                     transition absolute top-12 transparent-background btn-description"
-        >
-          <p>{description}</p>
-        </div>
-      )}
     </div>
   );
 }

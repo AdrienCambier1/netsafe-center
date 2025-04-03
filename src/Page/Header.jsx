@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { MenuModal } from "../Modals";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { GrayButton, HeaderButton } from "../Components/Buttons";
 import { Link } from "react-router-dom";
 import { ThemeContext, ModalContext, ConnectionContext } from "../Contexts";
@@ -84,7 +84,6 @@ export default function Header() {
           background={true}
           link="/forum/recent_posts"
           onClick={() => ScrollToTop()}
-          description="Forum"
         />
         {isAuthenticated === true ? (
           <GrayButton
@@ -92,14 +91,12 @@ export default function Header() {
             background={true}
             link="/account_center/account_overview"
             onClick={() => ScrollToTop()}
-            description="Mon compte"
           />
         ) : (
           <GrayButton
             icon={faUser}
             background={true}
             onClick={() => toggleModal("loginModal")}
-            description="Connexion"
           />
         )}
         <div className="block lg:hidden">

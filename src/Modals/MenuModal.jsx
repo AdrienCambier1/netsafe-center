@@ -13,7 +13,7 @@ import ReactFocusLock from "react-focus-lock";
 
 export default function MenuModal({ isOpen, onClose }) {
   const { theme, setTheme } = useContext(ThemeContext);
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const { modals, toggleModal } = useContext(ModalContext);
   const { isAuthenticated } = useContext(ConnectionContext);
 
   const ScrollToTop = () => {

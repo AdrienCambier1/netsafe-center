@@ -29,7 +29,7 @@ export default function RegisterModal({ isOpen, onClose }) {
 
   const [errors, setErrors] = useState({});
   const [connectionState, setConnectionState] = useState("email");
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
+  const { toggleModal, setModalState } = useContext(ModalContext);
   const { register } = useContext(ConnectionContext);
   const navigate = useNavigate();
 

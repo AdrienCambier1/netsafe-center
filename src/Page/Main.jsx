@@ -1,9 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import {
   Home,
-  NotFound,
-  Login,
-  SignUp,
   AccountCenter,
   ClassesList,
   QuizList,

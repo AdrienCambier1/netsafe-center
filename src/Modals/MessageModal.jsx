@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { useState, useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { ModalContext } from "../Contexts";
 
 export default function MessageModal({ value, isActive, modal }) {

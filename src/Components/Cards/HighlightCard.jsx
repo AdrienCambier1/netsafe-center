@@ -1,8 +1,4 @@
-import {
-  faCheck,
-  faLightbulb,
-  faQuestionCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import { IconWithBackground } from "../";
 
 export default function HighlightCard({ data, type }) {

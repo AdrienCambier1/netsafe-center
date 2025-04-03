@@ -8,8 +8,7 @@ import { useContext, useState } from "react";
 import ReactFocusLock from "react-focus-lock";
 
 export default function CreatePostModal({ isOpen }) {
-  const { modals, toggleModal, setModalState, setNewPost } =
-    useContext(ModalContext);
+  const { toggleModal, setModalState, setNewPost } = useContext(ModalContext);
   const { auth, authFetch } = useContext(ConnectionContext);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");

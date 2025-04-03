@@ -1,8 +1,6 @@
 import ReactDOM from "react-dom";
 import { ModalBackground } from "../Components";
 import { HeavyPurpleButton, GrayButton } from "../Components/Buttons";
-import { useContext } from "react";
-import { ModalContext } from "../Contexts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactFocusLock from "react-focus-lock";
 
