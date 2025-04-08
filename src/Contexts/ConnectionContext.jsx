@@ -26,40 +26,6 @@ export const ConnectionProvider = ({ children }) => {
     }
   }, [auth]);
 
-  useEffect(() => {
-    if (auth.refreshToken) {
-      checkAndRefreshToken();
-    }
-  }, []);
-
-  const isTokenExpired = useCallback((token) => {
-    if (!token) return true;
-
-    try {
-      const decoded = jwtDecode(token);
-      const currentTime = Date.now() / 1000;
-
-      if (!decoded.exp || decoded.exp < currentTime) {
-        return true;
-      }
-
-      return decoded.exp - currentTime < 300;
-    } catch (error) {
-      console.error("Erreur lors du décodage du token:", error);
-      return true;
-    }
-  }, []);
-
-  const checkAndRefreshToken = useCallback(async () => {
-    if (!auth.accessToken || isRefreshing) return false;
-
-    if (!isTokenExpired(auth.accessToken)) {
-      return true;
-    }
-
-    return await refreshAccessToken();
-  }, [auth.accessToken, isRefreshing, isTokenExpired]);
-
   const login = async (mail, password) => {
     try {
       const requestBody = {
@@ -90,8 +56,7 @@ export const ConnectionProvider = ({ children }) => {
 
       return { success: true };
     } catch (error) {
-      console.error("Erreur lors de la connexion:", error);
-      return { success: false, error: error.message };
+      return { success: false };
     }
   };
 
@@ -123,19 +88,13 @@ export const ConnectionProvider = ({ children }) => {
       const loginResult = await login(mail, password);
       return loginResult;
     } catch (error) {
-      console.error("Erreur lors de l'inscription:", error);
-      return { success: false, error: error.message };
+      return { success: false };
     }
   };
 
-  const isAccessTokenValid = async () => {
+  /* const isAccessTokenValid = async () => {
     try {
       if (!auth.accessToken) return false;
-
-      if (isTokenExpired(auth.accessToken)) {
-        const refreshed = await refreshAccessToken();
-        return refreshed;
-      }
 
       const response = await fetch(
         "https://netsafe-center-backend.vercel.app/protected",
@@ -155,12 +114,11 @@ export const ConnectionProvider = ({ children }) => {
 
       return true;
     } catch (error) {
-      console.error("Erreur lors de la vérification du token:", error);
       return false;
     }
-  };
+  }; */
 
-  const refreshAccessToken = async () => {
+  /* const refreshAccessToken = async () => {
     if (isRefreshing) return false;
 
     if (!auth.refreshToken) {
@@ -194,18 +152,16 @@ export const ConnectionProvider = ({ children }) => {
 
       return true;
     } catch (error) {
-      console.error("Erreur lors du rafraîchissement du token:", error);
       logout();
       return false;
     } finally {
       setIsRefreshing(false);
     }
-  };
+  }; */
 
   const authFetch = async (url, options = {}) => {
-    await checkAndRefreshToken();
-
     if (!isAuthenticated) {
+      logout();
       throw new Error("Non authentifié");
     }
 
@@ -218,20 +174,19 @@ export const ConnectionProvider = ({ children }) => {
       },
     };
 
-    return fetch(url, authOptions);
+    try {
+      const response = await fetch(url, authOptions);
+
+      if (response.status === 401) {
+        logout();
+      }
+
+      return response;
+    } catch (error) {
+      logout();
+      throw new Error(error);
+    }
   };
-
-  useEffect(() => {
-    if (!auth.refreshToken) return;
-
-    checkAndRefreshToken();
-
-    const intervalId = setInterval(() => {
-      checkAndRefreshToken();
-    }, 3 * 60 * 1000);
-
-    return () => clearInterval(intervalId);
-  }, [auth.refreshToken, checkAndRefreshToken]);
 
   return (
     <ConnectionContext.Provider
@@ -241,9 +196,7 @@ export const ConnectionProvider = ({ children }) => {
         login,
         logout,
         register,
-        isAccessTokenValid,
         authFetch,
-        refreshAccessToken,
       }}
     >
       {children}

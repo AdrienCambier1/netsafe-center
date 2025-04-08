@@ -21,8 +21,8 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export default function AccountCenter() {
-  const { modals, toggleModal, setModalState } = useContext(ModalContext);
-  const { auth, logout, authFetch } = useContext(ConnectionContext);
+  const { toggleModal, setModalState } = useContext(ModalContext);
+  const { auth, authFetch } = useContext(ConnectionContext);
   const [userData, setUserData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
@@ -53,7 +53,6 @@ export default function AccountCenter() {
         if (!response.ok) {
           navigate("/");
           setModalState("logoutAlert", true);
-          logout();
           return;
         }
 

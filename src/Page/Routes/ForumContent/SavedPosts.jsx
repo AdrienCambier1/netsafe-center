@@ -14,7 +14,7 @@ export default function SavedPosts() {
   const [postData, setPostData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { newPost, setModalState } = useContext(ModalContext);
-  const { auth, logout, authFetch } = useContext(ConnectionContext);
+  const { auth, authFetch } = useContext(ConnectionContext);
   const navigate = useNavigate();
 
   const filteredPosts =
@@ -45,7 +45,6 @@ export default function SavedPosts() {
         if (!response.ok) {
           navigate("/");
           setModalState("logoutAlert", true);
-          logout();
           return;
         }
 
