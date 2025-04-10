@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-purple-50/50 dark:bg-black;
-}
-
-header {
-  @apply z-10 fixed dark:bg-neutral-950 bg-white shadow-[5px_12px_20px_rgba(36,37,38,0.075)] border-b border-transparent dark:border-neutral-800 h-16 w-full flex items-center justify-between px-8;
-}
-
 @font-face {
   font-family: "Raleway";
   src: url("./font/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
 }
 
-* {
-  @apply font-['Raleway'];
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-purple-50/50 dark:bg-black antialiased  @apply font-['Raleway'];
+}
+
+header {
+  @apply z-10 fixed dark:bg-neutral-950 bg-white shadow-[5px_12px_20px_rgba(36,37,38,0.075)] border-b border-transparent dark:border-neutral-800 h-16 w-full flex items-center justify-between px-8;
 }
 
 .open {
