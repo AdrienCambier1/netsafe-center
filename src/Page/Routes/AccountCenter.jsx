@@ -38,31 +38,19 @@ export default function AccountCenter() {
     }
 
     const fetchUserData = async () => {
-      try {
-        const response = await authFetch(
-          `https://netsafe-center-backend.vercel.app/users/search?query=${auth.identifiant}`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${auth.accessToken}`,
-            },
-          }
-        );
+      const response = await authFetch(
+        `https://netsafe-center-backend.vercel.app/users/search?query=${auth.identifiant}`
+      );
 
-        if (!response.ok) {
-          navigate("/");
-          setModalState("logoutAlert", true);
-          return;
-        }
-
+      if (!response.ok) {
+        navigate("/");
+        setModalState("logoutAlert", true);
+      } else if (response.ok) {
         const data = await response.json();
         setUserData(data);
-      } catch (error) {
-        throw new Error(error);
-      } finally {
-        setIsLoading(false);
       }
+
+      setIsLoading(false);
     };
 
     fetchUserData();

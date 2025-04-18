@@ -15,49 +15,42 @@ export default function CreatePostModal({ isOpen }) {
 
   const handleCreatePost = async () => {
     setModalState("isLoading", true);
-    try {
-      const requestBody = {
+
+    const requestBody = {
+      title: title,
+      content: content,
+      user_id: 1,
+    };
+
+    const response = await authFetch(
+      `https://netsafe-center-backend.vercel.app/posts`,
+      {
+        method: "POST",
+        body: JSON.stringify(requestBody),
+      }
+    );
+
+    if (response.ok) {
+      const newPostData = await response.json();
+
+      setNewPost({
+        id: newPostData.id,
         title: title,
         content: content,
-        user_id: 1,
-      };
+        user_name: auth.identifiant,
+        created_at: new Date().toISOString(),
+        likes_count: "0",
+      });
 
-      const response = await authFetch(
-        `https://netsafe-center-backend.vercel.app/posts`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${auth.accessToken}`,
-          },
-          body: JSON.stringify(requestBody),
-        }
-      );
-
-      if (response.ok) {
-        const newPostData = await response.json();
-
-        setNewPost({
-          id: newPostData.id,
-          title: title,
-          content: content,
-          user_name: auth.identifiant,
-          created_at: new Date().toISOString(),
-          likes_count: "0",
-        });
-
-        setModalState("removePostAlert", false);
-        setModalState("postAlert", true);
-        toggleModal("createPostModal");
-        resetForm();
-      } else {
-        setModalState("tryCreatePostAlert", true);
-      }
-    } catch (error) {
+      setModalState("removePostAlert", false);
+      setModalState("postAlert", true);
+      toggleModal("createPostModal");
+      resetForm();
+    } else {
       setModalState("tryCreatePostAlert", true);
-    } finally {
-      setModalState("isLoading", false);
     }
+
+    setModalState("isLoading", false);
   };
 
   const handleClose = () => {

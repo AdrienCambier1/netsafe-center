@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState, useCallback } from "react";
-import { jwtDecode } from "jwt-decode";
 
 export const ConnectionContext = createContext();
 
@@ -14,7 +13,6 @@ export const ConnectionProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(
     !!initialAuth.refreshToken
   );
-  const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
     if (auth.refreshToken) {
@@ -27,25 +25,16 @@ export const ConnectionProvider = ({ children }) => {
   }, [auth]);
 
   const login = async (mail, password) => {
-    try {
-      const requestBody = {
-        mail: mail,
-        password: password,
-      };
-
-      const response = await fetch(
-        "https://netsafe-center-backend.vercel.app/Login/login",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(requestBody),
-        }
-      );
-
-      if (!response.ok) {
-        return { success: false };
+    const response = await fetch(
+      "https://netsafe-center-backend.vercel.app/Login/login",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mail, password }),
       }
+    ).catch(() => ({ ok: false }));
 
+    if (response.ok) {
       const data = await response.json();
 
       setAuth({
@@ -55,9 +44,9 @@ export const ConnectionProvider = ({ children }) => {
       });
 
       return { success: true };
-    } catch (error) {
-      return { success: false };
     }
+
+    return { success: false };
   };
 
   const logout = () => {
@@ -65,104 +54,26 @@ export const ConnectionProvider = ({ children }) => {
   };
 
   const register = async (identifiant, mail, password) => {
-    try {
-      const requestBody = {
-        identifiant: identifiant,
-        mail: mail,
-        password: password,
-      };
-
-      const response = await fetch(
-        "https://netsafe-center-backend.vercel.app/Login/register",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(requestBody),
-        }
-      );
-
-      if (!response.ok) {
-        return { success: false };
+    const response = await fetch(
+      "https://netsafe-center-backend.vercel.app/Login/register",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ identifiant, mail, password }),
       }
+    ).catch(() => ({ ok: false }));
 
-      const loginResult = await login(mail, password);
-      return loginResult;
-    } catch (error) {
-      return { success: false };
+    if (response.ok) {
+      return login(mail, password);
     }
+
+    return { success: false };
   };
-
-  /* const isAccessTokenValid = async () => {
-    try {
-      if (!auth.accessToken) return false;
-
-      const response = await fetch(
-        "https://netsafe-center-backend.vercel.app/protected",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${auth.accessToken}`,
-          },
-        }
-      );
-
-      if (!response.ok) {
-        const refreshed = await refreshAccessToken();
-        return refreshed;
-      }
-
-      return true;
-    } catch (error) {
-      return false;
-    }
-  }; */
-
-  /* const refreshAccessToken = async () => {
-    if (isRefreshing) return false;
-
-    if (!auth.refreshToken) {
-      logout();
-      return false;
-    }
-
-    setIsRefreshing(true);
-
-    try {
-      const response = await fetch(
-        "https://netsafe-center-backend.vercel.app/Login/refresh",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ refreshToken: auth.refreshToken }),
-        }
-      );
-
-      if (!response.ok) {
-        logout();
-        return false;
-      }
-
-      const data = await response.json();
-
-      setAuth((prevAuth) => ({
-        ...prevAuth,
-        accessToken: data.accessToken,
-      }));
-
-      return true;
-    } catch (error) {
-      logout();
-      return false;
-    } finally {
-      setIsRefreshing(false);
-    }
-  }; */
 
   const authFetch = async (url, options = {}) => {
     if (!isAuthenticated) {
       logout();
-      throw new Error("Non authentifié");
+      return { ok: false, status: 401 };
     }
 
     const authOptions = {
@@ -174,18 +85,16 @@ export const ConnectionProvider = ({ children }) => {
       },
     };
 
-    try {
-      const response = await fetch(url, authOptions);
-
-      if (response.status === 401) {
-        logout();
-      }
-
-      return response;
-    } catch (error) {
+    const response = await fetch(url, authOptions).catch(() => {
       logout();
-      throw new Error(error);
+      return { ok: false, status: 0 };
+    });
+
+    if (response.status === 401) {
+      logout();
     }
+
+    return response;
   };
 
   return (

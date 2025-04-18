@@ -45,25 +45,21 @@ export default function LoginModal({ isOpen, onClose }) {
   };
 
   const handleConnection = async () => {
-    try {
-      setModalState("isLoading", true);
+    setModalState("isLoading", true);
 
-      const response = await login(formData.email, formData.password);
+    const response = await login(formData.email, formData.password);
 
-      if (response.success) {
-        navigate("/");
-        setModalState("loginAlert", true);
-        setModalState("menuModal", false);
-        onClose();
-        resetForm();
-      } else {
-        setModalState("tryLoginAlert", true);
-      }
-    } catch (error) {
+    if (response.success) {
+      navigate("/");
+      setModalState("loginAlert", true);
+      setModalState("menuModal", false);
+      onClose();
+      resetForm();
+    } else {
       setModalState("tryLoginAlert", true);
-    } finally {
-      setModalState("isLoading", false);
     }
+
+    setModalState("isLoading", false);
   };
 
   const isSubmitDisabled = !formData.email || !formData.password;

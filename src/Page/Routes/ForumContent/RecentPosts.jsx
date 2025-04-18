@@ -29,21 +29,16 @@ export default function RecentPosts() {
     }
 
     const fetchPostData = async () => {
-      try {
-        const response = await fetch(
-          `https://netsafe-center-backend.vercel.app/posts`,
-          {
-            method: "GET",
-          }
-        );
+      const response = await fetch(
+        `https://netsafe-center-backend.vercel.app/posts`
+      );
 
+      if (response.ok) {
         const data = await response.json();
         setPostData(data);
-      } catch (error) {
-        throw new Error(error);
-      } finally {
-        setIsLoading(false);
       }
+
+      setIsLoading(false);
     };
 
     fetchPostData();

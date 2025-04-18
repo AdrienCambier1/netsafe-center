@@ -94,29 +94,25 @@ export default function RegisterModal({ isOpen, onClose }) {
   };
 
   const handleRegister = async () => {
-    try {
-      setModalState("isLoading", true);
+    setModalState("isLoading", true);
 
-      const response = await register(
-        formData.user,
-        formData.email,
-        formData.password
-      );
+    const response = await register(
+      formData.user,
+      formData.email,
+      formData.password
+    );
 
-      if (response.success) {
-        navigate("/");
-        setModalState("registerAlert", true);
-        setModalState("menuModal", false);
-        onClose();
-        resetForm();
-      } else {
-        setModalState("tryRegisterAlert", true);
-      }
-    } catch (error) {
+    if (response.success) {
+      navigate("/");
+      setModalState("registerAlert", true);
+      setModalState("menuModal", false);
+      onClose();
+      resetForm();
+    } else {
       setModalState("tryRegisterAlert", true);
-    } finally {
-      setModalState("isLoading", false);
     }
+
+    setModalState("isLoading", false);
   };
 
   useEffect(() => {

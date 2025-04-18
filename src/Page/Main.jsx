@@ -24,12 +24,9 @@ import {
 } from "./Routes/AccountCenterContent";
 import { Question } from "./Routes/QuizContent";
 import { ClassSection } from "./Routes/ClassContent";
-import { ConnectionContext } from "../Contexts";
-import { useContext } from "react";
+import { ProtectedRoute } from "../Components/ProtectedRoute";
 
 export default function Main() {
-  const { isAuthenticated } = useContext(ConnectionContext);
-
   return (
     <main className=" min-h-screen pt-16 flex justify-center">
       <Routes>
@@ -38,7 +35,9 @@ export default function Main() {
         <Route
           path="account_center"
           element={
-            isAuthenticated === true ? <AccountCenter /> : <Navigate to="/" />
+            <ProtectedRoute>
+              <AccountCenter />
+            </ProtectedRoute>
           }
         >
           <Route path="account_overview" element={<AccountOverview />} />
@@ -52,13 +51,17 @@ export default function Main() {
         <Route
           path="classes_list"
           element={
-            isAuthenticated === true ? <ClassesList /> : <Navigate to="/" />
+            <ProtectedRoute>
+              <ClassesList />
+            </ProtectedRoute>
           }
         />
         <Route
           path="quiz_list"
           element={
-            isAuthenticated === true ? <QuizList /> : <Navigate to="/" />
+            <ProtectedRoute>
+              <QuizList />
+            </ProtectedRoute>
           }
         />
         <Route path="useful_tools" element={<UsefulTools />} />
@@ -69,25 +72,37 @@ export default function Main() {
           <Route
             path="saved_posts"
             element={
-              isAuthenticated === true ? <SavedPosts /> : <Navigate to="/" />
+              <ProtectedRoute>
+                <SavedPosts />
+              </ProtectedRoute>
             }
           />
           <Route
             path="user_posts"
             element={
-              isAuthenticated === true ? <UserPosts /> : <Navigate to="/" />
+              <ProtectedRoute>
+                <UserPosts />
+              </ProtectedRoute>
             }
           />
         </Route>
         <Route
           path="quiz/:quizId"
-          element={isAuthenticated === true ? <Quiz /> : <Navigate to="/" />}
+          element={
+            <ProtectedRoute>
+              <Quiz />
+            </ProtectedRoute>
+          }
         >
           <Route path="" element={<Question />} />
         </Route>
         <Route
           path="class/:classId"
-          element={isAuthenticated === true ? <Class /> : <Navigate to="/" />}
+          element={
+            <ProtectedRoute>
+              <Class />
+            </ProtectedRoute>
+          }
         >
           <Route path="section/:sectionId" element={<ClassSection />} />
         </Route>

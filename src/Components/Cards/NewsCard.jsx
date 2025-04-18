@@ -30,39 +30,34 @@ export default function NewsCard({
   like,
   canModify,
 }) {
-  const { modals, setModalState, toggleModal, setCurrentPostId } =
+  const { setModalState, toggleModal, setCurrentPostId } =
     useContext(ModalContext);
   const [comment, setComment] = useState("");
   const [activeMultipleButton, setActiveMultipleButton] = useState(false);
   const [isCommentOpen, setIsCommentOpen] = useState(false);
   const [commentsData, setCommentsData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [isExpanded, setIsExpanded] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {
     if (isCommentOpen) {
       const fetchCommentsData = async () => {
-        if (commentsData.length > 0) {
-          return;
-        }
-
         setIsLoading(true);
-        try {
-          const response = await fetch(
-            `https://netsafe-center-backend.vercel.app/posts/${id}/comments`,
-            {
-              method: "GET",
-            }
-          );
 
+        const response = await fetch(
+          `https://netsafe-center-backend.vercel.app/posts/${id}/comments`,
+          {
+            method: "GET",
+          }
+        );
+
+        if (response.ok) {
           const data = await response.json();
           setCommentsData(data);
-        } catch (error) {
-          console.error("Erreur lors du chargement des commentaires:", error);
-        } finally {
-          setIsLoading(false);
         }
+
+        setIsLoading(false);
       };
 
       fetchCommentsData();
@@ -129,7 +124,18 @@ export default function NewsCard({
           )}
         </div>
         <h2 className="second-title">{title}</h2>
-        <p className="default-text">{content}</p>
+        <p className={`default-text ${!isExpanded && "line-clamp-3"}`}>
+          {content}
+        </p>
+        {content.length > 250 && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="default-text underline w-fit"
+          >
+            {isExpanded ? "Voir moins" : "Voir plus"}
+          </button>
+        )}
+
         <div className="flex justify-between items-start lg:items-center">
           <div className="flex gap-2">
             <SaveButton />
