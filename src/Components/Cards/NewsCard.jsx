@@ -131,12 +131,12 @@ export default function NewsCard({
         >
           {content}
         </p>
-        {content.length > 250 && (
+        {content.length > 250 && !isExpanded && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="default-text underline w-fit"
           >
-            {isExpanded ? "Voir moins" : "Voir plus"}
+            Voir plus
           </button>
         )}
 
