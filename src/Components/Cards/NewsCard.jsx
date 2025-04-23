@@ -124,7 +124,11 @@ export default function NewsCard({
           )}
         </div>
         <h2 className="second-title">{title}</h2>
-        <p className={`default-text ${!isExpanded && "line-clamp-3"}`}>
+        <p
+          className={`default-text whitespace-pre-wrap ${
+            !isExpanded && "line-clamp-3"
+          }`}
+        >
           {content}
         </p>
         {content.length > 250 && (
