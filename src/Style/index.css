@@ -264,7 +264,7 @@ header {
 /* Texts */
 
 .dark-text {
-  @apply dark:text-neutral-600 text-neutral-400 text-sm;
+  @apply dark:text-neutral-600 text-neutral-400 font-medium text-sm;
 }
 
 .smaller-dark-text {

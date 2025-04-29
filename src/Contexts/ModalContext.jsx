@@ -6,7 +6,7 @@ export const ModalProvider = ({ children }) => {
   const [modals, setModals] = useState({});
   const [currentPostId, setCurrentPostId] = useState(null);
   const [deletedPostId, setDeletedPostId] = useState(null);
-  const [newPost, setNewPost] = useState(null); // Nouvel état pour stocker les données du post créé
+  const [newPost, setNewPost] = useState(null);
 
   const toggleModal = (modalName) => {
     setModals((prev) => ({

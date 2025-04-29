@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useCallback } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ConnectionContext = createContext();
 
@@ -40,7 +40,7 @@ export const ConnectionProvider = ({ children }) => {
       setAuth({
         accessToken: data.accessToken,
         refreshToken: data.refreshToken,
-        identifiant: data.identifiant,
+        identifiant: data.user.identifiant,
       });
 
       return { success: true };

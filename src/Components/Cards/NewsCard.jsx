@@ -124,22 +124,23 @@ export default function NewsCard({
           )}
         </div>
         <h2 className="second-title">{title}</h2>
-        <p
-          className={`default-text whitespace-pre-wrap ${
-            !isExpanded && "line-clamp-3"
-          }`}
-        >
-          {content}
-        </p>
-        {content.length > 250 && !isExpanded && (
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="default-text underline w-fit"
+        <div className="flex flex-col gap-2">
+          <p
+            className={`default-text whitespace-pre-wrap ${
+              !isExpanded && "line-clamp-3"
+            }`}
           >
-            Voir plus
-          </button>
-        )}
-
+            {content}
+          </p>
+          {content.length > 250 && !isExpanded && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="dark-text w-fit"
+            >
+              Voir plus
+            </button>
+          )}
+        </div>
         <div className="flex justify-between items-start lg:items-center">
           <div className="flex gap-2">
             <SaveButton />
