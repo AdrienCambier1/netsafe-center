@@ -153,7 +153,7 @@ export default function NewsCard({
           {isTruncated && !isExpanded && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="dark-text w-fit"
+              className="more-btn"
             >
               Voir plus
             </button>

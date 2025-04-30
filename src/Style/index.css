@@ -239,6 +239,10 @@ header {
   @apply text-sm font-medium text-neutral-300;
 }
 
+.more-btn {
+  @apply dark-text w-fit hover:underline;
+}
+
 /* Titles */
 
 .first-title {
