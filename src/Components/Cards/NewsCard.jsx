@@ -38,6 +38,8 @@ export default function NewsCard({
   const [commentsData, setCommentsData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isTruncated, setIsTruncated] = useState(false);
+  const contentRef = useRef(null);
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -83,6 +85,20 @@ export default function NewsCard({
     resetComment();
   };
 
+  useEffect(() => {
+    const checkTruncation = () => {
+      if (contentRef.current) {
+        const element = contentRef.current;
+        setIsTruncated(element.scrollHeight > element.clientHeight);
+      }
+    };
+
+    checkTruncation();
+
+    window.addEventListener("resize", checkTruncation);
+    return () => window.removeEventListener("resize", checkTruncation);
+  }, [content]);
+
   const resetComment = () => {
     setComment("");
   };
@@ -126,13 +142,15 @@ export default function NewsCard({
         <h2 className="second-title">{title}</h2>
         <div className="flex flex-col gap-2">
           <p
+            ref={contentRef}
             className={`default-text whitespace-pre-wrap ${
               !isExpanded && "line-clamp-3"
             }`}
           >
             {content}
           </p>
-          {content.length > 250 && !isExpanded && (
+
+          {isTruncated && !isExpanded && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="dark-text w-fit"
