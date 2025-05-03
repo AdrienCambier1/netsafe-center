@@ -5,10 +5,10 @@ export default function LoaderModal({ isLoading }) {
     <div
       className={`${
         isLoading ? "opacity-100 visible" : "opacity-0 invisible"
-      } z-[999] center-modal transition`}
+      } z-[999] center-modal !items-center transition`}
     >
       <div className="transparent-background rounded-3xl p-8">
-        <div className="loader"></div>
+        <div className="loader" />
       </div>
     </div>,
     document.querySelector("body")
