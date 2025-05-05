@@ -6,6 +6,8 @@ import { faHeading } from "@fortawesome/free-solid-svg-icons";
 import { ModalContext, ConnectionContext } from "../Contexts";
 import { useContext, useState } from "react";
 import ReactFocusLock from "react-focus-lock";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale";
 
 export default function CreatePostModal({ isOpen }) {
   const { toggleModal, setModalState, setNewPost } = useContext(ModalContext);
@@ -19,7 +21,7 @@ export default function CreatePostModal({ isOpen }) {
     const requestBody = {
       title: title,
       content: content,
-      user_id: 1,
+      user_id: auth.id,
     };
 
     const response = await authFetch(
@@ -32,14 +34,15 @@ export default function CreatePostModal({ isOpen }) {
 
     if (response.ok) {
       const newPostData = await response.json();
+      console.log(newPostData);
 
       setNewPost({
         id: newPostData.id,
-        title: title,
-        content: content,
-        user_name: auth.identifiant,
-        created_at: new Date().toISOString(),
-        likes_count: "0",
+        title: newPostData.title,
+        content: newPostData.content,
+        user: { identifiant: auth.identifiant },
+        created_at: newPostData.created_at,
+        likes_count: 0,
       });
 
       setModalState("removePostAlert", false);

@@ -13,7 +13,7 @@ export default function SubmitInput({
   return (
     <div className="group search-input">
       <input
-        className="px-4"
+        className="px-3 rounded-full"
         placeholder={placeholder}
         value={value}
         onChange={onChange}

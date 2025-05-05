@@ -7,7 +7,7 @@ export default function SearchInput({ placeholder, onClick, value, onChange }) {
     <div className="group search-input">
       <FontAwesomeIcon className="gray-icon" icon={faSearch} />
       <input
-        className="pr-4"
+        className="pr-3"
         placeholder={placeholder}
         value={value}
         onChange={onChange}

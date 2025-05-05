@@ -80,7 +80,7 @@ export default function SavedPosts() {
                 id={post.id}
                 title={post.title}
                 content={post.content}
-                user={post.user_name}
+                user={post.user.identifiant}
                 date={format(new Date(post.created_at), "dd/MM/yyyy", {
                   locale: fr,
                 })}

@@ -7,6 +7,7 @@ export const ConnectionProvider = ({ children }) => {
     accessToken: null,
     refreshToken: null,
     identifiant: null,
+    id: null,
   };
 
   const [auth, setAuth] = useState(initialAuth);
@@ -41,6 +42,7 @@ export const ConnectionProvider = ({ children }) => {
         accessToken: data.accessToken,
         refreshToken: data.refreshToken,
         identifiant: data.user.identifiant,
+        id: data.user.id,
       });
 
       return { success: true };
@@ -50,7 +52,12 @@ export const ConnectionProvider = ({ children }) => {
   };
 
   const logout = () => {
-    setAuth({ accessToken: null, refreshToken: null, identifiant: null });
+    setAuth({
+      accessToken: null,
+      refreshToken: null,
+      identifiant: null,
+      id: null,
+    });
   };
 
   const register = async (identifiant, mail, password) => {
