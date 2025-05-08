@@ -30,7 +30,7 @@ export default function RecentPosts() {
 
     const fetchPostData = async () => {
       const response = await fetch(
-        `https://netsafe-center-backend.vercel.app/posts`
+        `https://netsafe-center-backend.vercel.app/posts?sortBy=created_at`
       );
 
       if (response.ok) {

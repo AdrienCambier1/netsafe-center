@@ -30,7 +30,7 @@ export default function MostLikedPosts() {
 
     const fetchPostData = async () => {
       const response = await fetch(
-        `https://netsafe-center-backend.vercel.app/posts`
+        `https://netsafe-center-backend.vercel.app/posts?sortBy=likes_count`
       );
 
       if (response.ok) {

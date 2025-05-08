@@ -39,7 +39,7 @@ export default function UserPosts() {
 
     const fetchPostData = async () => {
       const response = await authFetch(
-        `https://netsafe-center-backend.vercel.app/posts`
+        `https://netsafe-center-backend.vercel.app/users/${auth.id}/posts`
       );
 
       if (!response.ok) {
