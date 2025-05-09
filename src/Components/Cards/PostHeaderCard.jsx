@@ -1,11 +1,7 @@
-import { CustomTitle } from "../../Components";
+import { CustomTitle, AccountImage } from "../../Components";
 import { SearchInput } from "../Inputs";
-import { IconPurpleButton, GrayButton } from "../Buttons";
-import {
-  faNewspaper,
-  faPlus,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { IconPurpleButton } from "../Buttons";
+import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { ModalContext } from "../../Contexts";
 
@@ -28,15 +24,7 @@ export default function PostHeaderCard({
         <div className="flex gap-4 justify-between items-center">
           {description ? (
             <>
-              <div className="flex gap-4 items-center">
-                <GrayButton
-                  icon={faNewspaper}
-                  background={true}
-                  link="/forum/user_posts"
-                  connectionRequired={true}
-                />
-                <p className="dark-text">{description}</p>
-              </div>
+              <p className="dark-text">{description}</p>
               <IconPurpleButton
                 icon={faPlus}
                 onClick={() => toggleModal("createPostModal")}

@@ -1,7 +1,13 @@
 import AccountImage from "../AccountImage";
 import { LikeButton } from "../../Components/Buttons";
 
-export default function CommentCard({ user, comment, date, like }) {
+export default function CommentCard({
+  user,
+  comment,
+  date,
+  like,
+  isTopBottom,
+}) {
   return (
     <div className="flex gap-4">
       <div className="flex flex-col">
@@ -12,15 +18,17 @@ export default function CommentCard({ user, comment, date, like }) {
           <div className="w-[1px] h-full dark:bg-neutral-800 bg-neutral-200" />
         </div>
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-col gap-2">
+      <div
+        className={`${
+          !isTopBottom && "pb-4"
+        } flex flex-col gap-2 overflow-hidden`}
+      >
+        <div className="flex gap-2 items-center">
           <p className="default-text">{user}</p>
-          <p className="default-text">{comment}</p>
-        </div>
-        <div className="flex gap-2 items-center justify-between">
           <p className="smaller-dark-text">{date}</p>
-          <LikeButton value={like} connectionRequired={true} />
         </div>
+        <p className="default-text whitespace-pre-wrap">{comment}</p>
+        <LikeButton value={like} connectionRequired={true} />
       </div>
     </div>
   );

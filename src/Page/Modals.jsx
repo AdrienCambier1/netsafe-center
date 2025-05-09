@@ -26,26 +26,24 @@ export default function Modals() {
     if (!currentPostId) return;
 
     setModalState("isLoading", true);
-    try {
-      const response = await authFetch(
-        `https://netsafe-center-backend.vercel.app/posts/${currentPostId}`,
-        {
-          method: "DELETE",
-        }
-      );
-      if (response.ok) {
-        setModalState("removePostAlert", true);
-        setDeletedPostId(currentPostId);
-        setCurrentPostId(null);
-        setModalState("removePostDialog", false);
-      } else {
-        setModalState("tryDeletePostAlert", true);
+
+    const response = await authFetch(
+      `https://netsafe-center-backend.vercel.app/posts/${currentPostId}`,
+      {
+        method: "DELETE",
       }
-    } catch (error) {
+    );
+
+    if (response.ok) {
+      setModalState("removePostAlert", true);
+      setDeletedPostId(currentPostId);
+      setCurrentPostId(null);
+      setModalState("removePostDialog", false);
+    } else {
       setModalState("tryDeletePostAlert", true);
-    } finally {
-      setModalState("isLoading", false);
     }
+
+    setModalState("isLoading", false);
   };
 
   return (
@@ -156,6 +154,11 @@ export default function Modals() {
         modal="tryDeletePostAlert"
         isActive={modals["tryDeletePostAlert"]}
         value="Erreur lors de la suppression du post"
+      />
+      <MessageModal
+        modal="tryAddCommentAlert"
+        isActive={modals["tryAddCommentAlert"]}
+        value="Une erreur est survenue lors de l'ajout du commentaire"
       />
       <MessageModal
         modal="textCopied"

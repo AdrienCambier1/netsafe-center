@@ -32,21 +32,19 @@ export default function Home() {
     }
 
     const fetchPostData = async () => {
-      try {
-        const response = await fetch(
-          `https://netsafe-center-backend.vercel.app/posts?limit=5`,
-          {
-            method: "GET",
-          }
-        );
+      const response = await fetch(
+        `https://netsafe-center-backend.vercel.app/posts?limit=5`,
+        {
+          method: "GET",
+        }
+      );
 
+      if (response.ok) {
         const data = await response.json();
         setPostData(data);
-      } catch (error) {
-        throw new Error(error);
-      } finally {
-        setIsLoading(false);
       }
+
+      setIsLoading(false);
     };
 
     fetchPostData();
@@ -106,14 +104,14 @@ export default function Home() {
               <LightPurpleButton
                 icon={faCaretLeft}
                 value="Les cours"
-                link="classes_list"
+                link="/classes_list"
                 connectionRequired={true}
               />
             </div>
             <HeavyPurpleButton
               icon={faPenNib}
               value="Testez vos connaissances"
-              link="quiz_list"
+              link="/quiz/1"
               connectionRequired={true}
             />
             <div className="hidden md:flex lg:hidden flex-col gap-8">

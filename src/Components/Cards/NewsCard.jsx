@@ -17,9 +17,10 @@ import {
 } from "../Buttons";
 import { AccountImage } from "../";
 import { SubmitInput } from "../Inputs";
-import { ModalContext } from "../../Contexts";
+import { ModalContext, ConnectionContext } from "../../Contexts";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
+import { use } from "react";
 
 export default function NewsCard({
   id,
@@ -30,6 +31,7 @@ export default function NewsCard({
   like,
   canModify,
 }) {
+  const { auth, authFetch } = useContext(ConnectionContext);
   const { setModalState, toggleModal, setCurrentPostId } =
     useContext(ModalContext);
   const [comment, setComment] = useState("");
@@ -57,6 +59,7 @@ export default function NewsCard({
         if (response.ok) {
           const data = await response.json();
           setCommentsData(data);
+          console.log(data);
         }
 
         setIsLoading(false);
@@ -65,6 +68,46 @@ export default function NewsCard({
       fetchCommentsData();
     }
   }, [isCommentOpen]);
+
+  const handleCommentSubmit = async () => {
+    setModalState("isLoading", true);
+
+    const requestBody = {
+      content: comment,
+      user_id: auth.id,
+    };
+
+    const response = await authFetch(
+      `https://netsafe-center-backend.vercel.app/posts/${id}/comments`,
+      {
+        method: "POST",
+        body: JSON.stringify(requestBody),
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+
+      const newCommentData = {
+        content: data.content,
+        user: { identifiant: auth.identifiant },
+        created_at: data.created_at,
+        likes_count: 0,
+      };
+
+      setCommentsData((currentComments) => [
+        newCommentData,
+        ...currentComments,
+      ]);
+
+      setModalState("commentAlert", true);
+      setComment("");
+    } else {
+      setModalState("tryAddCommentAlert", true);
+    }
+
+    setModalState("isLoading", false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -80,11 +123,6 @@ export default function NewsCard({
     };
   }, [menuRef]);
 
-  const handleCommentSubmit = () => {
-    setModalState("commentAlert", true);
-    resetComment();
-  };
-
   useEffect(() => {
     const checkTruncation = () => {
       if (contentRef.current) {
@@ -98,10 +136,6 @@ export default function NewsCard({
     window.addEventListener("resize", checkTruncation);
     return () => window.removeEventListener("resize", checkTruncation);
   }, [content]);
-
-  const resetComment = () => {
-    setComment("");
-  };
 
   const buttons = [
     { icon: faEdit, value: "Modifier" },
@@ -193,12 +227,15 @@ export default function NewsCard({
                 commentsData.map((comment, index) => (
                   <CommentCard
                     key={index}
+                    isTopBottom={
+                      index === 0 || index === commentsData.length - 1
+                    }
                     date={format(new Date(comment.created_at), "dd/MM/yyyy", {
                       locale: fr,
                     })}
                     comment={comment.content}
                     like={parseInt(comment.likes_count)}
-                    user={comment.user_name}
+                    user={comment.user.identifiant}
                     type="isAccount"
                   />
                 ))

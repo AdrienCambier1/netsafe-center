@@ -34,7 +34,6 @@ export default function CreatePostModal({ isOpen }) {
 
     if (response.ok) {
       const newPostData = await response.json();
-      console.log(newPostData);
 
       setNewPost({
         id: newPostData.id,
