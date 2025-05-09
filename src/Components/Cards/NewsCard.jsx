@@ -227,9 +227,7 @@ export default function NewsCard({
                 commentsData.map((comment, index) => (
                   <CommentCard
                     key={index}
-                    isTopBottom={
-                      index === 0 || index === commentsData.length - 1
-                    }
+                    isLast={index === commentsData.length - 1}
                     date={format(new Date(comment.created_at), "dd/MM/yyyy", {
                       locale: fr,
                     })}
