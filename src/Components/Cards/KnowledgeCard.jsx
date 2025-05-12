@@ -7,9 +7,9 @@ export default function KnowledgeCard({ brand, title, link }) {
       <div className="bg-teal bg-icon-squared">
         <FontAwesomeIcon className="p-4 h-4 w-4" icon={faBookOpen} />
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 overflow-hidden">
         <p className="text-sm font-bold text-teal-500">{brand}</p>
-        <p className="default-text">{title}</p>
+        <p className="default-text truncate">{title}</p>
       </div>
     </a>
   );
