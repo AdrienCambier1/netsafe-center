@@ -22,7 +22,7 @@ export default function KnowledgeArea() {
           />
           <KnowledgeCard
             brand="Malwarebytes"
-            title="Guide du contrôle parental : assurer la sécurité de vos enfants en ligne"
+            title="Assurer la sécurité de vos enfants en ligne"
             link="https://www.malwarebytes.com/fr/cybersecurity/basics/parental-control"
           />
           <KnowledgeCard
@@ -32,22 +32,22 @@ export default function KnowledgeArea() {
           />
           <KnowledgeCard
             brand="Cybermalveillance.gouv.fr"
-            title="Les bonnes pratiques - Assistance aux victimes de cybermalveillance"
+            title="Assistance aux victimes de cybermalveillance"
             link="https://www.cybermalveillance.gouv.fr/bonnes-pratiques"
           />
           <KnowledgeCard
             brand="ANSSI"
-            title="Guides essentiels et bonnes pratiques de cybersécurité - Par où commencer"
+            title="Guides essentiels et bonnes pratiques de cybersécurité"
             link="https://cyber.gouv.fr/guides-essentiels-et-bonnes-pratiques-de-cybersecurite-par-ou-commencer"
           />
           <KnowledgeCard
             brand="Malwarebytes"
-            title="Conseils de sécurité sur Internet pour les enfants, les adolescents et les parents"
+            title="Conseils de sécurité sur Internet"
             link="https://www.malwarebytes.com/fr/cybersecurity/basics/internet-safety-tips-for-kids"
           />
           <KnowledgeCard
             brand="Cybermalveillance.gouv.fr"
-            title="Que faire en cas de cyberattaque ? Consignes pour les collaborateurs"
+            title="Que faire en cas de cyberattaque ?"
             link="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/bonnes-pratiques/cyberattaque-consignes-collaborateurs"
           />
           <KnowledgeCard
@@ -57,7 +57,7 @@ export default function KnowledgeArea() {
           />
           <KnowledgeCard
             brand="Cybermalveillance.gouv.fr"
-            title="Actualités - Assistance aux victimes de cybermalveillance"
+            title="Assistance aux victimes de cybermalveillance"
             link="https://www.cybermalveillance.gouv.fr/blog"
           />
         </div>
