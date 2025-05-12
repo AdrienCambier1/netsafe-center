@@ -9,7 +9,7 @@ export default function KnowledgeArea() {
           Retrouvez une liste de liens permettant de suivre l'actualité
           concernant la sécurité numérique
         </h4>
-        <div className="flex flex-col md:grid grid-cols-3 gap-4">
+        <div className="flex flex-col md:grid grid-cols-2 gap-4">
           <KnowledgeCard
             brand="Cybermalveillance.gouv.fr"
             title="Les 10 mesures essentielles pour assurer votre cybersécurité"

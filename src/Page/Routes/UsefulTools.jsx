@@ -8,7 +8,7 @@ export default function UsefulTools() {
         <h4>
           Retrouvez une liste d'outils gratuits pour vous protéger numériquement
         </h4>
-        <div className="flex flex-col md:grid grid-cols-3 gap-4">
+        <div className="flex flex-col md:grid grid-cols-2 gap-4">
           <ToolsCard
             brand="Avast"
             title="Générateur de mots de passe aléatoires"
