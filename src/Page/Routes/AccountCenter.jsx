@@ -59,7 +59,7 @@ export default function AccountCenter() {
   return (
     <div className="page-content">
       <div className="border-b border-color pb-4 flex flex-col md:flex-row gap-4 justify-between md:items-center">
-        <h1 className="first-title">Gestion du compte</h1>
+        <h1>Gestion du compte</h1>
         <CardButton
           value={`ID : ${auth.identifiant}`}
           icon={faCopy}

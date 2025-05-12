@@ -270,7 +270,7 @@ export default function RegisterModal({ isOpen, onClose }) {
           )}
           <GrayButton onClick={handleClose} icon={faXmark} />
         </div>
-        <h2 className="second-title">Inscrivez-vous</h2>
+        <h2>Inscrivez-vous</h2>
         {connectionState === "email"
           ? EmailForm()
           : connectionState === "password"

@@ -40,7 +40,7 @@ export default function MenuModal({ isOpen, onClose }) {
         <div className="flex justify-between items-center">
           <IconPurpleButton icon={faClose} onClick={onClose} />
           <div className="flex gap-2 items-center">
-            <h4 className="fourth-title">Menu</h4>
+            <h4>Menu</h4>
             {theme === "dark" ? (
               <GrayButton icon={faSun} onClick={() => setTheme("light")} />
             ) : (

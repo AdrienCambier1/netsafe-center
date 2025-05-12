@@ -173,7 +173,7 @@ export default function NewsCard({
             </div>
           )}
         </div>
-        <h2 className="second-title">{title}</h2>
+        <h2>{title}</h2>
         <div className="flex flex-col gap-2">
           <p
             ref={contentRef}
@@ -220,7 +220,7 @@ export default function NewsCard({
               />
             </div>
             <div className="flex flex-col gap-2">
-              <h4 className="my-2 fourth-title">Tous les commentaires</h4>
+              <h4 className="my-2">Tous les commentaires</h4>
               {isLoading ? (
                 <CommentCardSkeleton />
               ) : commentsData.length > 0 ? (

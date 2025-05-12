@@ -74,7 +74,7 @@ export default function CreatePostModal({ isOpen }) {
         disabled={!isOpen}
         className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
       >
-        <h2 className="second-title">Rédigez votre post</h2>
+        <h2>Rédigez votre post</h2>
         <div className="w-full flex flex-col gap-2">
           <p className="default-text">Titre</p>
           <TextInput

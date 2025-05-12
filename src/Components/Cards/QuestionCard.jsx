@@ -43,9 +43,9 @@ export default function QuestionCard({
   return (
     <div className="card">
       <div className="flex flex-col p-2 gap-8">
-        <h2 className="second-title">{question}</h2>
+        <h2>{question}</h2>
         <div className="flex flex-col gap-4">
-          <h4 className="fourth-title">{typeText[type]}</h4>
+          <h4>{typeText[type]}</h4>
           <div className="grid grid-cols-2 gap-4">
             {answers.map((answer, index) => {
               const result = results[index] || {};

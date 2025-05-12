@@ -61,7 +61,7 @@ export default function Home() {
       <>
         <ConnectedState link="/account_center/account_overview" />
         <div className="flex flex-col gap-2">
-          <h4 className="fourth-title">Nos réseaux</h4>
+          <h4>Nos réseaux</h4>
           <LightPurpleButton icon={faTiktok} value="Tiktok" />
           <LightPurpleButton icon={faYoutube} value="Youtube" />
         </div>
@@ -94,7 +94,7 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <h4 className="fourth-title">Vos avancées</h4>
+              <h4>Vos avancées</h4>
               <LightPurpleButton
                 icon={faCaretLeft}
                 value="Les quiz"

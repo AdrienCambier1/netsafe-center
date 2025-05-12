@@ -245,19 +245,19 @@ header {
 
 /* Titles */
 
-.first-title {
-  @apply text-2xl font-bold text-zinc-800 dark:text-zinc-200;
+h1 {
+  @apply text-2xl font-bold text-zinc-800 dark:text-zinc-200 border-b border-color pb-4;
 }
 
-.second-title {
+h2 {
   @apply text-xl text-zinc-800 dark:text-zinc-200 font-bold;
 }
 
-.third-title {
+h3 {
   @apply text-xl text-zinc-800 dark:text-zinc-200 font-medium;
 }
 
-.fourth-title {
+h4 {
   @apply text-zinc-400 dark:text-zinc-600 font-semibold;
 }
 

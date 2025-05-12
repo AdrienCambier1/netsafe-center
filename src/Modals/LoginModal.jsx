@@ -74,7 +74,7 @@ export default function LoginModal({ isOpen, onClose }) {
         <div className="absolute top-2 right-2">
           <GrayButton onClick={handleClose} icon={faXmark} />
         </div>
-        <h2 className="second-title">Connectez-vous</h2>
+        <h2>Connectez-vous</h2>
         <form
           onSubmit={handleConnectionSubmit}
           className="flex flex-col gap-4 items-center w-full"
