@@ -280,7 +280,7 @@ h4 {
 }
 
 .text-error {
-  @apply mt-2 text-red-400 text-xs font-medium;
+  @apply text-red-400 text-xs font-medium;
 }
 
 .text-purple {

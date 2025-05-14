@@ -1,7 +1,10 @@
-import { CustomTitle } from "../../../Components";
-import { CardContent } from "../../../Components";
+import { CustomTitle, CardContent } from "../../../Components";
+import { useContext } from "react";
+import { ModalContext } from "../../../Contexts";
 
 export default function PasswordAndSecurity() {
+  const { toggleModal } = useContext(ModalContext);
+
   return (
     <div className="card">
       <div className="p-2 flex flex-col gap-4">
@@ -12,6 +15,9 @@ export default function PasswordAndSecurity() {
           description="Mot de passe"
           value="Sécurisez votre mot de passe en le mettant régulièrement à jour."
           button="Mettre à jour"
+          onClick={() => {
+            toggleModal("modifyPasswordModal");
+          }}
         />
       </div>
     </div>

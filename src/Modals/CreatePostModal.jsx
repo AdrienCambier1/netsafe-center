@@ -1,13 +1,11 @@
 import ReactDOM from "react-dom";
-import { GrayButton, HeavyPurpleButton } from "../Components/Buttons";
+import { GrayButton } from "../Components/Buttons";
 import { ModalBackground } from "../Components";
 import { TextInput, TextArea } from "../Components/Inputs";
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
 import { ModalContext, ConnectionContext } from "../Contexts";
 import { useContext, useState } from "react";
 import ReactFocusLock from "react-focus-lock";
-import { format } from "date-fns";
-import { fr } from "date-fns/locale";
 
 export default function CreatePostModal({ isOpen }) {
   const { toggleModal, setModalState, setNewPost } = useContext(ModalContext);
@@ -93,11 +91,14 @@ export default function CreatePostModal({ isOpen }) {
           />
         </div>
         <div className="flex flex-col gap-4 w-full">
-          <HeavyPurpleButton
-            value="Envoyer"
+          <button
+            className="heavy-purple-btn justify-center"
+            type="button"
             onClick={handleCreatePost}
             disabled={isSubmitDisabled}
-          />
+          >
+            Envoyer
+          </button>
           <GrayButton background={true} value="Annuler" onClick={handleClose} />
         </div>
       </ReactFocusLock>

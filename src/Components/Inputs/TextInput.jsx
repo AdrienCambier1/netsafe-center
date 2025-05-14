@@ -9,7 +9,6 @@ export default function TextInput({
   placeholder,
   type,
   icon,
-  error,
 }) {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -18,24 +17,21 @@ export default function TextInput({
   };
 
   return (
-    <>
-      <div className="transition group text-input h-10">
-        <FontAwesomeIcon className="gray-icon z-10" icon={icon} />
-        <input
-          onChange={onChange}
-          type={type === "password" && isPasswordVisible ? "text" : type}
-          value={value}
-          placeholder={placeholder}
+    <div className="transition group text-input h-10">
+      <FontAwesomeIcon className="gray-icon z-10" icon={icon} />
+      <input
+        onChange={onChange}
+        type={type === "password" && isPasswordVisible ? "text" : type}
+        value={value}
+        placeholder={placeholder}
+      />
+      {type === "password" && (
+        <GrayButton
+          icon={!isPasswordVisible ? faEyeSlash : faEye}
+          onClick={togglePasswordVisibility}
+          custom="z-10"
         />
-        {type === "password" && (
-          <GrayButton
-            icon={!isPasswordVisible ? faEyeSlash : faEye}
-            onClick={togglePasswordVisibility}
-            custom="z-10"
-          />
-        )}
-      </div>
-      {error && <p className="text-error">{error}</p>}
-    </>
+      )}
+    </div>
   );
 }

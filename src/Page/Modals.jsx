@@ -6,6 +6,8 @@ import {
   LoginModal,
   RegisterModal,
   MessageModal,
+  ModifyEmailModal,
+  ModifyPasswordModal,
 } from "../Modals";
 import { ConnectionContext, ModalContext } from "../Contexts";
 import { useContext } from "react";
@@ -49,6 +51,8 @@ export default function Modals() {
   return (
     <>
       <CreatePostModal isOpen={modals["createPostModal"]} />
+      <ModifyEmailModal isOpen={modals["modifyEmailModal"]} />
+      <ModifyPasswordModal isOpen={modals["modifyPasswordModal"]} />
       <AlertModal
         modal="postAlert"
         isActive={modals["postAlert"]}

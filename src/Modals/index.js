@@ -6,3 +6,5 @@ export { default as LoginModal } from "./LoginModal";
 export { default as RegisterModal } from "./RegisterModal";
 export { default as LoaderModal } from "./LoaderModal";
 export { default as MessageModal } from "./MessageModal";
+export { default as ModifyEmailModal } from "./ModifyEmailModal";
+export { default as ModifyPasswordModal } from "./ModifyPasswordModal";

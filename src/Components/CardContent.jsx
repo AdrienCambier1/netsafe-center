@@ -1,4 +1,4 @@
-export default function CardContent({ description, value, button }) {
+export default function CardContent({ description, value, button, onClick }) {
   return (
     <div className="flex flex-col py-2 gap-2 items-start">
       <h4>{description}</h4>
@@ -8,9 +8,12 @@ export default function CardContent({ description, value, button }) {
         )}
 
         {button && (
-          <p className="text-purple-btn flex-none basis-1/4 text-right">
+          <button
+            onClick={onClick}
+            className="text-purple-btn flex-none basis-1/4 text-right"
+          >
             {button}
-          </p>
+          </button>
         )}
       </div>
     </div>
