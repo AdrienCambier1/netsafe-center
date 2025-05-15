@@ -11,7 +11,7 @@ import {
   PostHeaderCard,
 } from "../../Components/Cards";
 import { LightPurpleButton, HeavyPurpleButton } from "../../Components/Buttons";
-import { faTiktok, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { useContext, useEffect, useState } from "react";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
@@ -62,8 +62,12 @@ export default function Home() {
         <ConnectedState link="/account_center/account_overview" />
         <div className="flex flex-col gap-2">
           <h4>Nos réseaux</h4>
-          <LightPurpleButton icon={faTiktok} value="Tiktok" />
-          <LightPurpleButton icon={faYoutube} value="Youtube" />
+          <LightPurpleButton
+            link="https://www.tiktok.com/@netsafecenter"
+            icon={faTiktok}
+            value="Tiktok"
+          />
+          <LightPurpleButton icon={faInstagram} value="Instagram" />
         </div>
         <HeavyPurpleButton
           icon={faArrowLeft}
