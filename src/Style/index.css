@@ -44,7 +44,7 @@ header {
 }
 
 .transparent-background {
-  @apply bg-black/50 dark:bg-white/25 backdrop-blur-[2px];
+  @apply bg-neutral-500/75 dark:bg-neutral-500/25 backdrop-blur-sm;
 }
 
 .transition {
@@ -53,10 +53,6 @@ header {
 
 .page-content {
   @apply px-6 py-8 w-full max-w-[70rem];
-}
-
-.alert-modal {
-  @apply py-4 px-8 bottom-6 right-6 rounded-xl z-20 border bg-white dark:bg-neutral-950;
 }
 
 /* Feed colors */
@@ -243,7 +239,7 @@ header {
 }
 
 .btn-description p {
-  @apply text-sm font-medium text-neutral-300;
+  @apply text-sm font-medium text-neutral-200;
 }
 
 .more-btn {
@@ -300,11 +296,8 @@ h4 {
 
 /* HTML: <div class="loader"></div> */
 .loader {
-  width: 50px;
-  padding: 8px;
+  @apply bg-neutral-200 p-[8px] w-[50px] rounded-[50%];
   aspect-ratio: 1;
-  border-radius: 50%;
-  background: #d4d4d4;
   --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
   -webkit-mask: var(--_m);
   mask: var(--_m);

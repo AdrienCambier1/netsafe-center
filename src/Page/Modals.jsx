@@ -1,5 +1,4 @@
 import {
-  AlertModal,
   CreatePostModal,
   DialogModal,
   LoaderModal,
@@ -53,33 +52,32 @@ export default function Modals() {
       <CreatePostModal isOpen={modals["createPostModal"]} />
       <ModifyEmailModal isOpen={modals["modifyEmailModal"]} />
       <ModifyPasswordModal isOpen={modals["modifyPasswordModal"]} />
-      <AlertModal
+      <MessageModal
         modal="postAlert"
         isActive={modals["postAlert"]}
         value="Votre post a été ajouté"
       />
-      <AlertModal
+      <MessageModal
         modal="loginAlert"
         isActive={modals["loginAlert"]}
         value="Vous êtes connecté"
       />
-      <AlertModal
+      <MessageModal
         modal="registerAlert"
         isActive={modals["registerAlert"]}
         value="Votre compte a été créé"
       />
-      <AlertModal
+      <MessageModal
         modal="logoutAlert"
-        isError={true}
         isActive={modals["logoutAlert"]}
         value="Vous avez été déconnecté"
       />
-      <AlertModal
+      <MessageModal
         modal="commentAlert"
         isActive={modals["commentAlert"]}
         value="Le commentaire a été ajouté"
       />
-      <AlertModal
+      <MessageModal
         modal="removePostAlert"
         isError={true}
         isActive={modals["removePostAlert"]}
