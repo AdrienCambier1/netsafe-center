@@ -176,22 +176,6 @@ header {
   @apply dark:placeholder:text-neutral-600 placeholder:text-neutral-400 dark:text-neutral-400 text-neutral-600;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px var(--neutral-100) inset !important;
-  -webkit-text-fill-color: var(--neutral-600) !important;
-}
-
-.dark input:-webkit-autofill,
-.dark input:-webkit-autofill:hover,
-.dark input:-webkit-autofill:focus,
-.dark input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px var(--neutral-900) inset !important;
-  -webkit-text-fill-color: var(--neutral-400) !important;
-}
-
 /* Buttons */
 
 .heavy-purple-btn {
