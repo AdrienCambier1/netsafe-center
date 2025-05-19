@@ -139,7 +139,7 @@ header {
 }
 
 .modal-card {
-  @apply border border-transparent dark:border-neutral-800 relative w-full sm:w-[30rem] p-6 sm:p-8 rounded-t-2xl sm:rounded-2xl dark:bg-neutral-950 bg-white z-50 flex flex-col gap-8 items-center;
+  @apply border border-transparent dark:border-neutral-800 relative w-full sm:w-[30rem] p-8 rounded-t-2xl sm:rounded-2xl dark:bg-neutral-950 bg-white z-50 flex flex-col gap-8 items-center;
 }
 
 /* Inputs */
