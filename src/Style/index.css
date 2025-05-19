@@ -29,7 +29,7 @@ header {
 }
 
 .center-modal {
-  @apply flex fixed inset-0 items-center justify-center p-2;
+  @apply flex fixed inset-0 items-center justify-center p-3;
 }
 
 .center {
