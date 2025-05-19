@@ -45,11 +45,11 @@ header {
 }
 
 .page-content {
-  @apply p-6 w-full max-w-[70rem];
+  @apply px-6 py-8 w-full max-w-[70rem];
 }
 
 .alert-modal {
-  @apply py-4 px-8 bottom-6 right-6 rounded-xl z-20 border bg-white dark:bg-neutral-950;
+  @apply py-4 px-8 bottom-8 right-6 rounded-xl z-20 border bg-white dark:bg-neutral-950;
 }
 
 /* Feed colors */
