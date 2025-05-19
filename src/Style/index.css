@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  @apply z-10 fixed dark:bg-neutral-950 bg-white shadow-[5px_12px_20px_rgba(36,37,38,0.075)] border-b border-transparent dark:border-neutral-800 h-16 w-full flex items-center justify-between px-8;
+  @apply z-10 fixed dark:bg-neutral-950 bg-white shadow-[5px_12px_20px_rgba(36,37,38,0.075)] border-b border-transparent dark:border-neutral-800 h-16 w-full flex items-center justify-between px-4 sm:px-8;
 }
 
 .open {
@@ -45,7 +45,7 @@ header {
 }
 
 .page-content {
-  @apply p-8 w-full max-w-[70rem];
+  @apply !py-8 p-4 sm:p-8 w-full max-w-[70rem];
 }
 
 .alert-modal {

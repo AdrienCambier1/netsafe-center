@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <>
       <div className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative">
-        <div className="col-span-1 p-8">
+        <div className="col-span-1 !py-8 p-4 sm:p-8">
           <div className="flex flex-col gap-8 sticky top-24">
             <div className="flex flex-col gap-2">
               <LightPurpleButton
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative flex flex-col gap-4 p-8 md:border-l border-t md:border-t-0 border-color">
+        <div className="lg:col-span-2 relative flex flex-col gap-4 !py-8 p-4 sm:p-8 md:border-l border-t md:border-t-0 border-color">
           {isLoading ? (
             <>
               <PostHeaderCardSkeleton />
@@ -156,7 +156,7 @@ export default function Home() {
             </>
           )}
         </div>
-        <div className="block md:hidden lg:block col-span-1 p-8 lg:border-l border-t md:border-t-0 border-color">
+        <div className="block md:hidden lg:block col-span-1 !py-8 p-4 sm:p-8 lg:border-l border-t md:border-t-0 border-color">
           <div className="flex flex-col gap-8 sticky top-24">
             {asideElement()}
           </div>
