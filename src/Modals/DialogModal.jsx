@@ -20,6 +20,7 @@ export default function DialogModal({
     <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
       <ModalBackground isOpen={isOpen} onClick={onClose} />
       <ReactFocusLock
+        autoFocus={false}
         disabled={!isOpen}
         className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
       >

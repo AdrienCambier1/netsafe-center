@@ -52,6 +52,7 @@ export default function ModifyPasswordModal({ isOpen }) {
     <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
       <ModalBackground isOpen={isOpen} onClick={handleClose} />
       <ReactFocusLock
+        autoFocus={false}
         disabled={!isOpen}
         className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
       >

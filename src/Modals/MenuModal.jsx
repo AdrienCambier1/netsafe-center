@@ -32,6 +32,7 @@ export default function MenuModal({ isOpen, onClose }) {
     <div className={`${isOpen ? "visible" : "invisible"} z-30 absolute`}>
       <ModalBackground isOpen={isOpen} onClick={onClose} />
       <ReactFocusLock
+        autoFocus={false}
         disabled={!isOpen || modals["loginModal"] || modals["registerModal"]}
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"
