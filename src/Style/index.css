@@ -7,6 +7,13 @@
   src: url("./font/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
 }
 
+:root {
+  --neutral-600: #525252;
+  --neutral-400: #a3a3a3;
+  --neutral-100: #f5f5f5;
+  --neutral-900: #171717;
+}
+
 html {
   @apply scroll-smooth;
 }
@@ -145,7 +152,7 @@ header {
 /* Inputs */
 
 .search-input {
-  @apply dark:bg-neutral-900 bg-neutral-100 items-center flex rounded-full w-full;
+  @apply dark:!bg-neutral-900 bg-neutral-100 items-center flex rounded-full w-full;
 }
 
 .search-input input {
@@ -167,6 +174,22 @@ header {
 .text-input textarea,
 .text-input input {
   @apply dark:placeholder:text-neutral-600 placeholder:text-neutral-400 dark:text-neutral-400 text-neutral-600;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--neutral-100) inset !important;
+  -webkit-text-fill-color: var(--neutral-600) !important;
+}
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--neutral-900) inset !important;
+  -webkit-text-fill-color: var(--neutral-400) !important;
 }
 
 /* Buttons */
