@@ -83,6 +83,36 @@ export default function Modals() {
         isActive={modals["removePostAlert"]}
         value="Votre post a été supprimé"
       />
+      <MessageModal
+        modal="tryLoginAlert"
+        isActive={modals["tryLoginAlert"]}
+        value="Email ou mot de passe incorrect"
+      />
+      <MessageModal
+        modal="tryRegisterAlert"
+        isActive={modals["tryRegisterAlert"]}
+        value="Erreur lors de l'inscription"
+      />
+      <MessageModal
+        modal="tryCreatePostAlert"
+        isActive={modals["tryCreatePostAlert"]}
+        value="Erreur lors de la création du post"
+      />
+      <MessageModal
+        modal="tryDeletePostAlert"
+        isActive={modals["tryDeletePostAlert"]}
+        value="Erreur lors de la suppression du post"
+      />
+      <MessageModal
+        modal="tryAddCommentAlert"
+        isActive={modals["tryAddCommentAlert"]}
+        value="Une erreur est survenue lors de l'ajout du commentaire"
+      />
+      <MessageModal
+        modal="textCopied"
+        isActive={modals["textCopied"]}
+        value="Copié dans le presse-papiers"
+      />
       <DialogModal
         isOpen={modals["logoutDialog"]}
         onClose={() => toggleModal("logoutDialog")}
@@ -137,36 +167,6 @@ export default function Modals() {
         onClose={() => toggleModal("registerModal")}
       />
       <LoaderModal isLoading={modals["isLoading"]} />
-      <MessageModal
-        modal="tryLoginAlert"
-        isActive={modals["tryLoginAlert"]}
-        value="Email ou mot de passe incorrect"
-      />
-      <MessageModal
-        modal="tryRegisterAlert"
-        isActive={modals["tryRegisterAlert"]}
-        value="Erreur lors de l'inscription"
-      />
-      <MessageModal
-        modal="tryCreatePostAlert"
-        isActive={modals["tryCreatePostAlert"]}
-        value="Erreur lors de la création du post"
-      />
-      <MessageModal
-        modal="tryDeletePostAlert"
-        isActive={modals["tryDeletePostAlert"]}
-        value="Erreur lors de la suppression du post"
-      />
-      <MessageModal
-        modal="tryAddCommentAlert"
-        isActive={modals["tryAddCommentAlert"]}
-        value="Une erreur est survenue lors de l'ajout du commentaire"
-      />
-      <MessageModal
-        modal="textCopied"
-        isActive={modals["textCopied"]}
-        value="Copié dans le presse-papiers"
-      />
     </>
   );
 }
