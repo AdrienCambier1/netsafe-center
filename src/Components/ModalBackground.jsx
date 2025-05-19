@@ -22,7 +22,7 @@ export default function ModalBackground({ isOpen, onClick }) {
       onClick={onClick}
       className={`${
         isOpen ? "block" : "hidden"
-      } fixed h-screen w-screen top-0 left-0 bg-black/50`}
+      } fixed inset-0 backdrop-blur-[2px] cursor-pointer bg-black/50`}
     ></div>
   );
 }
