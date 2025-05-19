@@ -77,23 +77,23 @@ header {
 }
 
 .bg-teal {
-  @apply dark:bg-teal-900/50 bg-teal-50 text-teal-500;
+  @apply dark:bg-teal-900/50 bg-teal-100/50 text-teal-500;
 }
 
 .bg-purple {
-  @apply dark:bg-purple-900/50 bg-purple-50 text-purple-500;
+  @apply dark:bg-purple-900/50 bg-purple-100/50 text-purple-500;
 }
 
 .bg-yellow {
-  @apply dark:bg-yellow-900/50 bg-yellow-50 text-yellow-500;
+  @apply dark:bg-yellow-900/50 bg-yellow-100/50 text-yellow-500;
 }
 
 .bg-indigo {
-  @apply dark:bg-indigo-950 bg-indigo-50 text-indigo-500;
+  @apply dark:bg-indigo-900/50 bg-indigo-100/50 text-indigo-500;
 }
 
 .bg-red {
-  @apply dark:bg-red-900/50 bg-red-50 text-red-500;
+  @apply dark:bg-red-900/50 bg-red-100/50 text-red-500;
 }
 
 /* Bg templates */
