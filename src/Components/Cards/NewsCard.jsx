@@ -193,7 +193,7 @@ export default function NewsCard({
             </button>
           )}
         </div>
-        <div className="flex justify-between items-start lg:items-center">
+        <div className="flex justify-between items-center">
           <div className="flex gap-2">
             <SaveButton />
             <RoundedGrayButton

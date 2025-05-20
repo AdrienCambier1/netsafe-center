@@ -40,11 +40,9 @@ export default function Header() {
 
   return (
     <header>
-      <div className="flex gap-4 h-full items-center relative">
-        <Link to="/" onClick={() => ScrollToTop()}>
-          <p className="text-lg dark:text-neutral-200 text-neutral-800 font-['Raleway'] font-medium uppercase">
-            Netsafe Center
-          </p>
+      <div className="flex gap-4 h-full items-center relative overflow-hidden">
+        <Link to="/" onClick={() => ScrollToTop()} className="logo">
+          Netsafe Center
         </Link>
       </div>
       <div className="hidden lg:flex gap-4 h-full items-center relative">
