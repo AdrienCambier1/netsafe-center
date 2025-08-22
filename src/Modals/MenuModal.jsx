@@ -29,7 +29,7 @@ export default function MenuModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className={`${isOpen ? "visible" : "invisible"} z-30 absolute`}>
+    <div className={`${isOpen ? "visible" : "invisible"} z-30 fixed`}>
       <ModalBackground isOpen={isOpen} onClick={onClose} />
       <ReactFocusLock
         autoFocus={false}

@@ -29,7 +29,7 @@ export default function TextInput({
         <GrayButton
           icon={!isPasswordVisible ? faEyeSlash : faEye}
           onClick={togglePasswordVisibility}
-          custom="z-10"
+          custom="!bg-transparent"
         />
       )}
     </div>
