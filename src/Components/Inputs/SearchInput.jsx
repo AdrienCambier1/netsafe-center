@@ -6,12 +6,13 @@ export default function SearchInput({ placeholder, onClick, value, onChange }) {
   return (
     <div className="group search-input">
       <FontAwesomeIcon className="gray-icon" icon={faSearch} />
-      <input 
-        placeholder={placeholder} 
-        value={value} 
-        onChange={onChange} 
+      <input
+        type="text"
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
         autoComplete="off"
-        name={`search-${Math.random().toString(36).substr(2, 9)}`}
+        name={`search_${Date.now()}`}
       />
       <IconPurpleButton
         icon={faPlus}
