@@ -16,13 +16,15 @@ export default function DialogModal({
   customColor,
   link,
 }) {
+  if (!isOpen) return null;
+
   return ReactDOM.createPortal(
-    <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
+    <div className="z-30 center-modal">
       <ModalBackground isOpen={isOpen} onClick={onClose} />
       <ReactFocusLock
         autoFocus={false}
         disabled={!isOpen}
-        className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
+        className="modal-card"
       >
         <div
           className={`${customBackground} rounded-full flex items-center justify-center p-4 w-fit`}

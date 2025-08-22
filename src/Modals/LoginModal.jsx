@@ -64,13 +64,15 @@ export default function LoginModal({ isOpen, onClose }) {
 
   const isSubmitDisabled = !formData.email || !formData.password;
 
+  if (!isOpen) return null;
+
   return ReactDOM.createPortal(
-    <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
+    <div className="z-30 center-modal">
       <ModalBackground isOpen={isOpen} onClick={handleClose} />
       <ReactFocusLock
         autoFocus={false}
         disabled={!isOpen}
-        className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
+        className="modal-card"
       >
         <div className="absolute top-2 right-2">
           <GrayButton onClick={handleClose} icon={faXmark} />

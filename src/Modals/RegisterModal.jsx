@@ -250,13 +250,15 @@ export default function RegisterModal({ isOpen, onClose }) {
     );
   };
 
+  if (!isOpen) return null;
+
   return ReactDOM.createPortal(
-    <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
+    <div className="z-30 center-modal">
       <ModalBackground isOpen={isOpen} onClick={handleClose} />
       <ReactFocusLock
         autoFocus={false}
         disabled={!isOpen}
-        className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
+        className=" modal-card"
       >
         <div
           className={`absolute top-2 px-2 flex w-full ${

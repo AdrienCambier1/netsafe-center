@@ -65,13 +65,15 @@ export default function CreatePostModal({ isOpen }) {
 
   const isSubmitDisabled = !title || !content;
 
+  if (!isOpen) return null;
+
   return ReactDOM.createPortal(
-    <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
+    <div className="z-30 center-modal">
       <ModalBackground isOpen={isOpen} onClick={handleClose} />
       <ReactFocusLock
         autoFocus={false}
         disabled={!isOpen}
-        className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
+        className="modal-card"
       >
         <h2>Rédigez votre post</h2>
         <div className="w-full flex flex-col gap-2">

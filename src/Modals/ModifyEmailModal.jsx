@@ -24,13 +24,15 @@ export default function ModifyEmailModal({ isOpen }) {
 
   const isSubmitDisabled = !email || !password;
 
+  if (!isOpen) return null;
+
   return ReactDOM.createPortal(
-    <div className={`${isOpen ? "visible" : "invisible"} z-30 center-modal`}>
+    <div className="z-30 center-modal">
       <ModalBackground isOpen={isOpen} onClick={handleClose} />
       <ReactFocusLock
         autoFocus={false}
         disabled={!isOpen}
-        className={`${isOpen ? "opacity-100" : "opacity-0"} modal-card`}
+        className="modal-card"
       >
         <h2>Modifier l'email</h2>
         <div className="w-full flex flex-col gap-2">
