@@ -102,7 +102,12 @@ export default function CreatePostModal({ isOpen }) {
           >
             Envoyer
           </button>
-          <GrayButton background={true} value="Annuler" onClick={handleClose} />
+          <GrayButton
+            background={true}
+            value="Annuler"
+            onClick={handleClose}
+            custom="!w-full"
+          />
         </div>
       </ReactFocusLock>
     </div>,

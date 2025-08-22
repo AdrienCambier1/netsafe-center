@@ -44,7 +44,12 @@ export default function DialogModal({
             link={link}
             onClick={() => onClick()}
           />
-          <GrayButton background={true} value="Annuler" onClick={onClose} />
+          <GrayButton
+            background={true}
+            value="Annuler"
+            onClick={onClose}
+            custom="!w-full"
+          />
         </div>
       </ReactFocusLock>
     </div>,

@@ -63,7 +63,12 @@ export default function ModifyEmailModal({ isOpen }) {
           >
             Modifier
           </button>
-          <GrayButton background={true} value="Annuler" onClick={handleClose} />
+          <GrayButton
+            background={true}
+            value="Annuler"
+            onClick={handleClose}
+            custom="!w-full"
+          />
         </div>
       </ReactFocusLock>
     </div>,
