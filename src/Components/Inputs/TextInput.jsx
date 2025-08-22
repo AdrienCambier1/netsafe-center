@@ -29,12 +29,14 @@ export default function TextInput({
         autoCapitalize="off"
         spellCheck="false"
       />
-      {type === "password" && (
+      {type === "password" ? (
         <GrayButton
           icon={!isPasswordVisible ? faEyeSlash : faEye}
           onClick={togglePasswordVisibility}
           custom="!bg-transparent"
         />
+      ) : (
+        <GrayButton icon={faEye} custom="invisible" />
       )}
     </div>
   );
