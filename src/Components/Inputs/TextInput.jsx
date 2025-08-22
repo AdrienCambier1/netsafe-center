@@ -18,7 +18,7 @@ export default function TextInput({
 
   return (
     <div className="transition group text-input h-10">
-      <FontAwesomeIcon className="gray-icon z-10" icon={icon} />
+      <FontAwesomeIcon className="gray-icon" icon={icon} />
       <input
         onChange={onChange}
         type={type === "password" && isPasswordVisible ? "text" : type}

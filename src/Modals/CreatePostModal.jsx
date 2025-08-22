@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { GrayButton } from "../Components/Buttons";
 import { ModalBackground } from "../Components";
-import { TextInput, TextArea } from "../Components/Inputs";
+import { TextInput } from "../Components/Inputs";
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
 import { ModalContext, ConnectionContext } from "../Contexts";
 import { useContext, useState } from "react";
@@ -85,7 +85,7 @@ export default function CreatePostModal({ isOpen }) {
         </div>
         <div className="w-full flex flex-col gap-2">
           <p className="default-text">Contenu du post</p>
-          <TextArea
+          <textarea
             onChange={(e) => setContent(e.target.value)}
             placeholder="Rédigez votre texte"
             value={content}

@@ -212,7 +212,6 @@ export default function NewsCard({
             <div className="flex gap-2">
               <SubmitInput
                 placeholder="Rédiger un commentaire"
-                icon={faArrowUp}
                 value={comment}
                 onClick={handleCommentSubmit}
                 onChange={(e) => setComment(e.target.value)}

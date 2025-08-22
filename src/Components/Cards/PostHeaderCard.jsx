@@ -1,7 +1,7 @@
 import { CustomTitle, AccountImage } from "../../Components";
 import { SearchInput } from "../Inputs";
 import { IconPurpleButton } from "../Buttons";
-import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { ModalContext } from "../../Contexts";
 
@@ -34,7 +34,6 @@ export default function PostHeaderCard({
           ) : (
             <SearchInput
               placeholder="Rechercher un post"
-              icon={faSearch}
               onClick={() => toggleModal("createPostModal")}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}

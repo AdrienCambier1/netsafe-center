@@ -6,9 +6,9 @@ export default function SearchInput({ placeholder, onClick, value, onChange }) {
   return (
     <div className="group search-input">
       <FontAwesomeIcon className="gray-icon" icon={faSearch} />
-      <input 
-        placeholder={placeholder} 
-        value={value} 
+      <input
+        placeholder={placeholder}
+        value={value}
         onChange={onChange}
         autoComplete="off"
         autoCorrect="off"

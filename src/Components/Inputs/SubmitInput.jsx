@@ -1,19 +1,22 @@
-import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { IconPurpleButton } from "../Buttons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowsUpToLine,
+  faArrowUp,
+  faPenNib,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function SubmitInput({
   placeholder,
-  icon,
   value,
   onChange,
   onClick,
   disabled,
 }) {
   return (
-    <div className="group search-input">
+    <div className="group submit-input">
+      <FontAwesomeIcon className="gray-icon" icon={faPenNib} />
       <input
-        className="px-3 rounded-full"
         placeholder={placeholder}
         value={value}
         onChange={onChange}
@@ -23,7 +26,7 @@ export default function SubmitInput({
         spellCheck="false"
       />
       <IconPurpleButton
-        icon={icon}
+        icon={faArrowUp}
         onClick={onClick}
         disabled={disabled}
         connectionRequired={true}

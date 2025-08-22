@@ -169,31 +169,36 @@ header {
 /* Inputs */
 /**********/
 
+input {
+  @apply px-2 w-full h-full outline-none border-none font-medium text-sm dark:placeholder:text-neutral-600 placeholder:text-neutral-400 dark:text-neutral-400 text-neutral-600;
+}
+
+textarea {
+  @apply text-sm font-medium p-3 relative resize-none w-full min-h-32 bg-neutral-100 dark:bg-neutral-900 rounded-xl dark:placeholder:text-neutral-600 placeholder:text-neutral-400 dark:text-neutral-400 text-neutral-600;
+}
+
 .search-input,
+.submit-input,
 .text-input {
-  @apply flex items-center justify-between relative w-full;
+  @apply relative w-full bg-neutral-100 dark:bg-neutral-900;
 }
 
-.search-input {
-  @apply rounded-full;
+.search-input,
+.submit-input {
+  @apply relative flex items-center justify-between rounded-full;
 }
 
-.search-input input {
-  @apply absolute px-9 w-full h-full rounded-full bg-transparent;
+.search-input input,
+.submit-input input {
+  @apply h-full bg-transparent;
+}
+
+.text-input {
+  @apply flex items-center justify-between rounded-xl h-10;
 }
 
 .text-input input {
-  @apply absolute px-9 h-full rounded-xl;
-}
-
-.text-input textarea {
-  @apply p-2 min-h-32 resize-none rounded-xl;
-}
-
-.text-input textarea,
-.text-input input,
-.search-input {
-  @apply w-full font-medium text-sm dark:placeholder:text-neutral-600 placeholder:text-neutral-400 dark:text-neutral-400 text-neutral-600 bg-neutral-100 dark:bg-neutral-900;
+  @apply w-full h-full rounded-xl bg-transparent outline-none border-none font-medium text-sm;
 }
 
 input:focus,
