@@ -24,6 +24,10 @@ export default function TextInput({
         type={type === "password" && isPasswordVisible ? "text" : type}
         value={value}
         placeholder={placeholder}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
       />
       {type === "password" && (
         <GrayButton

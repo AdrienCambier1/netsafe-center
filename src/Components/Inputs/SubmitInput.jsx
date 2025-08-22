@@ -17,6 +17,10 @@ export default function SubmitInput({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
       />
       <IconPurpleButton
         icon={icon}
