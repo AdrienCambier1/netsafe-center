@@ -12,7 +12,9 @@ export default function SearchInput({ placeholder, onClick, value, onChange }) {
         value={value}
         onChange={onChange}
         autoComplete="off"
-        name={`search_${Date.now()}`}
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
         role="searchbox"
         data-form-type="search"
       />
