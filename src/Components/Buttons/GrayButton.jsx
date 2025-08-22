@@ -37,9 +37,7 @@ export default function GrayButton({
           background
             ? "gray-btn-bg"
             : "hover:bg-neutral-100 dark:hover:bg-neutral-800"
-        } ${
-          value && "p-2 w-full h-10"
-        } hover:opacity-75 transition gray-btn rounded-xl w-fit ${custom}`}
+        } ${value && "p-2 w-full h-10"} gray-btn  ${custom}`}
       >
         <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon} />
         {value}

@@ -20,7 +20,6 @@ import { SubmitInput } from "../Inputs";
 import { ModalContext, ConnectionContext } from "../../Contexts";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { use } from "react";
 
 export default function NewsCard({
   id,

@@ -256,7 +256,7 @@ textarea:focus,
 }
 
 .gray-btn {
-  @apply dark:text-neutral-600 text-neutral-400 flex gap-2 items-center justify-center font-medium cursor-pointer;
+  @apply rounded-xl w-fit dark:text-neutral-600 text-neutral-400 flex gap-2 items-center justify-center font-medium cursor-pointer hover:opacity-75 transition;
 }
 
 .gray-btn-bg {

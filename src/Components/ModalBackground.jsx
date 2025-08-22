@@ -2,19 +2,25 @@ import { useEffect } from "react";
 
 export default function ModalBackground({ isOpen, onClick }) {
   useEffect(() => {
+    const hasVisibleModals = () => {
+      return Array.from(document.querySelectorAll(".center-modal")).some(
+        (modal) =>
+          !modal.classList.contains("invisible") &&
+          !modal.classList.contains("hidden")
+      );
+    };
+
     if (isOpen) {
       document.body.style.overflowY = "hidden";
-    } else {
-      const anyModalOpen =
-        document.querySelectorAll(".center-modal").length > 0 &&
-        Array.from(document.querySelectorAll(".center-modal")).some(
-          (modal) => !modal.classList.contains("invisible")
-        );
-
-      if (!anyModalOpen) {
-        document.body.style.removeProperty("overflow-y");
-      }
+    } else if (!hasVisibleModals()) {
+      document.body.style.overflowY = "";
     }
+
+    return () => {
+      if (!hasVisibleModals()) {
+        document.body.style.overflowY = "";
+      }
+    };
   }, [isOpen]);
 
   return (
