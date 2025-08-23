@@ -12,11 +12,6 @@ export default function UsefulTools() {
         </h4>
         <div className="flex flex-col md:grid grid-cols-2 gap-4">
           <ToolsCard
-            brand="Avast"
-            title="Générateur de mots de passe aléatoires"
-            link="https://www.avast.com/fr-fr/random-password-generator"
-          />
-          <ToolsCard
             brand="Kaspersky"
             title="Testeur et générateur de mots de passe"
             link="https://password.kaspersky.com/fr/"
@@ -40,11 +35,6 @@ export default function UsefulTools() {
             brand="Sitechecker"
             title="Analyse de sécurité de site web"
             link="https://sitechecker.pro/fr/website-safety/"
-          />
-          <ToolsCard
-            brand="BotGuard"
-            title="Scanner de sécurité de site web"
-            link="https://botguard.net/fr/tools/scan"
           />
           <ToolsCard
             brand="NordVPN"

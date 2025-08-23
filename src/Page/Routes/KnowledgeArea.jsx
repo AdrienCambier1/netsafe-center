@@ -23,16 +23,6 @@ export default function KnowledgeArea() {
             link="https://cyber.gouv.fr/bonnes-pratiques-protegez-vous"
           />
           <KnowledgeCard
-            brand="Malwarebytes"
-            title="Assurer la sécurité de vos enfants en ligne"
-            link="https://www.malwarebytes.com/fr/cybersecurity/basics/parental-control"
-          />
-          <KnowledgeCard
-            brand="SafetyCulture"
-            title="Guide complet de la sécurité sur Internet"
-            link="https://safetyculture.com/fr/themes/securite-sur-internet/"
-          />
-          <KnowledgeCard
             brand="Cybermalveillance.gouv.fr"
             title="Assistance aux victimes de cybermalveillance"
             link="https://www.cybermalveillance.gouv.fr/bonnes-pratiques"
@@ -56,11 +46,6 @@ export default function KnowledgeArea() {
             brand="ANSSI"
             title="Les fondamentaux pour se sécuriser"
             link="https://cyber.gouv.fr/les-fondamentaux-pour-se-securiser"
-          />
-          <KnowledgeCard
-            brand="Cybermalveillance.gouv.fr"
-            title="Assistance aux victimes de cybermalveillance"
-            link="https://www.cybermalveillance.gouv.fr/blog"
           />
         </div>
       </div>
