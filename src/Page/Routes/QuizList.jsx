@@ -4,7 +4,9 @@ import QuizData from "../../Data/quiz.json";
 export default function QuizList() {
   return (
     <div className="page-content">
-      <h1>Quiz d'apprentissage</h1>
+      <div className="title-border-bottom">
+        <h1>Quiz d'apprentissage</h1>
+      </div>
       <div className="pt-4 flex flex-col gap-4">
         <h4>Retrouvez l'intégralité de nos quizz en ligne</h4>
         <div className="flex flex-col md:grid grid-cols-4 gap-4">

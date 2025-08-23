@@ -11,7 +11,9 @@ export default function Class() {
 
   return (
     <div className="page-content">
-      <h1>Cours en ligne</h1>
+      <div className="title-border-bottom">
+        <h1>Cours en ligne</h1>
+      </div>
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div>
           <div className="flex flex-col gap-2 sticky top-24">

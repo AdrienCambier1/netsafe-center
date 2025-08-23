@@ -16,7 +16,9 @@ export default function Forum() {
 
   return (
     <div className="page-content">
-      <h1>Forum d'entraide</h1>
+      <div className="title-border-bottom">
+        <h1>Forum d'entraide</h1>
+      </div>
       <div className="flex flex-col md:grid grid-cols-3 gap-4 pt-4">
         <div>
           <div className="flex flex-col gap-2 sticky top-24">

@@ -3,7 +3,9 @@ import { ToolsCard } from "../../Components/Cards";
 export default function UsefulTools() {
   return (
     <div className="page-content">
-      <h1>Outils pratiques</h1>
+      <div className="title-border-bottom">
+        <h1>Outils pratiques</h1>
+      </div>
       <div className="pt-4 flex flex-col gap-4">
         <h4>
           Retrouvez une liste d'outils gratuits pour vous protéger numériquement

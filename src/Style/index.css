@@ -308,7 +308,7 @@ textarea:focus,
 /**********/
 
 h1 {
-  @apply text-2xl font-bold text-zinc-800 dark:text-zinc-200 border-b border-color pb-4;
+  @apply text-2xl font-bold text-zinc-800 dark:text-zinc-200;
 }
 
 h2 {
@@ -325,6 +325,10 @@ h4 {
 
 .highlight-card-title {
   @apply font-semibold dark:text-neutral-200 text-neutral-800;
+}
+
+.title-border-bottom {
+  @apply border-b border-color pb-4;
 }
 
 /*********/

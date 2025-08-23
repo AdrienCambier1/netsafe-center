@@ -3,7 +3,9 @@ import { KnowledgeCard } from "../../Components/Cards";
 export default function KnowledgeArea() {
   return (
     <div className="page-content">
-      <h1>Espace de connaissances</h1>
+      <div className="title-border-bottom">
+        <h1>Espace de connaissances</h1>
+      </div>
       <div className="pt-4 flex flex-col gap-4">
         <h4>
           Retrouvez une liste de liens permettant de suivre l'actualité
