@@ -28,7 +28,7 @@ import { ProtectedRoute } from "../Components/ProtectedRoute";
 
 export default function Main() {
   return (
-    <main className="min-h-[100dvh] pt-16 flex justify-center">
+    <main className="min-h-[100vh] pt-16 flex justify-center">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
