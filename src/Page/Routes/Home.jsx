@@ -80,7 +80,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative">
+      <div className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 relative">
         <div className="col-span-1 px-6 py-8">
           <div className="flex flex-col gap-8 sticky top-24">
             <div className="flex flex-col gap-2">
@@ -118,14 +118,14 @@ export default function Home() {
               link="/quiz/1"
               connectionRequired={true}
             />
-            <div className="hidden md:flex lg:hidden flex-col gap-8">
+            <div className="hidden md:flex xl:hidden flex-col gap-8">
               <div className="border-t border-color" />
               {asideElement()}
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative flex flex-col gap-4 px-6 py-8 md:border-l border-t md:border-t-0 border-color">
+        <div className="xl:col-span-2 relative flex flex-col gap-4 px-6 py-8 md:border-l border-t md:border-t-0 border-color">
           {isLoading ? (
             <>
               <PostHeaderCardSkeleton />
@@ -156,7 +156,7 @@ export default function Home() {
             </>
           )}
         </div>
-        <div className="block md:hidden lg:block col-span-1 px-6 py-8 lg:border-l border-t md:border-t-0 border-color">
+        <div className="block md:hidden xl:block col-span-1 px-6 py-8 xl:border-l border-t md:border-t-0 border-color">
           <div className="flex flex-col gap-8 sticky top-24">
             {asideElement()}
           </div>
