@@ -9,7 +9,7 @@ export default function RoundedGrayButton({ link, onClick, icon, value }) {
       tyoe="button"
       className={`${
         value && "px-4 w-fit"
-      } transition hover:opacity-75 gray-btn gray-btn-bg !rounded-full`}
+      } hover:opacity-75 gray-btn gray-btn-bg !rounded-full`}
     >
       <FontAwesomeIcon
         className={`${value ? "py-2.5" : "p-2.5"} h-4 w-4`}

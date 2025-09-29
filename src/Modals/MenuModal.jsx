@@ -36,7 +36,7 @@ export default function MenuModal({ isOpen, onClose }) {
         disabled={!isOpen || modals["loginModal"] || modals["registerModal"]}
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } p-4 top-0 right-0 w-60 max-w-full h-full fixed dark:bg-neutral-950 bg-white border-l border-transparent dark:border-neutral-800 transition block lg:hidden overflow-y-auto scrollbar-hide`}
+        } menu-modal`}
       >
         <div className="flex justify-between items-center">
           <IconPurpleButton icon={faClose} onClick={onClose} />

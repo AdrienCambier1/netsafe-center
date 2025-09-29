@@ -36,7 +36,7 @@ export default function IconPurpleButton({
       onClick={handleClick}
       className={`${
         disabled ? "opacity-50 cursor-not-allowed" : "hover:opacity-75"
-      } transition rounded-full bg-purple-shadow flex items-center justify-center text-white cursor-pointer`}
+      } rounded-full bg-purple-shadow flex items-center justify-center text-white cursor-pointer`}
     >
       <FontAwesomeIcon className="p-2.5 h-4 w-4" icon={icon} />
     </Link>

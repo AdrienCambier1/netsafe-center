@@ -7,9 +7,7 @@ export default function MultipleButton({ buttons, isOpen }) {
     <div className={`${isOpen ? "visible" : "invisible"}  absolute right-0`}>
       <ReactFocusLock
         disabled={!isOpen}
-        className={`${
-          isOpen ? "opacity-100" : "opacity-0"
-        } transition multiple-btn`}
+        className={`${isOpen ? "opacity-100" : "opacity-0"} multiple-btn`}
       >
         {buttons.map((button) => (
           <Link

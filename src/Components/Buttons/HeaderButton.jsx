@@ -27,7 +27,7 @@ export default function HeaderButton({
     <Link
       to={connectionRequired && !isAuthenticated ? "#" : link}
       onClick={handleClick}
-      className="transition header-button"
+      className="header-button"
     >
       {value}
     </Link>

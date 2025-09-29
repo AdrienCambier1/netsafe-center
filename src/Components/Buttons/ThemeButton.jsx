@@ -9,7 +9,7 @@ export default function ThemeButton({ img, value, selected, onClick }) {
           selected
             ? "outline-purple-500"
             : "hover:outline-purple-500 outline-transparent"
-        } transition outline outline-2 outline-offset-2 rounded-xl border border-color`}
+        } outline outline-2 outline-offset-2 rounded-xl border border-color`}
       />
       <p className="default-text">{value}</p>
     </div>
